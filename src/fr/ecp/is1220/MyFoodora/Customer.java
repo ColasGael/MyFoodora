@@ -1,12 +1,8 @@
-package Group9_Project_IS1220_part1_Colas_Prabakaran;
+package fr.ecp.is1220.MyFoodora;
 
 public class Customer extends User {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 8234513441513658859L;
-	private String surname ;
 	private FidelityCard fidelityCard ;
 	/**
 	 * true if the customer wants to be notified whenever a new special offer is set
@@ -27,13 +23,13 @@ public class Customer extends User {
 	 * @param surname : the surname of the user
 	 * @param address : the address of the user
 	 */
-	public Customer(String name, String userName, String password, MyFoodora myFoodora, String surname, Position address) {
-		super(name, userName, password, myFoodora);
-		this.surname = surname ;
-		this.fidelityCard = new BasicFidelityCard() ;
+	public Customer(String name, String userName, String password, String surname, Position address) {
+		super(name, surname, userName, password);
+		this.fidelityCard = new BasicFidelityCard();
 		this.offerBoard = new Board() ;
 		this.address = address ;
-		userType = "Customer" ;
+		
+		this.setUserType ("customer") ;
 	}
 	
 	/**
@@ -69,12 +65,4 @@ public class Customer extends User {
 	public void setAddress(Position address) {
 		this.address = address;
 	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}	
 }

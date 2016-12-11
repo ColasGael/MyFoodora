@@ -1,4 +1,4 @@
-package Group9_Project_IS1220_part1_Colas_Prabakaran;
+package fr.ecp.is1220.MyFoodora;
 
 public class Dessert extends Dish {
 	

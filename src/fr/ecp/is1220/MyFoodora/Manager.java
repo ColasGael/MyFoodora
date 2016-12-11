@@ -1,12 +1,12 @@
-package Group9_Project_IS1220_part1_Colas_Prabakaran;
+package fr.ecp.is1220.MyFoodora;
 
 public class Manager extends User {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2291793873364057722L;
-	private String surname ;
+	/**
+	 * the MyFoodora core
+	 */
+	private MyFoodora myFoodora = new MyFoodora ();
 	
 	/**
 	 * creates a manager who will manage the MyFoodora platform
@@ -16,27 +16,59 @@ public class Manager extends User {
 	 * @param surname : the surname of the user
 	 */
 	public Manager(String name, String userName, String password, MyFoodora myFoodora, String surname) {
-		super(name, userName, password, myFoodora);
-		this.surname = surname ;
+		super(name, surname, userName, password);
+		this.myFoodora = myFoodora;
+		
+		this.setUserType("manager");
 	}
 	
 	/**
-	 * adds the user user
+	 * adds the user 
 	 * @param user : The user object 
 	 */
 	public void addUser(User user){
-		
+		//TO DO
 	}
 	
-	public void removeUser(User user){
-		
+	/**
+	 * remove the user of uniqueID from the system
+	 * @param uniqueID
+	 */
+	public void removeUser(int uniqueID){
+		myFoodora.removeUser(uniqueID);
+	}
+	
+	/**
+	 * activate the user of uniqueID of the system
+	 * @param uniqueID
+	 */
+	public void activateUser (int uniqueID){
+		try{
+			User user = myFoodora.findUserByUniqueID(uniqueID);
+			user.setActivated(true);
+		}catch(UserNotFoundException e){
+			System.err.println(e.getMessage());
+		}
+	}
+	
+	/**
+	 * deactivate the user of uniqueID of the system
+	 * @param uniqueID
+	 */
+	public void deactivateUser (int uniqueID){
+		try{
+			User user = myFoodora.findUserByUniqueID(uniqueID);
+			user.setActivated(false);
+		}catch(UserNotFoundException e){
+			System.err.println(e.getMessage());
+		}
 	}
 
-	public String getSurname() {
-		return surname;
+	public MyFoodora getMyFoodora() {
+		return myFoodora;
 	}
 
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public void setMyFoodora(MyFoodora myFoodora) {
+		this.myFoodora = myFoodora;
 	}
 }

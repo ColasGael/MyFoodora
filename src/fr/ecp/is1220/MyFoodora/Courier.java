@@ -2,9 +2,6 @@ package fr.ecp.is1220.MyFoodora;
 
 public class Courier extends User {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5347546696284207206L;
 	private Position position ;
 	private String phoneNumber ;
@@ -22,11 +19,12 @@ public class Courier extends User {
 	 * @param position : the position of the courier
 	 * @param phoneNumber : the phone number of the courier
 	 */
-	public Courier(String name, String userName, String password, MyFoodora myFoodora, Position position, String phoneNumber) {
-		super(name, userName, password, myFoodora);
+	public Courier(String name, String surname, String userName, String password, Position position, String phoneNumber) {
+		super(name, surname, userName, password);
 		this.position = position ;
 		this.phoneNumber = phoneNumber ;
-		userType = "Courier" ;
+		
+		this.setUserType ("courier") ;
 	}
 
 	public Position getPosition() {

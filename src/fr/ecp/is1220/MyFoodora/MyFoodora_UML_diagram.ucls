@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.13" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="fr.ecp.is1220.MyFoodora.FullMeal" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/FullMeal.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="160" width="313" x="1343" y="1742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="fr.ecp.is1220.MyFoodora.Menu" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Menu.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="394" width="313" x="1381" y="569"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="fr.ecp.is1220.MyFoodora.TargetProfitPolicyMarkup" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/TargetProfitPolicyMarkup.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="261" x="205" y="333"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="fr.ecp.is1220.MyFoodora.Dish" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Dish.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="321" width="308" x="995" y="1363"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="fr.ecp.is1220.MyFoodora.Position" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Position.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="214" width="309" x="2715" y="1742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="fr.ecp.is1220.MyFoodora.Restaurant" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Restaurant.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="178" width="327" x="2143" y="333"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="fr.ecp.is1220.MyFoodora.Dessert" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Dessert.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="313" x="995" y="1996"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="fr.ecp.is1220.MyFoodora.NonReachableTargetProfitException" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/NonReachableTargetProfitException.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="313" x="226" y="1742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="fr.ecp.is1220.MyFoodora.PointFidelityCard" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/PointFidelityCard.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="358" width="313" x="1701" y="1996"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="fr.ecp.is1220.MyFoodora.MyFoodora" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/MyFoodora.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="754" width="396" x="2082" y="569"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="11" language="java" name="fr.ecp.is1220.MyFoodora.TargetProfitPolicy" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/TargetProfitPolicy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="88" width="261" x="266" y="1363"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="12" language="java" name="fr.ecp.is1220.MyFoodora.FairOccupationDeliveryPolicy" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/FairOccupationDeliveryPolicy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="292" x="2082" y="-354"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="fr.ecp.is1220.MyFoodora.Board" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Board.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="178" width="313" x="2362" y="1742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="fr.ecp.is1220.MyFoodora.UserFactory" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/UserFactory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="88" width="143" x="1052" y="-354"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="fr.ecp.is1220.MyFoodora.FastestDeliveryPolicy" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/FastestDeliveryPolicy.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="292" x="2612" y="-354"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="fr.ecp.is1220.MyFoodora.Manager" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Manager.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="196" width="309" x="2510" y="333"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="fr.ecp.is1220.MyFoodora.Starter" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Starter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="313" x="1348" y="1996"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="fr.ecp.is1220.MyFoodora.User" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/User.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="483" width="309" x="2552" y="-190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="fr.ecp.is1220.MyFoodora.Meal" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Meal.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="339" width="309" x="1343" y="1363"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="fr.ecp.is1220.MyFoodora.SorterPrice" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/SorterPrice.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="304" x="609" y="569"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="fr.ecp.is1220.MyFoodora.TargetProfitPolicyServiceFee" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/TargetProfitPolicyServiceFee.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="261" x="506" y="333"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="fr.ecp.is1220.MyFoodora.BasicFidelityCard" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/BasicFidelityCard.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="313" x="2403" y="1996"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="fr.ecp.is1220.MyFoodora.Customer" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Customer.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="304" width="358" x="2066" y="1363"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="fr.ecp.is1220.MyFoodora.HalfMeal" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/HalfMeal.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="142" width="309" x="1339" y="333"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="fr.ecp.is1220.MyFoodora.Courier" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Courier.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="286" width="343" x="2755" y="1363"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="26" language="java" name="fr.ecp.is1220.MyFoodora.SorterFoodItem" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/SorterFoodItem.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="88" width="304" x="630" y="1363"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="27" language="java" name="fr.ecp.is1220.MyFoodora.LotteryFidelityCard" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/LotteryFidelityCard.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="309" x="2054" y="1996"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="fr.ecp.is1220.MyFoodora.TargetProfitPolicyDeliveryCost" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/TargetProfitPolicyDeliveryCost.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="106" width="261" x="807" y="333"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="fr.ecp.is1220.MyFoodora.Order" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/Order.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="412" width="306" x="1755" y="-190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="fr.ecp.is1220.MyFoodora.FidelityCard" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/FidelityCard.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="141" width="313" x="1988" y="1742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="fr.ecp.is1220.MyFoodora.UserNotFoundException" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/UserNotFoundException.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="209" x="2485" y="1363"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="32" language="java" name="fr.ecp.is1220.MyFoodora.DeliveryPolicy" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/DeliveryPolicy.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="88" width="292" x="1713" y="1363"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="33" language="java" name="fr.ecp.is1220.MyFoodora.FoodItem" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/FoodItem.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="154" x="799" y="1742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="34" language="java" name="fr.ecp.is1220.MyFoodora.SorterCounter" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/SorterCounter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="304" x="953" y="569"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="fr.ecp.is1220.MyFoodora.MainDish" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/MainDish.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="305" x="650" y="1996"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="fr.ecp.is1220.MyFoodora.MyFoodoraTest" 
+    project="Group9_Project_IS1220_part1_Prabakaran_Colas" 
+    file="/Group9_Project_IS1220_part1_Prabakaran_Colas/src/fr/ecp/is1220/MyFoodora/MyFoodoraTest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="175" x="2944" y="-354"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="37">    
+    <bendpoint x="2521" y="-190"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="38">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="39">    
+    <bendpoint x="3017" y="-190"/>    
+    <bendpoint x="3038" y="333"/>    
+    <bendpoint x="3083" y="569"/>    
+    <bendpoint x="3128" y="1363"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="40">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="41" name="deliveryPolicy">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="42" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="43">    
+    <bendpoint x="256" y="569"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <generalization id="44">    
+    <bendpoint x="2954" y="569"/>    
+    <bendpoint x="2954" y="333"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <association id="45">    
+    <bendpoint x="2870" y="333"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="46" name="users">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="47" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="49" name="menu">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="50" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="51">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="52" name="address">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="53" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="54">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="55">    
+    <bendpoint x="2028" y="333"/>    
+    <bendpoint x="2037" y="569"/>    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="56" name="customer">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="57" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="58">    
+    <bendpoint x="3059" y="-190"/>    
+    <bendpoint x="3059" y="333"/>    
+    <bendpoint x="3059" y="569"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="59">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="60">    
+    <bendpoint x="964" y="1363"/>    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="61">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="62">    
+    <bendpoint x="2112" y="333"/>    
+    <bendpoint x="2508" y="569"/>    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="63" name="courier">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="64" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="65">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="66">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="67">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="68">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="69" name="starter">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="70" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="71">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <association id="72">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="73" name="dessert">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="74" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="75">    
+    <bendpoint x="1004" y="1742"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="76">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <association id="77">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="78" name="dishes">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="79" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="80">    
+    <bendpoint x="1350" y="569"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="81">    
+    <bendpoint x="1287" y="333"/>    
+    <bendpoint x="1287" y="569"/>    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="82" name="dishes">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="83" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="84">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="85" name="restaurant">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="86" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="87">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="88">    
+    <bendpoint x="235" y="569"/>    
+    <bendpoint x="235" y="1363"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="89">    
+    <bendpoint x="2891" y="-190"/>    
+    <bendpoint x="2891" y="333"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="90">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="91">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="92" name="fidelityCard">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="93" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="30" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="94">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="95">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <generalization id="96">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="97">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="98" name="mealOfTheWeek">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="99" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="100">    
+    <bendpoint x="578" y="569"/>    
+    <bendpoint x="578" y="1363"/>    
+    <bendpoint x="578" y="1742"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <dependency id="101">    
+    <bendpoint x="557" y="569"/>    
+    <bendpoint x="557" y="1363"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="102">    
+    <bendpoint x="2933" y="-190"/>    
+    <bendpoint x="2933" y="333"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <realization id="103">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="33"/>  
+  </realization>  
+  <generalization id="104">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <dependency id="105">    
+    <bendpoint x="2331" y="1742"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <realization id="106">    
+    <bendpoint x="536" y="569"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <dependency id="107">    
+    <bendpoint x="599" y="1363"/>    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="108">    
+    <bendpoint x="2454" y="1363"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="109">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="110">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <association id="111">    
+    <bendpoint x="1308" y="333"/>    
+    <bendpoint x="1308" y="569"/>    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="112" name="meals">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="113" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="114">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="26"/>  
+  </realization>  
+  <dependency id="115">    
+    <bendpoint x="1682" y="1363"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <association id="116">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="117" name="position">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="118" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="119">    
+    <bendpoint x="2112" y="-190"/>    
+    <bendpoint x="2049" y="333"/>    
+    <bendpoint x="1995" y="569"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <association id="120">    
+    <bendpoint x="1025" y="1742"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="121" name="mainDish">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="122" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="123">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <realization id="124">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="26"/>  
+  </realization>  
+  <generalization id="125">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <dependency id="126">    
+    <bendpoint x="1745" y="333"/>    
+    <bendpoint x="1745" y="569"/>    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <association id="127">    
+    <bendpoint x="1329" y="569"/>    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="128" name="sideDish">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="129" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="130">    
+    <bendpoint x="2070" y="333"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="131" name="completedOrders">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="132" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="133">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="134" name="shipOrderPolicy">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="135" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="136">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <realization id="137">    
+    <bendpoint x="395" y="569"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="11"/>  
+  </realization>  
+  <dependency id="138">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <association id="139">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="140" name="meals">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="141" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="142">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="143" name="targetProfitPolicy">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="144" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="145">    
+    <bendpoint x="2912" y="-190"/>    
+    <bendpoint x="2975" y="333"/>    
+    <bendpoint x="2975" y="569"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <association id="146">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="147" name="offerBoard">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="148" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="149">    
+    <bendpoint x="2007" y="333"/>    
+    <bendpoint x="2016" y="569"/>    
+    <bendpoint x="2035" y="1363"/>    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="150" name="addressOfDelivery">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="151" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="152">    
+    <bendpoint x="2724" y="569"/>    
+    <bendpoint x="2724" y="1363"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="153" name="address">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="154" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="155">    
+    <bendpoint x="3038" y="-190"/>    
+    <bendpoint x="2996" y="333"/>    
+    <bendpoint x="2933" y="569"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <realization id="156">    
+    <bendpoint x="1724" y="-190"/>    
+    <bendpoint x="1724" y="333"/>    
+    <bendpoint x="1724" y="569"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="32"/>  
+  </realization>  
+  <dependency id="157">    
+    <bendpoint x="214" y="569"/>    
+    <bendpoint x="214" y="1363"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <generalization id="158">    
+    <bendpoint x="983" y="1742"/>    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="159">    
+    <bendpoint x="1180" y="1742"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <generalization id="160">    
+    <bendpoint x="2912" y="569"/>    
+    <bendpoint x="2912" y="333"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="18"/>  
+  </generalization>  
+  <generalization id="161">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="30"/>  
+  </generalization>  
+  <dependency id="162">    
+    <bendpoint x="2091" y="-190"/>    
+    <bendpoint x="2091" y="333"/>    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="163">    
+    <bendpoint x="2996" y="-190"/>    
+    <bendpoint x="3017" y="333"/>    
+    <bendpoint x="3017" y="569"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <realization id="164">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="33"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

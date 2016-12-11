@@ -1,19 +1,19 @@
 package fr.ecp.is1220.MyFoodora;
 
+public class AccountDeactivatedException extends Exception {
 
-public class UserNotFoundException extends Exception {
+	private static final long serialVersionUID = -7830538404004078430L;
 
-	private static final long serialVersionUID = -673308961619162935L;
-
-	public UserNotFoundException() {
+	public AccountDeactivatedException() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
 	/**
 	 * @param message : message given when the exception is thrown
 	 */
-	public UserNotFoundException(String message) {
+	public AccountDeactivatedException(String message) {
 		super(message);
 		// TODO Auto-generated constructor stub
 	}
+
 }

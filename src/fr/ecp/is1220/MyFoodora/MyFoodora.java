@@ -1,4 +1,4 @@
-package Group9_Project_IS1220_part1_Colas_Prabakaran;
+package fr.ecp.is1220.MyFoodora;
 
 
 import java.util.ArrayList ;
@@ -8,9 +8,6 @@ import java.io.* ;
 
 public class MyFoodora implements java.io.Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6956532311204306476L;
 	/**
 	 * The list of all the users of the platform
@@ -41,8 +38,24 @@ public class MyFoodora implements java.io.Serializable{
 
 
 	public MyFoodora() {
+		super();
 	}
 	
+	/**
+	 * Create a new MyFoodora instance
+	 * @param serviceFee
+	 * @param markupPercentage
+	 * @param deliveryCost
+	 */
+	public MyFoodora(double serviceFee, double markupPercentage, double deliveryCost) {
+		super();
+		this.users = new ArrayList<User>();
+		this.completedOrders = new ArrayList<Order>();
+		this.serviceFee = serviceFee;
+		this.markupPercentage = markupPercentage;
+		this.deliveryCost = deliveryCost;
+	}
+
 	public void saveMyFoodora(){
 		try { 
 			FileOutputStream fileOut = new FileOutputStream("myFoodora.ser"); 
@@ -54,21 +67,6 @@ public class MyFoodora implements java.io.Serializable{
 		}catch(IOException exception) { 
 				exception.printStackTrace(); 
 		}
-	}
-	
-	/**
-	 * Method which returns the user which is logged
-	 * @param userName
-	 * @param password
-	 * @return User
-	 */
-	public User login(String userName, String password){
-		for (User user : users){
-			if((user.getUserName()==userName)&&(user.getPassword()==password)){
-				return user ;
-			}
-		}
-		return null ;
 	}
 	
 	public void loadMyFoodora(){
@@ -91,6 +89,28 @@ public class MyFoodora implements java.io.Serializable{
 			c.printStackTrace();
 			return; 
 		}
+	}
+	
+	/**
+	 * Method which returns the user who is logged with the given username and password
+	 * @param userName
+	 * @param password
+	 * @return User
+	 */
+	public User login(String userName, String password) throws IdentificationIncorrectException, AccountDeactivatedException{
+		User foundUser;
+		for (User user : users){
+			//Check that the given identification parameters match a user of the database
+			if((user.getUserName()==userName)&&(user.getPassword()==password)){
+				foundUser = user ;
+				if (foundUser.isActivated()){
+					return (foundUser);
+				}else{
+					throw (new AccountDeactivatedException ("your account is deactivated"));
+				}
+			}
+		}
+		throw (new IdentificationIncorrectException ("username or password incorrect"));
 	}
 	
 	public void registerCustomer(String name, String userName, String password, String surname, Position address){
@@ -216,10 +236,10 @@ public class MyFoodora implements java.io.Serializable{
 		return totalIncome/customersOfThePeriod.size();
 	}
 	
+	
 	public ArrayList<User> getUsers() {
 		return users;
 	}
-
 
 	public void setUsers(ArrayList<User> users) {
 		this.users = users;
@@ -233,24 +253,6 @@ public class MyFoodora implements java.io.Serializable{
 		try{
 			User user = this.findUserByUniqueID(uniqueID);
 			this.users.remove(user);
-		}catch(UserNotFoundException e){
-			System.err.println(e);
-		}
-	}
-	
-	public void activateUser (int uniqueID){
-		try{
-			User user = this.findUserByUniqueID(uniqueID);
-			user.setActivated(true);
-		}catch(UserNotFoundException e){
-			System.err.println(e);
-		}
-	}
-	
-	public void disactivateUser (int uniqueID){
-		try{
-			User user = this.findUserByUniqueID(uniqueID);
-			user.setActivated(false);
 		}catch(UserNotFoundException e){
 			System.err.println(e);
 		}
