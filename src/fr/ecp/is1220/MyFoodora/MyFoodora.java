@@ -35,11 +35,6 @@ public class MyFoodora implements java.io.Serializable{
 	private DeliveryPolicy deliveryPolicy = null ;
 	
 	private SorterFoodItem shipOrderPolicy = null ;
-
-
-	public MyFoodora() {
-		super();
-	}
 	
 	/**
 	 * Create a new MyFoodora instance
@@ -56,11 +51,11 @@ public class MyFoodora implements java.io.Serializable{
 		this.deliveryCost = deliveryCost;
 	}
 
-	public void saveMyFoodora(){
+	public static void saveMyFoodora(MyFoodora myFoodora){
 		try { 
 			FileOutputStream fileOut = new FileOutputStream("myFoodora.ser"); 
 			ObjectOutputStream out = new ObjectOutputStream(fileOut); 
-			out.writeObject(this); 
+			out.writeObject(myFoodora); 
 			out.close(); 
 			fileOut.close(); 
 			System.out.print("The MyFoodora platform has been saved."); 
@@ -69,25 +64,21 @@ public class MyFoodora implements java.io.Serializable{
 		}
 	}
 	
-	public void loadMyFoodora(){
+	public static MyFoodora loadMyFoodora(){
+		MyFoodora myFoodora = null;
 		try { 
 			FileInputStream fileIn = new FileInputStream("myFoodora.ser"); 
 			ObjectInputStream in = new ObjectInputStream(fileIn); 
-			MyFoodora copy =(MyFoodora) in.readObject(); 
-			setUsers(copy.getUsers());
-			setCompletedOrders(copy.getCompletedOrders());
-			setServiceFee(copy.getServiceFee());
-			setMarkupPercentage(copy.getMarkupPercentage());
-			setDeliveryCost(copy.getDeliveryCost());
 			in.close(); 
 			fileIn.close(); 
+			myFoodora =(MyFoodora) in.readObject(); 
 		}catch(IOException exception) {
 			exception.printStackTrace();
-			return;
 		}catch(ClassNotFoundException c) {
 			System.out.println("MyFoodora class not found");
 			c.printStackTrace();
-			return; 
+		}finally{
+			return myFoodora;
 		}
 	}
 	
@@ -114,17 +105,23 @@ public class MyFoodora implements java.io.Serializable{
 	}
 	
 	public void registerCustomer(String name, String userName, String password, String surname, Position address){
-		Customer newUser = new Customer(name, userName, password, this, surname, address);
+		Customer newUser = new Customer(name, surname, userName, password, address);
 		users.add(newUser) ;
 	}
 	
-	public void registerCourier(String name, String userName, String password, Position position, String phoneNumber){
-		Courier newUser = new Courier(name, userName, password, this, position, phoneNumber);
+	public void registerCourier(String name, String surname, String userName, String password, Position position, String phoneNumber){
+		Courier newUser = new Courier(name, surname, userName, password, position, phoneNumber);
 		users.add(newUser) ;
 	}
+	
+	public void registerManager(String name, String surname, String userName, String password, Position position, String phoneNumber){
+		Courier newUser = new Courier(name, surname, userName, password, position, phoneNumber);
+		users.add(newUser) ;
+	}
+	
 	
 	public void registerRestaurant(String name, String userName, String password, MyFoodora myFoodora, Position address){
-		Restaurant newUser = new Restaurant(name, userName, password, this, address);
+		Restaurant newUser = new Restaurant(name, userName, password, address);
 		users.add(newUser) ;
 	}
 	

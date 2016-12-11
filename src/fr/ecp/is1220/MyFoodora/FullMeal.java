@@ -64,4 +64,9 @@ public class FullMeal extends Meal {
 	public Dessert getDessert() {
 		return dessert;
 	}
+	
+	@Override
+	public String toString() {
+		return ("Full" + ((Meal)this).toString() + starter.toString() + "/n" + dessert.toString() + "/n");
+	}
 }

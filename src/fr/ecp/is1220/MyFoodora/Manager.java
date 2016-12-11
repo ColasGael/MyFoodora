@@ -6,7 +6,7 @@ public class Manager extends User {
 	/**
 	 * the MyFoodora core
 	 */
-	private MyFoodora myFoodora = new MyFoodora ();
+	private MyFoodora myFoodora = null;
 	
 	/**
 	 * creates a manager who will manage the MyFoodora platform

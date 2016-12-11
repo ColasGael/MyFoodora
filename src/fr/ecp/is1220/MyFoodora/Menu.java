@@ -119,5 +119,12 @@ public class Menu implements java.io.Serializable {
 		this.mealOfTheWeek = mealOfTheWeek;
 		this.notifyMeals();
 	}
+
+	@Override
+	public String toString() {
+		return "Menu [dishes=" + dishes + ", meals=" + meals + ", genericDiscountFactor=" + genericDiscountFactor
+				+ ", specialDiscountFactor=" + specialDiscountFactor + ", mealOfTheWeek=" + mealOfTheWeek + "]";
+	}
 	
+
 }

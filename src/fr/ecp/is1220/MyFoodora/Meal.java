@@ -2,9 +2,6 @@ package fr.ecp.is1220.MyFoodora;
 
 public abstract class Meal implements FoodItem {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5331853906083701302L;
 	/**
 	 * the name of the meal
@@ -70,5 +67,11 @@ public abstract class Meal implements FoodItem {
 	@Override
 	public void increaseCounter() {
 		this.counter++ ;
+	}
+	
+	@Override
+	public String toString() {
+		return ("Meal : " + this.getName() + " price " + this.getPrice() + " type : " + this.getType() + "/n"
+				+ mainDish.toString() + "/n");
 	}
 }

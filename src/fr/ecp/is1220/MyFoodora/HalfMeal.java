@@ -2,9 +2,6 @@ package fr.ecp.is1220.MyFoodora;
 
 public class HalfMeal extends Meal {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 5964746563078278289L;
 	/**
 	 * the side dish : a starter or a dessert
@@ -53,5 +50,12 @@ public class HalfMeal extends Meal {
 
 	public Dish getSideDish() {
 		return sideDish;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return ("Half" + ((Meal)this).toString() + sideDish.toString() + "/n");
+	}
+	
+	
 }

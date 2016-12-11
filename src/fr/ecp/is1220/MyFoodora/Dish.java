@@ -1,9 +1,7 @@
 package fr.ecp.is1220.MyFoodora;
 
 public abstract class Dish implements FoodItem {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 6534351611225696695L;
 	/**
 	 * the name of the dish
@@ -20,7 +18,7 @@ public abstract class Dish implements FoodItem {
 	/**
 	 * the number of times the dish has been shipped 
 	 */
-	int counter = 0 ;
+	private int counter = 0 ;
 	
 	/**
 	 * creates a dish object of a given price and type
@@ -69,4 +67,12 @@ public abstract class Dish implements FoodItem {
 	public void increaseCounter() {
 		this.counter++ ;
 	}
+
+
+	@Override
+	public String toString() {
+		return "[name=" + name + ", price=" + price + ", type=" + type + ", counter=" + counter + "]";
+	}
+	
+	
 }
