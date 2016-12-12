@@ -1,5 +1,7 @@
 package fr.ecp.is1220.MyFoodora;
 
+import java.util.Calendar;
+
 public class Manager extends User {
 	
 	private static final long serialVersionUID = 2291793873364057722L;
@@ -21,7 +23,7 @@ public class Manager extends User {
 		this.myFoodora = myFoodora;
 		
 		this.setUserType("manager");
-	}
+	} 
 	
 	/**
 	 * adds the user 
@@ -73,6 +75,36 @@ public class Manager extends User {
 		}
 	}
 	
+	/**
+	 * compute the total income on a given period : between date1 (day1/month1/year1) and date2 (day2/month2/year2)
+	 * @param calendar1 : the beginning date of the period
+	 * @param calendar1 : the last date of the period
+	 * @return the total income on the given period
+	 */
+	public double totalIncome(Calendar calendar1, Calendar calendar2){
+		return(myFoodora.totalIncome(calendar1, calendar2));
+	}
+	
+	/**
+	 * compute the total profit on a given period : between date1 (day1/month1/year1) and date2 (day2/month2/year2)
+	 * @param calendar1 : the beginning date of the period
+	 * @param calendar1 : the last date of the period
+	 * @return the total income on the given period
+	 */
+	public double totalProfit (Calendar calendar1, Calendar calendar2){
+		return(myFoodora.totalProfit(calendar1, calendar2));
+	}	
+	
+	/**
+	 * compute the average income per customer on a given period : between date1 (day1/month1/year1) and date2 (day2/month2/year2)
+	 * @param calendar1
+	 * @param calendar2
+	 * @return the average income per customer on a given period
+	 */
+	public double averageIncomePerCostumer (Calendar calendar1, Calendar calendar2){
+		return(myFoodora.averageIncomePerCostumer(calendar1, calendar2));
+
+	}
 
 	public MyFoodora getMyFoodora() {
 		return myFoodora;
