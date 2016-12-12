@@ -23,7 +23,7 @@ public class Customer extends User {
 	 * @param surname : the surname of the user
 	 * @param address : the address of the user
 	 */
-	public Customer(String name, String userName, String password, String surname, Position address) {
+	public Customer(String name, String surname, String userName, String password, Position address) {
 		super(name, surname, userName, password);
 		this.fidelityCard = new BasicFidelityCard();
 		this.offerBoard = new Board() ;

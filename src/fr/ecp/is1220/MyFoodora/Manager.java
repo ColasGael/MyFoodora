@@ -15,7 +15,7 @@ public class Manager extends User {
 	 * @param password : the password of the user to login in the MyFoodora platform
 	 * @param surname : the surname of the user
 	 */
-	public Manager(String name, String userName, String password, MyFoodora myFoodora, String surname) {
+	public Manager(String name, String surname, String userName, String password, MyFoodora myFoodora) {
 		super(name, surname, userName, password);
 		this.myFoodora = myFoodora;
 		

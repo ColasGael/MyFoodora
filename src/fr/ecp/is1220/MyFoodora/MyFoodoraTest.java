@@ -8,16 +8,15 @@ public class MyFoodoraTest {
 
 	@Test
 	public void testStartupScenario() {
-		MyFoodora myFoodora = new MyFoodora() ;
-		myFoodora.registerCustomer("Theo","theo7794","password",null,null);
-		myFoodora.saveMyFoodora();
-		myFoodora.loadMyFoodora() ;
+		MyFoodora myFoodora = new MyFoodora(10, 0.05, 5) ;
+		myFoodora.registerCustomer("Theo", "Bob","theo7794","password",null);
+		MyFoodora.saveMyFoodora(myFoodora);
+		MyFoodora myFoodorabis = MyFoodora.loadMyFoodora() ;
 	}
 	
-	@Test
+	/*@Test
 	public void testLoginScenario() {
-		MyFoodora myFoodora = new MyFoodora() ;
-		myFoodora.loadMyFoodora() ;
+		MyFoodora myFoodora = MyFoodora.loadMyFoodora() ;
 		
 		User currentUser = myFoodora.login("theo7794", "password") ;
 		if (currentUser.getUserType() == "Customer"){
@@ -27,6 +26,6 @@ public class MyFoodoraTest {
 		}else if (currentUser.getUserType() == "Restaurant"){
 			Restaurant currentRestaurant = (Restaurant)myFoodora.login("theo7794", "password");
 		}		
-	}
+	}*/
 
 }
