@@ -7,6 +7,8 @@ public class MyFoodoraClient {
 	public static void main(String[] args) {
 		MyFoodora myFoodora = MyFoodora.loadMyFoodora();
 		
+		myFoodora.displayUsers();
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Welcome on the MyFoodora application \n"
@@ -23,7 +25,6 @@ public class MyFoodoraClient {
 					//TO DO
 					System.out.println("You have successfully created an account !\n"
 							+ "Now type \"login\" to log into the system \n or \"close\" to quit \n");
-					input = sc.next();
 					break;
 					
 				case("login"):
@@ -105,18 +106,18 @@ public class MyFoodoraClient {
 						System.out.println("Sorry " + e.getMessage() + "\n"
 								+ "Please call a manager : +33 1 41 13 15 79 \n");
 						input = "close";
-					}finally{
-						break;
+					/*}finally{
+						break;*/
 					}
 				case("close"):
 					break;
 				default:
 					System.out.println("This choice is not available, please try again \n");
-					System.out.println("If you are a new user please \"register\" \n"
-							+ "If not please \"login\" \n");
-					input = sc.next();
 					break;
 			}
+			System.out.println("If you are a new user please \"register\" \n"
+					+ "If not please \"login\" \n");
+			input = sc.next();
 		}
 
 		System.out.println("Thank you for your visit ! \n Goodbye !\n");

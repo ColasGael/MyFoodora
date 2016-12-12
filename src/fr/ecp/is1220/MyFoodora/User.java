@@ -89,7 +89,10 @@ public abstract class User implements java.io.Serializable {
 
 	public void setUserType(String userType) {
 		this.userType = userType;
-	}	
+	}
 	
+	public String toString(){
+		return (this.userType + " ID : " + this.uniqueID + name + surname);
+	}
 	
 }

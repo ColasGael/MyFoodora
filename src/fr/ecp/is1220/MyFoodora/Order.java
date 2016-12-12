@@ -5,9 +5,6 @@ import java.util.Calendar ;
 
 public class Order implements java.io.Serializable {
 	
-	/**
-	 * tg
-	 */
 	private static final long serialVersionUID = -372769376339718757L;
 	/**
 	 * the date of the order

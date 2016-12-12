@@ -68,10 +68,10 @@ public class MyFoodora implements java.io.Serializable{
 		MyFoodora myFoodora = null;
 		try { 
 			FileInputStream fileIn = new FileInputStream("myFoodora.ser"); 
-			ObjectInputStream in = new ObjectInputStream(fileIn); 
+			ObjectInputStream in = new ObjectInputStream(fileIn);  
+			myFoodora =(MyFoodora) in.readObject();
 			in.close(); 
-			fileIn.close(); 
-			myFoodora =(MyFoodora) in.readObject(); 
+			fileIn.close();
 		}catch(IOException exception) {
 			exception.printStackTrace();
 		}catch(ClassNotFoundException c) {
@@ -104,7 +104,7 @@ public class MyFoodora implements java.io.Serializable{
 		throw (new IdentificationIncorrectException ("username or password incorrect"));
 	}
 	
-	public void registerCustomer(String name, String userName, String password, String surname, Position address){
+	public void registerCustomer(String name, String surname, String userName, String password, Position address){
 		Customer newUser = new Customer(name, surname, userName, password, address);
 		users.add(newUser) ;
 	}
@@ -240,6 +240,10 @@ public class MyFoodora implements java.io.Serializable{
 
 	public void setUsers(ArrayList<User> users) {
 		this.users = users;
+	}
+	
+	public void displayUsers(){
+		System.out.println("Users " + users);
 	}
 	
 	public void addUser (User user){
