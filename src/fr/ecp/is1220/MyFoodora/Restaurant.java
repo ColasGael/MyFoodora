@@ -18,7 +18,7 @@ public class Restaurant extends User {
 		this.address = address ;
 		this.menu = new Menu() ;
 		
-		this.setUserType ("Restaurant") ;
+		this.setUserType ("restaurant") ;
 	}
 	
 	public Menu getMenu(){

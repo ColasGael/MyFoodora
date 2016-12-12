@@ -120,7 +120,7 @@ public class MyFoodoraClient {
 			input = sc.next();
 		}
 
-		System.out.println("Thank you for your visit ! \n Goodbye !\n");
+		System.out.println("Thank you for your visit ! \nGoodbye !\n");
 		sc.close();
 		MyFoodora.saveMyFoodora(myFoodora);
 	}

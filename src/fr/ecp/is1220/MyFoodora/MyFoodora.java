@@ -92,7 +92,7 @@ public class MyFoodora implements java.io.Serializable{
 		User foundUser;
 		for (User user : users){
 			//Check that the given identification parameters match a user of the database
-			if((user.getUserName()==userName)&&(user.getPassword()==password)){
+			if(user.getUserName().equals(userName)&&user.getPassword().equals(password)){
 				foundUser = user ;
 				if (foundUser.isActivated()){
 					return (foundUser);
