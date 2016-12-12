@@ -187,7 +187,7 @@ public class MyFoodora implements java.io.Serializable{
 	 * compute the total profit on a given period : between date1 (day1/month1/year1) and date2 (day2/month2/year2)
 	 * @param calendar1 : the beginning date of the period
 	 * @param calendar1 : the last date of the period
-	 * @return the total income on the given period
+	 * @return the total profit on the given period
 	 */
 	public double totalProfit (Calendar calendar1, Calendar calendar2){
 		double totalProfit = 0 ;
@@ -201,6 +201,12 @@ public class MyFoodora implements java.io.Serializable{
 		return totalProfit;
 	}
 	
+	/**
+	 * compute the average income per customer on a given period : between date1 (day1/month1/year1) and date2 (day2/month2/year2)
+	 * @param calendar1
+	 * @param calendar2
+	 * @return the average income per customer on a given period
+	 */
 	public double averageIncomePerCostumer (Calendar calendar1, Calendar calendar2){
 		double totalIncome = totalIncome(calendar1, calendar2);
 		ArrayList<Customer> customersOfThePeriod = new ArrayList<Customer>();
