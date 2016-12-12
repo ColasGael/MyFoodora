@@ -13,6 +13,10 @@ public class Courier extends User {
 	 * true when the courier is on-duty and false if he is off-duty
 	 */
 	private boolean onDuty = false ;
+	/**
+	 * show the delivery calls
+	 */
+	private Board<Order> board;
 
 	/**
 	 * creates a courier who will use the MyFoodora platform
@@ -25,7 +29,8 @@ public class Courier extends User {
 		super(name, surname, userName, password);
 		this.position = null ;
 		this.phoneNumber = "" ;
-		
+		this.board = new Board<Order>();
+
 		this.setUserType ("courier") ;
 	}
 	
@@ -42,6 +47,7 @@ public class Courier extends User {
 		super(name, surname, userName, password);
 		this.position = position ;
 		this.phoneNumber = phoneNumber ;
+		this.board = new Board<Order>();
 		
 		this.setUserType ("courier") ;
 	}

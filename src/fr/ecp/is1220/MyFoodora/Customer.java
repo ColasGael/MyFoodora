@@ -29,7 +29,7 @@ public class Customer extends User {
 	public Customer(String name, String surname, String userName, String password) {
 		super(name, surname, userName, password);
 		this.fidelityCard = new BasicFidelityCard();
-		this.offerBoard = new Board() ;
+		this.offerBoard = new Board<String>() ;
 		this.address = null ;
 		this.email = "" ;
 		this.phoneNumber = "" ;
@@ -50,7 +50,7 @@ public class Customer extends User {
 	public Customer(String name, String surname, String userName, String password, Position address, String email, String phoneNumber) {
 		super(name, surname, userName, password);
 		this.fidelityCard = new BasicFidelityCard();
-		this.offerBoard = new Board() ;
+		this.offerBoard = new Board<String>() ;
 		this.address = address ;
 		this.email = email ;
 		this.phoneNumber = phoneNumber ;
@@ -64,7 +64,7 @@ public class Customer extends User {
 	 */
 	public void addOffer(String offer){
 		if(consensus){
-			offerBoard.addOffer(offer);
+			offerBoard.addObs(offer);
 		}
 	}
 	

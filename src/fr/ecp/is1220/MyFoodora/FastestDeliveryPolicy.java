@@ -30,7 +30,7 @@ public class FastestDeliveryPolicy implements DeliveryPolicy {
 				//compute the distance between the address of delivery and the position of the courier 
 				double distance = Math.pow(Math.pow(x-xOrder, 2)*Math.pow(y-yOrder, 2), 0.5);
 				
-				if (distance < distanceMin){
+				if (courier.isOnDuty()&& (distance < distanceMin)){
 					chosenCourier = courier;
 				}
 			}

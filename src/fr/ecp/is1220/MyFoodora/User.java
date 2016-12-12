@@ -39,6 +39,14 @@ public abstract class User implements java.io.Serializable {
 		this.activated = true ;
 	}
 	
+	/**
+	 * unregister the user from the system
+	 * @param myFoodora : myFoodora core
+	 */
+	public void unregister(MyFoodora myFoodora){
+		myFoodora.removeUser(uniqueID);
+	}
+	
 	public String getName() {
 		return name;
 	}

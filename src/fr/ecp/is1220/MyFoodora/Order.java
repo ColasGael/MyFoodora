@@ -148,4 +148,11 @@ public class Order implements java.io.Serializable {
 		}
 		myFoodora.getDeliveryPolicy().allocateCourierToOrder(myFoodora,this);
 	}
+
+	@Override
+	public String toString() {
+		return "Order [dateOfOrder=" + dateOfOrder + ", customer=" + customer + ", restaurant=" + restaurant
+				+ ", dishes=" + dishes + ", meals=" + meals + ", price=" + price + ", courier=" + courier
+				+ ", addressOfDelivery=" + addressOfDelivery + "]";
+	}	
 }

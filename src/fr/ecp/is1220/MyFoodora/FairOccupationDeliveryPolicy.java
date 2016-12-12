@@ -17,7 +17,7 @@ public class FairOccupationDeliveryPolicy implements DeliveryPolicy {
 				Courier courier = (Courier)user;
 				int nbOfCompletedDeliveries = courier.getCounter();
 				
-				if (nbOfCompletedDeliveries < nbOfCompletedDeliveriesMin){
+				if (courier.isOnDuty()&&(nbOfCompletedDeliveries < nbOfCompletedDeliveriesMin)){
 					chosenCourier = courier;
 				}
 			}

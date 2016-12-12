@@ -176,8 +176,46 @@ public class Manager extends User {
 		}
 		return(leastSellingRestaurant);
 	}
+		
+	/**
+	 * get the most selling restaurant considering the number of orders
+	 * @return mostSellingRestaurant : the most selling restaurant
+	 */
+	public Courier mostActiveCourier(){
+		Courier mostActiveCourier = null;
+		int mostDeliveries = 0;
+		
+		for (User user : myFoodora.getUsers()){
+			if (user.getUserType().equals("courier")){
+				Courier courier = (Courier)user;
+				if(courier.getCounter() > mostDeliveries){
+					mostActiveCourier = courier;
+					mostDeliveries = courier.getCounter();
+				}
+			}
+		}
+		return(mostActiveCourier);
+	}
 	
-	
+	/**
+	 * get the least selling restaurant considering the number of orders
+	 * @return leastSellingRestaurant : the least selling restaurant
+	 */
+	public Courier leastSellingCourier(){
+		Courier leastSellingCourier = null;
+		int leastDeliveries = 999999999;
+		
+		for (User user : myFoodora.getUsers()){
+			if (user.getUserType().equals("courier")){
+				Courier courier = (Courier)user;
+				if(courier.getCounter() < leastDeliveries){
+					leastSellingCourier = courier;
+					leastDeliveries = courier.getCounter();
+				}
+			}
+		}
+		return(leastSellingCourier);
+	}	
 	
 	public MyFoodora getMyFoodora() {
 		return myFoodora;
