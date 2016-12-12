@@ -14,6 +14,22 @@ public class Courier extends User {
 	/**
 	 * creates a courier who will use the MyFoodora platform
 	 * @param name : the name of the user
+	 * @param surname : the surname of the user
+	 * @param userName : the user name in the MyFoodora platform
+	 * @param password : the password of the user to login in the MyFoodora platform
+	 */
+	public Courier(String name, String surname, String userName, String password) {
+		super(name, surname, userName, password);
+		this.position = null ;
+		this.phoneNumber = "" ;
+		
+		this.setUserType ("courier") ;
+	}
+	
+	/**
+	 * creates a courier who will use the MyFoodora platform
+	 * @param name : the name of the user
+	 * @param surname : the surname of the user
 	 * @param userName : the user name in the MyFoodora platform
 	 * @param password : the password of the user to login in the MyFoodora platform
 	 * @param position : the position of the courier

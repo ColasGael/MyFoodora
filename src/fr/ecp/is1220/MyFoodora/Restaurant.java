@@ -11,6 +11,20 @@ public class Restaurant extends User {
 	 * @param name : the name of the user
 	 * @param userName : the user name in the MyFoodora platform
 	 * @param password : the password of the user to login in the MyFoodora platform
+	 */
+	public Restaurant(String name, String surname, String userName, String password) {
+		super(name, "", userName, password);
+		this.address = null ;
+		this.menu = new Menu() ;
+		
+		this.setUserType ("restaurant") ;
+	}
+	
+	/**
+	 * creates a restaurant who will be used in the MyFoodora platform
+	 * @param name : the name of the user
+	 * @param userName : the user name in the MyFoodora platform
+	 * @param password : the password of the user to login in the MyFoodora platform
 	 * @param address : the address of the restaurant
 	 */
 	public Restaurant(String name, String userName, String password, Position address) {

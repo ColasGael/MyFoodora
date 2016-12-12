@@ -7,7 +7,7 @@ public class Customer extends User {
 	/**
 	 * true if the customer wants to be notified whenever a new special offer is set
 	 */
-	private boolean consensus = true ;
+	private boolean consensus = false ;
 	/**
 	 * the board which will show all the new offers if consensus is true
 	 */
@@ -15,19 +15,45 @@ public class Customer extends User {
 	
 	private Position address ;
 	
+	private String email ;
+	
+	private String phoneNumber ;
+	
 	/**
 	 * creates a customer who will use the MyFoodora platform
 	 * @param name : the name of the user
+	 * @param surname : the surname of the user
 	 * @param userName : the user name in the MyFoodora platform
 	 * @param password : the password of the user to login in the MyFoodora platform
-	 * @param surname : the surname of the user
-	 * @param address : the address of the user
 	 */
-	public Customer(String name, String surname, String userName, String password, Position address) {
+	public Customer(String name, String surname, String userName, String password) {
+		super(name, surname, userName, password);
+		this.fidelityCard = new BasicFidelityCard();
+		this.offerBoard = new Board() ;
+		this.address = null ;
+		this.email = "" ;
+		this.phoneNumber = "" ;
+		
+		this.setUserType ("customer") ;
+	}
+	
+	/**
+	 * creates a customer who will use the MyFoodora platform
+	 * @param name : the name of the user
+	 * @param surname : the surname of the user
+	 * @param userName : the user name in the MyFoodora platform
+	 * @param password : the password of the user to login in the MyFoodora platform
+	 * @param address : the address of the user
+	 * @param email : the email of the user
+	 * @param phoneNumber : the phone number of the user
+	 */
+	public Customer(String name, String surname, String userName, String password, Position address, String email, String phoneNumber) {
 		super(name, surname, userName, password);
 		this.fidelityCard = new BasicFidelityCard();
 		this.offerBoard = new Board() ;
 		this.address = address ;
+		this.email = email ;
+		this.phoneNumber = phoneNumber ;
 		
 		this.setUserType ("customer") ;
 	}

@@ -6,14 +6,15 @@ public class Manager extends User {
 	/**
 	 * the MyFoodora core
 	 */
-	private MyFoodora myFoodora = null;
+	private MyFoodora myFoodora;
 	
 	/**
 	 * creates a manager who will manage the MyFoodora platform
 	 * @param name : the name of the user
+	 * @param surname : the surname of the user
 	 * @param userName : the user name in the MyFoodora platform
 	 * @param password : the password of the user to login in the MyFoodora platform
-	 * @param surname : the surname of the user
+	 * @param myFoodora : the myFoodora core
 	 */
 	public Manager(String name, String surname, String userName, String password, MyFoodora myFoodora) {
 		super(name, surname, userName, password);
@@ -26,8 +27,16 @@ public class Manager extends User {
 	 * adds the user 
 	 * @param user : The user object 
 	 */
-	public void addUser(User user){
-		//TO DO
+	public void addUser(String userType, String name, String surname, String userName, String password){
+		myFoodora.getUserFactory().registerUser(userType, name, surname, userName, password, myFoodora);
+		
+		//to ensure that only managers can create manager accounts
+		if (userType.equals("manager")){
+			try{
+				myFoodora.login(userName, password).setActivated(true);
+			}catch(Exception e){
+			}
+		}
 	}
 	
 	/**
@@ -63,6 +72,8 @@ public class Manager extends User {
 			System.err.println(e.getMessage());
 		}
 	}
+	
+	
 
 	public MyFoodora getMyFoodora() {
 		return myFoodora;

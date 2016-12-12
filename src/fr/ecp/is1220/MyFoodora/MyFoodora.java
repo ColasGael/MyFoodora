@@ -36,6 +36,8 @@ public class MyFoodora implements java.io.Serializable{
 	
 	private SorterFoodItem shipOrderPolicy = null ;
 	
+	private UserFactory userFactory ;
+	
 	/**
 	 * Create a new MyFoodora instance
 	 * @param serviceFee
@@ -49,6 +51,7 @@ public class MyFoodora implements java.io.Serializable{
 		this.serviceFee = serviceFee;
 		this.markupPercentage = markupPercentage;
 		this.deliveryCost = deliveryCost;
+		this.userFactory = new UserFactory();
 	}
 
 	public static void saveMyFoodora(MyFoodora myFoodora){
@@ -102,27 +105,6 @@ public class MyFoodora implements java.io.Serializable{
 			}
 		}
 		throw (new IdentificationIncorrectException ("username or password incorrect"));
-	}
-	
-	public void registerCustomer(String name, String surname, String userName, String password, Position address){
-		Customer newUser = new Customer(name, surname, userName, password, address);
-		users.add(newUser) ;
-	}
-	
-	public void registerCourier(String name, String surname, String userName, String password, Position position, String phoneNumber){
-		Courier newUser = new Courier(name, surname, userName, password, position, phoneNumber);
-		users.add(newUser) ;
-	}
-	
-	public void registerManager(String name, String surname, String userName, String password, Position position, String phoneNumber){
-		Courier newUser = new Courier(name, surname, userName, password, position, phoneNumber);
-		users.add(newUser) ;
-	}
-	
-	
-	public void registerRestaurant(String name, String userName, String password, MyFoodora myFoodora, Position address){
-		Restaurant newUser = new Restaurant(name, userName, password, address);
-		users.add(newUser) ;
 	}
 	
 	/**
@@ -337,5 +319,8 @@ public class MyFoodora implements java.io.Serializable{
 	public void setShipOrderPolicy(SorterFoodItem shipOrderPolicy) {
 		this.shipOrderPolicy = shipOrderPolicy;
 	}
-	
+
+	public UserFactory getUserFactory() {
+		return userFactory;
+	}
 }
