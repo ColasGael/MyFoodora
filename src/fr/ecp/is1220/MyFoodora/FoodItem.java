@@ -13,7 +13,7 @@ public abstract class FoodItem implements java.io.Serializable {
 	/**
 	 * the number of times the meal has been shipped 
 	 */
-	int counter = 0 ;
+	protected int counter = 0 ;
 	
 	public int getCounter(){
 		return counter ;
