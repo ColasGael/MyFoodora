@@ -28,6 +28,10 @@ public class Restaurant extends User {
 	public void setMenu(Menu menu) {
 		this.menu = menu;
 	}
+	
+	public void displayMenu(){
+		System.out.println(this.menu.toString());
+	}
 
 	public Position getAddress() {
 		return address;
@@ -35,5 +39,11 @@ public class Restaurant extends User {
 
 	public void setAddress(Position address) {
 		this.address = address;
+	}
+	
+	@Override
+	public String toString(){
+		return ("Name : " + this.getName() + "\n" + 
+				"	Address " + address);
 	}
 }
