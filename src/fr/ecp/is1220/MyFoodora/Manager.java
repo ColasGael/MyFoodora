@@ -73,7 +73,6 @@ public class Manager extends User {
 		}
 	}
 	
-	
 
 	public MyFoodora getMyFoodora() {
 		return myFoodora;
