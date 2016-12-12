@@ -1,11 +1,35 @@
 package fr.ecp.is1220.MyFoodora;
 
 /**
- * this interface enables us to deal with both Dish and Meal objects in the sorter
+ * this abstract class enables us to deal with both Dish and Meal objects in the sorter
  */
-public interface FoodItem extends java.io.Serializable {
+public abstract class FoodItem implements java.io.Serializable {
+
+	private static final long serialVersionUID = -4013771930891098924L;
+	/**
+	 * the total price of the meal
+	 */
+	protected double price = 0;
+	/**
+	 * the number of times the meal has been shipped 
+	 */
+	int counter = 0 ;
 	
-	public double getPrice() ;
-	public int getCounter() ;
-	public void increaseCounter() ;
+	public int getCounter(){
+		return counter ;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+
+
+	public double getPrice() {
+		return price;
+	}
+	
+	public void increaseCounter() {
+		this.counter++ ;
+	}
 }

@@ -1,6 +1,6 @@
 package fr.ecp.is1220.MyFoodora;
 
-public abstract class Meal implements FoodItem {
+public abstract class Meal extends FoodItem {
 	
 	private static final long serialVersionUID = 5331853906083701302L;
 	/**
@@ -16,17 +16,9 @@ public abstract class Meal implements FoodItem {
 	 */
 	protected String type = "standard";
 	/**
-	 * the total price of the meal
-	 */
-	protected double price = 0;
-	/**
-	 * the generic discount factor for meals
+	 * The discount factor of the dish
 	 */
 	protected double discountFactor = 0.05; 
-	/**
-	 * the number of times the meal has been shipped 
-	 */
-	int counter = 0 ;
 	
 	/**
 	 * creates a Meal object of a given mainDish
@@ -52,21 +44,6 @@ public abstract class Meal implements FoodItem {
 
 	public String getType() {
 		return type;
-	}
-	
-	@Override
-	public int getCounter(){
-		return counter ;
-	}
-
-	@Override
-	public double getPrice() {
-		return price;
-	}
-	
-	@Override
-	public void increaseCounter() {
-		this.counter++ ;
 	}
 	
 	@Override
