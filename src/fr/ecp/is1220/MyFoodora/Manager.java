@@ -8,7 +8,10 @@ public class Manager extends User {
 	/**
 	 * the MyFoodora core
 	 */
-	private MyFoodora myFoodora;
+	private MyFoodora myFoodora ;
+	
+	private TargetProfitPolicyFactory targetProfitPolicyFactory ;
+	private DeliveryPolicyFactory deliveryPolicyFactory ;
 	
 	/**
 	 * creates a manager who will manage the MyFoodora platform
@@ -21,6 +24,8 @@ public class Manager extends User {
 	public Manager(String name, String surname, String userName, String password, MyFoodora myFoodora) {
 		super(name, surname, userName, password);
 		this.myFoodora = myFoodora;
+		this.targetProfitPolicyFactory = new TargetProfitPolicyFactory();
+		this.deliveryPolicyFactory = new DeliveryPolicyFactory();
 		
 		this.setUserType("manager");
 	} 
@@ -103,9 +108,77 @@ public class Manager extends User {
 	 */
 	public double averageIncomePerCostumer (Calendar calendar1, Calendar calendar2){
 		return(myFoodora.averageIncomePerCostumer(calendar1, calendar2));
-
 	}
+	
+	/**
+	 * compute the value of the profit related information (service fee, markup percentage or delivery cost) to meet a target profit	 
+	 * @param profitInfo : the profit related information : "serviceFee", "markup" or "deliveryCost"
+	 * @param targetProfit : the target profit to meet
+	 * @return profitInfoValue : the value of the profit related information
+	 */
+	public double meetTargetProfit (String profitInfo, double targetProfit){
+		try{
+			TargetProfitPolicy targetProfitPolicy = targetProfitPolicyFactory.chooseTargetProfitPolicy(profitInfo);
+			double profitInfoValue = targetProfitPolicy.meetTargetProfit(myFoodora, targetProfit);
+			return (profitInfoValue);
 
+		}catch(NonReachableTargetProfitException e){
+			System.err.println(e.getMessage());
+			return (0);
+		}
+	}
+	
+	/**
+	 * set the delivery policy : fastest delivery policy or fair occupation delivery policy
+	 * @param deliveryPolicyChoice : "fastest" or "fairOccupation"
+	 */
+	public void setDeliveryPolicy (String deliveryPolicyChoice){
+		DeliveryPolicy deliveryPolicy = deliveryPolicyFactory.chooseDeliveryPolicy(deliveryPolicyChoice);
+		myFoodora.setDeliveryPolicy(deliveryPolicy);
+	}
+	
+	/**
+	 * get the most selling restaurant considering the number of orders
+	 * @return mostSellingRestaurant : the most selling restaurant
+	 */
+	public Restaurant mostSellingRestaurant(){
+		Restaurant mostSellingRestaurant = null;
+		int mostSells = 0;
+		
+		for (User user : myFoodora.getUsers()){
+			if (user.getUserType().equals("restaurant")){
+				Restaurant restaurant = (Restaurant)user;
+				if(restaurant.getCounter() > mostSells){
+					mostSellingRestaurant = restaurant;
+					mostSells = restaurant.getCounter();
+				}
+			}
+		}
+		return(mostSellingRestaurant);
+	}
+	
+	/**
+	 * get the least selling restaurant considering the number of orders
+	 * @return leastSellingRestaurant : the least selling restaurant
+	 */
+	public Restaurant leastSellingRestaurant(){
+		Restaurant leastSellingRestaurant = null;
+		int leastSells = 999999999;
+		
+		for (User user : myFoodora.getUsers()){
+			if (user.getUserType().equals("restaurant")){
+				Restaurant restaurant = (Restaurant)user;
+				if(restaurant.getCounter() < leastSells){
+					leastSellingRestaurant = restaurant;
+					leastSells = restaurant.getCounter();
+				}
+			}
+		}
+		return(leastSellingRestaurant);
+	}
+	
+	
+	
 	public MyFoodora getMyFoodora() {
 		return myFoodora;
 	}

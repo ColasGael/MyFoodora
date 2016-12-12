@@ -7,11 +7,11 @@ public abstract class FoodItem implements java.io.Serializable {
 
 	private static final long serialVersionUID = -4013771930891098924L;
 	/**
-	 * the total price of the meal
+	 * the total price of the food item
 	 */
 	protected double price = 0;
 	/**
-	 * the number of times the meal has been shipped 
+	 * the number of times the food item has been shipped 
 	 */
 	protected int counter = 0 ;
 	
@@ -22,8 +22,6 @@ public abstract class FoodItem implements java.io.Serializable {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
-
 
 	public double getPrice() {
 		return price;

@@ -3,7 +3,6 @@ package fr.ecp.is1220.MyFoodora;
 public class FairOccupationDeliveryPolicy implements DeliveryPolicy {
 
 	public FairOccupationDeliveryPolicy() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

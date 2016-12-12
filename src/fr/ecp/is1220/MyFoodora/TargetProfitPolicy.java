@@ -10,6 +10,6 @@ public interface TargetProfitPolicy {
 	 * @param targetProfit : the target profit to meet
 	 */
 	
-	public abstract void meetTargetProfit (MyFoodora myFoodora, double targetProfit) throws NonReachableTargetProfitException;
+	public abstract double meetTargetProfit (MyFoodora myFoodora, double targetProfit) throws NonReachableTargetProfitException;
 	
 }

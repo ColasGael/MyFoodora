@@ -11,7 +11,7 @@ public class TargetProfitPolicyServiceFee implements TargetProfitPolicy {
 	 */
 	
 	@Override
-	public void meetTargetProfit (MyFoodora myFoodora, double targetProfit) throws NonReachableTargetProfitException {
+	public double meetTargetProfit (MyFoodora myFoodora, double targetProfit) throws NonReachableTargetProfitException {
 		int numberOfOrders = myFoodora.getCompletedOrders().size();
 		double totalIncome = myFoodora.totalIncomeLastMonth();
 		double markupPercentage = myFoodora.getMarkupPercentage();
@@ -20,7 +20,7 @@ public class TargetProfitPolicyServiceFee implements TargetProfitPolicy {
 		double serviceFee = (targetProfit - totalIncome*markupPercentage)/numberOfOrders + deliveryCost; 
 		
 		if (markupPercentage >= 0){
-			myFoodora.setServiceFee(serviceFee);
+			return(serviceFee);
 		}else{
 			throw (new NonReachableTargetProfitException("This target profit can not be reached"));
 		}

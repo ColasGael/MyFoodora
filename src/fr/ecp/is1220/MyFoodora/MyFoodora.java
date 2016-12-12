@@ -30,11 +30,11 @@ public class MyFoodora implements java.io.Serializable{
 	 */
 	private double deliveryCost ;
 	
-	private TargetProfitPolicy targetProfitPolicy = null ;
+	private TargetProfitPolicy targetProfitPolicy = new TargetProfitPolicyServiceFee() ;
 	
-	private DeliveryPolicy deliveryPolicy = null ;
+	private DeliveryPolicy deliveryPolicy = new FastestDeliveryPolicy() ;
 	
-	private SorterFoodItem shipOrderPolicy = null ;
+	private SorterFoodItem shippedOrderPolicy = new SorterCounter() ;
 	
 	private UserFactory userFactory ;
 	
@@ -317,13 +317,13 @@ public class MyFoodora implements java.io.Serializable{
 		this.deliveryPolicy = deliveryPolicy;
 	}
 
-	public SorterFoodItem getShipOrderPolicy() {
-		return shipOrderPolicy;
+	public SorterFoodItem getShippedOrderPolicy() {
+		return shippedOrderPolicy;
 	}
 
 
-	public void setShipOrderPolicy(SorterFoodItem shipOrderPolicy) {
-		this.shipOrderPolicy = shipOrderPolicy;
+	public void setShippedOrderPolicy(SorterFoodItem shipOrderPolicy) {
+		this.shippedOrderPolicy = shippedOrderPolicy;
 	}
 
 	public UserFactory getUserFactory() {

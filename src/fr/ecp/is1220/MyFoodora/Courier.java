@@ -5,6 +5,9 @@ public class Courier extends User {
 	private static final long serialVersionUID = 5347546696284207206L;
 	private Position position ;
 	private String phoneNumber ;
+	/**
+	 * the number of orders delivered
+	 */
 	private int counter = 0 ;
 	/**
 	 * true when the courier is on-duty and false if he is off-duty
@@ -69,5 +72,9 @@ public class Courier extends User {
 
 	public int getCounter() {
 		return counter;
+	}
+	
+	public void increaseCounter() {
+		counter++;
 	}
 }

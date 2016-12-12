@@ -129,9 +129,17 @@ public class Order implements java.io.Serializable {
 	}
 
 	/**
-	 * when the order is validated, we increase all the counters of the picked items
+	 * when the order is validated
+	 * 		we allocate a courier and increase his counter
+	 * 		we increase the counter of the restaurant
+	 * 		we increase all the counters of the picked items
 	 */
 	public void submit(MyFoodora myFoodora){
+		myFoodora.getDeliveryPolicy().allocateCourierToOrder(myFoodora, this);
+		this.courier.increaseCounter();
+		
+		restaurant.increaseCounter();
+		
 		for (Dish dish : dishes){
 			dish.increaseCounter();
 		}

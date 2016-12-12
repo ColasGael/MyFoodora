@@ -5,6 +5,10 @@ public class Restaurant extends User {
 	private static final long serialVersionUID = -983973017288067345L;
 	private Position address ;
 	private Menu menu ;
+	/**
+	 * the number of times an order has been passed to a restaurant 
+	 */
+	private int counter = 0 ;
 	
 	/**
 	 * creates a restaurant who will be used in the MyFoodora platform
@@ -53,6 +57,14 @@ public class Restaurant extends User {
 
 	public void setAddress(Position address) {
 		this.address = address;
+	}
+	
+	public int getCounter() {
+		return counter;
+	}
+
+	public void increaseCounter() {
+		this.counter++ ;
 	}
 	
 	@Override
