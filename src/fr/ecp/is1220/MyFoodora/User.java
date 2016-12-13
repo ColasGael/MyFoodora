@@ -99,8 +99,19 @@ public abstract class User implements java.io.Serializable {
 		this.userType = userType;
 	}
 	
+	@Override
 	public String toString(){
 		return (this.userType + " ID : " + this.uniqueID + " " + name + " " + surname);
+	}
+	
+	@Override
+	public boolean equals (Object o){
+		boolean isequal = false;
+		if (o instanceof User){
+			User user = (User)o;
+			isequal = this.uniqueID== user.getUniqueID();
+		}
+		return isequal;
 	}
 	
 }

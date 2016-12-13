@@ -266,6 +266,9 @@ public class MyFoodora implements java.io.Serializable{
 		this.completedOrders = completedOrders;
 	}
 	
+	public void addCompletedOrders(Order completedOrder) {
+		this.completedOrders.add(completedOrder);
+	}
 	
 	public double getServiceFee() {
 		return serviceFee;

@@ -23,6 +23,14 @@ public class Board <ObsType> implements java.io.Serializable{
 	}
 	
 	/**
+	 * removes an offer from the board
+	 * @param offer : the offer which is removed
+	 */
+	public void removeObs(ObsType obs){
+		this.obs.remove(obs) ;
+	}
+	
+	/**
 	 * clears the board
 	 */
 	public void clearBoard(){

@@ -51,6 +51,24 @@ public class Courier extends User {
 		
 		this.setUserType ("courier") ;
 	}
+	
+	/**
+	 * accept or refuse a delivery call
+	 * @param decision : the decision "true" if accept, "false" if refuse
+	 * @param waitingOrder : the waiting order
+	 * @param myFoodora
+	 */
+	public void acceptDeliveryCall (boolean decision, Order waitingOrder, MyFoodora myFoodora){
+		if (decision){
+			waitingOrder.validateOrderByCourier(myFoodora);
+		}else{
+			//we set the state of the courier as "off-duty" to allocate another courier to the order
+			this.onDuty = false;
+			myFoodora.getDeliveryPolicy().allocateCourierToOrder(myFoodora, waitingOrder);
+		}
+		this.board.removeObs(waitingOrder);
+		
+	}
 
 	public Position getPosition() {
 		return position;
@@ -82,5 +100,9 @@ public class Courier extends User {
 	
 	public void increaseCounter() {
 		counter++;
+	}
+
+	public Board<Order> getBoard() {
+		return board;
 	}
 }

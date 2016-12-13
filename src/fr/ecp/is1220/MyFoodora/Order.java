@@ -126,27 +126,36 @@ public class Order implements java.io.Serializable {
 
 	public void setCourier(Courier courier) {
 		this.courier = courier;
+		//we put the order on the board of the courier
+		this.courier.getBoard().addObs(this);
 	}
 
 	/**
 	 * when the order is validated
-	 * 		we allocate a courier and increase his counter
+	 * 		we allocate a courier and put the order on his board
 	 * 		we increase the counter of the restaurant
 	 * 		we increase all the counters of the picked items
 	 */
 	public void submit(MyFoodora myFoodora){
 		myFoodora.getDeliveryPolicy().allocateCourierToOrder(myFoodora, this);
-		this.courier.increaseCounter();
 		
 		restaurant.increaseCounter();
-		
 		for (Dish dish : dishes){
 			dish.increaseCounter();
 		}
 		for (Meal meal : meals){
 			meal.increaseCounter();
 		}
-		myFoodora.getDeliveryPolicy().allocateCourierToOrder(myFoodora,this);
+	}
+	
+	/**
+	 * indicate that the courier has accepted the delivery call of this order
+	 * 		the order is then completed
+	 * @param myFoodora : my Foodora system
+	 */
+	public void validateOrderByCourier (MyFoodora myFoodora){
+		this.courier.increaseCounter();
+		myFoodora.addCompletedOrders(this);
 	}
 
 	@Override
@@ -154,5 +163,15 @@ public class Order implements java.io.Serializable {
 		return "Order [dateOfOrder=" + dateOfOrder + ", customer=" + customer + ", restaurant=" + restaurant
 				+ ", dishes=" + dishes + ", meals=" + meals + ", price=" + price + ", courier=" + courier
 				+ ", addressOfDelivery=" + addressOfDelivery + "]";
-	}	
+	}
+	
+	@Override
+	public boolean equals (Object o){
+		boolean isequal = false;
+		if (o instanceof Order){
+			Order order = (Order)o;
+			isequal = this.dateOfOrder.equals(order.getDateOfOrder())&&this.customer.equals(order.getCustomer())&&(this.price==order.getPrice());
+		}
+		return isequal;
+	}
 }
