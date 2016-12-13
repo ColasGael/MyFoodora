@@ -18,6 +18,12 @@ public abstract class FidelityCard implements java.io.Serializable {
 		return type;
 	}
 	
-	public abstract computeReduction(Order order)
+	/**
+	 * 
+	 * @param order
+	 * @return
+	 */
+	public abstract double computeReduction(Order order);
+	public abstract double applyReduction (Order order);
 	
 }
