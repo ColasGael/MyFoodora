@@ -111,6 +111,27 @@ public class Manager extends User {
 	}
 	
 	/**
+	 * sets the value of the profit related information (service fee, markup percentage or delivery cost) to meet a target profit	 
+	 * @param profitInfo : the profit related information : "serviceFee", "markup" or "deliveryCost"
+	 * @param value : the value of the profit related information
+	 */
+	public void setProfitInfo (String profitInfo, double value){
+		switch(profitInfo){
+			case("serviceFee"):
+				this.myFoodora.setServiceFee(value);
+				break;
+			case("markup"):
+				this.myFoodora.setMarkupPercentage(value);
+				break;
+			case("deliveryCost"):
+				this.myFoodora.setDeliveryCost(value);
+				break;
+			default:
+				break;
+		}
+	}
+	
+	/**
 	 * compute the value of the profit related information (service fee, markup percentage or delivery cost) to meet a target profit	 
 	 * @param profitInfo : the profit related information : "serviceFee", "markup" or "deliveryCost"
 	 * @param targetProfit : the target profit to meet
@@ -215,7 +236,7 @@ public class Manager extends User {
 			}
 		}
 		return(leastSellingCourier);
-	}	
+	}
 	
 	public MyFoodora getMyFoodora() {
 		return myFoodora;

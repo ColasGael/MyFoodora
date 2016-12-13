@@ -16,6 +16,8 @@ public class Restaurant extends User {
 	 */
 	private FoodItemFactory foodItemFactory ;
 	
+	private SorterFoodItem shippedOrderPolicy = new SorterCounter() ;
+	
 	/**
 	 * creates a restaurant who will be used in the MyFoodora platform
 	 * @param name : the name of the user
@@ -131,6 +133,31 @@ public class Restaurant extends User {
 		}
 	}
 	
+	/**
+	 * display the food items of the menu according to the shipped order policy
+	 * @param foodItemType : the type of food items to display : "dish" or "meal"
+	 */
+	public void displaySortedFoodItems(String foodItemType){
+		ArrayList<FoodItem> notSortedFoodItems = new ArrayList<FoodItem>();
+		switch(foodItemType){
+			case("dish"):
+				ArrayList<Dish> dishes = this.menu.getDishes();
+				for(FoodItem dish : dishes){
+					notSortedFoodItems.add(dish);
+				}
+				break;
+			case("meal"):
+				ArrayList<Meal> meals = this.menu.getMeals();
+				for(FoodItem meal : meals){
+					notSortedFoodItems.add(meal);
+				}
+				break;
+			default: break;
+		}
+		ArrayList<FoodItem> sortedFoodItems = this.shippedOrderPolicy.sort(notSortedFoodItems);
+		System.out.println(sortedFoodItems);
+	}
+	
 	public Menu getMenu(){
 		return menu ;
 	}
@@ -166,6 +193,8 @@ public class Restaurant extends User {
 	public void increaseCounter() {
 		this.counter++ ;
 	}
+	
+	
 	
 	@Override
 	public String toString(){
