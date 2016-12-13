@@ -37,18 +37,28 @@ public class FullMeal extends Meal {
 		this.dessert = dessert;
 		
 		//the price is computed from the prices of the dishes and the discount factor
-		this.price = (starter.getPrice() + mainDish.getPrice() + dessert.getPrice())*(1-this.discountFactor);
+		this.price = this.computePrice();
 		
 		//the type of the meals depends on the type of the dishes which compose the meal
 		if ((mainDish.getType()== starter.getType()) && (mainDish.getType()== dessert.getType())){
 			this.type = mainDish.getType();
 		}
 	}
+	
+	/**
+	 * computes the price of the meal
+	 */
+	@Override
+	public double computePrice() {
+		double price = this.mealVisitor.computePriceMeal(this);
+		return(price);
+	}
 
 	/**
 	 * updates the price of the meal according to the changes of discount factors
 	 * @param menu : the menu which contains the meal
 	 */
+	@Override
 	public void update (Menu menu){
 		double genericDiscountFactor = menu.getGenericDiscountFactor();
 		double specialDiscountFactor = menu.getSpecialDiscountFactor();
@@ -62,47 +72,29 @@ public class FullMeal extends Meal {
 			//we apply the generic discount factor
 			this.discountFactor = genericDiscountFactor;
 		}
-		this.price = (starter.getPrice() + mainDish.getPrice() + dessert.getPrice())*(1-this.discountFactor);
+		this.price = this.computePrice();
 	}
-
+	
+	/**
+	 * adds a dish to the meal if possible
+	 * @param dish : the dish we want to add to the meal
+	 * @throws NoPlaceInMealException
+	 */
 	@Override
-	public void addDish2Meal(Dish dish) throws NoPlaceInMealException{
-		String dishType = dish.getDishType();
-		switch(dishType){
-			case("starter"):
-				if (this.starter==null){
-					this.starter = (Starter)dish;
-				}else{
-					throw (new NoPlaceInMealException("The meal already contains a starter"));
-				}
-				break;
-			case("mainDish"):
-				if (this.mainDish==null){
-					this.mainDish = (MainDish)dish;
-				}else{
-					throw (new NoPlaceInMealException("The meal already contains a mainDish"));
-				}
-				break;
-			case("dessert"):
-				if (this.dessert==null){
-					this.dessert = (Dessert)dish;
-				}else{
-					throw (new NoPlaceInMealException("The meal already contains a dessert"));
-				}
-				break;
-			default: break;
-		}
-		//the price is computed from the prices of the dishes and the discount factor
-		this.price = (starter.getPrice() + mainDish.getPrice() + dessert.getPrice())*(1-this.discountFactor);
-		
-		//the type of the meals depends on the type of the dishes which compose the meal
-		if ((mainDish.getType()== starter.getType()) && (mainDish.getType()== dessert.getType())){
-			this.type = mainDish.getType();
-		}
+	public void addDish(Dish dish) throws NoPlaceInMealException {
+		this.mealVisitor.addDish2Meal(dish, this);
+	}
+	
+	public void setStarter(Starter starter) {
+		this.starter = starter;
 	}
 
 	public Starter getStarter() {
 		return starter;
+	}
+
+	public void setDessert(Dessert dessert) {
+		this.dessert = dessert;
 	}
 
 	public Dessert getDessert() {

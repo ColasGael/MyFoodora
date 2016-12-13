@@ -122,7 +122,7 @@ public class MyFoodoraClient {
 
 		System.out.println("Thank you for your visit ! \nGoodbye !\n");
 		sc.close();
-		MyFoodora.saveMyFoodora(myFoodora);
+		myFoodora.saveMyFoodora();
 	}
 
 }

@@ -54,11 +54,11 @@ public class MyFoodora implements java.io.Serializable{
 		this.userFactory = new UserFactory();
 	}
 
-	public static void saveMyFoodora(MyFoodora myFoodora){
+	public void saveMyFoodora(){
 		try { 
 			FileOutputStream fileOut = new FileOutputStream("myFoodora.ser"); 
 			ObjectOutputStream out = new ObjectOutputStream(fileOut); 
-			out.writeObject(myFoodora); 
+			out.writeObject(this); 
 			out.close(); 
 			fileOut.close(); 
 			System.out.print("The MyFoodora platform has been saved."); 
@@ -83,6 +83,18 @@ public class MyFoodora implements java.io.Serializable{
 		}finally{
 			return myFoodora;
 		}
+	}
+	
+	/**
+	 * register a new user in the my Foodora system
+	 * @param userType : the type of user who is registered : "customer", "courier", "restaurant" or "manager"
+	 * @param name : the name of the user
+	 * @param surname : the surname of the user
+	 * @param userName : the username of the user
+	 * @param password : the password of the user
+	 */
+	public void register (String userType, String name, String surname, String userName, String password){
+		this.userFactory.registerUser(userType, name, surname, userName, password, this);
 	}
 	
 	/**

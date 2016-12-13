@@ -21,6 +21,8 @@ public abstract class Meal extends FoodItem {
 	 */
 	protected double discountFactor = 0.05; 
 	
+	protected MealVisitor mealVisitor ;
+	
 	/**
 	 * creates a Meal object of a given mainDish
 	 * @param name : the name of the meal
@@ -39,9 +41,11 @@ public abstract class Meal extends FoodItem {
 		this.mainDish = mainDish;
 	}
 	
-	abstract void update (Menu menu);
+	public abstract double computePrice();
 	
-	abstract void addDish2Meal (Dish dish) throws NoPlaceInMealException;
+	public abstract void update (Menu menu);
+	
+	public abstract void addDish (Dish dish) throws NoPlaceInMealException;
 
 	public String getName() {
 		return name;
@@ -50,15 +54,27 @@ public abstract class Meal extends FoodItem {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public void setMainDish(MainDish mainDish) {
+		this.mainDish = mainDish;
+	}
 
 	public MainDish getMainDish() {
 		return mainDish;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getType() {
 		return type;
 	}
 	
+	public double getDiscountFactor() {
+		return discountFactor;
+	}
+
 	@Override
 	public String toString() {
 		return ("Meal : " + this.getName() + " price " + this.getPrice() + " type : " + this.getType() + "/n"

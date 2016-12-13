@@ -8,6 +8,15 @@ public class UserFactory {
 	public UserFactory() {
 	}
 	
+	/**
+	 * register a new user in the my Foodora system
+	 * @param userType : the type of user who is registered : "customer", "courier", "restaurant" or "manager"
+	 * @param name : the name of the user
+	 * @param surname : the surname of the user
+	 * @param userName : the username of the user
+	 * @param password : the password of the user
+	 * @param myFoodora : myFoodora core
+	 */
 	public void registerUser (String userType, String name, String surname, String userName, String password, MyFoodora myFoodora){
 		switch(userType){
 			case("customer"):
