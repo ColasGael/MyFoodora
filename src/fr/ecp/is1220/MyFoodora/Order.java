@@ -111,6 +111,20 @@ public class Order implements java.io.Serializable {
 		return price;
 	}
 	
+	public double computePrice(boolean applyReduction){
+		double price = 0;
+		
+		for(Dish dish:this.dishes){
+			price += dish.getPrice();
+		}
+		for(Meal meal:this.meals){
+			price += meal.getPrice();
+		}
+		if(applyReduction){
+			price = customer.applyReduction(this, price);	
+		}
+		return(price);
+	}
 	
 	public Position getAddressOfDelivery() {
 		return addressOfDelivery;
@@ -135,8 +149,11 @@ public class Order implements java.io.Serializable {
 	 * 		we allocate a courier and put the order on his board
 	 * 		we increase the counter of the restaurant
 	 * 		we increase all the counters of the picked items
+	 * 		we compute the price of the order according to a eventual reduction
+	 * @param applyReduction : "true" if the customer wants to apply a reduction using his fidelity card
+	 * @param myFoodora : myFoodora core
 	 */
-	public void submit(MyFoodora myFoodora){
+	public void submit(boolean applyReduction, MyFoodora myFoodora){
 		myFoodora.getDeliveryPolicy().allocateCourierToOrder(myFoodora, this);
 		
 		restaurant.increaseCounter();
@@ -146,6 +163,7 @@ public class Order implements java.io.Serializable {
 		for (Meal meal : meals){
 			meal.increaseCounter();
 		}
+		this.price = this.computePrice(applyReduction);
 	}
 	
 	/**

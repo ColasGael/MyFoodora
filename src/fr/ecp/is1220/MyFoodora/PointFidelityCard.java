@@ -1,9 +1,7 @@
 package fr.ecp.is1220.MyFoodora;
 
 public class PointFidelityCard extends FidelityCard {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -8859809521402683700L;
 	/**
 	 * the number of fidelity points
