@@ -127,7 +127,7 @@ public class Restaurant extends User {
 		Meal meal = this.findMealByName(mealName);
 		Dish dish = this.findDishByName(dishName);
 		try{
-			meal.addDish2Meal(dish);
+			meal.addDish(dish);
 		}catch(NoPlaceInMealException e){
 			System.err.println(e.getMessage());
 		}
