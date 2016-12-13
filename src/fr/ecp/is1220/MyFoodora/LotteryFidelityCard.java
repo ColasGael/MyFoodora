@@ -22,24 +22,29 @@ public class LotteryFidelityCard extends FidelityCard {
 		this.type = "lottery" ;
 		this.lastDayWhenUsed = Calendar.getInstance() ;
 	}
-
 	@Override
-	public void applyReduction(Order order){
+	public double computeReduction(Order order){
 		ArrayList<Meal> meals = order.getMeals() ;
+		double newPrice = order.getPrice() ;
 		if((lastDayWhenUsed.get(Calendar.DAY_OF_YEAR)!=Calendar.getInstance().get(Calendar.DAY_OF_YEAR))||(lastDayWhenUsed.get(Calendar.YEAR)!=Calendar.getInstance().get(Calendar.YEAR))){
 			Random random = new Random() ;
 			int lottery = random.nextInt(1000) ;
-			if(lottery<probability*1000){
-				double priceOfOrder = order.computePrice() ;
+			if(lottery<=probability*1000){
+				double priceOfOrder = newPrice ;
 				double maxPriceOfMeal = 0 ;
 				for(Meal meal : meals){
 					if(meal.getPrice()>maxPriceOfMeal){
 						maxPriceOfMeal = meal.getPrice() ;
 					}
-					order.setPrice(priceOfOrder-maxPriceOfMeal)
+					newPrice = (priceOfOrder-maxPriceOfMeal);
 				}
 			}
 		}
+		return newPrice ;
+	}
+	@Override
+	public void applyReduction(Order order){
+		order.setPrice(computeReduction(order));
 	}
 
 	public static double getProbability() {
