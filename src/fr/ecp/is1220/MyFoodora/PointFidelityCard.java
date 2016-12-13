@@ -20,11 +20,37 @@ public class PointFidelityCard extends FidelityCard {
 	/**
 	 * the rate of the discount applied when the targetPoints value is reached
 	 */
-	private static double discountPrice = 0.1 ; 
+	private static double discountFactor = 0.1 ; 
 	
 	public PointFidelityCard() {
 		this.type = "point" ;
 	}
+	
+	/**
+	 * computes the reduction of an order according to the fidelity points of the user
+	 * @param order : the order submitted by the user
+	 * @return reduction : the reduction which can be applied
+	 */
+	public double computeReduction(Order order){
+		double reduction = 0;
+		if (this.points > targetPoints){
+			reduction = order.getPrice()*(1-discountFactor);
+		}
+		return reduction;
+	}
+	/**
+	 * applies the reduction calculated with computeReduction to the price of the order
+	 * 		and remove the used fidelity points
+	 * @param order : the order submitted by the user
+	 */
+	public void applyReduction (Order order){
+		double originalPrice = order.getPrice();
+		double reduction = this.computeReduction(order);
+		
+		order.setPrice(originalPrice - reduction);
+		this.removePoints(targetPoints);
+	}
+		
 	
 	public int getPoints() {
 		return points;
@@ -41,6 +67,15 @@ public class PointFidelityCard extends FidelityCard {
 	public int convertToPoints (double price){
 		int points = (int) (price/conversion);
 		return points;
+	}
+	
+	/**
+	 * adds the fidelity points to the card according to the price of the order
+	 * @param order : the order submitted by the customer
+	 */
+	public void computeFidelityPoints(Order order){
+		double price = order.getPrice();
+		this.addPoints(this.convertToPoints(price));
 	}
 
 	public static double getConversion() {
@@ -59,12 +94,12 @@ public class PointFidelityCard extends FidelityCard {
 		PointFidelityCard.targetPoints = targetPoints;
 	}
 
-	public static double getDiscountPrice() {
-		return discountPrice;
+	public static double getDiscountFactor() {
+		return discountFactor;
 	}
 
 	public static void setDiscountPrice(double discountPrice) {
-		PointFidelityCard.discountPrice = discountPrice;
+		PointFidelityCard.discountFactor = discountPrice;
 	}
 	
 	
