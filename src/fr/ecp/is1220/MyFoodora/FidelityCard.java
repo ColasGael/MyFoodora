@@ -19,11 +19,15 @@ public abstract class FidelityCard implements java.io.Serializable {
 	}
 	
 	/**
-	 * 
-	 * @param order
-	 * @return
+	 * computes the reduction of an order according to the fidelity program of the user
+	 * @param order : the order submitted by the user
+	 * @return reduction : the reduction which can be applied
 	 */
 	public abstract double computeReduction(Order order);
-	public abstract double applyReduction (Order order);
+	/**
+	 * applies the reduction calculated with computeReduction to the price of the order
+	 * @param order : the order submitted by the user
+	 */
+	public abstract void applyReduction (Order order);
 	
 }

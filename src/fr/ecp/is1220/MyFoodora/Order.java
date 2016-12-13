@@ -111,6 +111,10 @@ public class Order implements java.io.Serializable {
 		return price;
 	}
 	
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
 	public double computePrice(){
 		double price = 0;
 		
@@ -147,6 +151,7 @@ public class Order implements java.io.Serializable {
 	 * 		we increase the counter of the restaurant
 	 * 		we increase all the counters of the picked items
 	 * 		we compute the price of the order according to a eventual reduction
+	 * 		if necessary we add the fidelity points to the card of the customer
 	 * @param applyReduction : "true" if the customer wants to apply a reduction using his fidelity card
 	 * @param myFoodora : myFoodora core
 	 */
@@ -162,8 +167,12 @@ public class Order implements java.io.Serializable {
 		}
 		this.price = this.computePrice();
 		
+		FidelityCard fidelityCard = customer.getFidelityCard();
 		if(applyReduction){
-			this.price = customer.applyReduction(this);	
+			fidelityCard.applyReduction(this);	
+		}
+		if (fidelityCard instanceof PointFidelityCard){
+			((PointFidelityCard)fidelityCard).computeFidelityPoints(this);
 		}
 	}
 	
