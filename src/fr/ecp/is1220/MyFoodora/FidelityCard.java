@@ -2,10 +2,6 @@ package fr.ecp.is1220.MyFoodora;
 
 public abstract class FidelityCard implements java.io.Serializable {
 	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8552095078324661097L;
 	/**
 	 * the type of the fidelity card : basic, point or lottery
@@ -23,5 +19,4 @@ public abstract class FidelityCard implements java.io.Serializable {
 	}
 	
 	
-
 }
