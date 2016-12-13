@@ -38,7 +38,6 @@ public class LotteryFidelityCard extends FidelityCard {
 					}
 					order.setPrice(priceOfOrder-maxPriceOfMeal)
 				}
-				
 			}
 		}
 	}
@@ -50,7 +49,4 @@ public class LotteryFidelityCard extends FidelityCard {
 	public static void setProbability(double probability) {
 		LotteryFidelityCard.probability = probability;
 	}
-
-
-
 }
