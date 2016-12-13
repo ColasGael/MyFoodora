@@ -12,7 +12,7 @@ public class Restaurant extends User {
 	 */
 	private int counter = 0 ;
 	/**
-	 * the FoodItemFactory to create food items : dishes or meals
+	 * the FoodItemFactory used to create food items : dishes or meals
 	 */
 	private FoodItemFactory foodItemFactory ;
 	
