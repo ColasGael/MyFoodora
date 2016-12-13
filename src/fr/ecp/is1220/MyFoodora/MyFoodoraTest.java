@@ -9,7 +9,7 @@ public class MyFoodoraTest {
 	@Test
 	public void testStartupScenario() {
 		MyFoodora myFoodora = new MyFoodora(10, 0.05, 5) ;
-		myFoodora.registerCustomer("Theo", "Bob","theo7794","password",null);
+		//myFoodora.registerCustomer("Theo", "Bob","theo7794","password",null);
 		MyFoodora.saveMyFoodora(myFoodora);
 		MyFoodora myFoodorabis = MyFoodora.loadMyFoodora() ;
 	}

@@ -54,11 +54,11 @@ public class MyFoodora implements java.io.Serializable{
 		this.userFactory = new UserFactory();
 	}
 
-	public static void saveMyFoodora(MyFoodora myFoodora){
+	public void saveMyFoodora(){
 		try { 
 			FileOutputStream fileOut = new FileOutputStream("myFoodora.ser"); 
 			ObjectOutputStream out = new ObjectOutputStream(fileOut); 
-			out.writeObject(myFoodora); 
+			out.writeObject(this); 
 			out.close(); 
 			fileOut.close(); 
 			System.out.print("The MyFoodora platform has been saved."); 
