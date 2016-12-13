@@ -111,7 +111,7 @@ public class Order implements java.io.Serializable {
 		return price;
 	}
 	
-	public double computePrice(boolean applyReduction){
+	public double computePrice(){
 		double price = 0;
 		
 		for(Dish dish:this.dishes){
@@ -119,9 +119,6 @@ public class Order implements java.io.Serializable {
 		}
 		for(Meal meal:this.meals){
 			price += meal.getPrice();
-		}
-		if(applyReduction){
-			price = customer.applyReduction(this, price);	
 		}
 		return(price);
 	}
@@ -163,7 +160,11 @@ public class Order implements java.io.Serializable {
 		for (Meal meal : meals){
 			meal.increaseCounter();
 		}
-		this.price = this.computePrice(applyReduction);
+		this.price = this.computePrice();
+		
+		if(applyReduction){
+			this.price = customer.applyReduction(this);	
+		}
 	}
 	
 	/**
