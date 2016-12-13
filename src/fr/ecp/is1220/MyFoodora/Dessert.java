@@ -6,6 +6,7 @@ public class Dessert extends Dish {
 
 	public Dessert(String name, double price, String type) {
 		super(name, price, type);
+		this.dishType = "dessert";
 	}
 
 	@Override

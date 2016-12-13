@@ -1,5 +1,7 @@
 package fr.ecp.is1220.MyFoodora;
 
+import java.util.ArrayList;
+
 public class Restaurant extends User {
 	
 	private static final long serialVersionUID = -983973017288067345L;
@@ -9,6 +11,10 @@ public class Restaurant extends User {
 	 * the number of times an order has been passed to a restaurant 
 	 */
 	private int counter = 0 ;
+	/**
+	 * the FoodItemFactory to create food items : dishes or meals
+	 */
+	private FoodItemFactory foodItemFactory ;
 	
 	/**
 	 * creates a restaurant who will be used in the MyFoodora platform
@@ -20,6 +26,7 @@ public class Restaurant extends User {
 		super(name, "", userName, password);
 		this.address = null ;
 		this.menu = new Menu() ;
+		this.foodItemFactory = new FoodItemFactory();
 		
 		this.setUserType ("restaurant") ;
 	}
@@ -39,6 +46,91 @@ public class Restaurant extends User {
 		this.setUserType ("restaurant") ;
 	}
 	
+	/**
+	 * adds a new dish to the restaurant menu
+	 * @param dishType : "starter", "mainDish" or "dessert"
+	 * @param name : the name of the dish
+	 * @param price : the price of the dish
+	 * @param type : the type of dish "standard", "vegetarian" or "glutenFree"
+	 */
+	public void addDish(String dishType, String name, double price, String type){
+		Dish dish = this.foodItemFactory.createDish(dishType, name, price, type);
+		this.menu.addDish(dish);
+	}
+	
+	/**
+	 * remove dish of given name from the menu
+	 * @param name : the name of the dish
+	 */
+	public void removeDish(String name){
+		Dish dish = this.findDishByName(name);
+		this.menu.removeDish(dish);
+	}
+	
+	/**
+	 * finds the dish of given name in the menu
+	 * @param name : the name of the dish
+	 * @return dish : the dish of given name
+	 */
+	public Dish findDishByName(String name){
+		ArrayList<Dish> dishes = this.menu.getDishes();
+		for (Dish dish: dishes){
+			if (dish.getName().equals(name)){
+				return dish;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * adds a new meal to the restaurant menu
+	 * @param mealType : "full" or "half" 
+	 * @param name : the name of the meal
+	 */
+	public void addMeal(String mealType, String name){
+		Meal meal = this.foodItemFactory.createMeal(mealType, name);
+		this.menu.addMeal(meal);
+	}
+	
+	/**
+	 * remove meal of given name from the menu
+	 * @param name : the name of the meal
+	 */
+	public void removeMeal(String name){
+		Meal meal = this.findMealByName(name);
+		this.menu.removeMeal(meal);
+	}
+	
+	/**
+	 * finds the meal of given name in the menu
+	 * @param name : the name of the meal
+	 * @return meal : the meal of given name
+	 */
+	public Meal findMealByName(String name){
+		ArrayList<Meal> meals = this.menu.getMeals();
+		for (Meal meal: meals){
+			if (meal.getName().equals(name)){
+				return meal;
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * adds a dish to a meal if possible
+	 * @param mealName : the name of the meal
+	 * @param dishName : the name of the dish
+	 */
+	public void addDish2Meal(String mealName, String dishName){
+		Meal meal = this.findMealByName(mealName);
+		Dish dish = this.findDishByName(dishName);
+		try{
+			meal.addDish2Meal(dish);
+		}catch(NoPlaceInMealException e){
+			System.err.println(e.getMessage());
+		}
+	}
+	
 	public Menu getMenu(){
 		return menu ;
 	}
@@ -49,6 +141,14 @@ public class Restaurant extends User {
 	
 	public void displayMenu(){
 		System.out.println(this.menu.toString());
+	}
+	
+	public void setGenericDiscountFactor(double genericDiscountFactor) {
+		this.menu.setGenericDiscountFactor(genericDiscountFactor);
+	}
+	
+	public void setSpecialDiscountFactor(double specialDiscountFactor) {
+		this.menu.setSpecialDiscountFactor(specialDiscountFactor);
 	}
 
 	public Position getAddress() {

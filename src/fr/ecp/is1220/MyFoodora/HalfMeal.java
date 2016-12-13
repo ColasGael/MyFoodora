@@ -9,6 +9,15 @@ public class HalfMeal extends Meal {
 	private Dish sideDish;
 	
 	/**
+	 * creates a FullMeal object of a given mainDish, starter and dessert
+	 * @param name : the name of the meal
+	 */
+	public HalfMeal(String name) {
+		super(name);
+		this.sideDish = null;
+	}
+	
+	/**
 	 * creates a HalfMeal object of a given mainDish and sideDish
 	 * @param name : the name of the meal
 	 * @param mainDish
@@ -47,7 +56,42 @@ public class HalfMeal extends Meal {
 		this.price = (sideDish.getPrice() + mainDish.getPrice())*(1-this.discountFactor);
 	}
 	
-
+	@Override
+	public void addDish2Meal(Dish dish) throws NoPlaceInMealException{
+		String dishType = dish.getDishType();
+		switch(dishType){
+			case("starter"):
+				if (this.sideDish==null){
+					this.sideDish = (Starter)dish;
+				}else{
+					throw (new NoPlaceInMealException("The meal already contains a sideDish"));
+				}
+				break;
+			case("mainDish"):
+				if (this.mainDish==null){
+					this.mainDish = (MainDish)dish;
+				}else{
+					throw (new NoPlaceInMealException("The meal already contains a mainDish"));
+				}
+				break;
+			case("dessert"):
+				if (this.sideDish==null){
+					this.sideDish = (Dessert)dish;
+				}else{
+					throw (new NoPlaceInMealException("The meal already contains a sideDish"));
+				}
+				break;
+			default: break;
+		}
+		//the type of the meals depends on the type of the dishes which compose the meal
+		if (mainDish.getType()== sideDish.getType()){
+			this.type = mainDish.getType();
+		}
+		
+		//the price is computed from the prices of the dishes and the discount factor
+		this.price = (sideDish.getPrice() + mainDish.getPrice())*(1-this.discountFactor);
+	}
+	
 	public Dish getSideDish() {
 		return sideDish;
 	}

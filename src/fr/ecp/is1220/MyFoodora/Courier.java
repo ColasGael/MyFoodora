@@ -53,10 +53,10 @@ public class Courier extends User {
 	}
 	
 	/**
-	 * accept or refuse a delivery call
+	 * accept or refuse a delivery call for a waiting order
 	 * @param decision : the decision "true" if accept, "false" if refuse
 	 * @param waitingOrder : the waiting order
-	 * @param myFoodora
+	 * @param myFoodora : the my Foodora system
 	 */
 	public void acceptDeliveryCall (boolean decision, Order waitingOrder, MyFoodora myFoodora){
 		if (decision){

@@ -11,6 +11,7 @@ public abstract class Meal extends FoodItem {
 	 * the main-dish of the meal
 	 */
 	protected MainDish mainDish;
+	
 	/**
 	 * the type of the dish : standard, vegetarian or gluten-free
 	 */
@@ -22,6 +23,16 @@ public abstract class Meal extends FoodItem {
 	
 	/**
 	 * creates a Meal object of a given mainDish
+	 * @param name : the name of the meal
+	 * @param mainDish
+	 */
+	public Meal(String name) {
+		this.mainDish = null;
+	}
+	
+	/**
+	 * creates a Meal object of a given mainDish
+	 * @param name : the name of the meal
 	 * @param mainDish
 	 */
 	public Meal(String name, MainDish mainDish) {
@@ -29,6 +40,8 @@ public abstract class Meal extends FoodItem {
 	}
 	
 	abstract void update (Menu menu);
+	
+	abstract void addDish2Meal (Dish dish) throws NoPlaceInMealException;
 
 	public String getName() {
 		return name;

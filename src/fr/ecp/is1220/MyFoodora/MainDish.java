@@ -6,6 +6,7 @@ public class MainDish extends Dish{
 
 	public MainDish(String name, double price, String type) {
 		super(name, price, type);
+		this.dishType = "mainDish";
 	}
 	
 	@Override
