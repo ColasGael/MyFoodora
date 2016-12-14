@@ -103,6 +103,6 @@ public class FullMeal extends Meal {
 	
 	@Override
 	public String toString() {
-		return ("Full" + super.toString() + starter.toString() + "/n" + dessert.toString() + "/n");
+		return ("Full" + super.toString() + starter + "/n" + dessert + "/n");
 	}
 }

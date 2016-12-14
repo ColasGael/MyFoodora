@@ -12,5 +12,5 @@ public class Dessert extends Dish {
 	@Override
 	public String toString() {
 		return ("Dessert : " + super.toString());
-	}	
+	}
 }
