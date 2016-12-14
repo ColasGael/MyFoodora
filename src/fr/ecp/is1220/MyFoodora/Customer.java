@@ -1,5 +1,7 @@
 package fr.ecp.is1220.MyFoodora;
 
+import java.util.ArrayList;
+
 public class Customer extends User {
 	
 	private static final long serialVersionUID = 8234513441513658859L;
@@ -18,6 +20,10 @@ public class Customer extends User {
 	private String email ;
 	
 	private String phoneNumber ;
+	/**
+	 * enables the customer to register to different fidelity progams
+	 */
+	private FidelityCardFactory fidelityCardFactory ;
 	
 	/**
 	 * creates a customer who will use the MyFoodora platform
@@ -33,6 +39,8 @@ public class Customer extends User {
 		this.address = null ;
 		this.email = "" ;
 		this.phoneNumber = "" ;
+		
+		this.fidelityCardFactory = new FidelityCardFactory();
 		
 		this.setUserType ("customer") ;
 	}
@@ -75,7 +83,60 @@ public class Customer extends User {
 	public FidelityCard getFidelityCard() {
 		return fidelityCard;
 	}
-
+	
+	/**
+	 * registers the user to a Fidelity Card Plan of a given type : BasicFidelityCard, PointFidelityCard, LotteryFidelityCard or Null to unregister
+	 * @param cardType : "basic", "point", "lottery" or "none" to unregister
+	 */
+	public void registerFidelityCard (String cardType){
+		FidelityCard fidelityCard = this.fidelityCardFactory.createFidelityCard(cardType);
+		this.fidelityCard = fidelityCard;
+	}
+	
+	/**
+	 * displays the informations of the user's fidelity card plan
+	 */
+	public void displayFidelityInfo(){
+		System.out.println(this.fidelityCard.toString());
+	}
+	
+	/**
+	 * gets the history of all the orders the customer made on MyFoodora
+	 * @param myFoodora : the MyFoodora core
+	 * @return historyOfOrders : all the orders the customer made on MyFoodora
+	 */
+	public ArrayList<Order> getHistoryOfOrders (MyFoodora myFoodora){
+		ArrayList<Order> historyOfOrders = new ArrayList<Order>();
+		
+		ArrayList<Order> completedOrders = myFoodora.getCompletedOrders();
+		for(Order order : completedOrders){
+			//we seek the completed orders made by the customer
+			if (order.getCustomer().getUniqueID() == this.getUniqueID()){
+				historyOfOrders.add(order);
+			}
+		}
+		return historyOfOrders;
+	}
+	
+	/**
+	 * submits the completed order to myFoodora
+	 * @param order : the completed order
+	 * @param applyReduction : "true" if the customer wants to apply a reduction using his fidelity card
+	 * @param myFoodora : MyFoodora core
+	 */
+	public void submitOrder (Order order, boolean applyReduction, MyFoodora myFoodora){
+		order.submit(applyReduction, myFoodora);
+		this.payOrder(order);
+	}
+	
+	/**
+	 * the client pays the order (the payment is not implemented in the project)
+	 * @param order : the submitted order to pay
+	 */
+	public void payOrder(Order order){
+		System.out.println("You have paid " + order.getPrice() + " euros for your order\n");
+	}
+	
 	public boolean isConsensus() {
 		return consensus;
 	}
