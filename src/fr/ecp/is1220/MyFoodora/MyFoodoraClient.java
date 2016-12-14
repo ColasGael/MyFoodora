@@ -35,17 +35,17 @@ public class MyFoodoraClient {
 					String userType = login() ;
 				if(userType!=null){
 					disconnectLoop :
-					while (!input.equals("disconnect")){
-						String workInput = work(userType);
-						switch(workInput){
-						case("next"):
-							
-						case("disconnect"):
-							break disconnectLoop ;
-						case("close"):
-							break closeLoop ;
+						while (!input.equals("disconnect")){
+							String workInput = work(userType);
+							switch(workInput){
+							case("next"):
+
+							case("disconnect"):
+								break disconnectLoop ;
+							case("close"):
+								break closeLoop ;
+							}
 						}
-					}
 				}
 				break;
 				case("close"):
@@ -121,68 +121,68 @@ public class MyFoodoraClient {
 		break;
 		case("restaurant"):
 			Restaurant currentRestaurant = (Restaurant)currentUser ;
-			switch (input){
-			case("help"):
-				break;
-			case("edit"):
-				while(!input.equals("close")){
-					System.out.println("Type \"add\" to add an item or \"remove\" to remove an item :");
-					input = sc.next() ;
-					switch (input){
-					case("add"):
-						while(!input.equals("close")){
-							System.out.println("Do you want to add a \"meal\" or a \"dish\" ?") ;
-							input = sc.next();
-							switch(input){
-							case("meal"):
-								while(!input.equals("close")){
-									System.out.println("Do you want to add a \"full\" meal or a \"half\" meal ?");
-									input = sc.next();
-									switch(input){
-									case("full"): case("half"):
-										System.out.println("Enter the name of your "+input+" meal :");
-										String mealType = input ;
-										input = sc.next();
-										currentRestaurant.addMeal(mealType,input);
-										System.out.println("The "+mealType+" meal \""+input+"\" has been added to your menu.");
-										return "next" ;
-									case("disconnect"):
-										return "disconnect" ;
-									case("close"):
-										return "close" ;
-									default :
-										System.out.println("This choice is not available, please try again \n");
-									}
+		switch (input){
+		case("help"):
+			break;
+		case("edit"):
+			while(!input.equals("close")){
+				System.out.println("Type \"add\" to add an item or \"remove\" to remove an item :");
+				input = sc.next() ;
+				switch (input){
+				case("add"):
+					while(!input.equals("close")){
+						System.out.println("Do you want to add a \"meal\" or a \"dish\" ?") ;
+						input = sc.next();
+						switch(input){
+						case("meal"):
+							while(!input.equals("close")){
+								System.out.println("Do you want to add a \"full\" meal or a \"half\" meal ?");
+								input = sc.next();
+								switch(input){
+								case("full"): case("half"):
+									System.out.println("Enter the name of your "+input+" meal :");
+								String mealType = input ;
+								input = sc.next();
+								currentRestaurant.addMeal(mealType,input);
+								System.out.println("The "+mealType+" meal \""+input+"\" has been added to your menu.");
+								return "next" ;
+								case("disconnect"):
+									return "disconnect" ;
+								case("close"):
+									return "close" ;
+								default :
+									System.out.println("This choice is not available, please try again \n");
 								}
-								break;
-							case("disconnect"):
-								return "disconnect" ;
-							case("close"):
-								return "close" ;
-							default :
-								System.out.println("This choice is not available, please try again \n");
 							}
+						break;
+						case("disconnect"):
+							return "disconnect" ;
+						case("close"):
+							return "close" ;
+						default :
+							System.out.println("This choice is not available, please try again \n");
 						}
-						break;
-					case("remove"):
-						break;
-					case("disconnect"):
-						return "disconnect" ;
-					case("close"):
-						return "close" ;
-					default:
-						System.out.println("This choice is not available, please try again \n");
 					}
+				break;
+				case("remove"):
+					break;
+				case("disconnect"):
+					return "disconnect" ;
+				case("close"):
+					return "close" ;
+				default:
+					System.out.println("This choice is not available, please try again \n");
 				}
-				break;
-			case("disconnect"):
-				return "disconnect" ;
-			case("close"):
-				return "close" ;
-			default:
-				System.out.println("This choice is not available, please try again \n");
-				break;
 			}
+		break;
+		case("disconnect"):
+			return "disconnect" ;
+		case("close"):
+			return "close" ;
+		default:
+			System.out.println("This choice is not available, please try again \n");
+			break;
+		}
 		System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 		break;
 		case("manager"):

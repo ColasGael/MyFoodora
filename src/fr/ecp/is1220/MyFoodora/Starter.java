@@ -11,7 +11,7 @@ public class Starter extends Dish {
 	
 	@Override
 	public String toString() {
-		return ("Starter : " + ((Dish)this).toString());
+		return ("Starter : " + super.toString());
 	}
 	
 }

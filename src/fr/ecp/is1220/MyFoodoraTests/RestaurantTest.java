@@ -4,15 +4,24 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import fr.ecp.is1220.MyFoodora.Position;
+import fr.ecp.is1220.MyFoodora.Restaurant;
+
 public class RestaurantTest {
 	
-	@Before
-	public void createRestaurant(){
+	/**
+	 * we create an example of restaurant that will be used in the following tests
+	 */
+	@BeforeClass
+	public static void createRestaurant(){
+
 		
 	}
 
 	@Test
 	public void testAddDish() {
+		hoki.addDish("mainDish", "maki thon", 4.5, "standard");
+
 		fail("Not yet implemented");
 	}
 
@@ -52,38 +61,7 @@ public class RestaurantTest {
 	}
 
 	@Test
-	public void testGetMenu() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetMenu() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testDisplayMenu() {
-		fail("Not yet implemented");
+		
 	}
-
-	@Test
-	public void testSetGenericDiscountFactor() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetSpecialDiscountFactor() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetAddress() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetAddress() {
-		fail("Not yet implemented");
-	}
-
 }
