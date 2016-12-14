@@ -13,7 +13,7 @@ public class LotteryFidelityCard extends FidelityCard {
 	 */
 	private static double probability = 0.01 ;
 	/**
-	 * The last day when the Card was used because we can use it once a day
+	 * The last day when the Card was used because we can use it only once a day
 	 */
 	private Calendar lastDayWhenUsed ;
 
