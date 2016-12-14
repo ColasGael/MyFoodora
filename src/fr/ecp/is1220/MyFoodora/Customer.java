@@ -118,6 +118,25 @@ public class Customer extends User {
 		return historyOfOrders;
 	}
 	
+	/**
+	 * submits the completed order to myFoodora
+	 * @param order : the completed order
+	 * @param applyReduction : "true" if the customer wants to apply a reduction using his fidelity card
+	 * @param myFoodora : MyFoodora core
+	 */
+	public void submitOrder (Order order, boolean applyReduction, MyFoodora myFoodora){
+		order.submit(applyReduction, myFoodora);
+		this.payOrder(order);
+	}
+	
+	/**
+	 * the client pays the order (the payment is not implemented in the project)
+	 * @param order : the submitted order to pay
+	 */
+	public void payOrder(Order order){
+		System.out.println("You have paid " + order.getPrice() + " euros for your order\n");
+	}
+	
 	public boolean isConsensus() {
 		return consensus;
 	}
