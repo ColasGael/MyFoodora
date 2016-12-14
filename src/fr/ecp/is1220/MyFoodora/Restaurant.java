@@ -134,6 +134,15 @@ public class Restaurant extends User {
 	}
 	
 	/**
+	 * sets the new Meal of the week
+	 * @param mealName : the name of the new meal of the week
+	 */
+	public void setMealOfTheWeek(String mealName){
+		Meal mealOfTheWeek = this.findMealByName(mealName);
+		this.getMenu().setMealOfTheWeek(mealOfTheWeek);
+	}
+	
+	/**
 	 * display the food items of the menu according to the shipped order policy
 	 * @param foodItemType : the type of food items to display : "dish" or "meal"
 	 */

@@ -33,6 +33,6 @@ public class BasicFidelityCard extends FidelityCard {
 	
 	@Override
 	public String toString(){
-		return((FidelityCard)this).toString();
+		return super.toString();
 	}
 }

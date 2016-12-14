@@ -41,7 +41,8 @@ public class Board <ObsType> implements java.io.Serializable{
 	 * shows all the offers of the board
 	 * @return a string value of all the offers
 	 */
-	public String showBoard(){
+	@Override
+	public String toString(){
 		String message = "" ;
 		for(ObsType obs : this.obs){
 			message += obs + "\n" ;

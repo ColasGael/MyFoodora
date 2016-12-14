@@ -19,6 +19,7 @@ public class MyFoodoraTest {
 		hoki.addDish("mainDish", "california maki", 16.5, "standard");
 		hoki.addDish("starter", "soupe", 2.5, "vegetarian");
 		hoki.addDish("dessert", "litchee", 4, "vegetarian");
+		hoki.addDish("mainDish", "brochettes boeuf", 10.5, "standard");
 		
 		//we add meals to the menu
 		hoki.addMeal("half", "M2");
@@ -28,6 +29,9 @@ public class MyFoodoraTest {
 		hoki.addDish2Meal("M3", "soupe");
 		hoki.addDish2Meal("M3", "maki cheese");
 		hoki.addDish2Meal("M3", "litchee");
+		hoki.addMeal("half", "B1");
+		hoki.addDish2Meal("B1", "brochettes boeuf");
+		hoki.addDish2Meal("B1", "litchee");
 		
 		
 		myFoodora.register("customer","Theo", "Bob","theo7794","password");
