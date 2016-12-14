@@ -85,7 +85,6 @@ public class LotteryFidelityCard extends FidelityCard {
 		result += "You have " + (this.hasPlayed() ? "already " : "not ") + "played today\n";
 		result += "You have a probability of " + probability + " to win at the lottery\n";
 		result += "if you win, the most expensive meal of your order becomes free\n";
-		
 		return(result);
 	}
 }
