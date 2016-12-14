@@ -1,6 +1,10 @@
 package fr.ecp.is1220.MyFoodora;
 
-public class TargetProfitPolicyServiceFee implements TargetProfitPolicy {
+import java.io.Serializable ;
+
+public class TargetProfitPolicyServiceFee implements TargetProfitPolicy,Serializable {
+
+	private static final long serialVersionUID = -326916755426029061L;
 
 	/**
 	 * Sets the service fee

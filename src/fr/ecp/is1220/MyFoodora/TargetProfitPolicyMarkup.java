@@ -1,7 +1,11 @@
 package fr.ecp.is1220.MyFoodora;
 
-public class TargetProfitPolicyMarkup implements TargetProfitPolicy {
+import java.io.Serializable ;
+
+public class TargetProfitPolicyMarkup implements TargetProfitPolicy,Serializable {
 	
+	private static final long serialVersionUID = -37289269800490538L;
+
 	/**
 	 * Sets the markup percentage
 	 * based on last month income

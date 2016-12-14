@@ -1,6 +1,10 @@
 package fr.ecp.is1220.MyFoodora;
 
-public class FairOccupationDeliveryPolicy implements DeliveryPolicy {
+import java.io.Serializable ;
+
+public class FairOccupationDeliveryPolicy implements DeliveryPolicy,Serializable {
+
+	private static final long serialVersionUID = -8248152607689273031L;
 
 	public FairOccupationDeliveryPolicy() {
 	}

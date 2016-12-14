@@ -1,6 +1,10 @@
 package fr.ecp.is1220.MyFoodora;
 
-public class TargetProfitPolicyDeliveryCost implements TargetProfitPolicy {
+import java.io.Serializable ;
+
+public class TargetProfitPolicyDeliveryCost implements TargetProfitPolicy,Serializable {
+
+	private static final long serialVersionUID = -2989185117239530433L;
 
 	/**
 	 * Sets the delivery cost

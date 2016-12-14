@@ -1,6 +1,10 @@
 package fr.ecp.is1220.MyFoodora;
 
-public class FastestDeliveryPolicy implements DeliveryPolicy {
+import java.io.Serializable ;
+
+public class FastestDeliveryPolicy implements DeliveryPolicy,Serializable {
+
+	private static final long serialVersionUID = 776446129127381700L;
 
 	public FastestDeliveryPolicy() {
 		// TODO Auto-generated constructor stub

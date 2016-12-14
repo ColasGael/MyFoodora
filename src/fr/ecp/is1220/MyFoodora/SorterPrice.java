@@ -1,11 +1,14 @@
 package fr.ecp.is1220.MyFoodora;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  * sorts the list according to the area of figures (in descending order)
  */
-public class SorterPrice implements SorterFoodItem{
+public class SorterPrice implements SorterFoodItem,Serializable{
+
+	private static final long serialVersionUID = -7504058433135999177L;
 
 	/**
 	 * looks over the list of foodItems looking for the biggest price
