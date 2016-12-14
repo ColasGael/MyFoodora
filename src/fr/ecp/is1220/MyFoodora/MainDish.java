@@ -11,6 +11,6 @@ public class MainDish extends Dish{
 	
 	@Override
 	public String toString() {
-		return ("MainDish : " + ((Dish)this).toString());
+		return ("MainDish : " + super.toString());
 	}
 }

@@ -222,6 +222,7 @@ public class MyFoodoraClient {
 					while(!input.equals("close")){
 						System.out.println("Here is your menu :");
 						currentRestaurant.displayMenu();
+						System.out.println("Wha");
 						input = sc.next();
 						switch(input){
 						case("starter"): case("mainDish"): case("dessert") :
