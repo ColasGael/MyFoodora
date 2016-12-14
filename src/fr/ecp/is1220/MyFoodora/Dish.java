@@ -51,7 +51,11 @@ public abstract class Dish extends FoodItem {
 
 	@Override
 	public String toString() {
-		return "[name=" + name + ", price=" + price + ", type=" + type + ", counter=" + counter + "]";
+		String result = "none";
+		if (this != null){
+			result = "[name=" + name + ", price=" + price + ", type=" + type + ", counter=" + counter + "]";
+		}
+		return result;
 	}
 	
 	@Override
