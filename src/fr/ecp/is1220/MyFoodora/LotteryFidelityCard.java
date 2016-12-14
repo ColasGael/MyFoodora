@@ -12,7 +12,6 @@ public class LotteryFidelityCard extends FidelityCard {
 	 * The probability of having the first meal free
 	 */
 	private static double probability = 0.01 ;
-
 	/**
 	 * The last day when the Card was used because we can use it once a day
 	 */
@@ -83,9 +82,9 @@ public class LotteryFidelityCard extends FidelityCard {
 	@Override
 	public String toString(){
 		String result = ((FidelityCard)this).toString();
-		result += "You have " + (this.hasPlayed() ? "already " : "not ") + "played today";
-		result += "You have a probability of " + probability + " to win at the lottery";
-		result += "if you win, the most expensive meal of your order becomes free";
+		result += "You have " + (this.hasPlayed() ? "already " : "not ") + "played today\n";
+		result += "You have a probability of " + probability + " to win at the lottery\n";
+		result += "if you win, the most expensive meal of your order becomes free\n";
 		
 		return(result);
 	}
