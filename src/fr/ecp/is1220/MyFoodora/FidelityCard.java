@@ -30,4 +30,10 @@ public abstract class FidelityCard implements java.io.Serializable {
 	 */
 	public abstract void applyReduction (Order order);
 	
+	@Override
+	public String toString(){
+		String result = this.type + " fidelity card\n";
+		return (result);
+	}
+	
 }

@@ -22,32 +22,54 @@ public class LotteryFidelityCard extends FidelityCard {
 		this.type = "lottery" ;
 		this.lastDayWhenUsed = Calendar.getInstance() ;
 	}
+	
+	/**
+	 * computes the reduction of an order if the user wins the lottery (can be used once a day)
+	 * @param order : the order submitted by the user
+	 * @return reduction : the reduction which can be applied
+	 */
 	@Override
 	public double computeReduction(Order order){
+		double reduction = 0;
+		
 		ArrayList<Meal> meals = order.getMeals() ; //We get all the meals of the current order
-		double newPrice = order.getPrice() ;
+
 		//if the last day when the lottery was used is not today :
-		if((lastDayWhenUsed.get(Calendar.DAY_OF_YEAR)!=Calendar.getInstance().get(Calendar.DAY_OF_YEAR))||(lastDayWhenUsed.get(Calendar.YEAR)!=Calendar.getInstance().get(Calendar.YEAR))){
+		if(!this.hasPlayed()){
 			Random random = new Random() ;
 			//if the lottery is successful
 			if(random.nextDouble()<=probability){
-				double priceOfOrder = newPrice ;
 				double maxPriceOfMeal = 0 ; //we want to get the meal which is the most expensive.
 				for(Meal meal : meals){
 					if(meal.getPrice()>maxPriceOfMeal){
 						maxPriceOfMeal = meal.getPrice() ;
 					}
-					newPrice = (priceOfOrder-maxPriceOfMeal); //the most expensive meal of the order is free.
 				}
+				reduction = maxPriceOfMeal;
 			}
 			lastDayWhenUsed = Calendar.getInstance() ;
 		}
-		return newPrice ;
+		return reduction ;
 	}
 	
+	/**
+	 * applies the reduction calculated with computeReduction to the price of the order
+	 * @param order : the order submitted by the user
+	 */
 	@Override
 	public void applyReduction(Order order){
-		order.setPrice(computeReduction(order));
+		double originalPrice = order.getPrice();
+		double reduction = this.computeReduction(order);
+		
+		order.setPrice(originalPrice - reduction);
+	}
+	/**
+	 * indicates if the customer has played today
+	 * @return hasPlayed : true if the user hasPlayed today
+	 */
+	public boolean hasPlayed(){
+		boolean hasPlayed = (this.lastDayWhenUsed.get(Calendar.DAY_OF_YEAR)==Calendar.getInstance().get(Calendar.DAY_OF_YEAR))&&(lastDayWhenUsed.get(Calendar.YEAR)==Calendar.getInstance().get(Calendar.YEAR));
+		return hasPlayed;
 	}
 
 	public static double getProbability() {
@@ -56,5 +78,15 @@ public class LotteryFidelityCard extends FidelityCard {
 
 	public static void setProbability(double probability) {
 		LotteryFidelityCard.probability = probability;
+	}
+	
+	@Override
+	public String toString(){
+		String result = ((FidelityCard)this).toString();
+		result += "You have " + (this.hasPlayed() ? "already " : "not ") + "played today";
+		result += "You have a probability of " + probability + " to win at the lottery";
+		result += "if you win, the most expensive meal of your order becomes free";
+		
+		return(result);
 	}
 }

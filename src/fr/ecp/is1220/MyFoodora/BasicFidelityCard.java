@@ -13,6 +13,7 @@ public class BasicFidelityCard extends FidelityCard {
 	 * @param order : the order submitted by the user
 	 * @return reduction : the reduction which can be applied
 	 */
+	@Override
 	public double computeReduction(Order order){
 		double reduction = 0;
 		return reduction;
@@ -22,10 +23,16 @@ public class BasicFidelityCard extends FidelityCard {
 	 * 		and remove the used fidelity points
 	 * @param order : the order submitted by the user
 	 */
+	@Override
 	public void applyReduction (Order order){
 		double originalPrice = order.getPrice();
 		double reduction = this.computeReduction(order);
 		
 		order.setPrice(originalPrice - reduction);
+	}
+	
+	@Override
+	public String toString(){
+		return((FidelityCard)this).toString();
 	}
 }

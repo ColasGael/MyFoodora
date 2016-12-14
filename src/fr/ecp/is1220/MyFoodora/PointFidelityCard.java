@@ -31,6 +31,7 @@ public class PointFidelityCard extends FidelityCard {
 	 * @param order : the order submitted by the user
 	 * @return reduction : the reduction which can be applied
 	 */
+	@Override
 	public double computeReduction(Order order){
 		double reduction = 0;
 		if (this.points > targetPoints){
@@ -38,11 +39,13 @@ public class PointFidelityCard extends FidelityCard {
 		}
 		return reduction;
 	}
+	
 	/**
 	 * applies the reduction calculated with computeReduction to the price of the order
 	 * 		and remove the used fidelity points
 	 * @param order : the order submitted by the user
 	 */
+	@Override
 	public void applyReduction (Order order){
 		double originalPrice = order.getPrice();
 		double reduction = this.computeReduction(order);
@@ -64,6 +67,11 @@ public class PointFidelityCard extends FidelityCard {
 		this.points -= points;
 	}
 	
+	/**
+	 * converts a price paid in euros in fidelity points
+	 * @param price : the price paid
+	 * @return points : the number of fidelity points earned
+	 */
 	public int convertToPoints (double price){
 		int points = (int) (price/conversion);
 		return points;
@@ -98,9 +106,17 @@ public class PointFidelityCard extends FidelityCard {
 		return discountFactor;
 	}
 
-	public static void setDiscountPrice(double discountPrice) {
-		PointFidelityCard.discountFactor = discountPrice;
+	public static void setDiscountFactor(double discountFactor) {
+		PointFidelityCard.discountFactor = discountFactor;
 	}
 	
-	
+	@Override
+	public String toString(){
+		String result = ((FidelityCard)this).toString();
+		result += "You have " + this.points + " fidelity points on your card\n";
+		result += "You need " + targetPoints + " to have a " + discountFactor + " percent reduction on the price of your next order\n";
+		result += "When you spend " + conversion + " euros on My Foodora, you earn 1 fidelity point\n";
+		
+		return(result);
+	}
 }
