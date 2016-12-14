@@ -24,24 +24,27 @@ public class LotteryFidelityCard extends FidelityCard {
 	}
 	@Override
 	public double computeReduction(Order order){
-		ArrayList<Meal> meals = order.getMeals() ;
+		ArrayList<Meal> meals = order.getMeals() ; //We get all the meals of the current order
 		double newPrice = order.getPrice() ;
+		//if the last day when the lottery was used is not today :
 		if((lastDayWhenUsed.get(Calendar.DAY_OF_YEAR)!=Calendar.getInstance().get(Calendar.DAY_OF_YEAR))||(lastDayWhenUsed.get(Calendar.YEAR)!=Calendar.getInstance().get(Calendar.YEAR))){
 			Random random = new Random() ;
-			int lottery = random.nextInt(1000) ;
-			if(lottery<=probability*1000){
+			//if the lottery is successful
+			if(random.nextDouble()<=probability){
 				double priceOfOrder = newPrice ;
-				double maxPriceOfMeal = 0 ;
+				double maxPriceOfMeal = 0 ; //we want to get the meal which is the most expensive.
 				for(Meal meal : meals){
 					if(meal.getPrice()>maxPriceOfMeal){
 						maxPriceOfMeal = meal.getPrice() ;
 					}
-					newPrice = (priceOfOrder-maxPriceOfMeal);
+					newPrice = (priceOfOrder-maxPriceOfMeal); //the most expensive meal of the order is free.
 				}
 			}
+			lastDayWhenUsed = Calendar.getInstance() ;
 		}
 		return newPrice ;
 	}
+	
 	@Override
 	public void applyReduction(Order order){
 		order.setPrice(computeReduction(order));
