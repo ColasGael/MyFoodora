@@ -1,9 +1,13 @@
 package fr.ecp.is1220.MyFoodora;
 
+import java.io.Serializable ;
+
 /**
  *this factory class enables us to register different types of users
  */
-public class UserFactory {
+public class UserFactory implements Serializable {
+
+	private static final long serialVersionUID = -6020715672334438764L;
 
 	public UserFactory() {
 	}
