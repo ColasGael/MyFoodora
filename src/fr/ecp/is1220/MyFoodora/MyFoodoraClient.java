@@ -136,7 +136,7 @@ public class MyFoodoraClient {
 				switch (input){
 				case("create"):
 					while(!input.equals("close")){
-						System.out.println("Do you want to add a \"meal\", a \"dish\" or a \"dish2meal\" ?") ;
+						System.out.println("Do you want to add a \"meal\" or a \"dish\" ?") ;
 						input = sc.next();
 						switch(input){
 						case("meal"):
@@ -151,6 +151,7 @@ public class MyFoodoraClient {
 									input = sc.nextLine();
 									currentRestaurant.addMeal(mealType,input);
 									System.out.println("The "+mealType+" meal \""+input+"\" has been added to your menu.");
+									System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 									input = sc.next();
 									return "next" ;
 								case("disconnect"):
@@ -178,7 +179,7 @@ public class MyFoodoraClient {
 										try{
 											price = sc.nextDouble() ;
 										}catch(InputMismatchException e){
-											System.out.println("You must enter a price.");
+											System.err.println("You must enter a price.");
 											sc.next();
 										}
 									}
@@ -189,6 +190,8 @@ public class MyFoodoraClient {
 										case("standard"): case("vegetarian"): case("glutenFree") :											
 											currentRestaurant.addDish(dishType,name,price,type);
 											System.out.println("The "+type+" "+dishType+" \""+name+"\" has been added to your menu for "+String.valueOf(price)+" euros.");
+											System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
+											input = sc.next() ;
 											return "next" ;
 										case("disconnect"):
 											return "disconnect" ;
@@ -219,51 +222,19 @@ public class MyFoodoraClient {
 				case("remove"):
 					break;
 				case("add"):
-					while(!input.equals("close")){
 						System.out.println("Here is your menu :");
 						currentRestaurant.displayMenu();
-						System.out.println("Wha");
-						input = sc.next();
-						switch(input){
-						case("starter"): case("mainDish"): case("dessert") :
-							System.out.println("Enter the name of your "+input+ " :");
-							String dishType = input ;
-							sc.nextLine();
-							String name = sc.nextLine();
-							double price = 0 ;
-							while(price<=0){
-								System.out.println("Enter the price of your dish :");
-								try{
-									price = sc.nextDouble() ;
-								}catch(InputMismatchException e){
-									System.out.println("You must enter a price.");
-									sc.next();
-								}
-							}
-							while(!input.equals("close")){
-								System.out.println("Is your dish \"standard\", \"vegetarian\" or \"glutenFree\" ?");
-								String type = sc.next();
-								switch(type){
-								case("standard"): case("vegetarian"): case("glutenFree") :											
-									currentRestaurant.addDish(dishType,name,price,type);
-									System.out.println("The "+type+" "+dishType+" \""+name+"\" has been added to your menu for "+String.valueOf(price)+" euros.");
-									return "next" ;
-								case("disconnect"):
-									return "disconnect" ;
-								case("close"):
-									return "close" ;
-								default :
-									System.out.println("This choice is not available, please try again \n");
-								}
-							}
-						case("disconnect"):
-							return "disconnect" ;
-						case("close"):
-							return "close" ;
-						default :
-							System.out.println("This choice is not available, please try again \n");
+						System.out.println("Which dish do you want to add to a meal ? Enter its name :");
+						sc.next();
+						String mealName = sc.nextLine();
+						System.out.println("Which meal do you want to complete ? Enter its name :");
+						sc.next();
+						String dishName = sc.nextLine();
+						try{
+							currentRestaurant.addDish2Meal(mealName, dishName);
+						}catch(NullPointerException e){
+							System.err.println("Your dish name and meal name are not valid.");
 						}
-					}
 					break;
 				case("disconnect"):
 					return "disconnect" ;
@@ -282,7 +253,7 @@ public class MyFoodoraClient {
 			System.out.println("This choice is not available, please try again \n");
 			break;
 		}
-		System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
+		System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 		input = sc.next() ;
 		return "next" ;
 	}

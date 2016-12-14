@@ -122,8 +122,8 @@ public class Menu implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "Menu [dishes=" + dishes + ", meals=" + meals + ", genericDiscountFactor=" + genericDiscountFactor
-				+ ", specialDiscountFactor=" + specialDiscountFactor + ", mealOfTheWeek=" + mealOfTheWeek + "]";
+		return "Menu \n[dishes=\n" + dishes + ", \nmeals=\n" + meals + ", \ngenericDiscountFactor=" + genericDiscountFactor
+				+ ", \nspecialDiscountFactor=" + specialDiscountFactor + ", \nmealOfTheWeek=" + mealOfTheWeek + "]";
 	}
 	
 
