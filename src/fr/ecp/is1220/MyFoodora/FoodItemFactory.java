@@ -1,6 +1,10 @@
 package fr.ecp.is1220.MyFoodora;
 
-public class FoodItemFactory {
+import java.io.Serializable ;
+
+public class FoodItemFactory implements Serializable {
+
+	private static final long serialVersionUID = -8862062754084793470L;
 
 	public FoodItemFactory() {
 	}

@@ -7,11 +7,11 @@ import org.junit.Test;
 public class MyFoodoraTest {
 
 	@Test
-	public void testStartupScenario() {
+	public void testSaveAndLoadScenario() {
 		MyFoodora myFoodora = new MyFoodora(10, 0.05, 5) ;
-		myFoodora.register("Customer","Theo", "Bob","theo7794","password");
-		myFoodora.register("Courier","Jean", "Livreur","jean","password");
-		myFoodora.register("Restaurant","Le Hoki",null,"hoki","password");
+		myFoodora.register("customer","Theo", "Bob","theo7794","password");
+		myFoodora.register("courier","Jean", "Livreur","jean","password");
+		myFoodora.register("restaurant","Le Hoki",null,"hoki","password");
 		myFoodora.saveMyFoodora();
 		MyFoodora myFoodorabis = MyFoodora.loadMyFoodora() ;
 	}
