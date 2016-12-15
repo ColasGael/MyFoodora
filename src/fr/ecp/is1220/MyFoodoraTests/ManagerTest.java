@@ -55,7 +55,14 @@ public class ManagerTest {
 
 	@Test
 	public void testTotalIncome() {
-		fail("Not yet implemented");
+		//today
+		Calendar calendar2 = Calendar.getInstance();
+		//one month ago
+		Calendar calendar1 = Calendar.getInstance();
+		calendar1.add(Calendar.MONTH, -1);
+		//computes the total income between today and a month ago
+		double totalIncome = manager.totalIncome(calendar1, calendar2);
+		assertTrue(totalIncome > 0);
 	}
 
 	@Test
@@ -66,9 +73,8 @@ public class ManagerTest {
 		Calendar calendar1 = Calendar.getInstance();
 		calendar1.add(Calendar.MONTH, -1);
 		//computes the total income between today and a month ago
-		double totalIncome = manager.totalIncome(calendar1, calendar2);
-		
-		System.out.println(totalIncome);
+		double totalProfit = manager.totalProfit(calendar1, calendar2);
+		assertTrue(totalProfit > 0);
 	}
 
 	@Test
@@ -80,38 +86,41 @@ public class ManagerTest {
 		calendar1.add(Calendar.MONTH, -1);
 		//computes the total income between today and a month ago
 		double averageIncomePerCostumer = manager.averageIncomePerCostumer(calendar1, calendar2);
-		
-		System.out.println(averageIncomePerCostumer);
-	}
+		double totalIncome = manager.totalIncome(calendar1, calendar2);
 
-	@Test
-	public void testMeetTargetProfit() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetDeliveryPolicy() {
-		fail("Not yet implemented");
+		//as there is only one customer
+		assertTrue((averageIncomePerCostumer==totalIncome));
 	}
 
 	@Test
 	public void testMostSellingRestaurant() {
-		fail("Not yet implemented");
+		Restaurant mostSellingRestaurant = manager.mostSellingRestaurant();
+		System.out.println(mostSellingRestaurant);
+		
+		assertEquals("Le Hoki", mostSellingRestaurant.getName());
 	}
 
 	@Test
 	public void testLeastSellingRestaurant() {
-		fail("Not yet implemented");
+		Restaurant leastSellingRestaurant = manager.leastSellingRestaurant();
+		System.out.println(leastSellingRestaurant);	
+		
+		assertEquals("Dominos", leastSellingRestaurant.getName());
 	}
 
 	@Test
 	public void testMostActiveCourier() {
-		fail("Not yet implemented");
+		Courier mostActiveCourier = manager.mostActiveCourier();
+		System.out.println(mostActiveCourier);
+		
+		assertEquals("Peter", mostActiveCourier.getName());
 	}
 
 	@Test
-	public void testLeastSellingCourier() {
-		fail("Not yet implemented");
+	public void testLeastActiveCourier() {
+		Courier leastActiveCourier = manager.leastActiveCourier();
+		System.out.println(leastActiveCourier);
+		
+		assertEquals("Toby", leastActiveCourier.getName());
 	}
-
 }

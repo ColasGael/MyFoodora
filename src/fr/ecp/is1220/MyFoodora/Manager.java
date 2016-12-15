@@ -222,20 +222,20 @@ public class Manager extends User {
 	 * get the least selling restaurant considering the number of orders
 	 * @return leastSellingRestaurant : the least selling restaurant
 	 */
-	public Courier leastSellingCourier(){
-		Courier leastSellingCourier = null;
+	public Courier leastActiveCourier(){
+		Courier leastActiveCourier = null;
 		int leastDeliveries = 999999999;
 		
 		for (User user : myFoodora.getUsers()){
 			if (user.getUserType().equals("courier")){
 				Courier courier = (Courier)user;
 				if(courier.getCounter() < leastDeliveries){
-					leastSellingCourier = courier;
+					leastActiveCourier = courier;
 					leastDeliveries = courier.getCounter();
 				}
 			}
 		}
-		return(leastSellingCourier);
+		return(leastActiveCourier);
 	}
 	
 	public MyFoodora getMyFoodora() {

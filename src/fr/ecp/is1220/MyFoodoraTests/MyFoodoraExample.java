@@ -102,8 +102,10 @@ public class MyFoodoraExample {
 		//we fill the order with food items
 		order.addDish(mainDish);
 		order.addMeal(fullMeal);
-		//the customer submit the order
+		//the customer submits the order
 		order.submit(true, myFoodora);
+		//the courier accepts the delivery call
+		order.validateOrderByCourier(myFoodora);
 		
 		myFoodora.saveMyFoodora();
 	}
