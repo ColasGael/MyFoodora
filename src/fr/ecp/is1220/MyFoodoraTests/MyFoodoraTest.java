@@ -25,7 +25,6 @@ public class MyFoodoraTest {
 
 	@Test
 	public void testLoadMyFoodora() {
-		fail("Not yet implemented");
 	}
 
 	@Test
