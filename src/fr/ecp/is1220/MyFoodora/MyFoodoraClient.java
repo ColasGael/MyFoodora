@@ -238,7 +238,7 @@ public class MyFoodoraClient {
 								System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 								input = sc.next();
 								return "next" ;
-							}catch(NullPointerException e){
+							}catch(FoodItemNotFoundException e){
 								System.err.println("This meal does not exist.");
 							}
 							break ;
@@ -254,7 +254,7 @@ public class MyFoodoraClient {
 								System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 								input = sc.next();
 								return "next" ;
-							}catch(NullPointerException e){
+							}catch(FoodItemNotFoundException e){
 								System.err.println("This dish does not exist.");
 							}
 							break ;
@@ -275,8 +275,6 @@ public class MyFoodoraClient {
 						System.out.println("Which meal do you want to complete ? Enter its name :");
 						//sc.next();
 						String mealName = sc.nextLine();
-						System.out.println(currentRestaurant.findDishByName(dishName));
-						System.out.println(currentRestaurant.findMealByName(mealName));
 						try{
 							currentRestaurant.addDish2Meal(mealName, dishName);
 							System.out.println("The dish \""+dishName+"\" has been added to the meal \""+mealName+"\".");
@@ -285,7 +283,7 @@ public class MyFoodoraClient {
 							System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 							input = sc.next() ;
 							return "next" ;
-						}catch(NullPointerException e){
+						}catch(FoodItemNotFoundException e){
 							System.err.println("The dish \""+dishName+"\" and/or the meal \""+mealName+"\" do not exist.");
 						}catch(NoPlaceInMealException e){
 							System.err.println("You cannot add the \""+dishName+"\" to the meal \""+mealName+"\".");
@@ -348,8 +346,9 @@ public class MyFoodoraClient {
 							input = sc.nextLine();
 							currentRestaurant.setMealOfTheWeek(input);
 							mealName = currentRestaurant.getMenu().getMealOfTheWeek().getName() ;
-						}catch(NullPointerException e){
+						}catch(FoodItemNotFoundException e){
 							System.err.println("The meal \""+input+"\" does not exist.");
+							sc.next();
 						}
 					}
 					System.out.println("Your new meal of the week is "+currentRestaurant.getMenu().getMealOfTheWeek());
