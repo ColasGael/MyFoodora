@@ -343,4 +343,29 @@ public class MyFoodora implements java.io.Serializable{
 	public UserFactory getUserFactory() {
 		return userFactory;
 	}
+	
+	@Override
+	public boolean equals(Object o){
+		boolean isEqual = false;
+		
+		if (o instanceof MyFoodora){
+			MyFoodora myFoodora = (MyFoodora)o;
+			
+			users = myFoodora.getUsers();
+			isEqual = (this.users.equals(users));
+			
+			completedOrders = myFoodora.getCompletedOrders();
+			isEqual = isEqual&&(this.completedOrders.equals(completedOrders));
+
+			serviceFee = myFoodora.getServiceFee();
+			isEqual = isEqual&&(this.serviceFee==serviceFee);
+
+			markupPercentage = myFoodora.getMarkupPercentage();
+			isEqual = isEqual&&(this.markupPercentage==markupPercentage);
+
+			deliveryCost = myFoodora.getDeliveryCost();
+			isEqual = isEqual&&(this.deliveryCost==deliveryCost);
+		}
+		return isEqual;
+	}
 }

@@ -109,7 +109,7 @@ public abstract class User implements java.io.Serializable {
 		boolean isequal = false;
 		if (o instanceof User){
 			User user = (User)o;
-			isequal = this.uniqueID== user.getUniqueID();
+			isequal = (this.uniqueID == user.getUniqueID());
 		}
 		return isequal;
 	}
