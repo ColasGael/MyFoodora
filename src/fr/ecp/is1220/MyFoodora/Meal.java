@@ -21,7 +21,7 @@ public abstract class Meal extends FoodItem {
 	 */
 	protected double discountFactor = 0.05; 
 	
-	protected MealVisitor mealVisitor = new MealVisitor();
+	protected MealVisitor mealVisitor ;
 	
 	/**
 	 * creates a Meal object of a given mainDish
@@ -31,6 +31,7 @@ public abstract class Meal extends FoodItem {
 	public Meal(String name) {
 		this.name = name ;
 		this.mainDish = null;
+		this.mealVisitor = new MealVisitor();
 	}
 	
 	/**

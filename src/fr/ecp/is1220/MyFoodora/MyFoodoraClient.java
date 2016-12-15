@@ -220,6 +220,89 @@ public class MyFoodoraClient {
 					}
 					break;
 				case("remove"):
+					while(!input.equals("close")){
+						System.out.println("Do you want to remove a \"meal\" or a \"dish\" ?") ;
+						input = sc.next();
+						switch(input){
+						case("meal"):
+							while(!input.equals("close")){
+								System.out.println("Do you want to add a \"full\" meal or a \"half\" meal ?");
+								input = sc.next();
+								switch(input){
+								case("full"): case("half"):
+									System.out.println("Enter the name of your "+input+" meal :");
+									String mealType = input ;
+									sc.nextLine();
+									input = sc.nextLine();
+									currentRestaurant.addMeal(mealType,input);
+									System.out.println("The "+mealType+" meal \""+input+"\" has been added to your menu.");
+									System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
+									input = sc.next();
+									return "next" ;
+								case("disconnect"):
+									return "disconnect" ;
+								case("close"):
+									return "close" ;
+								default :
+									System.out.println("This choice is not available, please try again \n");
+								}
+							}
+							break;
+						case("dish"):
+							while(!input.equals("close")){
+								System.out.println("Do you want to add a \"starter\" dish, a \"mainDish\" or a \"dessert\" ?");
+								input = sc.next();
+								switch(input){
+								case("starter"): case("mainDish"): case("dessert") :
+									System.out.println("Enter the name of your "+input+ " :");
+									String dishType = input ;
+									sc.nextLine();
+									String name = sc.nextLine();
+									double price = 0 ;
+									while(price<=0){
+										System.out.println("Enter the price of your dish :");
+										try{
+											price = sc.nextDouble() ;
+										}catch(InputMismatchException e){
+											System.err.println("You must enter a price.");
+											sc.next();
+										}
+									}
+									while(!input.equals("close")){
+										System.out.println("Is your dish \"standard\", \"vegetarian\" or \"glutenFree\" ?");
+										String type = sc.next();
+										switch(type){
+										case("standard"): case("vegetarian"): case("glutenFree") :											
+											currentRestaurant.addDish(dishType,name,price,type);
+											System.out.println("The "+type+" "+dishType+" \""+name+"\" has been added to your menu for "+String.valueOf(price)+" euros.");
+											System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
+											input = sc.next() ;
+											return "next" ;
+										case("disconnect"):
+											return "disconnect" ;
+										case("close"):
+											return "close" ;
+										default :
+											System.out.println("This choice is not available, please try again \n");
+										}
+									}
+								case("disconnect"):
+									return "disconnect" ;
+								case("close"):
+									return "close" ;
+								default :
+									System.out.println("This choice is not available, please try again \n");
+								}
+							}
+							break;
+						case("disconnect"):
+							return "disconnect" ;
+						case("close"):
+							return "close" ;
+						default :
+							System.out.println("This choice is not available, please try again \n");
+						}
+					}
 					break;
 				case("add"):
 						System.out.println("Here is your menu :");
@@ -229,6 +312,8 @@ public class MyFoodoraClient {
 						System.out.println("Which meal do you want to complete ? Enter its name :");
 						//sc.next();
 						String mealName = sc.nextLine();
+						System.out.println(currentRestaurant.findDishByName(dishName));
+						System.out.println(currentRestaurant.findMealByName(mealName));
 						try{
 							currentRestaurant.addDish2Meal(mealName, dishName);
 							System.out.println("The dish \""+dishName+"\" has been added to the meal \""+mealName+"\".");
@@ -238,6 +323,7 @@ public class MyFoodoraClient {
 							input = sc.next() ;
 							return "next" ;
 						}catch(NullPointerException e){
+							e.printStackTrace();
 							System.err.println("The dish \""+dishName+"\" and/or the meal \""+mealName+"\" do not exist.");
 						}
 					break;

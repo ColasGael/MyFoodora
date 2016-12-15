@@ -10,6 +10,9 @@ public class MealVisitor implements Serializable {
 	
 	private static final long serialVersionUID = 7171309403572030641L;
 
+	public MealVisitor() {
+	}
+	
 	/**
 	 * compute the price of a full meal
 	 * @param fullMeal
