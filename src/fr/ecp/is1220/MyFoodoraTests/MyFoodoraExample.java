@@ -20,52 +20,53 @@ public class MyFoodoraExample {
 		
 		//we create a first restaurant : the HOKI
 		Restaurant hoki = new Restaurant("Le Hoki", "hoki", "password", new Position(12.3, 478.21));
-		//we add dishes to the menu
-		hoki.addDish("mainDish", "maki thon", 4.5, "standard");
-		hoki.addDish("mainDish", "maki saumon", 4, "standard");
-		hoki.addDish("mainDish", "maki cheese", 3.5, "vegetarian");
-		hoki.addDish("mainDish", "california maki", 16.5, "standard");
-		hoki.addDish("starter", "soupe", 2.5, "vegetarian");
-		hoki.addDish("dessert", "litchee", 4, "vegetarian");
-		hoki.addDish("mainDish", "brochettes boeuf", 10.5, "standard");
-		//we add meals to the menu
-		hoki.addMeal("half", "M2");
-		hoki.addDish2Meal("M2", "soupe");
-		hoki.addDish2Meal("M2", "maki saumon");
-		hoki.addMeal("full", "M3");
-		hoki.addDish2Meal("M3", "soupe");
-		hoki.addDish2Meal("M3", "maki cheese");
-		hoki.addDish2Meal("M3", "litchee");
-		hoki.addMeal("half", "B1");
-		hoki.addDish2Meal("B1", "brochettes boeuf");
-		hoki.addDish2Meal("B1", "litchee");
+		Menu menu = hoki.getMenu();
+		//we add dishes and meals to the menu
+		Starter starter = new Starter("soupe", 2.5, "vegetarian"); menu.addDish(starter);
+
+		MainDish mainDish = new MainDish("maki thon", 4.5, "standard");	menu.addDish(mainDish);
+		mainDish = new MainDish("california maki", 16.5, "standard"); menu.addDish(mainDish);
+		mainDish = new MainDish("maki saumon", 4, "standard"); menu.addDish(mainDish);
+		
+		HalfMeal halfMeal = new HalfMeal("M2", mainDish, starter); menu.addMeal(halfMeal);
 		//we set the meal of the day
-		hoki.setMealOfTheWeek("B1");
+		menu.setMealOfTheWeek(halfMeal);
+		
+		mainDish = new MainDish("maki cheese", 3.5, "vegetarian"); menu.addDish(mainDish);
+		Dessert dessert = new Dessert("litchee", 4, "vegetarian");	menu.addDish(dessert);
+		FullMeal fullMeal = new FullMeal("M3", mainDish, starter, dessert); menu.addMeal(fullMeal);
+
+		mainDish = new MainDish("brochettes boeuf", 10.5, "standard"); menu.addDish(mainDish);
+		halfMeal = new HalfMeal("B1", mainDish, dessert); menu.addMeal(halfMeal);
+
 		//we add the hoki to myFoodora
 		myFoodora.addUser(hoki);
 		
 		//we create a second restaurant : the DOMINOS
 		Restaurant dominos = new Restaurant("Dominos", "domi", "password", new Position(121.3, 41.31));
-		//we add dishes to the menu
-		dominos.addDish("mainDish", "cannibale", 13, "standard");
-		dominos.addDish("mainDish", "margherita", 10, "vegetarian");
-		dominos.addDish("mainDish", "orientale", 13.5, "standard");
-		dominos.addDish("mainDish", "4 fromages", 12.5, "vegetarian");
-		dominos.addDish("starter", "cheesy bread", 2.5, "vegetarian");
-		dominos.addDish("dessert", "tiramisu", 4.5, "vegetarian");
-		//we add meals to the menu
-		dominos.addMeal("half", "duo");
-		dominos.addDish2Meal("duo", "cheesy bread");
-		dominos.addDish2Meal("duo", "orientale");
-		dominos.addMeal("full", "family");
-		dominos.addDish2Meal("family", "cannibale");
-		dominos.addDish2Meal("family", "cheesy bread");
-		dominos.addDish2Meal("family", "tiramisu");
+		menu = dominos.getMenu();
+		//we add dishes and meals to the menu
+		starter = new Starter("cheesy bread", 2.5, "vegetarian"); menu.addDish(starter);
+		dessert = new Dessert("tiramisu", 4.5, "vegetarian");	menu.addDish(dessert);
+
+		mainDish = new MainDish("orientale", 13.5, "standard");	menu.addDish(mainDish);
+		
+		halfMeal = new HalfMeal("duo", mainDish, starter); menu.addMeal(halfMeal);
+		
+		mainDish = new MainDish("4 fromages", 12.5, "standard");	menu.addDish(mainDish);
+		mainDish = new MainDish("margherita", 10, "standard");	menu.addDish(mainDish);
+		mainDish = new MainDish("cannibale", 13, "standard");	menu.addDish(mainDish);
+
+		fullMeal = new FullMeal("family", mainDish, starter, dessert); menu.addMeal(fullMeal);
+
+		mainDish = new MainDish("california maki", 16.5, "standard"); menu.addDish(mainDish);
+		mainDish = new MainDish("maki saumon", 4, "standard"); menu.addDish(mainDish);
+	
 		//we add the dominos to myFoodora
 		myFoodora.addUser(dominos);
 		
 		//we adds manager
-		manager.addUser("manager", "Sylvestre", "Prabakaran", "prabakarans", "birthdaydate");
+		myFoodora.addUser(new Manager("Sylvestre", "Prabakaran", "prabakarans", "birthdaydate", myFoodora));
 		
 		//we add couriers
 		myFoodora.addUser(new Courier("Peter", "Parker", "spiderman", "password", new Position(1.23, 854.1), "0651964987"));
