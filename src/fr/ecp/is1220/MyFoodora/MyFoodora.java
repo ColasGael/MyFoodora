@@ -80,9 +80,8 @@ public class MyFoodora implements java.io.Serializable{
 		}catch(ClassNotFoundException c) {
 			System.out.println("MyFoodora class not found");
 			c.printStackTrace();
-		}finally{
-			return myFoodora;
 		}
+		return myFoodora;
 	}
 	
 	/**
