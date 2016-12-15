@@ -21,7 +21,7 @@ public abstract class Meal extends FoodItem {
 	 */
 	protected double discountFactor = 0.05; 
 	
-	protected MealVisitor mealVisitor ;
+	protected MealVisitor mealVisitor = new MealVisitor() ;
 	
 	/**
 	 * creates a Meal object of a given mainDish
@@ -31,7 +31,6 @@ public abstract class Meal extends FoodItem {
 	public Meal(String name) {
 		this.name = name ;
 		this.mainDish = null;
-		this.mealVisitor = new MealVisitor();
 	}
 	
 	/**
@@ -82,5 +81,15 @@ public abstract class Meal extends FoodItem {
 	public String toString() {
 		return ("Meal : " + this.getName() + "\nprice : " + this.getPrice() + " type : " + this.getType() +"\n"+
 				 mainDish);
+	}
+	
+	@Override
+	public boolean equals (Object o){
+		boolean isequal = false;
+		if (o instanceof Meal){
+			Meal meal = (Meal)o;
+			isequal = this.name.equals(meal.getName());
+		}
+		return isequal;
 	}
 }

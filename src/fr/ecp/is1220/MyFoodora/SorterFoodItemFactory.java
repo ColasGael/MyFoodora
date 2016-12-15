@@ -11,6 +11,7 @@ public class SorterFoodItemFactory implements Serializable {
 
 	public SorterFoodItemFactory() {
 	}
+	
 	/**
 	 * creates a food item sorter : 
 	 * 		sorting according to the number of time the items have been picked in completed orders

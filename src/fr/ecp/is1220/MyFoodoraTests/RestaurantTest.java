@@ -24,8 +24,16 @@ public class RestaurantTest {
 		}catch(Exception e){}
 	}
 	
+	@Test
+	public void testFindDishByNameWhenInMenu() throws FoodItemNotFoundException {
+		restaurant.addDish("mainDish", "maki crevette", 4.5, "standard");
+		//when the user misspells a word for example : "crevette" != "crevete"
+		Dish dish = restaurant.findDishByName("maki crevette");
+		assertEquals("maki crevette", dish.getName());
+	}
+	
 	@Test (expected = FoodItemNotFoundException.class)
-	public void testFindDishByName() throws FoodItemNotFoundException {
+	public void testFindDishByNameWhenNotInMenu() throws FoodItemNotFoundException {
 		restaurant.addDish("mainDish", "maki crevette", 4.5, "standard");
 		//when the user misspells a word for example : "crevette" != "crevete"
 		Dish dish = restaurant.findDishByName("maki crevete");
@@ -33,21 +41,23 @@ public class RestaurantTest {
 
 	@Test
 	public void testAddDish() throws FoodItemNotFoundException {
-		restaurant.addDish("mainDish", "maki avocat", 4.5, "standard");
+		restaurant.addDish("mainDish", "maki avocat", 4.5, "vegetarian");
 		Dish dish = restaurant.findDishByName("maki avocat");
-		System.out.println(dish);
+		System.out.println("The new added dish : " + dish);
 	}
 
 	@Test (expected = FoodItemNotFoundException.class)
 	public void testRemoveDish() throws FoodItemNotFoundException {
 		//we add a new dish to the menu of the restaurant (tested above)
-		restaurant.addDish("mainDish", "maki avocat", 4.5, "standard");
-		Dish dish = restaurant.findDishByName("maki avocat");
+		restaurant.addDish("mainDish", "maki daurade", 4.5, "standard");
+		Dish dish = restaurant.findDishByName("maki daurade");
 		//we remove this dish
-		restaurant.removeDish("maki avocat");
+		restaurant.removeDish("maki daurade");
+		//we check that the dish has been removed
+		dish = restaurant.findDishByName("maki daurade");
 	}
 
-	@Test
+	@Test (expected = FoodItemNotFoundException.class)
 	public void testFindMealByName() throws FoodItemNotFoundException {
 		restaurant.addMeal("full", "B2");
 		//when the user misspells a word for example : "B2" != "b2"
@@ -58,21 +68,24 @@ public class RestaurantTest {
 	public void testAddMeal() throws FoodItemNotFoundException {
 		restaurant.addMeal("full", "B2");
 		Meal meal = restaurant.findMealByName("B2");
-		System.out.println(meal);
+		System.out.println("The new added meal" + meal);
 	}
 
-	@Test
+	@Test (expected = FoodItemNotFoundException.class)
 	public void testRemoveMeal() throws FoodItemNotFoundException {
 		//we add a new meal to the menu of the restaurant (tested above)
-		restaurant.addMeal("full", "B2");
-		Meal meal = restaurant.findMealByName("B2");
+		restaurant.addMeal("full", "B7");
+		Meal meal = restaurant.findMealByName("B7");
 		//we remove this meal
-		restaurant.removeDish("B2");	}
+		restaurant.removeMeal("B7");
+		//we check that the dish has been removed
+		meal = restaurant.findMealByName("B7");
+	}
 
 	@Test
 	public void testAddDish2Meal() throws FoodItemNotFoundException, NoPlaceInMealException {
 		//we add a new meal to the menu of the restaurant (tested above)
-		restaurant.addMeal("full", "B2");
+		restaurant.addMeal("half", "B2");
 		Meal meal = restaurant.findMealByName("B2");
 		//we find dishes to add to the meal
 		Dish mainDish = restaurant.findDishByName("brochettes boeuf"); 
@@ -81,7 +94,7 @@ public class RestaurantTest {
 		restaurant.addDish2Meal("B2", "brochettes boeuf");
 		restaurant.addDish2Meal("B2", "litchee");
 		
-		System.out.println(meal);
+		System.out.println("The new adde half-meal " + meal);
 	}
 
 	@Test
@@ -96,6 +109,7 @@ public class RestaurantTest {
 
 	@Test
 	public void testDisplayMenu() {
-		
+		System.out.println("The menu of the restaurant");
+		restaurant.displayMenu();
 	}
 }

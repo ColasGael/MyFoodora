@@ -218,8 +218,7 @@ public class Restaurant extends User {
 
 	public void chooseShippedOrderPolicy (String shippedOrderPolicyName){
 		SorterFoodItem shippedOrderPolicy = this.sorterFoodItemFactory.chooseSorterFoodItem(shippedOrderPolicyName);
-		this.setShippedOrderPolicy(shippedOrderPolicy);
-		
+		this.shippedOrderPolicy = shippedOrderPolicy;
 	}
 		
 	@Override
