@@ -3,7 +3,6 @@ package fr.ecp.is1220.MyFoodoraTests;
 import fr.ecp.is1220.MyFoodora.*;
 
 public class MyFoodoraExample {
-
 	/**
 	 * creates an example of My Foodora which will be saved in "MyFoodora.ser"
 	 * this example is later used in the JUnit tests
