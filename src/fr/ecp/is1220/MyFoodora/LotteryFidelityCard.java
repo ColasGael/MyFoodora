@@ -48,6 +48,7 @@ public class LotteryFidelityCard extends FidelityCard {
 			}
 			lastDayWhenUsed = Calendar.getInstance() ;
 		}
+		System.out.println((reduction!=0) ? "You have won " + reduction + " euros !" : "You lose.");
 		return reduction ;
 	}
 	

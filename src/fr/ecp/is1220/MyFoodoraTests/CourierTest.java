@@ -2,8 +2,7 @@ package fr.ecp.is1220.MyFoodoraTests;
 
 import static org.junit.Assert.*;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 
 import fr.ecp.is1220.MyFoodora.*;
 
@@ -55,6 +54,7 @@ public class CourierTest {
 	
 	@Test
 	public void testAcceptDeliveryCall() throws OrderNotFoundException{
+		courier = order.getCourier();
 		//we store the previous counter of the courier
 		int previousCounter = courier.getCounter();
 				
@@ -72,4 +72,29 @@ public class CourierTest {
 		//we check that the board is now cleared
 		System.out.println(board);
 	}
+	
+	@Test
+	public void testRefuseDeliveryCall() throws OrderNotFoundException{
+		//we store the previous counter of the courier
+		int previousCounter = courier.getCounter();
+				
+		//the courier gets the call on his board : order of uniqueID 0
+		Board<Order> board = courier.getBoard();
+		Order order = board.findObsById(0);
+		
+		//the courier refuse the delivery call
+		courier.acceptDeliveryCall(false, order, myFoodora);
+		
+		//we check that the counter of the courier has not increased
+		int currentCounter = courier.getCounter();
+		assertEquals (previousCounter, currentCounter, 0);
+		
+		//we check that the board is now cleared
+		System.out.println(board);
+		
+		//we check that another courier has been allocated to the order
+		Courier newCourier = order.getCourier();
+		System.out.println(newCourier);
+		assertTrue(!(newCourier.equals(courier))&&!(newCourier.equals(null)));
+	}	
 }

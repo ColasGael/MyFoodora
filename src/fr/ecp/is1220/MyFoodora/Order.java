@@ -205,7 +205,7 @@ public class Order implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "Order [ID : " + this.uniqueID 
+		return "Order [ID : " + this.uniqueID + "\n"
 				+ "dateOfOrder=" + dateOfOrder.get(Calendar.DAY_OF_MONTH) + " " + dateOfOrder.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + dateOfOrder.get(Calendar.YEAR) + "\n" 
 				+ "customer=" + customer + "\n" 
 				+ "restaurant=" + restaurant + "\n" 
@@ -221,7 +221,7 @@ public class Order implements java.io.Serializable {
 		boolean isequal = false;
 		if (o instanceof Order){
 			Order order = (Order)o;
-			isequal = this.dateOfOrder.equals(order.getDateOfOrder())&&this.customer.equals(order.getCustomer())&&(this.price==order.getPrice());
+			isequal = (this.uniqueID == order.getUniqueID());
 		}
 		return isequal;
 	}

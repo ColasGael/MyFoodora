@@ -21,9 +21,9 @@ public class Customer extends User {
 	
 	private String phoneNumber ;
 	/**
-	 * enables the customer to register to different fidelity progams
+	 * enables the customer to register to different fidelity programs
 	 */
-	private FidelityCardFactory fidelityCardFactory ;
+	private FidelityCardFactory fidelityCardFactory = new FidelityCardFactory() ;
 	
 	/**
 	 * creates a customer who will use the MyFoodora platform
@@ -39,9 +39,7 @@ public class Customer extends User {
 		this.address = null ;
 		this.email = "" ;
 		this.phoneNumber = "" ;
-		
-		this.fidelityCardFactory = new FidelityCardFactory();
-		
+				
 		this.setUserType ("customer") ;
 	}
 	

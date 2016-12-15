@@ -51,7 +51,9 @@ public class PointFidelityCard extends FidelityCard {
 		double reduction = this.computeReduction(order);
 		
 		order.setPrice(originalPrice - reduction);
-		this.removePoints(targetPoints);
+		if (reduction != 0){
+			this.removePoints(targetPoints);
+		}
 	}
 		
 	
@@ -112,7 +114,7 @@ public class PointFidelityCard extends FidelityCard {
 	
 	@Override
 	public String toString(){
-		String result = ((FidelityCard)this).toString();
+		String result = super.toString();
 		result += "You have " + this.points + " fidelity points on your card\n";
 		result += "You need " + targetPoints + " to have a " + discountFactor + " percent reduction on the price of your next order\n";
 		result += "When you spend " + conversion + " euros on My Foodora, you earn 1 fidelity point\n";

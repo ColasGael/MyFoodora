@@ -85,7 +85,13 @@ public class MyFoodoraExample {
 		myFoodora.addUser(new Courier("Toby", "McGuire", "tobmac", "azerty", new Position(12.3, 5.18), "0651964989"));
 		
 		//we add customers
-		myFoodora.addUser(new Customer("Xavier", "Collar", "chaperouge", "qsdfghjkl", new Position(23.3, 45.12), "xavier.collar@myecp.fr", "0786822354"));
+		Customer customer = new Customer("Xavier", "Collar", "chaperouge", "qsdfghjkl", new Position(23.3, 45.12), "xavier.collar@myecp.fr", "0786822354");
+		
+		//we give this customer fidelity points
+		customer.registerFidelityCard("point");
+		((PointFidelityCard)customer.getFidelityCard()).addPoints(123);
+		
+		myFoodora.addUser(customer);
 		myFoodora.addUser(new Customer("Regis", "Troissant", "cptcroche", "hfekljkfemvc", new Position(87.3, 12.5), "regis.troissant@myecp.fr", "0786822355"));
 		myFoodora.addUser(new Customer("Baptiste", "Turpin", "alladin", "ieupri", new Position(2.3, 4.12), "baptiste.turpin@myecp.fr", "0786822356"));
 		myFoodora.addUser(new Customer("Kevin", "Uzan", "PJ", "fpzkfpzof", new Position(69.2, 12.78), "kevin.uzan@myecp.fr", "0786822354"));
