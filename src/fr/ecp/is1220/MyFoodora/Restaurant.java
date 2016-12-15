@@ -7,6 +7,7 @@ public class Restaurant extends User {
 	private static final long serialVersionUID = -983973017288067345L;
 	private Position address ;
 	private Menu menu ;
+	
 	/**
 	 * the number of times an order has been passed to a restaurant 
 	 */
