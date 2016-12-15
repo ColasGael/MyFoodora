@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 
 public class MealTest {
-
+	
 	private static MyFoodora myFoodora;
 	private static Meal fullMeal;
 	private static Meal halfMeal;
