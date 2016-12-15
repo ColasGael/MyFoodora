@@ -1,4 +1,6 @@
-package fr.ecp.is1220.MyFoodora;
+package fr.ecp.is1220.MyFoodoraTests;
+
+import fr.ecp.is1220.MyFoodora.*;
 
 public class MyFoodoraExample {
 
@@ -6,7 +8,7 @@ public class MyFoodoraExample {
 	 * creates an example of My Foodora which will be saved in "MyFoodora.ser"
 	 * this example is later used in the JUnit tests
 	 */
-	public void createMyFoodora() {
+	public static void createMyFoodora() {
 		//we create an empty myFoodora
 		double serviceFee = 10;
 		double markupPercentage = 0.05;
@@ -14,7 +16,8 @@ public class MyFoodoraExample {
 		MyFoodora myFoodora = new MyFoodora(serviceFee, markupPercentage, deliveryCost);
 		
 		//we add the first manager
-		Manager manager = new Manager ("")
+		Manager manager = new Manager("Gael", "Colas", "gcolas", "0123456789", myFoodora);
+		myFoodora.addUser(manager);
 		
 		//we create a first restaurant : the HOKI
 		Restaurant hoki = new Restaurant("Le Hoki", "hoki", "password", new Position(12.3, 478.21));
@@ -39,6 +42,8 @@ public class MyFoodoraExample {
 		hoki.addDish2Meal("B1", "litchee");
 		//we set the meal of the day
 		hoki.setMealOfTheWeek("B1");
+		//we add the hoki to myFoodora
+		myFoodora.addUser(hoki);
 		
 		//we create a second restaurant : the DOMINOS
 		Restaurant dominos = new Restaurant("Dominos", "domi", "password", new Position(121.3, 41.31));
@@ -57,16 +62,29 @@ public class MyFoodoraExample {
 		dominos.addDish2Meal("family", "cannibale");
 		dominos.addDish2Meal("family", "cheesy bread");
 		dominos.addDish2Meal("family", "tiramisu");
+		//we add the dominos to myFoodora
+		myFoodora.addUser(dominos);
 		
 		//we adds manager
+		manager.addUser("manager", "Sylvestre", "Prabakaran", "prabakarans", "birthdaydate");
 		
+		//we add couriers
+		myFoodora.addUser(new Courier("Peter", "Parker", "spiderman", "password", new Position(1.23, 854.1), "0651964987"));
+		myFoodora.addUser(new Courier("Spider", "Man", "peterparker", "motdepasse", new Position(1.23, 854.1), "0651964988"));
+		myFoodora.addUser(new Courier("Toby", "McGuire", "tobmac", "azerty", new Position(12.3, 5.18), "0651964989"));
 		
-		
-		myFoodora.register("customer","Theo", "Bob","theo7794","password");
-		myFoodora.register("courier","Jean", "Livreur","jean","password");
-		myFoodora.register("restaurant","Le Hoki",null,"hoki","password");
+		//we add customers
+		myFoodora.addUser(new Customer("Xavier", "Collar", "chaperouge", "qsdfghjkl", new Position(23.3, 45.12), "xavier.collar@myecp.fr", "0786822354"));
+		myFoodora.addUser(new Customer("Regis", "Troissant", "cptcroche", "hfekljkfemvc", new Position(87.3, 12.5), "regis.troissant@myecp.fr", "0786822355"));
+		myFoodora.addUser(new Customer("Baptiste", "Turpin", "alladin", "ieupri", new Position(2.3, 4.12), "baptiste.turpin@myecp.fr", "0786822356"));
+		myFoodora.addUser(new Customer("Kevin", "Uzan", "PJ", "fpzkfpzof", new Position(69.2, 12.78), "kevin.uzan@myecp.fr", "0786822354"));
+		myFoodora.addUser(new Customer("Theo", "Bob", "theo7794", "password", new Position(84.3, 145.12), "theo.bob@gmail.com", "0786822354"));
 		
 		myFoodora.saveMyFoodora();
-		MyFoodora myFoodorabis = MyFoodora.loadMyFoodora() ;
+	}
+	
+	
+	public static void main(String[] args) {
+		createMyFoodora();
 	}
 }
