@@ -1,23 +1,31 @@
 package fr.ecp.is1220.MyFoodoraTests;
 
+import fr.ecp.is1220.MyFoodora.*;
 import static org.junit.Assert.*;
 
-import org.junit.Test;
+import org.junit.*;
 
 public class MealTest {
 
+	private static MyFoodora myFoodora;
+	
+	@BeforeClass
+	public static void importMyFoodora(){
+		myFoodora = MyFoodora.loadMyFoodora();
+	}
+	
 	@Test
 	public void testMealString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testMealStringMainDish() {
-		fail("Not yet implemented");
-	}
+		try{
+			Restaurant restaurant = (Restaurant) myFoodora.login("hoki", "password");
+			Meal meal = restaurant.findMealByName("B2");
+			System.out.println(meal);
+		}catch(Exception e){}	
+	}	
 
 	@Test
 	public void testComputePrice() {
+		
 		fail("Not yet implemented");
 	}
 
