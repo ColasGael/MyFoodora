@@ -29,6 +29,7 @@ public abstract class Meal extends FoodItem {
 	 * @param mainDish
 	 */
 	public Meal(String name) {
+		this.name = name ;
 		this.mainDish = null;
 	}
 	
@@ -38,6 +39,7 @@ public abstract class Meal extends FoodItem {
 	 * @param mainDish
 	 */
 	public Meal(String name, MainDish mainDish) {
+		this.name = name;
 		this.mainDish = mainDish;
 	}
 	
@@ -77,7 +79,7 @@ public abstract class Meal extends FoodItem {
 
 	@Override
 	public String toString() {
-		return ("Meal : " + this.getName() + ", price : " + this.getPrice() + " type : " + this.getType() +
-				 mainDish + "\n");
+		return ("Meal : " + this.getName() + ", price : " + this.getPrice() + " type : " + this.getType() +" dishes :"+
+				 mainDish + ", ");
 	}
 }
