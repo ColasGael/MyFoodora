@@ -86,7 +86,12 @@ public class RestaurantTest {
 
 	@Test
 	public void testDisplaySortedFoodItems() {
-		restaurant.
+		//we sort the food items of the menu according to their price
+		restaurant.chooseShippedOrderPolicy("price");
+		//we display the sorted dish
+		restaurant.displaySortedFoodItems("dish");
+		//we display the sorted meals
+		restaurant.displaySortedFoodItems("meal");
 	}
 
 	@Test
