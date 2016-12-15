@@ -5,13 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import fr.ecp.is1220.MyFoodora.Courier;
-import fr.ecp.is1220.MyFoodora.Customer;
-import fr.ecp.is1220.MyFoodora.Dish;
-import fr.ecp.is1220.MyFoodora.Meal;
-import fr.ecp.is1220.MyFoodora.MyFoodora;
-import fr.ecp.is1220.MyFoodora.Order;
-import fr.ecp.is1220.MyFoodora.Restaurant;
+import fr.ecp.is1220.MyFoodora.*;
 
 public class CourierTest {
 	private static MyFoodora myFoodora;
@@ -27,6 +21,8 @@ public class CourierTest {
 	 * we create an example of order that will be used in the following tests
 	 */
 	private static Order order;
+	
+	private static Courier courier;
 
 	@BeforeClass
 	public static void importMyFoodora(){
@@ -45,22 +41,35 @@ public class CourierTest {
 			//the customer submit the order
 			order.submit(true, myFoodora);
 			
-			Courier courier = order.getCourier();
+			courier = order.getCourier();
 		}catch(Exception e){}
-	}
-	@Test
-	public void testAcceptDeliveryCall() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testSetPhoneNumber() {
-		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetBoard() {
-		fail("Not yet implemented");
+		Board board = courier.getBoard() ;
+		
+		//we check that the order is on the board
+		System.out.println(board);
 	}
-
+	
+	@Test
+	public void testAcceptDeliveryCall() throws OrderNotFoundException{
+		//we store the previous counter of the courier
+		int previousCounter = courier.getCounter();
+				
+		//the courier gets the call on his board : order of uniqueID 0
+		Board<Order> board = courier.getBoard();
+		Order order = board.findObsById(0);
+		
+		//the courier accept the delivery call
+		courier.acceptDeliveryCall(true, order, myFoodora);
+		
+		//we check that the counter of the courier has increased
+		int currentCounter = courier.getCounter();
+		assertEquals (previousCounter+1, currentCounter, 0);
+		
+		//we check that the board is now cleared
+		System.out.println(board);
+	}
 }

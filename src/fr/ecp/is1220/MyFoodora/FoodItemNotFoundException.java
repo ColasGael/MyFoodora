@@ -4,9 +4,6 @@ package fr.ecp.is1220.MyFoodora;
 public class FoodItemNotFoundException extends Exception {
 
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -9070158922691940906L;
 
 

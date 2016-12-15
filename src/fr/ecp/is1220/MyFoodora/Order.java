@@ -7,6 +7,15 @@ import java.util.Locale;
 public class Order implements java.io.Serializable {
 	
 	private static final long serialVersionUID = -372769376339718757L;
+	
+	/**
+	 * the static lastID ensure that the IDs of all orders are different
+	 */
+	protected static int lastID = 0 ;
+	/**
+	 * the unique ID of the order
+	 */
+	private int uniqueID;
 	/**
 	 * the date of the order
 	 */
@@ -46,6 +55,9 @@ public class Order implements java.io.Serializable {
 	 * @param restaurant
 	 */
 	public Order(Customer customer, Restaurant restaurant) {
+		this.uniqueID = lastID;
+		lastID++;
+		
 		this.customer = customer;
 		this.restaurant = restaurant;
 		this.dishes = new ArrayList<Dish>();
@@ -53,6 +65,10 @@ public class Order implements java.io.Serializable {
 		this.dateOfOrder = Calendar.getInstance() ;
 		this.courier = null ;
 		this.addressOfDelivery = customer.getAddress() ;
+	}
+
+	public int getUniqueID() {
+		return uniqueID;
 	}
 
 	public Customer getCustomer() {
@@ -189,7 +205,8 @@ public class Order implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "Order [dateOfOrder=" + dateOfOrder.get(Calendar.DAY_OF_MONTH) + " " + dateOfOrder.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + dateOfOrder.get(Calendar.YEAR) + "\n" 
+		return "Order [ID : " + this.uniqueID 
+				+ "dateOfOrder=" + dateOfOrder.get(Calendar.DAY_OF_MONTH) + " " + dateOfOrder.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + dateOfOrder.get(Calendar.YEAR) + "\n" 
 				+ "customer=" + customer + "\n" 
 				+ "restaurant=" + restaurant + "\n" 
 				+ "dishes=" + dishes + "\n"
