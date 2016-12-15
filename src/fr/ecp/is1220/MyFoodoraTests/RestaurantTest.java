@@ -9,9 +9,10 @@ import fr.ecp.is1220.MyFoodora.Restaurant;
 
 public class RestaurantTest {
 	
-	/**
+	 /*
+	 /
 	 * we create an example of restaurant that will be used in the following tests
-	 */
+	 *
 	@BeforeClass
 	public static void createRestaurant(){
 
@@ -63,5 +64,5 @@ public class RestaurantTest {
 	@Test
 	public void testDisplayMenu() {
 		
-	}
+	}*/
 }
