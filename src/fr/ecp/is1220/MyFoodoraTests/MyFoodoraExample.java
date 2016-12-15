@@ -97,6 +97,14 @@ public class MyFoodoraExample {
 		myFoodora.addUser(new Customer("Kevin", "Uzan", "PJ", "fpzkfpzof", new Position(69.2, 12.78), "kevin.uzan@myecp.fr", "0786822354"));
 		myFoodora.addUser(new Customer("Theo", "Bob", "theo7794", "password", new Position(84.3, 145.12), "theo.bob@gmail.com", "0786822354"));
 		
+		//we create an order
+		Order order = new Order(customer, hoki);
+		//we fill the order with food items
+		order.addDish(mainDish);
+		order.addMeal(fullMeal);
+		//the customer submit the order
+		order.submit(true, myFoodora);
+		
 		myFoodora.saveMyFoodora();
 	}
 	
