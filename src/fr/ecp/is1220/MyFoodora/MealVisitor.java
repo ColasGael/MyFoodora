@@ -1,12 +1,15 @@
 package fr.ecp.is1220.MyFoodora;
 
+import java.io.Serializable;
 /**
  * this visitor pattern enables us to deal with different implementation of
  *		computePrice
  *		addDish
  */
-public class MealVisitor {
+public class MealVisitor implements Serializable {
 	
+	private static final long serialVersionUID = 7171309403572030641L;
+
 	/**
 	 * compute the price of a full meal
 	 * @param fullMeal
@@ -85,7 +88,7 @@ public class MealVisitor {
 		fullMeal.setPrice (fullMeal.computePrice());
 		
 		//the type of the meals depends on the type of the dishes which compose the meal
-		if ((mainDish.getType()== starter.getType()) && (mainDish.getType()== dessert.getType())){
+		if ((mainDish != null)&&(starter != null)&&(dessert != null)&&(mainDish.getType()== starter.getType()) && (mainDish.getType()== dessert.getType())){
 			fullMeal.setType(mainDish.getType());
 		}
 	}
@@ -129,7 +132,7 @@ public class MealVisitor {
 		halfMeal.setPrice(halfMeal.computePrice());
 		
 		//the type of the meals depends on the type of the dishes which compose the meal
-		if (mainDish.getType()== sideDish.getType()){
+		if ((mainDish != null)&&(sideDish != null)&&(mainDish.getType()== sideDish.getType())){
 			halfMeal.setType(mainDish.getType());
 		}
 
