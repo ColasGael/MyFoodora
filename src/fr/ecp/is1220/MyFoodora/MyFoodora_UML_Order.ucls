@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="fr.ecp.is1220.MyFoodora.Courier" project="MYFOODORA" 
     file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Courier.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="811" y="87"/>    
+    <position height="-1" width="-1" x="813" y="147"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="fr.ecp.is1220.MyFoodora.Customer" project="MYFOODORA" 
     file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Customer.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-90" y="365"/>    
+    <position height="-1" width="-1" x="27" y="457"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="fr.ecp.is1220.MyFoodora.Board" project="MYFOODORA" 
     file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Board.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="602" y="789"/>    
+    <position height="-1" width="-1" x="482" y="859"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

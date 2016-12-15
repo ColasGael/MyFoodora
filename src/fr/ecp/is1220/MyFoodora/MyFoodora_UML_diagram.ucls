@@ -1,15 +1,1549 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.13" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="fr.ecp.is1220.MyFoodora.MyFoodora" project="MYFOODORA" 
-    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/MyFoodora.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="537" y="110"/>    
+  <class id="1" language="java" name="fr.ecp.is1220.MyFoodora.Manager" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Manager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="293" x="1956" y="-388"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
+  <class id="2" language="java" name="fr.ecp.is1220.MyFoodora.Starter" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Starter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="267" x="-465" y="5356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="fr.ecp.is1220.MyFoodora.Meal" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Meal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="263" x="-219" y="4062"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="fr.ecp.is1220.MyFoodora.SorterPrice" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/SorterPrice.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="267" x="-595" y="1680"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="fr.ecp.is1220.MyFoodora.UserNotFoundException" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/UserNotFoundException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="261" x="1785" y="1680"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="fr.ecp.is1220.MyFoodora.TargetProfitPolicyFactory" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/TargetProfitPolicyFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="267" x="2370" y="39"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="fr.ecp.is1220.MyFoodora.Board" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Board.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="267" x="597" y="4525"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="fr.ecp.is1220.MyFoodora.FoodItemFactory" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/FoodItemFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="267" x="-753" y="3473"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="fr.ecp.is1220.MyFoodora.MainDish" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/MainDish.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="260" x="-158" y="5356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="fr.ecp.is1220.MyFoodora.FastestDeliveryPolicy" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/FastestDeliveryPolicy.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="253" x="1387" y="322"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="fr.ecp.is1220.MyFoodora.FidelityCard" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/FidelityCard.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="267" x="353" y="2961"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="fr.ecp.is1220.MyFoodora.User" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="567" width="263" x="679" y="1680"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="fr.ecp.is1220.MyFoodora.NonReachableTargetProfitException" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/NonReachableTargetProfitException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="267" x="2615" y="2287"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="fr.ecp.is1220.MyFoodora.DeliveryPolicyFactory" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/DeliveryPolicyFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="235" x="1700" y="39"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="fr.ecp.is1220.MyFoodora.Position" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Position.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="263" x="172" y="4525"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="fr.ecp.is1220.MyFoodora.IdentificationIncorrectException" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/IdentificationIncorrectException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="267" x="1289" y="1680"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="fr.ecp.is1220.MyFoodora.TargetProfitPolicyServiceFee" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/TargetProfitPolicyServiceFee.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="261" x="2038" y="322"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="fr.ecp.is1220.MyFoodora.BasicFidelityCard" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/BasicFidelityCard.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="267" x="637" y="3190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="fr.ecp.is1220.MyFoodora.Customer" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Customer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="303" x="925" y="2287"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="fr.ecp.is1220.MyFoodora.OrderNotFoundException" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/OrderNotFoundException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="263" x="597" y="4826"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="fr.ecp.is1220.MyFoodora.NoPlaceInMealException" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/NoPlaceInMealException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="178" x="48" y="5037"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="fr.ecp.is1220.MyFoodora.TargetProfitPolicyMarkup" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/TargetProfitPolicyMarkup.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="255" x="2339" y="322"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="fr.ecp.is1220.MyFoodora.FullMeal" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/FullMeal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="267" x="-627" y="4525"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="fr.ecp.is1220.MyFoodora.Dish" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Dish.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="262" x="-627" y="5037"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="fr.ecp.is1220.MyFoodora.FidelityCardFactory" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/FidelityCardFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="263" x="313" y="2714"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="fr.ecp.is1220.MyFoodora.Order" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Order.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="549" width="261" x="597" y="3473"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="27" language="java" name="fr.ecp.is1220.MyFoodora.DeliveryPolicy" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/DeliveryPolicy.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="253" x="1724" y="4525"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="28" language="java" name="fr.ecp.is1220.MyFoodora.UserFactory" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/UserFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="326" x="313" y="1680"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="fr.ecp.is1220.MyFoodora.AccountDeactivatedException" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/AccountDeactivatedException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="267" x="982" y="1680"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="fr.ecp.is1220.MyFoodora.SorterCounter" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/SorterCounter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="267" x="-246" y="1680"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="fr.ecp.is1220.MyFoodora.Courier" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Courier.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="271" x="1411" y="4062"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="fr.ecp.is1220.MyFoodora.PointFidelityCard" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/PointFidelityCard.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="423" width="267" x="147" y="4062"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="fr.ecp.is1220.MyFoodora.Dessert" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Dessert.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="267" x="-772" y="5356"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="fr.ecp.is1220.MyFoodora.MyFoodora" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/MyFoodora.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="765" width="293" x="1347" y="875"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="fr.ecp.is1220.MyFoodora.HalfMeal" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/HalfMeal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="263" x="-299" y="4525"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="fr.ecp.is1220.MyFoodora.SorterFoodItemFactory" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/SorterFoodItemFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="267" x="-288" y="875"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="fr.ecp.is1220.MyFoodora.FairOccupationDeliveryPolicy" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/FairOccupationDeliveryPolicy.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="143" width="253" x="1682" y="322"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="fr.ecp.is1220.MyFoodora.FoodItem" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/FoodItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="267" x="-225" y="2714"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="fr.ecp.is1220.MyFoodora.LotteryFidelityCard" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/LotteryFidelityCard.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="263" x="313" y="3190"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="40" language="java" name="fr.ecp.is1220.MyFoodora.TargetProfitPolicy" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/TargetProfitPolicy.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="236" x="2615" y="1680"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="41" language="java" name="fr.ecp.is1220.MyFoodora.MyFoodoraClient" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/MyFoodoraClient.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="143" x="191" y="39"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="fr.ecp.is1220.MyFoodora.FoodItemNotFoundException" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/FoodItemNotFoundException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="267" x="-637" y="875"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="fr.ecp.is1220.MyFoodora.Restaurant" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Restaurant.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="513" width="261" x="10" y="322"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="44" language="java" name="fr.ecp.is1220.MyFoodora.TargetProfitPolicyDeliveryCost" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/TargetProfitPolicyDeliveryCost.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="117" width="266" x="2655" y="322"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="45" language="java" name="fr.ecp.is1220.MyFoodora.SorterFoodItem" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/SorterFoodItem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="256" x="-307" y="2287"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="46" language="java" name="fr.ecp.is1220.MyFoodora.MealVisitor" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/MealVisitor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="263" x="-299" y="4826"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="fr.ecp.is1220.MyFoodora.Menu" project="MYFOODORA" 
+    file="/MYFOODORA/src/fr/ecp/is1220/MyFoodora/Menu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="405" width="267" x="-425" y="3473"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="48">    
+    <bendpoint x="-340" y="875"/>    
+    <bendpoint x="-647" y="1680"/>    
+    <bendpoint x="-668" y="2287"/>    
+    <bendpoint x="-673" y="2714"/>    
+    <bendpoint x="-709" y="2961"/>    
+    <bendpoint x="-746" y="3190"/>    
+    <bendpoint x="-784" y="3473"/>    
+    <bendpoint x="-784" y="4062"/>    
+    <bendpoint x="-763" y="4525"/>    
+    <bendpoint x="-742" y="4826"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="49">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="43"/>  
+  </dependency>  
+  <dependency id="50">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <association id="51">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="52" name="meals"/>      
+      <multiplicity id="53" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="54">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <dependency id="55">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="56">    
+    <bendpoint x="2624" y="322"/>    
+    <bendpoint x="2624" y="875"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="40"/>  
+  </dependency>  
+  <dependency id="57">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <dependency id="58">    
+    <bendpoint x="-214" y="322"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="59">    
+    <bendpoint x="-314" y="5037"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <dependency id="60">    
+    <bendpoint x="-353" y="4062"/>    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <association id="61">    
+    <bendpoint x="-6" y="4525"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="62" name="mealVisitor"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="46" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="64">    
+    <bendpoint x="322" y="322"/>    
+    <bendpoint x="272" y="875"/>    
+    <bendpoint x="219" y="1680"/>    
+    <bendpoint x="261" y="2287"/>    
+    <bendpoint x="606" y="2714"/>    
+    <bendpoint x="779" y="2961"/>    
+    <bendpoint x="955" y="3190"/>    
+    <bendpoint x="955" y="3473"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <realization id="65">    
+    <bendpoint x="2346" y="875"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="40"/>  
+  </realization>  
+  <association id="66">    
+    <bendpoint x="-330" y="4826"/>    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="67" name="sideDish"/>      
+      <multiplicity id="68" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="69">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="70" name="meals"/>      
+      <multiplicity id="71" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="72">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <dependency id="73">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <dependency id="74">    
+    <bendpoint x="2476" y="875"/>    
+    <bendpoint x="2476" y="1680"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <dependency id="75">    
+    <bendpoint x="-220" y="5037"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="76">    
+    <bendpoint x="1170" y="4062"/>    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <association id="77">    
+    <bendpoint x="-679" y="4826"/>    
+    <bendpoint x="-679" y="5037"/>    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="78" name="dessert"/>      
+      <multiplicity id="79" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="80">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="81" name="courier"/>      
+      <multiplicity id="82" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="83">    
+    <bendpoint x="2951" y="39"/>    
+    <bendpoint x="2951" y="322"/>    
+    <bendpoint x="2930" y="875"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="40"/>  
+  </dependency>  
+  <generalization id="84">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="85">    
+    <bendpoint x="-528" y="4062"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="35"/>  
+  </dependency>  
+  <association id="86">    
+    <bendpoint x="934" y="3190"/>    
+    <bendpoint x="934" y="2961"/>    
+    <bendpoint x="934" y="2714"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="87" name="customer"/>      
+      <multiplicity id="88" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="89">    
+    <bendpoint x="57" y="4826"/>    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <realization id="90">    
+    <bendpoint x="2645" y="875"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="40"/>  
+  </realization>  
+  <generalization id="91">    
+    <bendpoint x="51" y="3473"/>    
+    <bendpoint x="51" y="3190"/>    
+    <bendpoint x="51" y="2961"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <dependency id="92">    
+    <bendpoint x="2325" y="875"/>    
+    <bendpoint x="2325" y="1680"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="93">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="94" name="userFactory"/>      
+      <multiplicity id="95" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="96">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <dependency id="97">    
+    <bendpoint x="1042" y="875"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <realization id="98">    
+    <bendpoint x="1712" y="875"/>    
+    <bendpoint x="1712" y="1680"/>    
+    <bendpoint x="1712" y="2287"/>    
+    <bendpoint x="1712" y="2714"/>    
+    <bendpoint x="1712" y="2961"/>    
+    <bendpoint x="1733" y="3190"/>    
+    <bendpoint x="1733" y="3473"/>    
+    <bendpoint x="1733" y="4062"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <dependency id="99">    
+    <bendpoint x="-272" y="5037"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="100">    
+    <bendpoint x="301" y="322"/>    
+    <bendpoint x="230" y="875"/>    
+    <bendpoint x="198" y="1680"/>    
+    <bendpoint x="198" y="2287"/>    
+    <bendpoint x="198" y="2714"/>    
+    <bendpoint x="198" y="2961"/>    
+    <bendpoint x="219" y="3190"/>    
+    <bendpoint x="402" y="3473"/>    
+    <bendpoint x="585" y="4062"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <association id="101">    
+    <bendpoint x="135" y="875"/>    
+    <bendpoint x="135" y="1680"/>    
+    <bendpoint x="135" y="2287"/>    
+    <bendpoint x="135" y="2714"/>    
+    <bendpoint x="135" y="2961"/>    
+    <bendpoint x="135" y="3190"/>    
+    <bendpoint x="126" y="3473"/>    
+    <bendpoint x="116" y="4062"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="102" name="address"/>      
+      <multiplicity id="103" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="104">    
+    <bendpoint x="-298" y="1680"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="105">    
+    <bendpoint x="343" y="322"/>    
+    <bendpoint x="343" y="875"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="106">    
+    <bendpoint x="2972" y="39"/>    
+    <bendpoint x="2972" y="322"/>    
+    <bendpoint x="2972" y="875"/>    
+    <bendpoint x="2972" y="1680"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="107">    
+    <bendpoint x="-319" y="875"/>    
+    <bendpoint x="-626" y="1680"/>    
+    <bendpoint x="-626" y="2287"/>    
+    <bendpoint x="-626" y="2714"/>    
+    <bendpoint x="-626" y="2961"/>    
+    <bendpoint x="-626" y="3190"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="108" name="foodItemFactory"/>      
+      <multiplicity id="109" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="110">    
+    <bendpoint x="2497" y="875"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="40"/>  
+  </realization>  
+  <generalization id="111">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <dependency id="112">    
+    <bendpoint x="322" y="2961"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="39"/>  
+  </dependency>  
+  <generalization id="113">    
+    <bendpoint x="301" y="875"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="114">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="46"/>  
+  </dependency>  
+  <dependency id="115">    
+    <bendpoint x="364" y="39"/>    
+    <bendpoint x="364" y="322"/>    
+    <bendpoint x="322" y="875"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="28"/>  
+  </dependency>  
+  <association id="116">    
+    <bendpoint x="507" y="4062"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="117" name="addressOfDelivery"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="119">    
+    <bendpoint x="-21" y="322"/>    
+    <bendpoint x="30" y="875"/>    
+    <bendpoint x="51" y="1680"/>    
+    <bendpoint x="72" y="2287"/>    
+    <bendpoint x="93" y="2714"/>    
+    <bendpoint x="93" y="2961"/>    
+    <bendpoint x="93" y="3190"/>    
+    <bendpoint x="95" y="3473"/>    
+    <bendpoint x="95" y="4062"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="120">    
+    <bendpoint x="1356" y="39"/>    
+    <bendpoint x="1356" y="322"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="121" name="myFoodora"/>      
+      <multiplicity id="122" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="123">    
+    <bendpoint x="606" y="4062"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="124">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <association id="125">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="126" name="targetProfitPolicy"/>      
+      <multiplicity id="127" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="128">    
+    <bendpoint x="778" y="322"/>    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="129" name="myFoodora"/>      
+      <multiplicity id="130" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="131">    
+    <bendpoint x="2007" y="39"/>    
+    <bendpoint x="2007" y="322"/>    
+    <bendpoint x="2052" y="875"/>    
+    <bendpoint x="2097" y="1680"/>    
+    <bendpoint x="1975" y="2287"/>    
+    <bendpoint x="1854" y="2714"/>    
+    <bendpoint x="1733" y="2961"/>    
+    <bendpoint x="1712" y="3190"/>    
+    <bendpoint x="1691" y="3473"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="132">    
+    <bendpoint x="240" y="1680"/>    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="133" name="shippedOrderPolicy"/>      
+      <multiplicity id="134" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="135">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="136" name="sorterFoodItemFactory"/>      
+      <multiplicity id="137" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="138">    
+    <bendpoint x="-710" y="322"/>    
+    <bendpoint x="-710" y="875"/>    
+    <bendpoint x="-710" y="1680"/>    
+    <bendpoint x="-710" y="2287"/>    
+    <bendpoint x="-694" y="2714"/>    
+    <bendpoint x="-647" y="2961"/>    
+    <bendpoint x="-498" y="3190"/>    
+    <bendpoint x="-107" y="3473"/>    
+    <bendpoint x="74" y="4062"/>    
+    <bendpoint x="120" y="4525"/>    
+    <bendpoint x="120" y="4826"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="139">    
+    <bendpoint x="-668" y="322"/>    
+    <bendpoint x="-668" y="875"/>    
+    <bendpoint x="-668" y="1680"/>    
+    <bendpoint x="-647" y="2287"/>    
+    <bendpoint x="-577" y="2714"/>    
+    <bendpoint x="-506" y="2961"/>    
+    <bendpoint x="-435" y="3190"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <association id="140">    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="141" name="mealOfTheWeek"/>      
+      <multiplicity id="142" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="143">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="144">    
+    <bendpoint x="72" y="875"/>    
+    <bendpoint x="72" y="1680"/>    
+    <bendpoint x="51" y="2287"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <dependency id="145">    
+    <bendpoint x="36" y="4826"/>    
+    <bendpoint x="17" y="5037"/>    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <realization id="146">    
+    <bendpoint x="1754" y="875"/>    
+    <bendpoint x="1754" y="1680"/>    
+    <bendpoint x="1754" y="2287"/>    
+    <bendpoint x="1754" y="2714"/>    
+    <bendpoint x="1754" y="2961"/>    
+    <bendpoint x="1754" y="3190"/>    
+    <bendpoint x="1754" y="3473"/>    
+    <bendpoint x="1754" y="4062"/>    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <dependency id="147">    
+    <bendpoint x="-679" y="4062"/>    
+    <bendpoint x="-679" y="4525"/>    
+    <bendpoint x="-616" y="4826"/>    
+    <bendpoint x="-335" y="5037"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="148">    
+    <bendpoint x="156" y="875"/>    
+    <bendpoint x="156" y="1680"/>    
+    <bendpoint x="162" y="2287"/>    
+    <bendpoint x="168" y="2714"/>    
+    <bendpoint x="173" y="2961"/>    
+    <bendpoint x="177" y="3190"/>    
+    <bendpoint x="332" y="3473"/>    
+    <bendpoint x="465" y="4062"/>    
+    <bendpoint x="465" y="4525"/>    
+    <bendpoint x="465" y="4826"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <realization id="149">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="45"/>  
+  </realization>  
+  <association id="150">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="151" name="position"/>      
+      <multiplicity id="152" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="153">    
+    <bendpoint x="1649" y="1680"/>    
+    <bendpoint x="1670" y="2287"/>    
+    <bendpoint x="1670" y="2714"/>    
+    <bendpoint x="1670" y="2961"/>    
+    <bendpoint x="1691" y="3190"/>    
+    <bendpoint x="1712" y="3473"/>    
+    <bendpoint x="1712" y="4062"/>    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="154" name="deliveryPolicy"/>      
+      <multiplicity id="155" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="156">    
+    <bendpoint x="251" y="875"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="43"/>  
+  </dependency>  
+  <dependency id="157">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="46"/>  
+  </dependency>  
+  <dependency id="158">    
+    <bendpoint x="-21" y="2287"/>    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <dependency id="159">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="160">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="37"/>  
+  </dependency>  
+  <dependency id="161">    
+    <bendpoint x="1733" y="875"/>    
+    <bendpoint x="1733" y="1680"/>    
+    <bendpoint x="1733" y="2287"/>    
+    <bendpoint x="1733" y="2714"/>    
+    <bendpoint x="1691" y="2961"/>    
+    <bendpoint x="1670" y="3190"/>    
+    <bendpoint x="1670" y="3473"/>    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <dependency id="162">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <association id="163">    
+    <bendpoint x="-616" y="4062"/>    
+    <bendpoint x="-658" y="4525"/>    
+    <bendpoint x="-658" y="4826"/>    
+    <end type="SOURCE" refId="47" navigable="false">      
+      <attribute id="164" name="dishes"/>      
+      <multiplicity id="165" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="166">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="167" name="fidelityCardFactory"/>      
+      <multiplicity id="168" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="169">    
+    <bendpoint x="448" y="322"/>    
+    <bendpoint x="448" y="875"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <generalization id="170">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <association id="171">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="172" name="deliveryPolicyFactory"/>      
+      <multiplicity id="173" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="174">    
+    <bendpoint x="1607" y="1680"/>    
+    <bendpoint x="1503" y="2287"/>    
+    <bendpoint x="1399" y="2714"/>    
+    <bendpoint x="1188" y="2961"/>    
+    <bendpoint x="976" y="3190"/>    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="175" name="completedOrders"/>      
+      <multiplicity id="176" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="177">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="178">    
+    <bendpoint x="1357" y="2287"/>    
+    <bendpoint x="1357" y="2714"/>    
+    <bendpoint x="1357" y="2961"/>    
+    <bendpoint x="1357" y="3190"/>    
+    <bendpoint x="1357" y="3473"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <association id="179">    
+    <bendpoint x="9" y="875"/>    
+    <bendpoint x="-277" y="1680"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="180" name="shippedOrderPolicy"/>      
+      <multiplicity id="181" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="182">    
+    <bendpoint x="-6" y="4826"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="183">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="29"/>  
+  </dependency>  
+  <dependency id="184">    
+    <bendpoint x="-507" y="4062"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <dependency id="185">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="186">    
+    <bendpoint x="1965" y="39"/>    
+    <bendpoint x="1965" y="322"/>    
+    <bendpoint x="1965" y="875"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="187">    
+    <bendpoint x="1586" y="1680"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="188">    
+    <bendpoint x="-595" y="4826"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="189">    
+    <bendpoint x="364" y="875"/>    
+    <bendpoint x="261" y="1680"/>    
+    <bendpoint x="240" y="2287"/>    
+    <bendpoint x="225" y="2714"/>    
+    <bendpoint x="219" y="2961"/>    
+    <bendpoint x="198" y="3190"/>    
+    <bendpoint x="311" y="3473"/>    
+    <bendpoint x="444" y="4062"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="190">    
+    <bendpoint x="99" y="4525"/>    
+    <bendpoint x="99" y="4826"/>    
+    <bendpoint x="256" y="5037"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="191" name="mainDish"/>      
+      <multiplicity id="192" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="193">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <association id="194">    
+    <bendpoint x="486" y="4062"/>    
+    <bendpoint x="141" y="4525"/>    
+    <bendpoint x="15" y="4826"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="195" name="dishes"/>      
+      <multiplicity id="196" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="197">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="198" name="targetProfitPolicyFactory"/>      
+      <multiplicity id="199" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="200">    
+    <bendpoint x="2951" y="875"/>    
+    <bendpoint x="2951" y="1680"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <dependency id="201">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <association id="202">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="203" name="users"/>      
+      <multiplicity id="204" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="205">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="206">    
+    <bendpoint x="606" y="3190"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <generalization id="207">    
+    <bendpoint x="1420" y="3473"/>    
+    <bendpoint x="1420" y="3190"/>    
+    <bendpoint x="1420" y="2961"/>    
+    <bendpoint x="1420" y="2714"/>    
+    <bendpoint x="1420" y="2287"/>    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="208">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="209">    
+    <bendpoint x="78" y="4525"/>    
+    <bendpoint x="78" y="4826"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="210">    
+    <bendpoint x="240" y="2961"/>    
+    <bendpoint x="156" y="3190"/>    
+    <bendpoint x="156" y="3473"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="32"/>  
+  </dependency>  
+  <dependency id="211">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="212">    
+    <bendpoint x="997" y="2714"/>    
+    <bendpoint x="997" y="2961"/>    
+    <bendpoint x="997" y="3190"/>    
+    <bendpoint x="888" y="3473"/>    
+    <bendpoint x="564" y="4062"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="213" name="address"/>      
+      <multiplicity id="214" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="215">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="216">    
+    <bendpoint x="-721" y="4062"/>    
+    <bendpoint x="-721" y="4525"/>    
+    <bendpoint x="-721" y="4826"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="217">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="218">    
+    <bendpoint x="2993" y="39"/>    
+    <bendpoint x="2993" y="322"/>    
+    <bendpoint x="2993" y="875"/>    
+    <bendpoint x="2993" y="1680"/>    
+    <bendpoint x="2993" y="2287"/>    
+    <bendpoint x="2993" y="2714"/>    
+    <bendpoint x="2993" y="2961"/>    
+    <bendpoint x="2993" y="3190"/>    
+    <bendpoint x="2993" y="3473"/>    
+    <bendpoint x="2993" y="4062"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="219">    
+    <bendpoint x="177" y="3473"/>    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <generalization id="220">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="221">    
+    <bendpoint x="648" y="2714"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="222" name="fidelityCard"/>      
+      <multiplicity id="223" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="224">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <dependency id="225">    
+    <bendpoint x="1986" y="322"/>    
+    <bendpoint x="2031" y="875"/>    
+    <bendpoint x="2076" y="1680"/>    
+    <bendpoint x="2076" y="2287"/>    
+    <bendpoint x="2076" y="2714"/>    
+    <bendpoint x="2076" y="2961"/>    
+    <bendpoint x="2076" y="3190"/>    
+    <bendpoint x="2076" y="3473"/>    
+    <bendpoint x="2076" y="4062"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <dependency id="226">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="27"/>  
+  </dependency>  
+  <association id="227">    
+    <bendpoint x="261" y="3190"/>    
+    <bendpoint x="261" y="2961"/>    
+    <bendpoint x="246" y="2714"/>    
+    <bendpoint x="219" y="2287"/>    
+    <bendpoint x="177" y="1680"/>    
+    <bendpoint x="177" y="875"/>    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="228" name="restaurant"/>      
+      <multiplicity id="229" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="43" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="230">    
+    <bendpoint x="1378" y="2714"/>    
+    <bendpoint x="1378" y="2961"/>    
+    <bendpoint x="1378" y="3190"/>    
+    <bendpoint x="1336" y="3473"/>    
+    <bendpoint x="1336" y="4062"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="231" name="offerBoard"/>      
+      <multiplicity id="232" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="233">    
+    <bendpoint x="51" y="875"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="234">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <dependency id="235">    
+    <bendpoint x="-330" y="4525"/>    
+    <bendpoint x="-372" y="4826"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="24"/>  
+  </dependency>  
+  <dependency id="236">    
+    <bendpoint x="-401" y="2287"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="38"/>  
+  </dependency>  
+  <realization id="237">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="45"/>  
+  </realization>  
+  <dependency id="238">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="239">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <generalization id="240">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <dependency id="241">    
+    <bendpoint x="1189" y="875"/>    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="242">    
+    <bendpoint x="650" y="2961"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="243">    
+    <bendpoint x="160" y="39"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="43"/>  
+  </dependency>  
+  <generalization id="244">    
+    <bendpoint x="-700" y="4826"/>    
+    <bendpoint x="-700" y="4525"/>    
+    <bendpoint x="-658" y="4062"/>    
+    <bendpoint x="-456" y="3473"/>    
+    <bendpoint x="-456" y="3190"/>    
+    <bendpoint x="-456" y="2961"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="38"/>  
+  </generalization>  
+  <dependency id="245">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <generalization id="246">    
+    <bendpoint x="469" y="39"/>    
+    <bendpoint x="469" y="322"/>    
+    <bendpoint x="406" y="875"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="247">    
+    <bendpoint x="-689" y="322"/>    
+    <bendpoint x="-689" y="875"/>    
+    <bendpoint x="-689" y="1680"/>    
+    <bendpoint x="-689" y="2287"/>    
+    <bendpoint x="-647" y="2714"/>    
+    <bendpoint x="-562" y="2961"/>    
+    <bendpoint x="-477" y="3190"/>    
+    <bendpoint x="-128" y="3473"/>    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="248">    
+    <bendpoint x="114" y="875"/>    
+    <bendpoint x="114" y="1680"/>    
+    <bendpoint x="114" y="2287"/>    
+    <bendpoint x="114" y="2714"/>    
+    <bendpoint x="114" y="2961"/>    
+    <bendpoint x="114" y="3190"/>    
+    <bendpoint x="74" y="3473"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <generalization id="249">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <dependency id="250">    
+    <bendpoint x="-742" y="4062"/>    
+    <bendpoint x="-742" y="4525"/>    
+    <bendpoint x="-763" y="4826"/>    
+    <bendpoint x="-763" y="5037"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="33"/>  
+  </dependency>  
+  <association id="251">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="252" name="board"/>      
+      <multiplicity id="253" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="254">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="255">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="256">    
+    <bendpoint x="800" y="2714"/>    
+    <bendpoint x="800" y="2961"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="257">    
+    <bendpoint x="-351" y="4826"/>    
+    <bendpoint x="-293" y="5037"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="258">    
+    <bendpoint x="1628" y="3473"/>    
+    <bendpoint x="1628" y="3190"/>    
+    <bendpoint x="1628" y="2961"/>    
+    <bendpoint x="1628" y="2714"/>    
+    <bendpoint x="1628" y="2287"/>    
+    <bendpoint x="1628" y="1680"/>    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="259">    
+    <bendpoint x="1691" y="875"/>    
+    <bendpoint x="1670" y="1680"/>    
+    <bendpoint x="1649" y="2287"/>    
+    <bendpoint x="1524" y="2714"/>    
+    <bendpoint x="1399" y="2961"/>    
+    <bendpoint x="1336" y="3190"/>    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="260">    
+    <bendpoint x="427" y="875"/>    
+    <bendpoint x="282" y="1680"/>    
+    <bendpoint x="282" y="2287"/>    
+    <bendpoint x="282" y="2714"/>    
+    <bendpoint x="282" y="2961"/>    
+    <bendpoint x="282" y="3190"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <association id="261">    
+    <bendpoint x="93" y="875"/>    
+    <bendpoint x="93" y="1680"/>    
+    <bendpoint x="93" y="2287"/>    
+    <bendpoint x="72" y="2714"/>    
+    <bendpoint x="72" y="2961"/>    
+    <bendpoint x="30" y="3190"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="262" name="menu"/>      
+      <multiplicity id="263" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="47" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="264">    
+    <bendpoint x="385" y="322"/>    
+    <bendpoint x="385" y="875"/>    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="265" name="currentUser"/>      
+      <multiplicity id="266" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="267">    
+    <bendpoint x="-637" y="4826"/>    
+    <bendpoint x="-658" y="5037"/>    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="268" name="starter"/>      
+      <multiplicity id="269" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="270">    
+    <bendpoint x="-763" y="4062"/>    
+    <bendpoint x="-784" y="4525"/>    
+    <bendpoint x="-784" y="4826"/>    
+    <bendpoint x="-742" y="5037"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="271">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="272">    
+    <bendpoint x="-637" y="4062"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="273">    
+    <bendpoint x="1670" y="875"/>    
+    <bendpoint x="1691" y="1680"/>    
+    <bendpoint x="1691" y="2287"/>    
+    <bendpoint x="1691" y="2714"/>    
+    <bendpoint x="1649" y="2961"/>    
+    <bendpoint x="1649" y="3190"/>    
+    <bendpoint x="1649" y="3473"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="31"/>  
+  </dependency>  
+  <generalization id="274">    
+    <bendpoint x="240" y="3473"/>    
+    <bendpoint x="240" y="3190"/>    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <dependency id="275">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="44"/>  
+  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
