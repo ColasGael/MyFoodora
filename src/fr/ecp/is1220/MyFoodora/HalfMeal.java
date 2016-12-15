@@ -86,7 +86,7 @@ public class HalfMeal extends Meal {
 
 	@Override
 	public String toString() {
-		return ("Half" + super.toString() + sideDish + "/n");
+		return ("Half" + super.toString() + sideDish + "\n");
 	}
 	
 	

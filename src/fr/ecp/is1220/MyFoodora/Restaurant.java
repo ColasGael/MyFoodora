@@ -203,9 +203,7 @@ public class Restaurant extends User {
 	public void increaseCounter() {
 		this.counter++ ;
 	}
-	
-	
-	
+		
 	@Override
 	public String toString(){
 		return ("Name : " + this.getName() + "\n" + 

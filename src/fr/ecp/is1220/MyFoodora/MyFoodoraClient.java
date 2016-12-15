@@ -225,15 +225,20 @@ public class MyFoodoraClient {
 						System.out.println("Here is your menu :");
 						currentRestaurant.displayMenu();
 						System.out.println("Which dish do you want to add to a meal ? Enter its name :");
-						sc.next();
-						String mealName = sc.nextLine();
+						String dishName = sc.next()+sc.nextLine();
 						System.out.println("Which meal do you want to complete ? Enter its name :");
-						sc.next();
-						String dishName = sc.nextLine();
+						//sc.next();
+						String mealName = sc.nextLine();
 						try{
 							currentRestaurant.addDish2Meal(mealName, dishName);
+							System.out.println("The dish \""+dishName+"\" has been added to the meal \""+mealName+"\".");
+							System.out.println("Here is your updated menu :");
+							System.out.println(currentRestaurant.findMealByName(mealName));
+							System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
+							input = sc.next() ;
+							return "next" ;
 						}catch(NullPointerException e){
-							System.err.println("Your dish name and meal name are not valid.");
+							System.err.println("The dish \""+dishName+"\" and/or the meal \""+mealName+"\" do not exist.");
 						}
 					break;
 				case("disconnect"):
@@ -241,7 +246,7 @@ public class MyFoodoraClient {
 				case("close"):
 					return "close" ;
 				default:
-					System.out.println("This choice is not available, please try again \n");
+					System.out.println("\nThis choice is not available, please try again \n");
 				}
 			}
 			break;
