@@ -16,9 +16,14 @@ public class MealVisitor {
 		Starter starter = fullMeal.getStarter();
 		MainDish mainDish = fullMeal.getMainDish();
 		Dessert dessert = fullMeal.getDessert();
+		
 		double discountFactor = fullMeal.getDiscountFactor();
 		
-		double price = (starter.getPrice() + mainDish.getPrice() + dessert.getPrice())*(1-discountFactor);
+		double starterPrice = (starter == null ? 0 : starter.getPrice());
+		double mainDishPrice = (mainDish == null ? 0 : mainDish.getPrice());
+		double dessertPrice = (dessert == null ? 0 : dessert.getPrice());
+		
+		double price = (starterPrice + mainDishPrice + dessertPrice)*(1-discountFactor);
 		return (price);
 	}
 	
@@ -30,9 +35,13 @@ public class MealVisitor {
 	public double computePriceMeal(HalfMeal halfMeal){
 		Dish sideDish = halfMeal.getSideDish();
 		MainDish mainDish = halfMeal.getMainDish();
+		
 		double discountFactor = halfMeal.getDiscountFactor();
 		
-		double price = (sideDish.getPrice() + mainDish.getPrice())*(1-discountFactor);
+		double sideDishPrice = (sideDish == null ? 0 : sideDish.getPrice());
+		double mainDishPrice = (mainDish == null ? 0 : mainDish.getPrice());
+		
+		double price = (sideDishPrice + mainDishPrice)*(1-discountFactor);
 		return (price);
 	}
 	

@@ -21,7 +21,7 @@ public abstract class Meal extends FoodItem {
 	 */
 	protected double discountFactor = 0.05; 
 	
-	protected MealVisitor mealVisitor ;
+	protected MealVisitor mealVisitor = new MealVisitor();
 	
 	/**
 	 * creates a Meal object of a given mainDish
