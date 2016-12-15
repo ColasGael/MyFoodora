@@ -128,7 +128,11 @@ public class MyFoodoraClient {
 		Restaurant currentRestaurant = (Restaurant)currentUser ;
 		switch (input){
 		case("help"):
-			System.out.println("\"edit\" : edit your menu\n\"manage\" : manage your discounts\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
+			System.out.println("\"displayMenu\" : display your menu\n\"edit\" : edit your menu\n\"manage\" : manage your discounts\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
+			break;
+		case("displayMenu"):
+			System.out.println("Here is your menu :");
+			currentRestaurant.displayMenu();
 			break;
 		case("edit"):
 			while(!input.equals("close")){
@@ -226,9 +230,9 @@ public class MyFoodoraClient {
 						input = sc.next();
 						switch(input){
 						case("meal"):
-							System.out.println("Here is your menu :");
-							currentRestaurant.displayMenu();
-							System.out.println("Enter the name of the meal :");
+							System.out.println("Here are your meals :");
+							System.out.println(currentRestaurant.getMenu().getMeals());
+							System.out.println("\nEnter the name of the meal :");
 							sc.nextLine();
 							input = sc.nextLine();
 							try{
@@ -243,9 +247,9 @@ public class MyFoodoraClient {
 							}
 							break ;
 						case("dish"):
-							System.out.println("Here is your menu :");
-							currentRestaurant.displayMenu();
-							System.out.println("Enter the name of the dish :");
+							System.out.println("Here are your dishes :");
+							System.out.println(currentRestaurant.getMenu().getMeals());
+							System.out.println("\nEnter the name of the dish :");
 							sc.nextLine();
 							input = sc.nextLine();
 							try{
@@ -278,7 +282,7 @@ public class MyFoodoraClient {
 						try{
 							currentRestaurant.addDish2Meal(mealName, dishName);
 							System.out.println("The dish \""+dishName+"\" has been added to the meal \""+mealName+"\".");
-							System.out.println("Here is your updated menu :");
+							System.out.println("Here is your updated meal :");
 							System.out.println(currentRestaurant.findMealByName(mealName));
 							System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 							input = sc.next() ;
@@ -307,12 +311,13 @@ public class MyFoodoraClient {
 					System.out.println("Your generic discount factor is "+currentRestaurant.getMenu().getGenericDiscountFactor());
 					System.out.println("Enter the new value of your generic discount factor :");
 					double factor = -1 ;
-					while((factor<0)||(factor>100)){
+					while((factor<0)||(factor>1)){
 						try{
 							factor = sc.nextDouble();
 							currentRestaurant.setGenericDiscountFactor(factor);
 						}catch(InputMismatchException e){
 							System.err.println("You must enter a generic discount factor.");
+							sc.next();
 						}
 					}
 					System.out.println("Your new generic discount factor is "+currentRestaurant.getMenu().getGenericDiscountFactor());
@@ -323,12 +328,13 @@ public class MyFoodoraClient {
 					System.out.println("Your special discount factor is "+currentRestaurant.getMenu().getSpecialDiscountFactor());
 					System.out.println("Enter the new value of your special discount factor :");
 					double specialFactor = -1 ;
-					while((specialFactor<0)||(specialFactor>100)){
+					while((specialFactor<0)||(specialFactor>1)){
 						try{
 							specialFactor = sc.nextDouble();
 							currentRestaurant.setSpecialDiscountFactor(specialFactor);
 						}catch(InputMismatchException e){
 							System.err.println("You must enter a special discount factor.");
+							sc.next();
 						}
 					}
 					System.out.println("Your new special discount factor is "+currentRestaurant.getMenu().getSpecialDiscountFactor());
@@ -336,11 +342,12 @@ public class MyFoodoraClient {
 					input = sc.next();
 					return "next" ;
 				case("meal"):
-					System.out.println("Your meal of the week is "+currentRestaurant.getMenu().getMealOfTheWeek());
-					System.out.println("Here is your menu :");
-					currentRestaurant.displayMenu();
+					System.out.println("Your meal of the week is :"+currentRestaurant.getMenu().getMealOfTheWeek());
+					System.out.println("\nHere are your meals :");
+					System.out.println(currentRestaurant.getMenu().getMeals());
 					System.out.println("Enter the name of the new meal of the week :");
 					String mealName = null ;
+					sc.nextLine();
 					while(mealName == null){
 						try{
 							input = sc.nextLine();
@@ -348,7 +355,6 @@ public class MyFoodoraClient {
 							mealName = currentRestaurant.getMenu().getMealOfTheWeek().getName() ;
 						}catch(FoodItemNotFoundException e){
 							System.err.println("The meal \""+input+"\" does not exist.");
-							sc.next();
 						}
 					}
 					System.out.println("Your new meal of the week is "+currentRestaurant.getMenu().getMealOfTheWeek());

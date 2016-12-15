@@ -80,7 +80,7 @@ public abstract class Meal extends FoodItem {
 
 	@Override
 	public String toString() {
-		return ("Meal : " + this.getName() + ", price : " + this.getPrice() + " type : " + this.getType() +" dishes :"+
-				 mainDish + ", ");
+		return ("Meal : " + this.getName() + "\nprice : " + this.getPrice() + " type : " + this.getType() +"\n"+
+				 mainDish);
 	}
 }
