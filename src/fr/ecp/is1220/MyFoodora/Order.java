@@ -2,6 +2,7 @@ package fr.ecp.is1220.MyFoodora;
 
 import java.util.ArrayList;
 import java.util.Calendar ;
+import java.util.Locale;
 
 public class Order implements java.io.Serializable {
 	
@@ -188,9 +189,14 @@ public class Order implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "Order [dateOfOrder=" + dateOfOrder + ", customer=" + customer + ", restaurant=" + restaurant
-				+ ", dishes=" + dishes + ", meals=" + meals + ", price=" + price + ", courier=" + courier
-				+ ", addressOfDelivery=" + addressOfDelivery + "]";
+		return "Order [dateOfOrder=" + dateOfOrder.get(Calendar.DAY_OF_MONTH) + " " + dateOfOrder.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + dateOfOrder.get(Calendar.YEAR) + "\n" 
+				+ "customer=" + customer + "\n" 
+				+ "restaurant=" + restaurant + "\n" 
+				+ "dishes=" + dishes + "\n"
+				+ "meals=" + meals + "\n"
+				+ "price=" + price + "\n"
+				+ "courier=" + courier + "\n"
+				+ "addressOfDelivery=" + addressOfDelivery + "]\n";
 	}
 	
 	@Override

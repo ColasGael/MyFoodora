@@ -37,7 +37,6 @@ public class OrderTest {
 			order.addDish(dish);
 			Meal meal = restaurant.findMealByName("M3");
 			order.addMeal(meal);
-			//the customer submit the order
 		}catch(Exception e){}
 	}
 	
@@ -48,6 +47,7 @@ public class OrderTest {
 	
 	@Test
 	public void testSubmit() throws FoodItemNotFoundException{
+		//the customer submit the order
 		order.submit(true, myFoodora);
 		
 		Courier courier = order.getCourier();
