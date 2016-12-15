@@ -161,7 +161,7 @@ public class MyFoodoraClient {
 					sc.next();
 				}
 			}
-			break;
+			break ;
 		case("disconnect"):
 			return "disconnect" ;
 		case("close"):
