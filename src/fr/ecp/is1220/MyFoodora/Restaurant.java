@@ -17,6 +17,10 @@ public class Restaurant extends User {
 	 */
 	private FoodItemFactory foodItemFactory ;
 	
+	private SorterFoodItemFactory  sorterFoodItemFactory = new SorterFoodItemFactory();
+	/**
+	 * the policy to sort food items that have been shipped in completed orders
+	 */
 	private SorterFoodItem shippedOrderPolicy = new SorterCounter() ;
 	
 	/**
@@ -206,6 +210,16 @@ public class Restaurant extends User {
 
 	public void increaseCounter() {
 		this.counter++ ;
+	}
+	
+	public void setShippedOrderPolicy(SorterFoodItem shippedOrderPolicy) {
+		this.shippedOrderPolicy = shippedOrderPolicy;
+	}
+
+	public void chooseShippedOrderPolicy (String shippedOrderPolicyName){
+		SorterFoodItem shippedOrderPolicy = this.sorterFoodItemFactory.chooseSorterFoodItem(shippedOrderPolicyName);
+		this.setShippedOrderPolicy(shippedOrderPolicy);
+		
 	}
 		
 	@Override
