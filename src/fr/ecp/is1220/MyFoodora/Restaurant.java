@@ -65,8 +65,9 @@ public class Restaurant extends User {
 	/**
 	 * remove dish of given name from the menu
 	 * @param name : the name of the dish
+	 * @throws FoodItemNotFoundException
 	 */
-	public void removeDish(String name){
+	public void removeDish(String name) throws FoodItemNotFoundException{
 		Dish dish = this.findDishByName(name);
 		this.menu.removeDish(dish);
 	}
@@ -75,15 +76,16 @@ public class Restaurant extends User {
 	 * finds the dish of given name in the menu
 	 * @param name : the name of the dish
 	 * @return dish : the dish of given name
+	 * @throws FoodItemNotFoundException
 	 */
-	public Dish findDishByName(String name){
+	public Dish findDishByName(String name) throws FoodItemNotFoundException {
 		ArrayList<Dish> dishes = this.menu.getDishes();
 		for (Dish dish: dishes){
 			if (dish.getName().equals(name)){
 				return dish;
 			}
 		}
-		return null;
+		throw (new FoodItemNotFoundException(name+" is not found")) ;
 	}
 	
 	/**
@@ -99,8 +101,9 @@ public class Restaurant extends User {
 	/**
 	 * remove meal of given name from the menu
 	 * @param name : the name of the meal
+	 * @throws FoodItemNotFoundException
 	 */
-	public void removeMeal(String name){
+	public void removeMeal(String name) throws FoodItemNotFoundException{
 		Meal meal = this.findMealByName(name);
 		this.menu.removeMeal(meal);
 	}
@@ -109,37 +112,37 @@ public class Restaurant extends User {
 	 * finds the meal of given name in the menu
 	 * @param name : the name of the meal
 	 * @return meal : the meal of given name
+	 * @throws FoodItemNotFoundException
 	 */
-	public Meal findMealByName(String name){
+	public Meal findMealByName(String name) throws FoodItemNotFoundException {
 		ArrayList<Meal> meals = this.menu.getMeals();
 		for (Meal meal: meals){
 			if (meal.getName().equals(name)){
 				return meal;
 			}
 		}
-		return null;
+		throw (new FoodItemNotFoundException(name+" is not found")) ;
 	}
 	
 	/**
 	 * adds a dish to a meal if possible
 	 * @param mealName : the name of the meal
 	 * @param dishName : the name of the dish
+	 * @throws NoPlaceInMealException, FoodItemNotFoundException
 	 */
-	public void addDish2Meal(String mealName, String dishName){
+	public void addDish2Meal(String mealName, String dishName) throws NoPlaceInMealException, FoodItemNotFoundException{
 		Meal meal = this.findMealByName(mealName);
 		Dish dish = this.findDishByName(dishName);
-		try{
-			meal.addDish(dish);
-		}catch(NoPlaceInMealException e){
-			System.err.println(e.getMessage());
-		}
+		meal.addDish(dish);
+
 	}
 	
 	/**
 	 * sets the new Meal of the week
 	 * @param mealName : the name of the new meal of the week
+	 * @throws FoodItemNotFoundException
 	 */
-	public void setMealOfTheWeek(String mealName){
+	public void setMealOfTheWeek(String mealName) throws FoodItemNotFoundException{
 		Meal mealOfTheWeek = this.findMealByName(mealName);
 		this.getMenu().setMealOfTheWeek(mealOfTheWeek);
 	}

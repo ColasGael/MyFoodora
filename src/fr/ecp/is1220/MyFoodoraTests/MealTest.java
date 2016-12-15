@@ -35,14 +35,14 @@ public class MealTest {
 	}
 
 	@Test
-	public void testUpdate() {
+	public void testUpdate() throws FoodItemNotFoundException {
 		restaurant.setMealOfTheWeek("M3");
 		double price = fullMeal.getPrice();
 		assertEquals("the price of meal M3 is 9€ when meal of the week",price, 9., 0);
 	}
 	
 	@Test
-	public void testAddDish() throws NoPlaceInMealException {
+	public void testAddDish() throws NoPlaceInMealException, FoodItemNotFoundException{
 		Dish dish = restaurant.findDishByName("maki thon");
 		FullMeal fullMeal = new FullMeal("S3");
 		fullMeal.addDish(dish);
@@ -50,7 +50,7 @@ public class MealTest {
 	}
 
 	@Test(expected = NoPlaceInMealException.class)
-	public void testAddDishWhenMealFull() throws NoPlaceInMealException {
+	public void testAddDishWhenMealFull() throws NoPlaceInMealException, FoodItemNotFoundException{
 		Dish dish = restaurant.findDishByName("maki thon");
 		halfMeal.addDish(dish);
 	}

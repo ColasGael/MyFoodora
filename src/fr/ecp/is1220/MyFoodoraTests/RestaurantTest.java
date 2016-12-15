@@ -9,13 +9,13 @@ import fr.ecp.is1220.MyFoodora.*;
 
 public class RestaurantTest {
 	
-
 	private static MyFoodora myFoodora;
 	/**
-	 * we create an example of restaurant that will be used in the following tests
-	 */
+	 * 	we create an example of restaurant that will be used in the following tests
+	*/
+
 	private static Restaurant restaurant;
-	
+
 	@BeforeClass
 	public static void importMyFoodora(){
 		myFoodora = MyFoodora.loadMyFoodora();
@@ -58,22 +58,35 @@ public class RestaurantTest {
 	public void testAddMeal() throws FoodItemNotFoundException {
 		restaurant.addMeal("full", "B2");
 		Meal meal = restaurant.findMealByName("B2");
-		System.out.println(dish);
+		System.out.println(meal);
 	}
 
 	@Test
 	public void testRemoveMeal() throws FoodItemNotFoundException {
-		fail("Not yet implemented");
-	}
+		//we add a new meal to the menu of the restaurant (tested above)
+		restaurant.addMeal("full", "B2");
+		Meal meal = restaurant.findMealByName("B2");
+		//we remove this meal
+		restaurant.removeDish("B2");	}
 
 	@Test
-	public void testAddDish2Meal() throws FoodItemNotFoundException throws NoPlaceInMealException {
-		fail("Not yet implemented");
+	public void testAddDish2Meal() throws FoodItemNotFoundException, NoPlaceInMealException {
+		//we add a new meal to the menu of the restaurant (tested above)
+		restaurant.addMeal("full", "B2");
+		Meal meal = restaurant.findMealByName("B2");
+		//we find dishes to add to the meal
+		Dish mainDish = restaurant.findDishByName("brochettes boeuf"); 
+		Dish dessert = restaurant.findDishByName("litchee");
+		//we add them to the empty meal
+		restaurant.addDish2Meal("B2", "brochettes boeuf");
+		restaurant.addDish2Meal("B2", "litchee");
+		
+		System.out.println(meal);
 	}
 
 	@Test
 	public void testDisplaySortedFoodItems() {
-		fail("Not yet implemented");
+		restaurant.
 	}
 
 	@Test
