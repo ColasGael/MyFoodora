@@ -53,7 +53,7 @@ public abstract class Dish extends FoodItem {
 	public String toString() {
 		String result = "none";
 		if (this != null){
-			result = "[name=" + name + ", price=" + price + ", type=" + type + ", counter=" + counter + "]";
+			result = "[name=" + name + ", price=" + price + ", type=" + type + ", counter=" + counter + "]\n";
 		}
 		return result;
 	}
