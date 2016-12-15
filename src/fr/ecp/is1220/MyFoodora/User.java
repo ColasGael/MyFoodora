@@ -99,9 +99,17 @@ public abstract class User implements java.io.Serializable {
 		this.userType = userType;
 	}
 	
+	public static int getLastID() {
+		return lastID;
+	}
+
+	public static void setLastID(int lastID) {
+		User.lastID = lastID;
+	}
+
 	@Override
 	public String toString(){
-		return (this.userType + " ID : " + this.uniqueID + " " + name + " " + surname);
+		return (this.userType + " ID : " + this.uniqueID + " " + name + " " + surname + "\n");
 	}
 	
 	@Override

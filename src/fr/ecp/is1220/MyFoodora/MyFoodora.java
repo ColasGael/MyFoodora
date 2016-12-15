@@ -10,6 +10,10 @@ public class MyFoodora implements java.io.Serializable{
 	
 	private static final long serialVersionUID = -6956532311204306476L;
 	/**
+	 * We saves the lastId value of users between save and load
+	 */
+	public int userLastID;
+	/**
 	 * The list of all the users of the platform
 	 */
 	private ArrayList<User> users ;
@@ -56,6 +60,8 @@ public class MyFoodora implements java.io.Serializable{
 
 	public void saveMyFoodora(){
 		try { 
+			this.userLastID = User.getLastID();
+			
 			FileOutputStream fileOut = new FileOutputStream("myFoodora.ser"); 
 			ObjectOutputStream out = new ObjectOutputStream(fileOut); 
 			out.writeObject(this); 
@@ -73,6 +79,9 @@ public class MyFoodora implements java.io.Serializable{
 			FileInputStream fileIn = new FileInputStream("myFoodora.ser"); 
 			ObjectInputStream in = new ObjectInputStream(fileIn);  
 			myFoodora =(MyFoodora) in.readObject();
+			
+			User.setLastID(myFoodora.userLastID);
+			
 			in.close(); 
 			fileIn.close();
 		}catch(IOException exception) {
@@ -336,7 +345,7 @@ public class MyFoodora implements java.io.Serializable{
 	}
 
 
-	public void setShippedOrderPolicy(SorterFoodItem shipOrderPolicy) {
+	public void setShippedOrderPolicy(SorterFoodItem shippedOrderPolicy) {
 		this.shippedOrderPolicy = shippedOrderPolicy;
 	}
 
