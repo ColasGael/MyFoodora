@@ -173,7 +173,7 @@ public class MyFoodora implements java.io.Serializable{
 		for(Order order : this.completedOrders){
 			Calendar dateOfOrder = order.getDateOfOrder();
 			//check that the order was on the given period
-			if ((dateOfOrder.compareTo(calendar1)>=0)&&(dateOfOrder.compareTo(calendar1)<=0)){
+			if ((dateOfOrder.compareTo(calendar1)>=0)&&(dateOfOrder.compareTo(calendar2)<=0)){
 				totalIncome += order.getPrice()*(1+markupPercentage)+serviceFee ;
 			}
 		}
@@ -214,7 +214,7 @@ public class MyFoodora implements java.io.Serializable{
 		for(Order order : this.completedOrders){
 			Calendar dateOfOrder = order.getDateOfOrder();
 			//check that the order was on the given period
-			if ((dateOfOrder.compareTo(calendar1)>=0)&&(dateOfOrder.compareTo(calendar1)<=0)){
+			if ((dateOfOrder.compareTo(calendar1)>=0)&&(dateOfOrder.compareTo(calendar2)<=0)){
 				totalProfit += order.getPrice()*markupPercentage+serviceFee-deliveryCost ;
 			}
 		}
