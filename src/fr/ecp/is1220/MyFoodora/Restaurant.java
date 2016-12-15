@@ -146,9 +146,14 @@ public class Restaurant extends User {
 	 * @param mealName : the name of the new meal of the week
 	 * @throws FoodItemNotFoundException
 	 */
-	public void setMealOfTheWeek(String mealName) throws FoodItemNotFoundException{
+	public void setMealOfTheWeek(String mealName, MyFoodora myFoodora) throws FoodItemNotFoundException{
 		Meal mealOfTheWeek = this.findMealByName(mealName);
 		this.getMenu().setMealOfTheWeek(mealOfTheWeek);
+		
+		//we notify the customers that agreed to be notified for special offers
+		double reduction = 100*(this.menu.getSpecialDiscountFactor()-this.menu.getGenericDiscountFactor())/(1 - this.menu.getGenericDiscountFactor());
+		String offer = "At " + this.getName() + " the meal " + mealName + " is " + reduction + "% cheaper than usually !\n";
+		myFoodora.newOffer(offer);
 	}
 	
 	/**

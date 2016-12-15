@@ -43,7 +43,7 @@ public class Board <ObsType> implements java.io.Serializable{
 	 */
 	@Override
 	public String toString(){
-		String message = "" ;
+		String message = "Board :\n" ;
 		for(ObsType obs : this.obs){
 			message += obs + "\n" ;
 		}

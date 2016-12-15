@@ -36,7 +36,7 @@ public class MealTest {
 
 	@Test
 	public void testUpdate() throws FoodItemNotFoundException {
-		restaurant.setMealOfTheWeek("M3");
+		restaurant.setMealOfTheWeek("M3", myFoodora);
 		double price = fullMeal.getPrice();
 		assertEquals("the price of meal M3 is 9€ when meal of the week",price, 9., 0);
 	}

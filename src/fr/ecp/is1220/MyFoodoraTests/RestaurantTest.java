@@ -11,9 +11,8 @@ public class RestaurantTest {
 	
 	private static MyFoodora myFoodora;
 	/**
-	 * 	we create an example of restaurant that will be used in the following tests
-	*/
-
+	 * we create an example of restaurant that will be used in the following tests
+	 */
 	private static Restaurant restaurant;
 
 	@BeforeClass

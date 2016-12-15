@@ -28,8 +28,7 @@ public class MyFoodoraExample {
 		mainDish = new MainDish("california maki", 16.5, "standard"); menu.addDish(mainDish);
 		mainDish = new MainDish("maki saumon", 4, "standard"); menu.addDish(mainDish);
 		
-		HalfMeal halfMeal = new HalfMeal("M2", mainDish, starter); menu.addMeal(halfMeal);
-		//we set the meal of the day
+		HalfMeal halfMeal = new HalfMeal("M2", mainDish, starter); menu.addMeal(halfMeal);		//we set the meal of the day
 		menu.setMealOfTheWeek(halfMeal);
 		
 		mainDish = new MainDish("maki cheese", 3.5, "vegetarian"); menu.addDish(mainDish);
@@ -69,8 +68,20 @@ public class MyFoodoraExample {
 		myFoodora.addUser(new Manager("Sylvestre", "Prabakaran", "prabakarans", "birthdaydate", myFoodora));
 		
 		//we add couriers
-		myFoodora.addUser(new Courier("Peter", "Parker", "spiderman", "password", new Position(1.23, 854.1), "0651964987"));
-		myFoodora.addUser(new Courier("Spider", "Man", "peterparker", "motdepasse", new Position(1.23, 854.1), "0651964988"));
+		Courier courier = new Courier("Peter", "Parker", "spiderman", "password", new Position(1.23, 854.1), "0651964987"); 
+		for (int i=0 ; i<23; i++){
+			courier.increaseCounter();
+		}
+		courier.setOnDuty(true);
+		myFoodora.addUser(courier);
+		
+		courier = new Courier("Spider", "Man", "peterparker", "motdepasse", new Position(1.23, 854.1), "0651964988");
+		for (int i=0; i<7; i++){
+			courier.increaseCounter();
+		}
+		courier.setOnDuty(true);
+		myFoodora.addUser(courier);
+
 		myFoodora.addUser(new Courier("Toby", "McGuire", "tobmac", "azerty", new Position(12.3, 5.18), "0651964989"));
 		
 		//we add customers
@@ -79,6 +90,8 @@ public class MyFoodoraExample {
 		myFoodora.addUser(new Customer("Baptiste", "Turpin", "alladin", "ieupri", new Position(2.3, 4.12), "baptiste.turpin@myecp.fr", "0786822356"));
 		myFoodora.addUser(new Customer("Kevin", "Uzan", "PJ", "fpzkfpzof", new Position(69.2, 12.78), "kevin.uzan@myecp.fr", "0786822354"));
 		myFoodora.addUser(new Customer("Theo", "Bob", "theo7794", "password", new Position(84.3, 145.12), "theo.bob@gmail.com", "0786822354"));
+		
+		
 		
 		myFoodora.saveMyFoodora();
 	}
