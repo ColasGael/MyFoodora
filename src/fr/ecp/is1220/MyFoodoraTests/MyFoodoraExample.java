@@ -33,7 +33,7 @@ public class MyFoodoraExample {
 		hoki.addMeal("half", "M2");
 		hoki.addDish2Meal("M2", "soupe");
 		hoki.addDish2Meal("M2", "maki saumon");
-		hoki.addMeal("half", "M2");
+		hoki.addMeal("full", "M3");
 		hoki.addDish2Meal("M3", "soupe");
 		hoki.addDish2Meal("M3", "maki cheese");
 		hoki.addDish2Meal("M3", "litchee");

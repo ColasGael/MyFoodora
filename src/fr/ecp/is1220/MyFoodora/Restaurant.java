@@ -44,7 +44,8 @@ public class Restaurant extends User {
 		super(name, "", userName, password);
 		this.address = address ;
 		this.menu = new Menu() ;
-		
+		this.foodItemFactory = new FoodItemFactory();
+
 		this.setUserType ("restaurant") ;
 	}
 	
