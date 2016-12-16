@@ -2,6 +2,10 @@ package fr.ecp.is1220.MyFoodora;
 
 import java.util.Scanner;
 import java.util.InputMismatchException ;
+import java.util.Locale;
+import java.text.ParseException ;
+import java.util.Calendar ;
+import java.text.SimpleDateFormat ;
 
 public class MyFoodoraClient {
 
@@ -257,6 +261,35 @@ public class MyFoodoraClient {
 				input = sc.next() ;
 				switch (input){
 				case("totalIncome"):case("totalProfit"):case("averageIncomePerCustomer"):
+					String input2 = "" ;
+					while(!input2.equals("exit")){
+						SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
+						try{
+							System.out.println("Please enter the first day of the period for computing in format DD MM YYYY or type \"exit\":");
+							input2 = sc.next();
+							Calendar date1 = Calendar.getInstance() ;
+							date1.setTime(sdf.parse(input2)) ;
+							System.out.println("Please enter the last day of the period for computing in format DD MM YYYY or type \"exit\":");
+							input2 = sc.next();
+							Calendar date2 = Calendar.getInstance() ;
+							date2.setTime(sdf.parse(input2)) ;
+							System.out.println("The "+input+" during the period between "+date1.get(Calendar.DAY_OF_MONTH) + " " + date1.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + date1.get(Calendar.YEAR)
+							+" and "+date2.get(Calendar.DAY_OF_MONTH) + " " + date2.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + date2.get(Calendar.YEAR)+" is :\n");
+							switch(input){
+							case("totalIncome"):
+								System.out.println(currentManager.totalIncome(date1, date2));
+								return "next" ;
+							case("totalProfit"):
+								System.out.println(currentManager.totalProfit(date1, date2));
+								return "next" ;
+							case("averageIncomePerCustomer"):
+								System.out.println(currentManager.averageIncomePerCostumer(date1, date2));
+								return "next" ;
+							}
+						}catch(ParseException e){
+							System.err.println("You must enter a date in DD MM YYYY format.");
+						}
+					}
 					break ;
 				case("disconnect"):
 					return "disconnect" ;
