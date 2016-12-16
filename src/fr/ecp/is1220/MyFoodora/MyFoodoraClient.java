@@ -115,13 +115,18 @@ public class MyFoodoraClient {
 		return "next" ;
 	}
 	
+	/**
+	 * Works with all the possible commands that a restaurant can use
+	 * @return "next" to go to the next command, "disconnect" or "close".
+	 */
 	private static String workCourier(){
+		System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 		Courier currentCourier = (Courier)currentUser ;
 		System.out.println(currentCourier.getBoard());
 		input = sc.next();	
 		switch (input){
 		case("help"):
-			System.out.println("\"changeState\" : set state to off duty or on duty\n\"changePosition\" : change your position\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
+			System.out.println("\"changeState\" : set state to off duty or on duty\n\"changePosition\" : change your position\n\"accept\" : accept to delivery an order of your board\n\"refuse\" : refuse to delivery an order of your board\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
 			break;
 		case("changeState"):
 			while(!input.equals("close")){
@@ -132,7 +137,6 @@ public class MyFoodoraClient {
 				case("onDuty"):case("offDuty"):
 					currentCourier.setOnDuty(input.equals("onDuty"));
 					System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
-					System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 					return "next" ;
 				case("disconnect"):
 					return "disconnect" ;
@@ -154,11 +158,112 @@ public class MyFoodoraClient {
 					pos.setY(sc.nextDouble()) ;
 					currentCourier.setPosition(pos);
 					System.out.println("Your new position is"+(currentCourier.getPosition()));
-					System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 					return "next" ;
 				}catch(InputMismatchException e){
 					System.err.println("You must enter a coordonate.");
 					sc.next();
+				}
+			}
+			break ;
+		case("accept"):
+			while(!input.equals("exit")){
+				System.out.println("Please enter the ID of the order you want to deliver or type \"exit\":");
+				input = sc.next();
+				try{
+					int id = Integer.parseInt(input) ;
+					currentCourier.acceptDeliveryCall(true, currentCourier.getBoard().findObsById(id), myFoodora);
+					System.out.println("You have accepted to deliver this order :\n"+currentCourier.getBoard().findObsById(id));
+					return "next" ;
+				}catch(OrderNotFoundException e){
+					System.err.println("This Order ID is not in your board.");
+				}catch(NumberFormatException e){
+					System.err.println("You must enter an ID");
+				}
+			}
+			break ;
+		case("refuse"):
+			while(!input.equals("exit")){
+				System.out.println("Please enter the ID of the order you want to refuse or type \"exit\":");
+				input = sc.next();
+				try{
+					int id = Integer.parseInt(input) ;
+					currentCourier.acceptDeliveryCall(false, currentCourier.getBoard().findObsById(id), myFoodora);
+					System.out.println("You have accepted to deliver this order :\n"+currentCourier.getBoard().findObsById(id));
+					return "next" ;
+				}catch(OrderNotFoundException e){
+					System.err.println("This Order ID is not in your board.");
+				}catch(NumberFormatException e){
+					System.err.println("You must enter an ID");
+				}
+			}
+			break ;
+		case("disconnect"):
+			return "disconnect" ;
+		case("close"):
+			return "close" ;
+		default:
+			System.out.println("This choice is not available, please try again \n");
+			break;
+		}
+		return "next" ;
+	}
+	
+	private static String workManager(){
+		Manager currentManager = (Manager)currentUser ;
+		input = sc.next();	
+		switch (input){
+		case("help"):
+			System.out.println("\"changeState\" : set state to off duty or on duty\n\"changePosition\" : change your position\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
+			break;
+		case("activate"):
+			System.out.println("Here is a list of all the users of MyFoodora :");
+			currentManager.getMyFoodora().displayUsers();
+			while(!input.equals("exit")){
+				System.out.println("Please enter the ID of the user you want to activate or type \"exit\":");
+				input = sc.next();
+				try{
+					int id = Integer.parseInt(input) ;
+					currentManager.activateUser(id);
+					System.out.println("You have activated the account of this user :\n"+currentManager.getMyFoodora().findUserByUniqueID(id));
+					return "next" ;
+				}catch(UserNotFoundException e){
+					System.err.println("This User ID is not in MyFoodora.");
+				}catch(NumberFormatException e){
+					System.err.println("You must enter an ID");
+				}
+			}
+			break ;
+		case("deactivate"):
+			System.out.println("Here is a list of all the users of MyFoodora :");
+			currentManager.getMyFoodora().displayUsers();
+			while(!input.equals("exit")){
+				System.out.println("Please enter the ID of the user you want to deactivate or type \"exit\":");
+				input = sc.next();
+				try{
+					int id = Integer.parseInt(input) ;
+					currentManager.deactivateUser(id);
+					System.out.println("You have deactivated the account of this user :\n"+currentManager.getMyFoodora().findUserByUniqueID(id));
+					return "next" ;
+				}catch(UserNotFoundException e){
+					System.err.println("This User ID is not in MyFoodora.");
+				}catch(NumberFormatException e){
+					System.err.println("You must enter an ID");
+				}
+			}
+			break ;
+		case("compute"):
+			while(!input.equals("close")){
+				System.out.println("Do you want to compute a \"totalIncome\", a \"totalProfit\" or an \"averageIncomePerCustomer\" ?");
+				input = sc.next() ;
+				switch (input){
+				case("totalIncome"):case("totalProfit"):case("averageIncomePerCustomer"):
+					break ;
+				case("disconnect"):
+					return "disconnect" ;
+				case("close"):
+					return "close" ;
+				default:
+					System.out.println("\nThis choice is not available, please try again \n");
 				}
 			}
 			break ;
@@ -174,15 +279,12 @@ public class MyFoodoraClient {
 		return "next" ;
 	}
 	
-	private static String workManager(){
-		return "next" ;
-	}
-	
 	/**
 	 * Works with all the possible commands that a restaurant can use
 	 * @return "next" to go to the next command, "disconnect" or "close".
 	 */
 	private static String workRestaurant(){
+		System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 		Restaurant currentRestaurant = (Restaurant)currentUser ;
 		input = sc.next();	
 		switch (input){
@@ -215,7 +317,6 @@ public class MyFoodoraClient {
 									input = sc.nextLine();
 									currentRestaurant.addMeal(mealType,input);
 									System.out.println("The "+mealType+" meal \""+input+"\" has been added to your menu.");
-									System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 									return "next" ;
 								case("disconnect"):
 									return "disconnect" ;
@@ -253,7 +354,6 @@ public class MyFoodoraClient {
 										case("standard"): case("vegetarian"): case("glutenFree") :											
 											currentRestaurant.addDish(dishType,name,price,type);
 											System.out.println("The "+type+" "+dishType+" \""+name+"\" has been added to your menu for "+String.valueOf(price)+" euros.");
-											System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 											return "next" ;
 										case("disconnect"):
 											return "disconnect" ;
@@ -296,7 +396,6 @@ public class MyFoodoraClient {
 								input = currentRestaurant.findMealByName(input).getName();
 								currentRestaurant.removeMeal(input);
 								System.out.println("The meal \""+input+"\" has been removed from your menu.");
-								System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 								return "next" ;
 							}catch(FoodItemNotFoundException e){
 								System.err.println("This meal does not exist.");
@@ -311,7 +410,6 @@ public class MyFoodoraClient {
 							try{
 								currentRestaurant.removeDish(input);
 								System.out.println("The dish \""+input+"\" has been removed from your menu.");
-								System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 								return "next" ;
 							}catch(FoodItemNotFoundException e){
 								System.err.println("This dish does not exist.");
@@ -339,7 +437,6 @@ public class MyFoodoraClient {
 							System.out.println("The dish \""+dishName+"\" has been added to the meal \""+mealName+"\".");
 							System.out.println("Here is your updated meal :");
 							System.out.println(currentRestaurant.findMealByName(mealName));
-							System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 							return "next" ;
 						}catch(FoodItemNotFoundException e){
 							System.err.println("The dish \""+dishName+"\" and/or the meal \""+mealName+"\" do not exist.");
@@ -375,7 +472,6 @@ public class MyFoodoraClient {
 						}
 					}
 					System.out.println("Your new generic discount factor is "+currentRestaurant.getMenu().getGenericDiscountFactor());
-					System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 					return "next" ;
 				case("special"):
 					System.out.println("Your special discount factor is "+currentRestaurant.getMenu().getSpecialDiscountFactor());
@@ -391,7 +487,6 @@ public class MyFoodoraClient {
 						}
 					}
 					System.out.println("Your new special discount factor is "+currentRestaurant.getMenu().getSpecialDiscountFactor());
-					System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 					return "next" ;
 				case("meal"):
 					System.out.println("Your meal of the week is :"+currentRestaurant.getMenu().getMealOfTheWeek());
@@ -410,7 +505,6 @@ public class MyFoodoraClient {
 						}
 					}
 					System.out.println("Your new meal of the week is "+currentRestaurant.getMenu().getMealOfTheWeek());
-					System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 					return "next" ;
 				case("disconnect"):
 					return "disconnect" ;
@@ -429,7 +523,6 @@ public class MyFoodoraClient {
 			System.out.println("This choice is not available, please try again \n");
 			break;
 		}
-		System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 		return "next" ;
 	}
 }

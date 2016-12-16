@@ -58,26 +58,18 @@ public class Manager extends User {
 	 * activate the user of uniqueID of the system
 	 * @param uniqueID
 	 */
-	public void activateUser (int uniqueID){
-		try{
-			User user = myFoodora.findUserByUniqueID(uniqueID);
-			user.setActivated(true);
-		}catch(UserNotFoundException e){
-			System.err.println(e.getMessage());
-		}
+	public void activateUser (int uniqueID) throws UserNotFoundException{
+		User user = myFoodora.findUserByUniqueID(uniqueID);
+		user.setActivated(true);
 	}
 	
 	/**
 	 * deactivate the user of uniqueID of the system
 	 * @param uniqueID
 	 */
-	public void deactivateUser (int uniqueID){
-		try{
-			User user = myFoodora.findUserByUniqueID(uniqueID);
-			user.setActivated(false);
-		}catch(UserNotFoundException e){
-			System.err.println(e.getMessage());
-		}
+	public void deactivateUser (int uniqueID) throws UserNotFoundException{
+		User user = myFoodora.findUserByUniqueID(uniqueID);
+		user.setActivated(false);
 	}
 	
 	/**
