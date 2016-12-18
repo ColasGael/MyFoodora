@@ -129,16 +129,10 @@ public class Manager extends User {
 	 * @param targetProfit : the target profit to meet
 	 * @return profitInfoValue : the value of the profit related information
 	 */
-	public double meetTargetProfit (String profitInfo, double targetProfit){
-		try{
-			TargetProfitPolicy targetProfitPolicy = targetProfitPolicyFactory.chooseTargetProfitPolicy(profitInfo);
-			double profitInfoValue = targetProfitPolicy.meetTargetProfit(myFoodora, targetProfit);
-			return (profitInfoValue);
-
-		}catch(NonReachableTargetProfitException e){
-			System.err.println(e.getMessage());
-			return (0);
-		}
+	public double meetTargetProfit (String profitInfo, double targetProfit) throws NonReachableTargetProfitException {
+		TargetProfitPolicy targetProfitPolicy = targetProfitPolicyFactory.chooseTargetProfitPolicy(profitInfo);
+		double profitInfoValue = targetProfitPolicy.meetTargetProfit(myFoodora, targetProfit);
+		return (profitInfoValue);
 	}
 	
 	/**

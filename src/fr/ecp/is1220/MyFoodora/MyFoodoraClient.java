@@ -217,7 +217,7 @@ public class MyFoodoraClient {
 		input = sc.next();	
 		switch (input){
 		case("help"):
-			System.out.println("\"activate\" : activate an account\n\"deactivate\" : deactivate an account\n\"compute\" : compute a business value\n\"stat\" : display statistics\n\"setCurrentPolicy\" : set the current delivery policy\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
+			System.out.println("\"activate\" : activate an account\n\"deactivate\" : deactivate an account\n\"compute\" : compute a business value\n\"stat\" : display statistics\n\"setCurrentPolicy\" : set the current delivery policy\n\"meetTargetProfit\" : meet a target profit py changing a business value\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
 			break;
 		case("activate"):
 			System.out.println("Here is a list of all the users of MyFoodora :");
@@ -315,6 +315,39 @@ public class MyFoodoraClient {
 				switch (input){
 				case("fairOccupation"):case("fastest"):
 					currentManager.setDeliveryPolicy(input);
+					break ;
+				case("disconnect"):
+					return "disconnect" ;
+				case("close"):
+					return "close" ;
+				default:
+					System.out.println("\nThis choice is not available, please try again \n");
+				}
+			}
+			break ;
+		case("meetTargetProfit"):
+			while(!input.equals("close")){
+				System.out.println("Do you want to change considering the \"markup\" value, the \"serviceFee\" value or the \"deliveryCost\" value ?");
+				input = sc.next() ;
+				switch (input){
+				case("markup"):case("seviceFee"):case("deliveryCost"):
+					double profit ;
+					boolean profitValidated = false ;
+					while(!profitValidated){
+						System.out.println("Enter the target profit :");
+						try{
+							profit = sc.nextDouble() ;
+							currentManager.meetTargetProfit(input, profit);
+							profitValidated = true ;
+							System.out.println("The business value has been modified.");
+							return "next" ;
+						}catch(InputMismatchException e){
+							System.err.println("You must enter a profit value.");
+							sc.next();
+						}catch(NonReachableTargetProfitException e){
+							System.err.println("The target profit is unreachable.");
+						}
+					}
 					break ;
 				case("disconnect"):
 					return "disconnect" ;
