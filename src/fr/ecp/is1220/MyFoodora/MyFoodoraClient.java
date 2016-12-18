@@ -217,7 +217,7 @@ public class MyFoodoraClient {
 		input = sc.next();	
 		switch (input){
 		case("help"):
-			System.out.println("\"activate\" : activate an account\n\"deactivate\" : deactivate an account\n\"compute\" : compute a business value\n\"stat\" : display statistics\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
+			System.out.println("\"activate\" : activate an account\n\"deactivate\" : deactivate an account\n\"compute\" : compute a business value\n\"stat\" : display statistics\n\"setCurrentPolicy\" : set the current delivery policy\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
 			break;
 		case("activate"):
 			System.out.println("Here is a list of all the users of MyFoodora :");
@@ -302,41 +302,19 @@ public class MyFoodoraClient {
 			}
 			break ;
 		case("stat"):
+			System.out.println("He are MyFoodora's stats :");
+			System.out.println("The most selling restaurant :\n"+currentManager.mostSellingRestaurant());
+			System.out.println("The least selling restaurant :\n"+currentManager.leastSellingRestaurant());
+			System.out.println("The most active courier :\n"+currentManager.mostActiveCourier());
+			System.out.println("The least active courier :\n"+currentManager.leastActiveCourier());
+			return "next" ;
+		case("setCurrentPolicy"):
 			while(!input.equals("close")){
-				System.out.println("Do you want to compute a \"totalIncome\", a \"totalProfit\" or an \"averageIncomePerCustomer\" ?");
+				System.out.println("Do you want to deliver considering the \"fairOccupation\" or the \"fastest\" delivery ?");
 				input = sc.next() ;
 				switch (input){
-				case("totalIncome"):case("totalProfit"):case("averageIncomePerCustomer"):
-					String input2 = "" ;
-					while(!input2.equals("exit")){
-						SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy");
-						try{
-							System.out.println("Please enter the first day of the period for computing in format DD MM YYYY or type \"exit\":");
-							sc.nextLine();
-							input2 = sc.nextLine();
-							Calendar date1 = Calendar.getInstance() ;
-							date1.setTime(sdf.parse(input2)) ;
-							System.out.println("Please enter the last day of the period for computing in format DD MM YYYY or type \"exit\":");
-							input2 = sc.nextLine();
-							Calendar date2 = Calendar.getInstance() ;
-							date2.setTime(sdf.parse(input2)) ;
-							System.out.println("The "+input+" during the period between "+date1.get(Calendar.DAY_OF_MONTH) + " " + date1.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + date1.get(Calendar.YEAR)
-							+" and "+date2.get(Calendar.DAY_OF_MONTH) + " " + date2.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.US) + " " + date2.get(Calendar.YEAR)+" is :\n");
-							switch(input){
-							case("totalIncome"):
-								System.out.println(currentManager.totalIncome(date1, date2));
-								return "next" ;
-							case("totalProfit"):
-								System.out.println(currentManager.totalProfit(date1, date2));
-								return "next" ;
-							case("averageIncomePerCustomer"):
-								System.out.println(currentManager.averageIncomePerCostumer(date1, date2));
-								return "next" ;
-							}
-						}catch(ParseException e){
-							System.err.println("You must enter a date in DD MM YYYY format.");
-						}
-					}
+				case("fairOccupation"):case("fastest"):
+					currentManager.setDeliveryPolicy(input);
 					break ;
 				case("disconnect"):
 					return "disconnect" ;
