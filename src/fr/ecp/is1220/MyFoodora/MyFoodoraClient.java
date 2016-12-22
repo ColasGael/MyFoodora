@@ -2,15 +2,18 @@ package fr.ecp.is1220.MyFoodora;
 
 import java.util.Scanner;
 import java.util.InputMismatchException ;
+import java.util.NoSuchElementException ;
 import java.util.Locale;
 import java.text.ParseException ;
 import java.util.Calendar ;
 import java.text.SimpleDateFormat ;
+import java.util.StringTokenizer ;
 
 public class MyFoodoraClient {
 
 	private static Scanner sc ;
 	private static String input ;
+	private static StringTokenizer st ;
 	private static MyFoodora myFoodora ;
 	private static User currentUser ;
 
@@ -21,17 +24,22 @@ public class MyFoodoraClient {
 
 		sc = new Scanner(System.in);
 
-		System.out.println("Welcome on the MyFoodora application \n"
-				+ "Type \"close\" to quit \n");
+		System.out.println("Welcome on the MyFoodora application \n"+ "Type \"close\" to quit \n");
 
-		System.out.println("If you are a new user please \"register\" \n"
-				+ "If not please \"login\" \n");
-
-		input = sc.next();
-
+		String commande = "" ;
 		closeLoop :
-			while (!input.equals("close")){		
-				switch (input){
+			while (!commande.equals("close")){	
+				System.out.println("If you are a new user please \"register\" \n"
+						+ "If not please \"login\"");
+				input = sc.nextLine();
+				st = new StringTokenizer(input) ;
+				try{
+					commande = st.nextToken() ;
+					st.nextToken("\"");
+				}catch(NoSuchElementException e){
+					commande = "";
+				}
+				switch (commande){
 				case("register"):
 					System.out.println("You have successfully created an account !\n"
 							+ "Now type \"login\" to log into the system \n or \"close\" to quit \n");
@@ -39,29 +47,15 @@ public class MyFoodoraClient {
 				case("login"):
 					String userType = login() ;
 					if(userType!=null){
-						disconnectLoop :
-						while (!input.equals("disconnect")){
-							String workInput = work(userType);
-							switch(workInput){
-							case("next"):
-								break ;
-							case("disconnect"):
-								break disconnectLoop ;
-							case("close"):
-								break closeLoop ;
-							}
-						}
+						work(userType);
 					}
 					break;
 				case("close"):
 					break closeLoop ;
 				default:
-					System.out.println("This choice is not available, please try again \n");
+					System.err.println("This choice is not available, please try again");
 					break;
 				}
-				System.out.println("If you are a new user please \"register\" \n"
-						+ "If not please \"login\" \n");
-				input = sc.next();
 			}
 		System.out.println("Thank you for your visit ! \nGoodbye !\n");
 		sc.close();
@@ -73,16 +67,17 @@ public class MyFoodoraClient {
 	 * @return the userType of the user.
 	 */
 	private static String login(){
-		System.out.println("Please enter your username : ");
-		String username = sc.next();
-		System.out.println("Please enter your password : ");
-		String password = sc.next();
 		String userType = null ;
 		try{
+			String username = st.nextToken("\"");
+			System.out.println(username);
+			st.nextToken("\"");
+			String password = st.nextToken("\"") ;
+			System.out.println(password);
 			currentUser = myFoodora.login(username,password);
 			userType = currentUser.getUserType();
 			System.out.println("You have successfully logged in the system !\n");
-			System.out.println("Type \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");				
+			System.out.println("Welcome "+currentUser.getName());				
 		}catch(IdentificationIncorrectException e){
 			System.out.println("Sorry " + e.getMessage() + "\n"
 					+ "Please try again \n");
@@ -90,7 +85,8 @@ public class MyFoodoraClient {
 			System.out.println("Sorry " + e.getMessage() + "\n"
 					+ "Your account has been deactivated : Please call a manager : +33 1 41 13 15 79 \n");
 			input = "close";
-		}finally{			
+		}catch(NoSuchElementException e){
+			System.err.println("This choice is not available, please try again \n");
 		}
 		return userType ;
 	}
@@ -100,6 +96,9 @@ public class MyFoodoraClient {
 	 * @param userType
 	 */
 	private static String work(String userType){		
+		System.out.println("Type \"help\" to have a list of all available commands.");
+		input = sc.nextLine();
+		st = new StringTokenizer(input) ;
 		switch (userType){
 		case("customer"):
 			return workCustomer() ;
@@ -111,8 +110,7 @@ public class MyFoodoraClient {
 			return workManager() ;
 		default :
 			return null ;
-		}
-		
+		}		
 	}
 	
 	private static String workCustomer(){
@@ -124,92 +122,78 @@ public class MyFoodoraClient {
 	 * @return "next" to go to the next command, "disconnect" or "close".
 	 */
 	private static String workCourier(){
-		System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 		Courier currentCourier = (Courier)currentUser ;
 		System.out.println(currentCourier.getBoard());
-		input = sc.next();	
-		switch (input){
-		case("help"):
-			System.out.println("\"changeState\" : set state to off duty or on duty\n\"changePosition\" : change your position\n\"accept\" : accept to delivery an order of your board\n\"refuse\" : refuse to delivery an order of your board\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
-			break;
-		case("changeState"):
-			while(!input.equals("close")){
-				System.out.println("You are currently "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
-				System.out.println("Do you want to change to \"onDuty\" or \"offDuty\" ?");
-				input = sc.next() ;
-				switch (input){
-				case("onDuty"):case("offDuty"):
-					currentCourier.setOnDuty(input.equals("onDuty"));
-					System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+		String commande ;
+		try{
+			commande = st.nextToken() ;
+			st.nextToken("\"");
+			switch (commande){
+			case("help"):
+				System.out.println("\"onDuty <>\" : set state to on duty\n"
+						+ "\"offDuty <>\" : set state to off duty\n"
+						+ "\"logout\" : log out\n"
+						+ "\"close\" : close MyFoodora");
+				break;
+			case("onDuty"):
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"onDuty <>\" cannot have parameters.");
 					return "next" ;
-				case("disconnect"):
-					return "disconnect" ;
-				case("close"):
-					return "close" ;
-				default:
-					System.out.println("\nThis choice is not available, please try again \n");
 				}
-			}
-			break;
-		case("changePosition"):
-			while(!input.equals("close")){
-				System.out.println("Your position is"+(currentCourier.getPosition()));
-				Position pos = new Position(0,0) ;
-				try{
-					System.out.println("Enter the x coordonate of your new position :");
-					pos.setX(sc.nextDouble()) ;
-					System.out.println("Enter the y coordonate of your new position :");
-					pos.setY(sc.nextDouble()) ;
-					currentCourier.setPosition(pos);
-					System.out.println("Your new position is"+(currentCourier.getPosition()));
+				System.out.println("You were "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+				currentCourier.setOnDuty(true);
+				System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+				return "next" ;
+			case("offDuty"):
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"offDuty <>\" cannot have parameters.");
 					return "next" ;
-				}catch(InputMismatchException e){
-					System.err.println("You must enter a coordonate.");
-					sc.next();
 				}
-			}
-			break ;
-		case("accept"):
-			while(!input.equals("exit")){
-				System.out.println("Please enter the ID of the order you want to deliver or type \"exit\":");
-				input = sc.next();
-				try{
-					int id = Integer.parseInt(input) ;
-					currentCourier.acceptDeliveryCall(true, currentCourier.getBoard().findObsById(id), myFoodora);
-					System.out.println("You have accepted to deliver this order :\n"+currentCourier.getBoard().findObsById(id));
-					return "next" ;
-				}catch(OrderNotFoundException e){
-					System.err.println("This Order ID is not in your board.");
-				}catch(NumberFormatException e){
-					System.err.println("You must enter an ID");
+				System.out.println("You were "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+				currentCourier.setOnDuty(false);
+				System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+				return "next" ;
+			/*case("accept"):
+				while(!input.equals("exit")){
+					System.out.println("Please enter the ID of the order you want to deliver or type \"exit\":");
+					input = sc.next();
+					try{
+						int id = Integer.parseInt(input) ;
+						currentCourier.acceptDeliveryCall(true, currentCourier.getBoard().findObsById(id), myFoodora);
+						System.out.println("You have accepted to deliver this order :\n"+currentCourier.getBoard().findObsById(id));
+						return "next" ;
+					}catch(OrderNotFoundException e){
+						System.err.println("This Order ID is not in your board.");
+					}catch(NumberFormatException e){
+						System.err.println("You must enter an ID");
+					}
 				}
-			}
-			break ;
-		case("refuse"):
-			while(!input.equals("exit")){
-				System.out.println("Please enter the ID of the order you want to refuse or type \"exit\":");
-				input = sc.next();
-				try{
-					int id = Integer.parseInt(input) ;
-					currentCourier.acceptDeliveryCall(false, currentCourier.getBoard().findObsById(id), myFoodora);
-					System.out.println("You have accepted to deliver this order :\n"+currentCourier.getBoard().findObsById(id));
-					return "next" ;
-				}catch(OrderNotFoundException e){
-					System.err.println("This Order ID is not in your board.");
-				}catch(NumberFormatException e){
-					System.err.println("You must enter an ID");
+				break ;
+			case("refuse"):
+				while(!input.equals("exit")){
+					System.out.println("Please enter the ID of the order you want to refuse or type \"exit\":");
+					input = sc.next();
+					try{
+						int id = Integer.parseInt(input) ;
+						currentCourier.acceptDeliveryCall(false, currentCourier.getBoard().findObsById(id), myFoodora);
+						System.out.println("You have accepted to deliver this order :\n"+currentCourier.getBoard().findObsById(id));
+						return "next" ;
+					}catch(OrderNotFoundException e){
+						System.err.println("This Order ID is not in your board.");
+					}catch(NumberFormatException e){
+						System.err.println("You must enter an ID");
+					}
 				}
+				break ;*/
+			default:
+				System.out.println("This command is not available, please try again \n");
+				break;
 			}
-			break ;
-		case("disconnect"):
-			return "disconnect" ;
-		case("close"):
-			return "close" ;
-		default:
-			System.out.println("This choice is not available, please try again \n");
-			break;
+			return "next" ;
+		}catch(NoSuchElementException e){
+			commande = "";
+			return "next" ;
 		}
-		return "next" ;
 	}
 	
 	private static String workManager(){
@@ -377,20 +361,38 @@ public class MyFoodoraClient {
 	private static String workRestaurant(){
 		System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
 		Restaurant currentRestaurant = (Restaurant)currentUser ;
-		input = sc.next();	
-		switch (input){
-		case("help"):
-			System.out.println("\"displayMenu\" : display your menu\n\"edit\" : edit your menu\n\"manage\" : manage your discounts\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
-			break;
-		case("displayMenu"):
-			System.out.println("Here is your menu :");
-			currentRestaurant.displayMenu();
-			break;
-		case("edit"):
-			while(!input.equals("close")){
-				System.out.println("Type \"create\" to add a new item, \"add\" to add a dish to a meal, or \"remove\" to remove an item :");
-				input = sc.next() ;
-				switch (input){
+		String commande ;
+		try{
+			commande = st.nextToken() ;
+			st.nextToken("\"");
+			switch (commande){
+			case("help"):
+				System.out.println("\"showMenuItem <>\" : display your menu\n"
+						+ "\"addDishRestaurantMenu <dishName> <dishCategory> <foodCategory> <unitPrice>\" : add a new dish to your menu\n"
+						+ "\"manage\" : manage your discounts\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
+				return "next" ;
+			case("showMenuItem"):
+				if(st.hasMoreTokens()){
+					if(st.hasMoreTokens()){	
+						System.err.println("The command \"showMenuItem <>\" cannot have parameters.");
+						return "next" ;
+					}
+				}
+				System.out.println("Here is your menu :");
+				currentRestaurant.displayMenu();
+				return "next" ;
+			case("addDishRestaurantMenu"):
+				st.nextToken("\"");
+				String dishName = st.nextToken("\"");
+				st.nextToken("\"");
+				String dishCategory = st.nextToken("\"");
+				switch(dishCategory){
+				case("starter"):case("mainDish"):case("dessert"):
+					break ;
+				
+				}
+				st.nextToken("\"");
+				String foodCategory = st.nextToken("\"");
 				case("create"):
 					while(!input.equals("close")){
 						System.out.println("Do you want to add a \"meal\" or a \"dish\" ?") ;
@@ -615,5 +617,8 @@ public class MyFoodoraClient {
 			break;
 		}
 		return "next" ;
+		}catch(NoSuchElementException e){
+			return "next" ;
+		}
 	}
 }
