@@ -1,5 +1,6 @@
 package fr.ecp.is1220.MyFoodora;
 
+import java.io.*;
 import java.util.Scanner;
 import java.util.InputMismatchException ;
 import java.util.NoSuchElementException ;
@@ -24,13 +25,16 @@ public class MyFoodoraClient {
 
 		sc = new Scanner(System.in);
 
-		System.out.println("Welcome on the MyFoodora application \n"+ "Type \"close\" to quit \n");
+		System.out.println("Welcome on the MyFoodora application \n"
+				+ "Type \"help <>\" to have a list of all available commands\n"
+				+ "Type \"close <>\" to quit \n");
 
 		String commande = "" ;
 		closeLoop :
 			while (!commande.equals("close")){	
 				System.out.println("If you are a new user please \"register\" \n"
-						+ "If not please \"login\"");
+						+ "If not please \"login <username> <password>\""
+						+ "Type \"help <>\" to have a list of all available commands");
 				input = sc.nextLine();
 				st = new StringTokenizer(input) ;
 				try{
@@ -42,17 +46,41 @@ public class MyFoodoraClient {
 				switch (commande){
 				case("register"):
 					System.out.println("You have successfully created an account !\n"
-							+ "Now type \"login\" to log into the system \n or \"close\" to quit \n");
+							+ "Now type \"login <username> <password>\" to log into the system \n"
+							+ "Or \"close <>\" to quit \n");
 					break;					
 				case("login"):
 					String userType = login() ;
 					String workReturn = "next" ;
 					if(userType!=null){
 						while(workReturn.equals("next")){
-							work(userType);
+							workReturn = work(userType);
+						}
+						if (workReturn.equals("close")){
+							break closeLoop;
 						}
 					}
 					break;
+				case ("runTest"):
+					input = sc.nextLine();
+					st = new StringTokenizer(input) ;
+					String fileName = st.nextToken() ;
+					try{
+						st.nextToken("\"");
+						File testScenarioFile = new File(fileName);
+						sc = new Scanner (testScenarioFile);
+					}catch(NoSuchElementException e){
+					}catch (FileNotFoundException e){
+						System.out.println("File of name " + fileName + " has not been found");
+					}
+					break;
+					
+				case("help"):
+					System.out.println("\"register <usertype> <name> <surname> <username> <password>\" : register into the system\n"
+							+ "\"login <username> <password>\" : log into the system\n"
+							+ "\"runTest <testScenarioFile>\" : execute the list of CLUI commands contained in the testScenario file passed as argument\n"
+							+ "\"close<>\" : close MyFoodora");
+					break ;
 				case("close"):
 					break closeLoop ;
 				default:
@@ -133,6 +161,8 @@ public class MyFoodoraClient {
 			case("help"):
 				System.out.println("\"onDuty <>\" : set state to on duty\n"
 						+ "\"offDuty <>\" : set state to off duty\n"
+						+ "\"accept <orderID> : accept the delivery call for the order of ID\n"
+						+ "\"refuse <orderID> : refuse the delivery call for the order of ID"
 						+ "\"logout\" : log out\n"
 						+ "\"close\" : close MyFoodora");
 				break;
@@ -154,7 +184,7 @@ public class MyFoodoraClient {
 				currentCourier.setOnDuty(false);
 				System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
 				return "next" ;
-			/*case("accept"):
+			case("accept"):
 				while(!input.equals("exit")){
 					System.out.println("Please enter the ID of the order you want to deliver or type \"exit\":");
 					input = sc.next();
@@ -185,7 +215,7 @@ public class MyFoodoraClient {
 						System.err.println("You must enter an ID");
 					}
 				}
-				break ;*/
+				break ;
 			default:
 				System.out.println("This command is not available, please try again \n");
 				break;
@@ -202,7 +232,14 @@ public class MyFoodoraClient {
 		input = sc.next();	
 		switch (input){
 		case("help"):
-			System.out.println("\"activate\" : activate an account\n\"deactivate\" : deactivate an account\n\"compute\" : compute a business value\n\"stat\" : display statistics\n\"setCurrentPolicy\" : set the current delivery policy\n\"meetTargetProfit\" : meet a target profit py changing a business value\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
+			System.out.println("\"activate\" : activate an account\n"
+					+ "\"deactivate\" : deactivate an account\n"
+					+ "\"compute\" : compute a business value\n"
+					+ "\"stat\" : display statistics\n"
+					+ "\"setCurrentPolicy\" : set the current delivery policy\n"
+					+ "\"meetTargetProfit\" : meet a target profit py changing a business value\n"
+					+ "\"logout\" : log out\n"
+					+ "\"close\" : close MyFoodora");
 			break;
 		case("activate"):
 			System.out.println("Here is a list of all the users of MyFoodora :");
@@ -343,8 +380,8 @@ public class MyFoodoraClient {
 				}
 			}
 			break ;
-		case("disconnect"):
-			return "disconnect" ;
+		case("logout"):
+			return "logout" ;
 		case("close"):
 			return "close" ;
 		default:
@@ -369,7 +406,9 @@ public class MyFoodoraClient {
 			case("help"):
 				System.out.println("\"showMenuItem <>\" : display your menu\n"
 						+ "\"addDishRestaurantMenu <dishName> <dishCategory> <foodCategory> <unitPrice>\" : add a new dish to your menu\n"
-						+ "\"manage\" : manage your discounts\n\"disconnect\" : change user\n\"close\" : close MyFoodora");
+						+ "\"manage\" : manage your discounts\n"
+						+ "\"disconnect\" : change user\n"
+						+ "\"close\" : close MyFoodora");
 				return "next" ;
 			case("showMenuItem"):
 				if(st.hasMoreTokens()){

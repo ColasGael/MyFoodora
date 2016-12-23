@@ -44,6 +44,13 @@ public class Manager extends User {
 			}catch(Exception e){
 			}
 		}
+		//by default each newly registered courier is onDuty
+		if (userType.equals("courier")){
+			try{
+				((Courier)myFoodora.login(userName, password)).setOnDuty(true);
+			}catch(Exception e){
+			}
+		}
 	}
 	
 	/**
