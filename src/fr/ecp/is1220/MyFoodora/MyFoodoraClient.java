@@ -39,7 +39,6 @@ public class MyFoodoraClient {
 				st = new StringTokenizer(input) ;
 				try{
 					commande = st.nextToken() ;
-					st.nextToken("\"");
 				}catch(NoSuchElementException e){
 					commande = "";
 				}
@@ -62,19 +61,19 @@ public class MyFoodoraClient {
 					}
 					break;
 				case ("runTest"):
-					input = sc.nextLine();
 					st = new StringTokenizer(input) ;
-					String fileName = st.nextToken() ;
+					String fileName = "" ;
 					try{
 						st.nextToken("\"");
+						fileName = st.nextToken() ;
 						File testScenarioFile = new File(fileName);
 						sc = new Scanner (testScenarioFile);
 					}catch(NoSuchElementException e){
+						System.err.println("Invalid number of arguments or syntax error.");
 					}catch (FileNotFoundException e){
-						System.out.println("File of name " + fileName + " has not been found");
+						System.err.println("File of name " + fileName + " has not been found");
 					}
-					break;
-					
+					break;					
 				case("help"):
 					System.out.println("\"register <usertype> <name> <surname> <username> <password>\" : register into the system\n"
 							+ "\"login <username> <password>\" : log into the system\n"
@@ -100,13 +99,16 @@ public class MyFoodoraClient {
 	private static String login(){
 		String userType = null ;
 		try{
+			st.nextToken("\"");
 			String username = st.nextToken("\"");
+			System.out.println(username);
 			st.nextToken("\"");
 			String password = st.nextToken("\"") ;
+			System.out.println(password);
 			currentUser = myFoodora.login(username,password);
 			userType = currentUser.getUserType();
 			System.out.println("You have successfully logged in the system !\n");
-			System.out.println("Welcome "+currentUser.getName());				
+			System.out.println("Welcome "+currentUser.getName());			
 		}catch(IdentificationIncorrectException e){
 			System.out.println("Sorry " + e.getMessage() + "\n"
 					+ "Please try again \n");
