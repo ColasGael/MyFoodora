@@ -161,10 +161,15 @@ public class MyFoodoraClient {
 			case("help"):
 				System.out.println("\"onDuty <>\" : set state to on duty\n"
 						+ "\"offDuty <>\" : set state to off duty\n"
+<<<<<<< HEAD
+						+ "\"logout <>\" : log out\n"
+						+ "\"close <>\" : close MyFoodora");
+=======
 						+ "\"accept <orderID> : accept the delivery call for the order of ID\n"
 						+ "\"refuse <orderID> : refuse the delivery call for the order of ID"
 						+ "\"logout\" : log out\n"
 						+ "\"close\" : close MyFoodora");
+>>>>>>> refs/remotes/origin/master
 				break;
 			case("onDuty"):
 				if(st.hasMoreTokens()){	
@@ -184,7 +189,12 @@ public class MyFoodoraClient {
 				currentCourier.setOnDuty(false);
 				System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
 				return "next" ;
+<<<<<<< HEAD
+			
+			/*case("accept"):
+=======
 			case("accept"):
+>>>>>>> refs/remotes/origin/master
 				while(!input.equals("exit")){
 					System.out.println("Please enter the ID of the order you want to deliver or type \"exit\":");
 					input = sc.next();
@@ -521,6 +531,24 @@ public class MyFoodoraClient {
 					try{
 						System.out.println("Here is the "+mealName+" :");
 						System.out.println(currentRestaurant.findMealByName(mealName));
+					}
+					catch(FoodItemNotFoundException e){
+						System.err.println("The meal"+mealName+" does not exist.");
+					}
+				}
+				return "next" ;
+			case("setSpecialOffer"):
+				st.nextToken("\"");
+				mealName = st.nextToken("\"");
+				if(st.hasMoreTokens()){
+					System.err.println("Invalid number of parameters or syntax error.");
+					error = true ;
+				}
+				if(!error){
+					try{
+						currentRestaurant.setMealOfTheWeek(mealName, myFoodora);
+						System.out.println("Here is the new meal of the week :");
+						System.out.println(currentRestaurant.getMenu().getMealOfTheWeek());
 					}
 					catch(FoodItemNotFoundException e){
 						System.err.println("The meal"+mealName+" does not exist.");
