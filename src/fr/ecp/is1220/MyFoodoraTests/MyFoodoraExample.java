@@ -15,7 +15,7 @@ public class MyFoodoraExample {
 		MyFoodora myFoodora = new MyFoodora(serviceFee, markupPercentage, deliveryCost);
 		
 		//we add the first manager
-		Manager manager = new Manager("Gael", "Colas", "gcolas", "0123456789", myFoodora);
+		Manager manager = new Manager("Gael", "Colas", "ceo", "123456789", myFoodora);
 		myFoodora.addUser(manager);
 		
 		//we create a first restaurant : the HOKI
