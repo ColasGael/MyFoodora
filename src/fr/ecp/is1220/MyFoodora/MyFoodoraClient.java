@@ -160,7 +160,11 @@ public class MyFoodoraClient {
 			switch (commande){
 			case("help"):
 				System.out.println("\"onDuty <>\" : set state to on duty\n"
+<<<<<<< HEAD
 						+ "\"offDuty <>\" : set state to off duty\n"
+=======
+						+ "\"offDuty <>\" : set state to off duty\n"
+>>>>>>> refs/remotes/origin/master
 						+ "\"accept <orderID> : accept the delivery call for the order of ID\n"
 						+ "\"refuse <orderID> : refuse the delivery call for the order of ID"
 						+ "\"logout\" : log out\n"
@@ -184,7 +188,11 @@ public class MyFoodoraClient {
 				currentCourier.setOnDuty(false);
 				System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
 				return "next" ;
+<<<<<<< HEAD
 			
+=======
+			
+>>>>>>> refs/remotes/origin/master
 			case("accept"):
 				while(!input.equals("exit")){
 					System.out.println("Please enter the ID of the order you want to deliver or type \"exit\":");
