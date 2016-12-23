@@ -1,1 +1,3 @@
 login "hoki" "password"
+logout
+close

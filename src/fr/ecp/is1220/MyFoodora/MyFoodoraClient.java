@@ -25,15 +25,13 @@ public class MyFoodoraClient {
 
 		sc = new Scanner(System.in);
 
-		System.out.println("Welcome on the MyFoodora application \n"
-				+ "Type \"help <>\" to have a list of all available commands\n"
-				+ "Type \"close <>\" to quit \n");
+		System.out.println("Welcome on the MyFoodora application \n");
 
 		String commande = "" ;
 		closeLoop :
 			while (!commande.equals("close")){	
 				System.out.println("If you are a new user please \"register\" \n"
-						+ "If not please \"login <username> <password>\""
+						+ "If not please use \"login <username> <password>\"\n"
 						+ "Type \"help <>\" to have a list of all available commands");
 				input = sc.nextLine();
 				st = new StringTokenizer(input) ;
@@ -57,6 +55,9 @@ public class MyFoodoraClient {
 						}
 						if (workReturn.equals("close")){
 							break closeLoop;
+						}
+						if (workReturn.equals("logout")){
+							break ;
 						}
 					}
 					break;
@@ -155,6 +156,7 @@ public class MyFoodoraClient {
 	private static String workCourier(){
 		Courier currentCourier = (Courier)currentUser ;
 		System.out.println(currentCourier.getBoard());
+		boolean error = false ;
 		String commande ;
 		try{
 			commande = st.nextToken() ;
@@ -171,22 +173,25 @@ public class MyFoodoraClient {
 			case("onDuty"):
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"onDuty <>\" cannot have parameters.");
-					return "next" ;
+					error = true ;
 				}
-				System.out.println("You were "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
-				currentCourier.setOnDuty(true);
-				System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+				if(!error){
+					System.out.println("You were "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+					currentCourier.setOnDuty(true);
+					System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+				}
 				return "next" ;
 			case("offDuty"):
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"offDuty <>\" cannot have parameters.");
-					return "next" ;
+					error = true ;
 				}
-				System.out.println("You were "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
-				currentCourier.setOnDuty(false);
-				System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
-				return "next" ;
-			
+				if(!error){
+					System.out.println("You were "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+					currentCourier.setOnDuty(false);
+					System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
+				}
+				return "next" ;			
 			case("accept"):
 				while(!input.equals("exit")){
 					System.out.println("Please enter the ID of the order you want to deliver or type \"exit\":");
@@ -243,8 +248,7 @@ public class MyFoodoraClient {
 					+ "\"meetTargetProfit\" : meet a target profit py changing a business value\n"
 					+ "\"logout\" : log out\n"
 					+ "\"close\" : close MyFoodora");
-			break;
-			
+			break;			
 		case("activate"):
 			System.out.println("Here is a list of all the users of MyFoodora :");
 			currentManager.getMyFoodora().displayUsers();
@@ -548,6 +552,14 @@ public class MyFoodoraClient {
 					}
 				}
 				return "next" ;
+			case("logout"):
+				if(st.hasMoreTokens()){
+					if(st.hasMoreTokens()){	
+						System.err.println("The command \"logout <>\" cannot have parameters.");
+						return "next" ;
+					}
+				}
+				return "logout" ;				
 			default :
 				System.err.println("The command "+commande+" does not exist.");	
 			}
