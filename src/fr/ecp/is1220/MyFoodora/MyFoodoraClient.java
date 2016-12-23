@@ -161,15 +161,10 @@ public class MyFoodoraClient {
 			case("help"):
 				System.out.println("\"onDuty <>\" : set state to on duty\n"
 						+ "\"offDuty <>\" : set state to off duty\n"
-<<<<<<< HEAD
-						+ "\"logout <>\" : log out\n"
-						+ "\"close <>\" : close MyFoodora");
-=======
 						+ "\"accept <orderID> : accept the delivery call for the order of ID\n"
 						+ "\"refuse <orderID> : refuse the delivery call for the order of ID"
 						+ "\"logout\" : log out\n"
 						+ "\"close\" : close MyFoodora");
->>>>>>> refs/remotes/origin/master
 				break;
 			case("onDuty"):
 				if(st.hasMoreTokens()){	
@@ -189,12 +184,8 @@ public class MyFoodoraClient {
 				currentCourier.setOnDuty(false);
 				System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
 				return "next" ;
-<<<<<<< HEAD
 			
-			/*case("accept"):
-=======
 			case("accept"):
->>>>>>> refs/remotes/origin/master
 				while(!input.equals("exit")){
 					System.out.println("Please enter the ID of the order you want to deliver or type \"exit\":");
 					input = sc.next();
