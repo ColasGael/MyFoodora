@@ -241,6 +241,7 @@ public class MyFoodoraClient {
 					+ "\"logout\" : log out\n"
 					+ "\"close\" : close MyFoodora");
 			break;
+			
 		case("activate"):
 			System.out.println("Here is a list of all the users of MyFoodora :");
 			currentManager.getMyFoodora().displayUsers();
