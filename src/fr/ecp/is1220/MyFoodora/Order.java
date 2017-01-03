@@ -51,8 +51,8 @@ public class Order implements java.io.Serializable {
 	
 	/**
 	 * creates a new Order object given a customer and a target restaurant
-	 * @param customer
-	 * @param restaurant
+	 * @param customer : the customer making an order
+	 * @param restaurant : the target restaurant
 	 */
 	public Order(Customer customer, Restaurant restaurant) {
 		this.uniqueID = lastID;
@@ -90,7 +90,7 @@ public class Order implements java.io.Serializable {
 	
 	/**
 	 * add a dish to the list of dishes proposed on the menu
-	 * @param meal : the dish to add to the menu
+	 * @param dish : the dish to add to the menu
 	 */
 	public void addDish(Dish dish){
 		this.dishes.add(dish);
@@ -98,7 +98,7 @@ public class Order implements java.io.Serializable {
 	
 	/**
 	 * remove a dish to the list of dishes proposed on the menu
-	 * @param meal : the dish to remove from the menu
+	 * @param dish : the dish to remove from the menu
 	 */
 	public void removeDish(Dish dish){
 		this.dishes.remove(dish);

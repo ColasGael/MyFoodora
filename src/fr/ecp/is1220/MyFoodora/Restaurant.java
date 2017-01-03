@@ -26,6 +26,7 @@ public class Restaurant extends User {
 	/**
 	 * creates a restaurant who will be used in the MyFoodora platform
 	 * @param name : the name of the user
+	 * @param surname : the surname of the user
 	 * @param userName : the user name in the MyFoodora platform
 	 * @param password : the password of the user to login in the MyFoodora platform
 	 */
@@ -69,7 +70,7 @@ public class Restaurant extends User {
 	/**
 	 * remove dish of given name from the menu
 	 * @param name : the name of the dish
-	 * @throws FoodItemNotFoundException
+	 * @throws FoodItemNotFoundException : if the dish of given name is not in the menu
 	 */
 	public void removeDish(String name) throws FoodItemNotFoundException{
 		Dish dish = this.findDishByName(name);
@@ -80,7 +81,7 @@ public class Restaurant extends User {
 	 * finds the dish of given name in the menu
 	 * @param name : the name of the dish
 	 * @return dish : the dish of given name
-	 * @throws FoodItemNotFoundException
+	 * @throws FoodItemNotFoundException : if the dish of given name is not in the menu
 	 */
 	public Dish findDishByName(String name) throws FoodItemNotFoundException {
 		ArrayList<Dish> dishes = this.menu.getDishes();
@@ -105,7 +106,7 @@ public class Restaurant extends User {
 	/**
 	 * remove meal of given name from the menu
 	 * @param name : the name of the meal
-	 * @throws FoodItemNotFoundException
+	 * @throws FoodItemNotFoundException : if the meal of given name is not in the menu
 	 */
 	public void removeMeal(String name) throws FoodItemNotFoundException{
 		Meal meal = this.findMealByName(name);
@@ -116,7 +117,7 @@ public class Restaurant extends User {
 	 * finds the meal of given name in the menu
 	 * @param name : the name of the meal
 	 * @return meal : the meal of given name
-	 * @throws FoodItemNotFoundException
+	 * @throws FoodItemNotFoundException : if the meal of given name is not in the menu
 	 */
 	public Meal findMealByName(String name) throws FoodItemNotFoundException {
 		ArrayList<Meal> meals = this.menu.getMeals();
@@ -132,7 +133,8 @@ public class Restaurant extends User {
 	 * adds a dish to a meal if possible
 	 * @param mealName : the name of the meal
 	 * @param dishName : the name of the dish
-	 * @throws NoPlaceInMealException, FoodItemNotFoundException
+	 * @throws NoPlaceInMealException : if the meal is already complete 
+	 * @throws FoodItemNotFoundException : if the dish or the meal of given name is not in the menu
 	 */
 	public void addDish2Meal(String mealName, String dishName) throws NoPlaceInMealException, FoodItemNotFoundException{
 		Meal meal = this.findMealByName(mealName);
@@ -144,7 +146,8 @@ public class Restaurant extends User {
 	/**
 	 * sets the new Meal of the week
 	 * @param mealName : the name of the new meal of the week
-	 * @throws FoodItemNotFoundException
+	 * @param myFoodora : the myFoodora core
+	 * @throws FoodItemNotFoundException : if the meal of given name is not in the menu
 	 */
 	public void setMealOfTheWeek(String mealName, MyFoodora myFoodora) throws FoodItemNotFoundException{
 		Meal mealOfTheWeek = this.findMealByName(mealName);

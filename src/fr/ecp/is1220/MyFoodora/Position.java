@@ -11,8 +11,8 @@ public class Position implements java.io.Serializable {
 	
 	/**
 	 * creates a position defined by two coordinates
-	 * @param x
-	 * @param y
+	 * @param x : the absciss
+	 * @param y : the ordinate 
 	 */
 	public Position(double x,double y) {
 		this.x = x ;
