@@ -51,6 +51,9 @@ public class MyFoodora implements java.io.Serializable{
 	public MyFoodora(double serviceFee, double markupPercentage, double deliveryCost) {
 		super();
 		this.users = new ArrayList<User>();
+		//we add the CEO
+		users.add(new Manager("","","ceo","123456789",this));
+		
 		this.completedOrders = new ArrayList<Order>();
 		this.serviceFee = serviceFee;
 		this.markupPercentage = markupPercentage;
