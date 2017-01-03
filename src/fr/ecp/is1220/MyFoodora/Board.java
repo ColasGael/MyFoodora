@@ -16,7 +16,7 @@ public class Board <ObsType> implements java.io.Serializable{
 	
 	/**
 	 * adds a new offer to the board
-	 * @param offer : the offer which is added
+	 * @param obs : the offer which is added
 	 */
 	public void addObs(ObsType obs){
 		this.obs.add(obs) ;
@@ -24,7 +24,7 @@ public class Board <ObsType> implements java.io.Serializable{
 	
 	/**
 	 * removes an offer from the board
-	 * @param offer : the offer which is removed
+	 * @param obs : the offer which is removed
 	 */
 	public void removeObs(ObsType obs){
 		this.obs.remove(obs) ;
@@ -34,6 +34,7 @@ public class Board <ObsType> implements java.io.Serializable{
 	 * finds the object of ID uniqueID
 	 * @param uniqueID : the ID of the object
 	 * @return object : the object of ID uniqueID
+	 * @throws OrderNotFoundException : if the order is not on the board
 	 */
 	public ObsType findObsById (int uniqueID) throws OrderNotFoundException {
 		

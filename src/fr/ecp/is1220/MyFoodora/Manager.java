@@ -30,9 +30,14 @@ public class Manager extends User {
 		this.setUserType("manager");
 	} 
 	
+
 	/**
-	 * adds the user 
-	 * @param user : The user object 
+	 * adds the user
+	 * @param userType : the type of user who is registered : "customer", "courier", "restaurant" or "manager"
+	 * @param name : the name of the user
+	 * @param surname : the surname of the user
+	 * @param userName : the username of the user
+	 * @param password : the password of the user
 	 */
 	public void addUser(String userType, String name, String surname, String userName, String password){
 		myFoodora.getUserFactory().registerUser(userType, name, surname, userName, password, myFoodora);
@@ -55,7 +60,7 @@ public class Manager extends User {
 	
 	/**
 	 * remove the user of uniqueID from the system
-	 * @param uniqueID
+	 * @param uniqueID : the ID of the user we want to remove
 	 */
 	public void removeUser(int uniqueID){
 		myFoodora.removeUser(uniqueID);
@@ -63,7 +68,8 @@ public class Manager extends User {
 	
 	/**
 	 * activate the user of uniqueID of the system
-	 * @param uniqueID
+	 * @param uniqueID : the ID of the user we want to activate
+	 * @throws UserNotFoundException : if the user of given uniqueID is not in the system
 	 */
 	public void activateUser (int uniqueID) throws UserNotFoundException{
 		User user = myFoodora.findUserByUniqueID(uniqueID);
@@ -72,7 +78,8 @@ public class Manager extends User {
 	
 	/**
 	 * deactivate the user of uniqueID of the system
-	 * @param uniqueID
+	 * @param uniqueID : the ID of the user we want to deactivate
+	 * @throws UserNotFoundException : if the user of given uniqueID is not in the system
 	 */
 	public void deactivateUser (int uniqueID) throws UserNotFoundException{
 		User user = myFoodora.findUserByUniqueID(uniqueID);
@@ -82,7 +89,7 @@ public class Manager extends User {
 	/**
 	 * compute the total income on a given period : between date1 (day1/month1/year1) and date2 (day2/month2/year2)
 	 * @param calendar1 : the beginning date of the period
-	 * @param calendar1 : the last date of the period
+	 * @param calendar2 : the last date of the period
 	 * @return the total income on the given period
 	 */
 	public double totalIncome(Calendar calendar1, Calendar calendar2){
@@ -92,7 +99,7 @@ public class Manager extends User {
 	/**
 	 * compute the total profit on a given period : between date1 (day1/month1/year1) and date2 (day2/month2/year2)
 	 * @param calendar1 : the beginning date of the period
-	 * @param calendar1 : the last date of the period
+	 * @param calendar2 : the last date of the period
 	 * @return the total income on the given period
 	 */
 	public double totalProfit (Calendar calendar1, Calendar calendar2){
@@ -101,8 +108,8 @@ public class Manager extends User {
 	
 	/**
 	 * compute the average income per customer on a given period : between date1 (day1/month1/year1) and date2 (day2/month2/year2)
-	 * @param calendar1
-	 * @param calendar2
+	 * @param calendar1 : the beginning date of the period
+	 * @param calendar2 : the last date of the period
 	 * @return the average income per customer on a given period
 	 */
 	public double averageIncomePerCostumer (Calendar calendar1, Calendar calendar2){
@@ -135,6 +142,7 @@ public class Manager extends User {
 	 * @param profitInfo : the profit related information : "serviceFee", "markup" or "deliveryCost"
 	 * @param targetProfit : the target profit to meet
 	 * @return profitInfoValue : the value of the profit related information
+	 * @throws NonReachableTargetProfitException : if the target profit cannot be reached 
 	 */
 	public double meetTargetProfit (String profitInfo, double targetProfit) throws NonReachableTargetProfitException {
 		TargetProfitPolicy targetProfitPolicy = targetProfitPolicyFactory.chooseTargetProfitPolicy(profitInfo);

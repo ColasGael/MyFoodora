@@ -26,7 +26,6 @@ public abstract class Meal extends FoodItem {
 	/**
 	 * creates a Meal object of a given mainDish
 	 * @param name : the name of the meal
-	 * @param mainDish
 	 */
 	public Meal(String name) {
 		this.name = name ;
@@ -36,7 +35,7 @@ public abstract class Meal extends FoodItem {
 	/**
 	 * creates a Meal object of a given mainDish
 	 * @param name : the name of the meal
-	 * @param mainDish
+	 * @param mainDish : the mainDish of the meal
 	 */
 	public Meal(String name, MainDish mainDish) {
 		this.name = name;

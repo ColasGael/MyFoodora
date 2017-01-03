@@ -27,9 +27,9 @@ public class FullMeal extends Meal {
 	/**
 	 * creates a FullMeal object of a given mainDish, starter and dessert
 	 * @param name : the name of the meal
-	 * @param mainDish
-	 * @param starter
-	 * @param dessert
+	 * @param mainDish : the mainDish of the meal
+	 * @param starter : the starter of the meal
+	 * @param dessert : the dessert of the meal
 	 */
 	public FullMeal(String name, MainDish mainDish, Starter starter, Dessert dessert) {
 		super(name, mainDish);
@@ -78,7 +78,7 @@ public class FullMeal extends Meal {
 	/**
 	 * adds a dish to the meal if possible
 	 * @param dish : the dish we want to add to the meal
-	 * @throws NoPlaceInMealException
+	 * @throws NoPlaceInMealException : if the meal is complete
 	 */
 	@Override
 	public void addDish(Dish dish) throws NoPlaceInMealException {

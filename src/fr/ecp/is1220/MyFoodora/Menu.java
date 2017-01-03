@@ -36,8 +36,8 @@ public class Menu implements java.io.Serializable {
 	
 	/**
 	 * creates a Menu object given a list of dishes and meals
-	 * @param dishes
-	 * @param meals
+	 * @param dishes : the list of dishes to add to the menu
+	 * @param meals : the list of meals to add to the menu
 	 */
 	public Menu(ArrayList<Dish> dishes, ArrayList<Meal> meals) {
 		this.dishes = dishes;
@@ -59,7 +59,7 @@ public class Menu implements java.io.Serializable {
 	
 	/**
 	 * add a dish to the list of dishes proposed on the menu
-	 * @param meal : the dish to add to the menu
+	 * @param dish : the dish to add to the menu
 	 */
 	public void addDish(Dish dish){
 		this.dishes.add(dish);
@@ -67,7 +67,7 @@ public class Menu implements java.io.Serializable {
 	
 	/**
 	 * remove a dish to the list of dishes proposed on the menu
-	 * @param meal : the dish to remove from the menu
+	 * @param dish : the dish to remove from the menu
 	 */
 	public void removeDish(Dish dish){
 		this.dishes.remove(dish);

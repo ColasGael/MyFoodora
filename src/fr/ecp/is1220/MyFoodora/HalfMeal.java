@@ -20,8 +20,8 @@ public class HalfMeal extends Meal {
 	/**
 	 * creates a HalfMeal object of a given mainDish and sideDish
 	 * @param name : the name of the meal
-	 * @param mainDish
-	 * @param sideDish
+	 * @param mainDish : the mainDish of the meal
+	 * @param sideDish : the sideDish of the meal
 	 */
 	public HalfMeal(String name, MainDish mainDish, Dish sideDish) {
 		super(name, mainDish);
@@ -69,7 +69,7 @@ public class HalfMeal extends Meal {
 	/**
 	 * adds a dish to the meal if possible
 	 * @param dish : the dish we want to add to the meal
-	 * @throws NoPlaceInMealException
+	 * @throws NoPlaceInMealException : if the meal is complete
 	 */
 	@Override
 	public void addDish(Dish dish) throws NoPlaceInMealException {

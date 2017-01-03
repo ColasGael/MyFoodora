@@ -15,7 +15,7 @@ public class MealVisitor implements Serializable {
 	
 	/**
 	 * compute the price of a full meal
-	 * @param fullMeal
+	 * @param fullMeal : the given fullMeal
 	 * @return price : the price of the full meal
 	 */
 	public double computePriceMeal(FullMeal fullMeal){
@@ -35,7 +35,7 @@ public class MealVisitor implements Serializable {
 	
 	/**
 	 * compute the price of a half meal
-	 * @param halfMeal
+	 * @param halfMeal : the given halfMeal
 	 * @return price : the price of the half meal
 	 */
 	public double computePriceMeal(HalfMeal halfMeal){
@@ -55,7 +55,7 @@ public class MealVisitor implements Serializable {
 	 * adds a dish to the meal if possible
 	 * @param dish : the dish we want to add to the meal
 	 * @param fullMeal : the full meal
-	 * @throws NoPlaceInMealException
+	 * @throws NoPlaceInMealException : if the meal is already complete
 	 */
 	public void addDish2Meal(Dish dish, FullMeal fullMeal) throws NoPlaceInMealException{
 		Starter starter = fullMeal.getStarter();
@@ -99,8 +99,8 @@ public class MealVisitor implements Serializable {
 	/**
 	 * adds a dish to the meal if possible
 	 * @param dish : the dish we want to add to the meal
-	 * @param fullMeal : the full meal
-	 * @throws NoPlaceInMealException
+	 * @param halfMeal : the half meal
+	 * @throws NoPlaceInMealException : if the meal is already complete
 	 */
 	public void addDish2Meal(Dish dish, HalfMeal halfMeal) throws NoPlaceInMealException{
 		Dish sideDish = halfMeal.getSideDish();
