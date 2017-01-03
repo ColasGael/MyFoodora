@@ -536,7 +536,8 @@ public class MyFoodoraClient {
 		default:
 			System.out.println("This choice is not available, please try again \n");
 			break;
-		}*/
+		}
+		*/
 	}
 	
 	/**
