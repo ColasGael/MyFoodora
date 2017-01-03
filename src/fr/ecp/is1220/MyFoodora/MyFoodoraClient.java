@@ -479,10 +479,10 @@ public class MyFoodoraClient {
 				st.nextToken("\"");
 				String mealCategory = st.nextToken("\"");
 				switch(mealCategory){
-				case("standard"):case("vegetarian"):case("glutenFree"):
+				case("full"):case("half"):case("glutenFree"):
 					break ;
 				default :
-					System.err.println("The <mealCategory> parameter is wrong. The possible values are \"standard\", \"vegetarian\" and \"glutenFree\".");
+					System.err.println("The <mealCategory> parameter is wrong. The possible values are \"full\" and \"half\" ");
 					error = true ;
 				}
 				if(st.hasMoreTokens()){
