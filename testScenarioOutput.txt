@@ -1,0 +1,15 @@
+If you are a new user please "register" 
+If not please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Le Hoki
+Type "help" to have a list of all available commands.
+You have logged out.
+If you are a new user please "register" 
+If not please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+Thank you for your visit ! 
+Goodbye !
+
+The MyFoodora platform has been saved.

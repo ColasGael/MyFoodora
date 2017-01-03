@@ -272,6 +272,12 @@ public class MyFoodora implements java.io.Serializable{
 		}
 	}
 	
+	/**
+	 * Finds the user corresponding to the uniqueID
+	 * @param uniqueID : the ID of the User which is searched 
+	 * @return the user corresponding to the uniqueID
+	 * @throws UserNotFoundException : if the userID does not exist in the platform
+	 */
 	public User findUserByUniqueID (int uniqueID) throws UserNotFoundException {
 		for (User user : this.users){
 			if (user.getUniqueID() == uniqueID){
@@ -279,6 +285,21 @@ public class MyFoodora implements java.io.Serializable{
 			}
 		}
 		throw(new UserNotFoundException("User of ID " + uniqueID + " not in the system"));
+	}
+	
+	/**
+	 * Finds the user corresponding to the user name
+	 * @param userName : the name of the User which is searched 
+	 * @return the user corresponding to the uniqueID
+	 * @throws UserNotFoundException : if the userName does not exist in the platform
+	 */
+	public User findUserByUsername (String userName) throws UserNotFoundException {
+		for (User user : this.users){
+			if (user.getUserName().equals(userName)){
+				return (user);
+			}
+		}
+		throw(new UserNotFoundException("User of name \"" + userName + "\" not in the system"));
 	}
 	
 	

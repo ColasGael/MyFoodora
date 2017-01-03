@@ -25,8 +25,7 @@ public class Manager extends User {
 		super(name, surname, userName, password);
 		this.myFoodora = myFoodora;
 		this.targetProfitPolicyFactory = new TargetProfitPolicyFactory();
-		this.deliveryPolicyFactory = new DeliveryPolicyFactory();
-		
+		this.deliveryPolicyFactory = new DeliveryPolicyFactory();		
 		this.setUserType("manager");
 	} 
 	

@@ -53,10 +53,8 @@ public class MyFoodoraClient {
 						while(workReturn.equals("next")){
 							workReturn = work(userType);
 						}
-						if (workReturn.equals("close")){
-							break closeLoop;
-						}
 						if (workReturn.equals("logout")){
+							System.out.println("You have logged out.");
 							break ;
 						}
 					}
@@ -67,12 +65,16 @@ public class MyFoodoraClient {
 					try{
 						st.nextToken("\"");
 						fileName = st.nextToken() ;
-						File testScenarioFile = new File(fileName);
+						File testScenarioFile = new File(fileName+".txt");
+						//to read the testScenario file
 						sc = new Scanner (testScenarioFile);
+						//to write the testScenario file
+						OutputStream out = new FileOutputStream(fileName+"Output.txt");
+						System.setOut(new PrintStream(out));
 					}catch(NoSuchElementException e){
 						System.err.println("Invalid number of arguments or syntax error.");
 					}catch (FileNotFoundException e){
-						System.err.println("File of name " + fileName + " has not been found");
+						System.err.println("File of name \"" + fileName + "\" has not been found");
 					}
 					break;					
 				case("help"):
@@ -102,10 +104,8 @@ public class MyFoodoraClient {
 		try{
 			st.nextToken("\"");
 			String username = st.nextToken("\"");
-			System.out.println(username);
 			st.nextToken("\"");
 			String password = st.nextToken("\"") ;
-			System.out.println(password);
 			currentUser = myFoodora.login(username,password);
 			userType = currentUser.getUserType();
 			System.out.println("You have successfully logged in the system !\n");
@@ -116,9 +116,8 @@ public class MyFoodoraClient {
 		}catch(AccountDeactivatedException e){
 			System.out.println("Sorry " + e.getMessage() + "\n"
 					+ "Your account has been deactivated : Please call a manager : +33 1 41 13 15 79 \n");
-			input = "close";
 		}catch(NoSuchElementException e){
-			System.err.println("This choice is not available, please try again \n");
+			System.err.println("Invalid number of parameters or syntax error.");
 		}
 		return userType ;
 	}
@@ -160,7 +159,6 @@ public class MyFoodoraClient {
 		String commande ;
 		try{
 			commande = st.nextToken() ;
-			st.nextToken("\"");
 			switch (commande){
 			case("help"):
 				System.out.println("\"onDuty <>\" : set state to on duty\n"
@@ -224,6 +222,15 @@ public class MyFoodoraClient {
 					}
 				}
 				break ;
+			case("logout"):
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"offDuty <>\" cannot have parameters.");
+					error = true ;
+				}
+				if(!error){
+					return "logout" ;
+				}
+				return "next" ;	
 			default:
 				System.out.println("This command is not available, please try again \n");
 				break;
@@ -237,8 +244,142 @@ public class MyFoodoraClient {
 	
 	private static String workManager(){
 		Manager currentManager = (Manager)currentUser ;
-		input = sc.next();	
-		switch (input){
+		boolean error = false ;
+		String commande ;
+		try{
+			commande = st.nextToken() ;
+			switch (commande){
+			case("help"):
+				System.out.println("\"registerRestaurant <name> <username> <password> <address> : register a new restaurant\n"
+						+ "\"registerCustomer <firstName> <lastName> <username> <password> <address> : register a new customer\n"
+						+ "\"registerCourier <firstName> <lastName> <username> <password> <address> : register a new courier\n"
+						+ "\"logout\" : log out"
+						);
+				break;
+			case("registerRestaurant"):
+				st.nextToken("\"");
+				String restaurantName = st.nextToken("\"");
+				st.nextToken("\"");
+				String restaurantUserName = st.nextToken("\"");
+				st.nextToken("\"");
+				String restaurantPassword = st.nextToken("\"");
+				String restaurantXString = st.nextToken("\",");
+				double restaurantX = 0;
+				String restaurantYString = st.nextToken(",\"");
+				double restaurantY = 0;
+				try{
+					restaurantX = Double.parseDouble(restaurantXString) ;
+					restaurantY = Double.parseDouble(restaurantYString) ;
+				}catch(NumberFormatException e){
+					System.err.println("The address parameter is invalid you must enter two coordinates (ex : \"1.25,1.45\").");
+					error = true ;
+				}
+				st.nextToken("\"");
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"registerRestaurant <name> <username> <password> <address>\" has only 4 parameters.");
+					error = true ;
+				}
+				if(!error){
+					currentManager.addUser("restaurant", restaurantName, "", restaurantUserName, restaurantPassword);
+					try{
+						((Restaurant)currentManager.getMyFoodora().findUserByUsername(restaurantUserName)).setAddress(new Position(restaurantX,restaurantY));
+						System.out.println("The restaurant has been registered. Here are its properties : ") ;
+						System.out.println(currentManager.getMyFoodora().findUserByUsername(restaurantUserName));
+					}catch(UserNotFoundException e){
+						System.out.println("Error while creating the user.");
+					}
+				}
+				return "next" ;
+			case("registerCustomer"):
+				st.nextToken("\"");
+				String customerName = st.nextToken("\"");
+				st.nextToken("\"");
+				String customerSurname = st.nextToken("\"");
+				st.nextToken("\"");
+				String customerUserName = st.nextToken("\"");
+				st.nextToken("\"");
+				String customerPassword = st.nextToken("\"");
+				String customerXString = st.nextToken("\",");
+				double customerX = 0;
+				String customerYString = st.nextToken(",\"");
+				double customerY = 0;
+				try{
+					customerX = Double.parseDouble(customerXString) ;
+					customerY = Double.parseDouble(customerYString) ;
+				}catch(NumberFormatException e){
+					System.err.println("The address parameter is invalid you must enter two coordinates (ex : \"1.25,1.45\").");
+					error = true ;
+				}
+				st.nextToken("\"");
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"registerCustomer <firstName> <lastName> <username> <password> <address>\" has only 5 parameters.");
+					error = true ;
+				}
+				if(!error){
+					currentManager.addUser("customer", customerName, customerSurname, customerUserName, customerPassword);
+					try{
+						((Customer)currentManager.getMyFoodora().findUserByUsername(customerUserName)).setAddress(new Position(customerX,customerY));
+						System.out.println("The customer has been registered. Here are its properties : ") ;
+						System.out.println(currentManager.getMyFoodora().findUserByUsername(customerUserName));
+					}catch(UserNotFoundException e){
+						System.out.println("Error while creating the user.");
+					}
+				}
+				return "next" ;
+			case("registerCourier"):
+				st.nextToken("\"");
+				String courierName = st.nextToken("\"");
+				st.nextToken("\"");
+				String courierSurname = st.nextToken("\"");
+				st.nextToken("\"");
+				String courierUserName = st.nextToken("\"");
+				st.nextToken("\"");
+				String courierPassword = st.nextToken("\"");
+				String courierXString = st.nextToken("\",");
+				double courierX = 0;
+				String courierYString = st.nextToken(",\"");
+				double courierY = 0;
+				try{
+					courierX = Double.parseDouble(courierXString) ;
+					courierY = Double.parseDouble(courierYString) ;
+				}catch(NumberFormatException e){
+					System.err.println("The address parameter is invalid you must enter two coordinates (ex : \"1.25,1.45\").");
+					error = true ;
+				}
+				st.nextToken("\"");
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"registerCourier <firstName> <lastName> <username> <password> <address>\" has only 5 parameters.");
+					error = true ;
+				}
+				if(!error){
+					currentManager.addUser("courier", courierName, courierSurname, courierUserName, courierPassword);
+					try{
+						((Courier)currentManager.getMyFoodora().findUserByUsername(courierUserName)).setPosition(new Position(courierX,courierY));
+						System.out.println("The courier has been registered. Here are its properties : ") ;
+						System.out.println(currentManager.getMyFoodora().findUserByUsername(courierUserName));
+					}catch(UserNotFoundException e){
+						System.out.println("Error while creating the user.");
+					}
+				}
+				return "next" ;
+			case("logout"):
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"offDuty <>\" cannot have parameters.");
+					error = true ;
+				}
+				if(!error){
+					return "logout" ;
+				}
+				return "next" ;	
+			default :
+				System.err.println("The command "+commande+" does not exist.");	
+			}
+			return "next" ;
+		}catch(NoSuchElementException e){
+			System.err.println("Invalid number of parameters or syntax error.");
+			return "next" ;
+		}
+		/*switch (input){
 		case("help"):
 			System.out.println("\"activate\" : activate an account\n"
 					+ "\"deactivate\" : deactivate an account\n"
@@ -395,9 +536,7 @@ public class MyFoodoraClient {
 		default:
 			System.out.println("This choice is not available, please try again \n");
 			break;
-		}
-		System.out.println("\nType \"help\" for a list of available commands or \"disconnect\" to be disconnected \n");
-		return "next" ;
+		}*/
 	}
 	
 	/**
