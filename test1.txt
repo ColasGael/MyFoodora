@@ -1,0 +1,118 @@
+login "gcolas" "0123456789"
+registerRestaurant "Sushi Saka" "saka" "password" "152.4,47.2"
+registerRestaurant "Pizza Hut" "hut" "dateofbirth" "125.3,78.3"
+registerCustomer "Jamie" "Oliver" "joliver" "chef123" "12.2,45.3"
+registerCustomer "Gordon" "Ramsay" "gramsay" "chef456" "45.8,145.3"
+registerCourier "Forrest" "Gump" "fgump" "shrink" "784.2,12.3"
+registerCourier "Usain" "Bolt" "ubolt" "jamaik" "123.54,56.2"
+registerCourier "Speedy" "Gonzalez" "speedgonz" "ch33se" "12.3,125.3"
+showCustomers
+logout 
+login "saka" "password"
+addDishRestaurantMenu "maki surimi" "mainDish" "standard" "8"
+addDishRestaurantMenu "maki radis" "mainDish" "glutenFree" "7.5"
+addDishRestaurantMenu "sushi avocat" "mainDish" "vegetarian" "8.5"
+addDishRestaurantMenu "maki surimi" "mainDish" "standard" "8"
+addDishRestaurantMenu "miso" "starter" "vegetarian" "3"
+addDishRestaurantMenu "boule coco" "dessert" "vegetarian" "5"
+createMeal "S3" "full"
+addDish2Meal "miso" "S3"
+addDish2Meal "sushi avocat" "S3"
+addDish2Meal "boule coco" "S3"
+showMeal "S3"
+createMeal "M7" "half"
+addDish2Meal "miso" "M7"
+addDish2Meal "maki surimi" "M7"
+setSpecialOffer "S3"
+showMenuItem
+setGenericDiscountFactor "0.055"
+showMenuItem
+logout 
+login "hut" "dateofbirth"
+addDishRestaurantMenu "4 formaggi" "mainDish" "vegetarian" "12"
+addDishRestaurantMenu "margherita" "mainDish" "standard" "13.5"
+addDishRestaurantMenu "grecini" "starter" "vegetarian" "4.5"
+addDishRestaurantMenu "arancine" "starter" "vegetarian" "3"
+addDishRestaurantMenu "tiramisu" "dessert" "vegetarian" "6.5"
+createMeal "complet" "full"
+addDish2Meal "4 formaggi" "complet"
+addDish2Meal "arancine" "complet"
+addDish2Meal "tiramisu" "complet"
+showMeal "complet"
+createMeal "midi" "half"
+addDish2Meal "margherita" "midi"
+addDish2Meal "grecini" "midi"
+setSpecialOffer "midi"
+showMenuItem
+setSpecialDiscountFactor "0.09"
+showMenuItem 
+logout
+register "customer" "Auguste" "Gusteau" "agusteau" "chef789" "78.9,1.23"
+login "agusteau" "chef789"
+registerFidelityCard "lottery"
+displayFidelityInfo
+createOrder "Pizza Hut"
+addItem2Order "midi"
+addItem2Order "complet"
+addItem2Order "tiramisu"
+endOrder "yes"
+logout
+login "joliver" "chef123"
+registerFidelityCard "point"
+displayFidelityInfo
+createOrder "Sushi Saka"
+addItem2Order "S3"
+addItem2Order "M7"
+addItem2Order "miso"
+addItem2Order "boule coco"
+endOrder "no"
+logout
+login "ubolt" "jamaik"
+acceptDeliveryCall "yes" "0"
+offDuty
+logout
+login "speedgonz" "ch33se"
+acceptDeliveryCall "no" "1"
+logout
+login "fgump" "shrink"
+acceptDeliveryCall "yes" "1"
+logout
+login "ubolt" "jamaik"
+onDuty
+logout
+login "ceo" "123456789"
+showTotalProfit
+showTotalProfit "01/01/2017" "31/01/2017"
+setDeliveryPolicy "fairOccupation"
+logout
+login "joliver" "chef123"
+getHistoryOfOrders
+displayFidelityInfo
+createOrder "Sushi Saka"
+addItem2Order "M7"
+addItem2Order "miso"
+addItem2Order "boule coco"
+endOrder "yes"
+logout
+login "ubolt" "jamaik"
+logout
+login "speedgonz" "ch33se"
+acceptDeliveryCall "yes" "2"
+logout
+login "saka" "password"
+showSortedMeals
+showSortedDishes
+logout
+login "ceo" "123456789"
+showTotalProfit
+showTotalProfit "01/01/2017" "31/01/2017"
+meetTargetProfit "markup" "70"
+setProfitInfoValue "12"
+showTotalProfit
+showCustomers 
+showCourierDeliveries
+showRestaurantTop
+deactivateUser "ubolt"
+logout
+login "ubolt" "jamaik"
+close

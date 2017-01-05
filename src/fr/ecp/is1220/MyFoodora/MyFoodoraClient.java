@@ -98,8 +98,8 @@ public class MyFoodoraClient {
 						//to read the testScenario file
 						sc = new Scanner (testScenarioFile);
 						//to write the testScenario file
-						OutputStream out = new FileOutputStream(fileName+"Output.txt");
-						System.setOut(new PrintStream(out));
+						/*OutputStream out = new FileOutputStream(fileName+"Output.txt");
+						System.setOut(new PrintStream(out));*/
 					}catch(NoSuchElementException e){
 						System.err.println("Invalid number of arguments or syntax error.");
 					}catch (FileNotFoundException e){
@@ -934,6 +934,7 @@ public class MyFoodoraClient {
 						+ "\"addDish2Meal <dishName> <mealName>\" : adds a dish to a meal\n"
 						+ "\"showMeal <mealName>\" : displays the indicated meal\n"
 						+ "\"setSpecialOffer <mealName>\" : sets the meal of the week\n"
+						+ "\"setSpecialDiscountFactor <value>\" : sets the special discount factor\n"
 						+ "\"showSortedMeals <> : displays all the meals w.r.t. the number of times they have been picked\n"
 						+ "\"showSortedDishes <> : displays all the dishes w.r.t. the number of times they have been picked\n"
 						+ "\"logout\" : log out\n");
@@ -1006,7 +1007,7 @@ public class MyFoodoraClient {
 					error = true ;
 				}
 				if(st.hasMoreTokens()){
-					System.err.println("Invalid number of parameters or syntax error.");
+					System.err.println("The command \"createMeal <mealName> <mealCategory>\" has only 2 parameters.");
 					error = true ;
 				}
 				if(!error){
@@ -1052,6 +1053,25 @@ public class MyFoodoraClient {
 					catch(FoodItemNotFoundException e){
 						System.err.println("The meal"+mealName+" does not exist.");
 					}
+				}
+				return "next" ;
+			case("setSpecialDiscountFactor"):
+				st.nextToken("\"");
+				String stringDiscountFactor = st.nextToken("\"");
+				double discountFactor = 0;
+				try{
+					discountFactor = Double.parseDouble(stringDiscountFactor) ;
+				}catch(NumberFormatException e){
+					System.err.println("The <value> parameter is invalid. You must enter a double value.");
+					error = true ;
+				}
+				if(st.hasMoreTokens()){
+					System.err.println("The command \"setSpecialDiscountFactor <value>\" has only 1 parameter.");
+					error = true ;
+				}
+				if(!error){
+					currentRestaurant.setSpecialDiscountFactor(discountFactor);
+					System.out.println("The discount factor is : "+discountFactor);
 				}
 				return "next" ;
 			case("setSpecialOffer"):
