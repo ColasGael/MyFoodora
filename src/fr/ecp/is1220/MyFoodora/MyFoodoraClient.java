@@ -1072,6 +1072,7 @@ public class MyFoodoraClient {
 				if(!error){
 					currentRestaurant.setSpecialDiscountFactor(discountFactor);
 					System.out.println("The discount factor is : "+discountFactor);
+				
 				}
 				return "next" ;
 			case("setSpecialOffer"):
