@@ -98,8 +98,8 @@ public class MyFoodoraClient {
 						//to read the testScenario file
 						sc = new Scanner (testScenarioFile);
 						//to write the testScenario file
-						OutputStream out = new FileOutputStream(fileName+"Output.txt");
-						System.setOut(new PrintStream(out));
+						/*OutputStream out = new FileOutputStream(fileName+"Output.txt");
+						System.setOut(new PrintStream(out));*/
 					}catch(NoSuchElementException e){
 						System.err.println("Invalid number of arguments or syntax error.");
 					}catch (FileNotFoundException e){
@@ -433,7 +433,7 @@ public class MyFoodoraClient {
 				}
 				try{
 					currentCourier.acceptDeliveryCall(bAnswer, currentCourier.getBoard().findObsById(orderID), myFoodora);
-					System.out.println("You have "+(bAnswer?"accepted":"refused")+" to deliver the order n°"+ orderID+"\n") ;
+					System.out.println("You have "+(bAnswer?"accepted":"refused")+" to deliver the order n°"+ orderID+".\n") ;
 				}catch(OrderNotFoundException e){
 					System.err.println("This Order ID "+orderID+" is not in your board.");
 				}

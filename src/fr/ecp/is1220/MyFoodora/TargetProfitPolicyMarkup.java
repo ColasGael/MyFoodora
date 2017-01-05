@@ -22,7 +22,9 @@ public class TargetProfitPolicyMarkup implements TargetProfitPolicy,Serializable
 		double deliveryCost = myFoodora.getDeliveryCost();
 		
 		double markupPercentage = (targetProfit - numberOfOrders*(serviceFee - deliveryCost))/totalIncome; 
-		
+		if (totalIncome==0){
+			throw (new NonReachableTargetProfitException("This target profit can not be reached"));
+		}
 		if (markupPercentage >= 0){
 			return(markupPercentage);
 		}else{

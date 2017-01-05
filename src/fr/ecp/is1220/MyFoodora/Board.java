@@ -40,8 +40,6 @@ public class Board <ObsType> implements java.io.Serializable{
 		
 		for (ObsType object : obs){
 			if((object instanceof Order)&&(((Order)object).getUniqueID()==(uniqueID))){
-				System.out.println(((Order)object).getUniqueID());
-				System.out.println(uniqueID);
 				return object;
 			}
 		}

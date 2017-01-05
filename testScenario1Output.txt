@@ -13,39 +13,29 @@ Name : Pizza Hut
 	Address [x = 125.3, y = 78.3]
 Type "help" to have a list of all available commands.
 The customer has been registered. Here are its properties : 
-customer ID n°15 Jamie Oliver username:joliver
+customer ID n°3 Jamie Oliver username:joliver
 
 Type "help" to have a list of all available commands.
 The customer has been registered. Here are its properties : 
-customer ID n°16 Gordon Ramsay username:gramsay
+customer ID n°4 Gordon Ramsay username:gramsay
 
 Type "help" to have a list of all available commands.
 The courier has been registered. Here are its properties : 
-courier ID n°17 Forrest Gump username:fgump
+courier ID n°5 Forrest Gump username:fgump
 
 Type "help" to have a list of all available commands.
 The courier has been registered. Here are its properties : 
-courier ID n°18 Usain Bolt username:ubolt
+courier ID n°6 Usain Bolt username:ubolt
 
 Type "help" to have a list of all available commands.
 The courier has been registered. Here are its properties : 
-courier ID n°19 Speedy Gonzalez username:speedgonz
+courier ID n°7 Speedy Gonzalez username:speedgonz
 
 Type "help" to have a list of all available commands.
 Here are the activated customers of the platform :
-customer ID n°8 Xavier Collar username:chaperouge
+customer ID n°3 Jamie Oliver username:joliver
 
-customer ID n°9 Regis Troissant username:cptcroche
-
-customer ID n°10 Baptiste Turpin username:alladin
-
-customer ID n°11 Kevin Uzan username:PJ
-
-customer ID n°12 Theo Bob username:theo7794
-
-customer ID n°15 Jamie Oliver username:joliver
-
-customer ID n°16 Gordon Ramsay username:gramsay
+customer ID n°4 Gordon Ramsay username:gramsay
 
 Type "help" to have a list of all available commands.
 You have logged out.
@@ -353,7 +343,7 @@ You have logged out.
 Please use "login <username> <password>"
 Type "help <>" to have a list of all available commands
 You have been registered. Here is your accounts informations : 
-customer ID n°20 Auguste Gusteau username:agusteau
+customer ID n°8 Auguste Gusteau username:agusteau
 
 Please use "login <username> <password>"
 Type "help <>" to have a list of all available commands
@@ -415,7 +405,7 @@ Type "help" to have a list of all available commands.
 Here is your order :
 Order [ID : 1
 dateOfOrder=5 January 2017
-customer=customer ID n°20 Auguste Gusteau username:agusteau
+customer=customer ID n°8 Auguste Gusteau username:agusteau
 
 restaurant=Name : Pizza Hut
 	Address [x = 125.3, y = 78.3]
@@ -508,7 +498,7 @@ Type "help" to have a list of all available commands.
 Here is your order :
 Order [ID : 2
 dateOfOrder=5 January 2017
-customer=customer ID n°15 Jamie Oliver username:joliver
+customer=customer ID n°3 Jamie Oliver username:joliver
 
 restaurant=Name : Sushi Saka
 	Address [x = 152.4, y = 47.2]
@@ -544,7 +534,7 @@ Type "help" to have a list of all available commands.
 Board :
 Order [ID : 1
 dateOfOrder=5 January 2017
-customer=customer ID n°20 Auguste Gusteau username:agusteau
+customer=customer ID n°8 Auguste Gusteau username:agusteau
 
 restaurant=Name : Pizza Hut
 	Address [x = 125.3, y = 78.3]
@@ -563,13 +553,13 @@ Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
 Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=1]
 ]
 price=43.305
-courier=courier ID n°18 Usain Bolt username:ubolt
+courier=courier ID n°6 Usain Bolt username:ubolt
 
 addressOfDelivery=[x = 125.3, y = 78.3]]
 
 Order [ID : 2
 dateOfOrder=5 January 2017
-customer=customer ID n°15 Jamie Oliver username:joliver
+customer=customer ID n°3 Jamie Oliver username:joliver
 
 restaurant=Name : Sushi Saka
 	Address [x = 152.4, y = 47.2]
@@ -589,18 +579,18 @@ MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
 Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
 ]
 price=33.245000000000005
-courier=courier ID n°18 Usain Bolt username:ubolt
+courier=courier ID n°6 Usain Bolt username:ubolt
 
 addressOfDelivery=[x = 152.4, y = 47.2]]
 
 
-You have accepted to deliver the order :
+You have accepted to deliver the order n°1.
 
 Type "help" to have a list of all available commands.
 Board :
 Order [ID : 2
 dateOfOrder=5 January 2017
-customer=customer ID n°15 Jamie Oliver username:joliver
+customer=customer ID n°3 Jamie Oliver username:joliver
 
 restaurant=Name : Sushi Saka
 	Address [x = 152.4, y = 47.2]
@@ -620,12 +610,12 @@ MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
 Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
 ]
 price=33.245000000000005
-courier=courier ID n°18 Usain Bolt username:ubolt
+courier=courier ID n°6 Usain Bolt username:ubolt
 
 addressOfDelivery=[x = 152.4, y = 47.2]]
 
 
-You have refused to deliver the order :
+You have refused to deliver the order n°2.
 
 Type "help" to have a list of all available commands.
 Board :
@@ -645,7 +635,7 @@ Type "help" to have a list of all available commands.
 Board :
 Order [ID : 2
 dateOfOrder=5 January 2017
-customer=customer ID n°15 Jamie Oliver username:joliver
+customer=customer ID n°3 Jamie Oliver username:joliver
 
 restaurant=Name : Sushi Saka
 	Address [x = 152.4, y = 47.2]
@@ -665,13 +655,18 @@ MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
 Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
 ]
 price=33.245000000000005
-courier=courier ID n°19 Speedy Gonzalez username:speedgonz
+courier=courier ID n°7 Speedy Gonzalez username:speedgonz
 
 addressOfDelivery=[x = 152.4, y = 47.2]]
 
 
-You have refused to deliver the order :
+You have refused to deliver the order n°2.
 
+Type "help" to have a list of all available commands.
+Board :
+
+You were off duty.
+You are now on duty.
 Type "help" to have a list of all available commands.
 Board :
 
@@ -685,7 +680,7 @@ Type "help" to have a list of all available commands.
 Board :
 Order [ID : 2
 dateOfOrder=5 January 2017
-customer=customer ID n°15 Jamie Oliver username:joliver
+customer=customer ID n°3 Jamie Oliver username:joliver
 
 restaurant=Name : Sushi Saka
 	Address [x = 152.4, y = 47.2]
@@ -705,12 +700,12 @@ MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
 Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
 ]
 price=33.245000000000005
-courier=courier ID n°17 Forrest Gump username:fgump
+courier=courier ID n°5 Forrest Gump username:fgump
 
 addressOfDelivery=[x = 152.4, y = 47.2]]
 
 
-You have accepted to deliver the order :
+You have accepted to deliver the order n°2.
 
 Type "help" to have a list of all available commands.
 Board :
@@ -734,13 +729,27 @@ Please use "login <username> <password>"
 Type "help <>" to have a list of all available commands
 You have successfully logged in the system !
 
+Welcome Speedy
+Type "help" to have a list of all available commands.
+Board :
+
+You were on duty.
+You are now on duty.
+Type "help" to have a list of all available commands.
+Board :
+
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
 Welcome 
 Type "help" to have a list of all available commands.
 The total profit since the creation is :
-18.942500000000003
+13.8275
 Type "help" to have a list of all available commands.
 The total profit during this period is :
-18.942500000000003
+13.8275
 Type "help" to have a list of all available commands.
 Type "help" to have a list of all available commands.
 You have logged out.
@@ -752,7 +761,7 @@ Welcome Jamie
 Type "help" to have a list of all available commands.
 [Order [ID : 2
 dateOfOrder=5 January 2017
-customer=customer ID n°15 Jamie Oliver username:joliver
+customer=customer ID n°3 Jamie Oliver username:joliver
 
 restaurant=Name : Sushi Saka
 	Address [x = 152.4, y = 47.2]
@@ -772,7 +781,7 @@ MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
 Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
 ]
 price=33.245000000000005
-courier=courier ID n°17 Forrest Gump username:fgump
+courier=courier ID n°5 Forrest Gump username:fgump
 
 addressOfDelivery=[x = 152.4, y = 47.2]]
 ]
@@ -831,7 +840,7 @@ Type "help" to have a list of all available commands.
 Here is your order :
 Order [ID : 3
 dateOfOrder=5 January 2017
-customer=customer ID n°15 Jamie Oliver username:joliver
+customer=customer ID n°3 Jamie Oliver username:joliver
 
 restaurant=Name : Sushi Saka
 	Address [x = 152.4, y = 47.2]
@@ -859,9 +868,18 @@ You have successfully logged in the system !
 Welcome Usain
 Type "help" to have a list of all available commands.
 Board :
+
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Speedy
+Type "help" to have a list of all available commands.
+Board :
 Order [ID : 3
 dateOfOrder=5 January 2017
-customer=customer ID n°15 Jamie Oliver username:joliver
+customer=customer ID n°3 Jamie Oliver username:joliver
 
 restaurant=Name : Sushi Saka
 	Address [x = 152.4, y = 47.2]
@@ -875,19 +893,12 @@ MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
 Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
 ]
 price=18.395
-courier=courier ID n°18 Usain Bolt username:ubolt
+courier=courier ID n°7 Speedy Gonzalez username:speedgonz
 
 addressOfDelivery=[x = 152.4, y = 47.2]]
 
 
-You have logged out.
-Please use "login <username> <password>"
-Type "help <>" to have a list of all available commands
-You have successfully logged in the system !
-
-Welcome Speedy
-Type "help" to have a list of all available commands.
-Board :
+You have accepted to deliver the order n°3.
 
 Type "help" to have a list of all available commands.
 Board :
@@ -928,51 +939,37 @@ You have successfully logged in the system !
 Welcome 
 Type "help" to have a list of all available commands.
 The total profit since the creation is :
-18.942500000000003
+19.74725
 Type "help" to have a list of all available commands.
 The total profit during this period is :
-18.942500000000003
+19.74725
 Type "help" to have a list of all available commands.
 You can reach a profit of 20.0 by changing the markup to Infinity.
 Type "help" to have a list of all available commands.
 The markup value has been setted to 0.12.
 Type "help" to have a list of all available commands.
 The total profit since the creation is :
-24.462
+26.3934
 Type "help" to have a list of all available commands.
 Here are the activated customers of the platform :
-customer ID n°8 Xavier Collar username:chaperouge
+customer ID n°3 Jamie Oliver username:joliver
 
-customer ID n°9 Regis Troissant username:cptcroche
+customer ID n°4 Gordon Ramsay username:gramsay
 
-customer ID n°10 Baptiste Turpin username:alladin
-
-customer ID n°11 Kevin Uzan username:PJ
-
-customer ID n°12 Theo Bob username:theo7794
-
-customer ID n°15 Jamie Oliver username:joliver
-
-customer ID n°16 Gordon Ramsay username:gramsay
-
-customer ID n°20 Auguste Gusteau username:agusteau
+customer ID n°8 Auguste Gusteau username:agusteau
 
 Type "help" to have a list of all available commands.
 Here are the activated couriers of the platform :
-courier ID n°5 Peter Parker username:spiderman
+courier ID n°5 Forrest Gump username:fgump
 
-courier ID n°6 Spider Man username:peterparker
+courier ID n°6 Usain Bolt username:ubolt
 
-courier ID n°17 Forrest Gump username:fgump
-
-courier ID n°18 Usain Bolt username:ubolt
+courier ID n°7 Speedy Gonzalez username:speedgonz
 
 Type "help" to have a list of all available commands.
 Here are the activated restaurants of the platform :
 Name : Sushi Saka
 	Address [x = 152.4, y = 47.2]
-Name : Le Hoki
-	Address [x = 12.3, y = 478.21]
 Name : Pizza Hut
 	Address [x = 125.3, y = 78.3]
 Type "help" to have a list of all available commands.

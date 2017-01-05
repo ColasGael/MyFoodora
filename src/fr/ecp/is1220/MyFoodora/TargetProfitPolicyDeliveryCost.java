@@ -22,7 +22,9 @@ public class TargetProfitPolicyDeliveryCost implements TargetProfitPolicy,Serial
 		double serviceFee = myFoodora.getServiceFee();
 		
 		double deliveryCost = - (targetProfit - totalIncome*markupPercentage)/numberOfOrders + serviceFee; 
-	
+		if (totalIncome==0){
+			throw (new NonReachableTargetProfitException("This target profit can not be reached"));
+		}
 		if (markupPercentage >= 0){
 			return(deliveryCost);
 		}else{
