@@ -478,6 +478,8 @@ public class MyFoodoraClient {
 						+ "\"showMenuItem <restaurantName>\" : displays the menu of the restaurant\n"
 						+ "\"showTotalProfit <>\" : displays the total profit of MyFoodora.\n"
 						+ "\"showTotalProfit <startDate> <endDate>\" : displays the profit between statDate and endDate (format DD/MM/YYYY)\n"
+						+ "\"activateUser <username>\" : activates the user\n"
+						+ "\"deactivateUser <username>\" : deactivates the user\n"
 						+ "\"logout\" : log out"
 						);
 				break;
@@ -853,6 +855,48 @@ public class MyFoodoraClient {
 					}
 				}
 				return "next" ;
+			case("activateUser"):
+				st.nextToken("\"");
+				String username = st.nextToken("\"");
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"activateUser <userName>\" has only 1 parameter.");
+					error = true ;
+				}
+				if(!error){
+					try{
+						User user = myFoodora.findUserByUsername(username);
+						if(user.isActivated()){
+							System.err.println("The user \""+username+"\" is already activated.");
+						}else{
+							System.out.println("The user \""+username+"\" has been activated.");
+							user.setActivated(true);
+						}
+					}catch(UserNotFoundException e){
+						System.err.println("The user of username \""+username+"\" does not exist.");
+					}
+				}
+				return "next" ;
+			case("deactivateUser"):
+				st.nextToken("\"");
+				username = st.nextToken("\"");
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"deactivateUser <userName>\" has only 1 parameter.");
+					error = true ;
+				}
+				if(!error){
+					try{
+						User user = myFoodora.findUserByUsername(username);
+						if(!user.isActivated()){
+							System.err.println("The user \""+username+"\" is already deactivated.");
+						}else{
+							System.out.println("The user \""+username+"\" has been deactivated.");
+							user.setActivated(false);
+						}
+					}catch(UserNotFoundException e){
+						System.err.println("The user of username \""+username+"\" does not exist.");
+					}
+				}
+				return "next" ;
 			case("logout"):
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"logout <>\" cannot have parameters.");
@@ -870,54 +914,6 @@ public class MyFoodoraClient {
 			System.err.println("Invalid number of parameters or syntax error.");
 			return "next" ;
 		}
-		/*switch (input){
-		case("help"):
-			System.out.println("\"activate\" : activate an account\n"
-					+ "\"deactivate\" : deactivate an account\n"
-					+ "\"compute\" : compute a business value\n"
-					+ "\"stat\" : display statistics\n"
-					+ "\"setCurrentPolicy\" : set the current delivery policy\n"
-					+ "\"meetTargetProfit\" : meet a target profit py changing a business value\n"
-					+ "\"logout\" : log out\n"
-					+ "\"close\" : close MyFoodora");
-			break;			
-		case("activate"):
-			System.out.println("Here is a list of all the users of MyFoodora :");
-			currentManager.getMyFoodora().displayUsers();
-			while(!input.equals("exit")){
-				System.out.println("Please enter the ID of the user you want to activate or type \"exit\":");
-				input = sc.next();
-				try{
-					int id = Integer.parseInt(input) ;
-					currentManager.activateUser(id);
-					System.out.println("You have activated the account of this user :\n"+currentManager.getMyFoodora().findUserByUniqueID(id));
-					return "next" ;
-				}catch(UserNotFoundException e){
-					System.err.println("This User ID is not in MyFoodora.");
-				}catch(NumberFormatException e){
-					System.err.println("You must enter an ID");
-				}
-			}
-			break ;
-		case("deactivate"):
-			System.out.println("Here is a list of all the users of MyFoodora :");
-			currentManager.getMyFoodora().displayUsers();
-			while(!input.equals("exit")){
-				System.out.println("Please enter the ID of the user you want to deactivate or type \"exit\":");
-				input = sc.next();
-				try{
-					int id = Integer.parseInt(input) ;
-					currentManager.deactivateUser(id);
-					System.out.println("You have deactivated the account of this user :\n"+currentManager.getMyFoodora().findUserByUniqueID(id));
-					return "next" ;
-				}catch(UserNotFoundException e){
-					System.err.println("This User ID is not in MyFoodora.");
-				}catch(NumberFormatException e){
-					System.err.println("You must enter an ID");
-				}
-			}
-			break ;
-			}*/
 	}
 	
 	/**
