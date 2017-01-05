@@ -86,7 +86,7 @@ showTotalProfit "01/01/2017" "31/01/2017"
 setDeliveryPolicy "fairOccupation"
 logout
 login "joliver" "chef123"
-getHistoryOfOrders
+historyOfOrders
 displayFidelityInfo
 createOrder "Sushi Saka"
 addItem2Order "M7"
