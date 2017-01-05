@@ -435,7 +435,7 @@ public class MyFoodoraClient {
 					currentCourier.acceptDeliveryCall(bAnswer, currentCourier.getBoard().findObsById(orderID), myFoodora);
 					System.out.println("You have "+(bAnswer?"accepted":"refused")+" to deliver this order :\n"+currentCourier.getBoard().findObsById(orderID));
 				}catch(OrderNotFoundException e){
-					System.err.println("This Order ID is not in your board.");
+					System.err.println("This Order ID "+orderID+" is not in your board.");
 				}
 				return "next" ;
 			case("logout"):
