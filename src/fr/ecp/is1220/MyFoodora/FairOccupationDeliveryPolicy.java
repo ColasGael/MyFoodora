@@ -23,6 +23,7 @@ public class FairOccupationDeliveryPolicy implements DeliveryPolicy,Serializable
 				
 				if (courier.isOnDuty()&&(nbOfCompletedDeliveries < nbOfCompletedDeliveriesMin)){
 					chosenCourier = courier;
+					nbOfCompletedDeliveriesMin = nbOfCompletedDeliveries ;
 				}
 			}
 		}
