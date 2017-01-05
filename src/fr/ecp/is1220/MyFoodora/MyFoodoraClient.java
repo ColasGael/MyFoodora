@@ -157,6 +157,8 @@ public class MyFoodoraClient {
 				System.out.println("\"createOrder <restaurantName>\" : create a new order\n"
 						+ "\"addItem2Order <itemName>\" : add a dish or a meal to the menu\n"
 						+ "\"endOrder <applyReduction> : submit the order to today's date and applies the order depending on the applyReduction value \"yes\" or \"no\"\n"
+						+ "\"registerFidelityCard <cardType>\" : associate a new fidelity card (\"basic\", \"point\" or \"lottery\")\n"
+						+ "\"displayFidelityInfo <>\" : displays the fidelity info\n"
 						+ "\"logout\" : logout\n") ;
 				return "next" ;
 			case("createOrder"):
@@ -276,12 +278,45 @@ public class MyFoodoraClient {
 					currentOrder = null ;
 				}
 				return "next" ;
+			case("registerFidelityCard"):
+				st.nextToken("\"");
+				String cardType = st.nextToken("\"");
+				switch(cardType){
+				case("basic"):case("point"):case("lottery"):
+					break ;
+				default :
+					System.err.println("The <cardType> parameter must be \"basic\", \"point\" or \"lottery\".");
+					error = true ;
+				}
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"registerFidelityCard <cardType>\" has only 1 parameter.");
+					error = true ;
+				}
+				if(!error){
+					currentCustomer.registerFidelityCard(cardType);
+					System.out.println("You have now a "+cardType+" fidelity card.");
+				}
+				return "next" ;
+			case("displayFidelityInfo"):
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"displayFidelityInfo <>\" cannot have parameters.");
+					error = true ;
+				}
+				if(!error){
+					currentCustomer.displayFidelityInfo();
+				}
+			case("historyOfOrders"):
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"historyOfOrders <>\" cannot have parameters.");
+					error = true ;
+				}
+				if(!error){
+					System.out.println(currentCustomer.getHistoryOfOrders(myFoodora));
+				}
 			case("logout"):
-				if(st.hasMoreTokens()){
-					if(st.hasMoreTokens()){	
-						System.err.println("The command \"logout <>\" cannot have parameters.");
-						return "next" ;
-					}
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"logout <>\" cannot have parameters.");
+					return "next" ;
 				}
 				return "logout" ;				
 			default :
