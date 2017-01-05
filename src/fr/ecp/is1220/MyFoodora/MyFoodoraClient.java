@@ -159,7 +159,8 @@ public class MyFoodoraClient {
 						+ "\"endOrder <applyReduction> : submit the order to today's date and applies the order depending on the applyReduction value \"yes\" or \"no\"\n"
 						+ "\"registerFidelityCard <cardType>\" : associate a new fidelity card (\"basic\", \"point\" or \"lottery\")\n"
 						+ "\"displayFidelityInfo <>\" : displays the fidelity info\n"
-						+ "\"logout\" : logout\n") ;
+						+ "\"historyOfOrders <>\" : displays the history of orders\n"
+						+"\"logout\" : logout\n") ;
 				return "next" ;
 			case("createOrder"):
 				st.nextToken("\"");
@@ -344,10 +345,8 @@ public class MyFoodoraClient {
 			case("help"):
 				System.out.println("\"onDuty <>\" : set state to on duty\n"
 						+ "\"offDuty <>\" : set state to off duty\n"
-						+ "\"accept <orderID> : accept the delivery call for the order of ID\n"
-						+ "\"refuse <orderID> : refuse the delivery call for the order of ID"
-						+ "\"logout\" : log out\n"
-						+ "\"close\" : close MyFoodora");
+						+ "\"acceptDeliveryCall <orderID> <answer> : accept (<answer> = \"yes\") or refuse (<answer> = \"no\") the delivery call for the orderID\n"
+						+ "\"logout\" : log out\n");
 				break;
 			case("onDuty"):
 				if(st.hasMoreTokens()){	
@@ -371,38 +370,38 @@ public class MyFoodoraClient {
 					System.out.println("You are now "+(currentCourier.isOnDuty()?"on duty.":"off duty."));
 				}
 				return "next" ;			
-			case("accept"):
-				while(!input.equals("exit")){
-					System.out.println("Please enter the ID of the order you want to deliver or type \"exit\":");
-					input = sc.next();
-					try{
-						int id = Integer.parseInt(input) ;
-						currentCourier.acceptDeliveryCall(true, currentCourier.getBoard().findObsById(id), myFoodora);
-						System.out.println("You have accepted to deliver this order :\n"+currentCourier.getBoard().findObsById(id));
-						return "next" ;
-					}catch(OrderNotFoundException e){
-						System.err.println("This Order ID is not in your board.");
-					}catch(NumberFormatException e){
-						System.err.println("You must enter an ID");
-					}
+			case("acceptDeliveryCall"):
+				st.nextToken("\"");
+				String orderId = st.nextToken("\"") ;
+				int orderID = 0;
+				try{
+					orderID = Integer.parseInt(orderId) ;
+				}catch(NumberFormatException e){
+					System.err.println("The <orderId> parameter is invalid you must enter an integer.");
+					error = true ;
 				}
-				break ;
-			case("refuse"):
-				while(!input.equals("exit")){
-					System.out.println("Please enter the ID of the order you want to refuse or type \"exit\":");
-					input = sc.next();
-					try{
-						int id = Integer.parseInt(input) ;
-						currentCourier.acceptDeliveryCall(false, currentCourier.getBoard().findObsById(id), myFoodora);
-						System.out.println("You have accepted to deliver this order :\n"+currentCourier.getBoard().findObsById(id));
-						return "next" ;
-					}catch(OrderNotFoundException e){
-						System.err.println("This Order ID is not in your board.");
-					}catch(NumberFormatException e){
-						System.err.println("You must enter an ID");
-					}
+				st.nextToken("\"");
+				String answer = st.nextToken("\"");
+				boolean bAnswer = false ;
+				switch(answer){
+				case("yes"):
+					bAnswer = true ;
+				case("no"):
+					bAnswer = false ;
+				default :
+					System.err.println("The <answer> parameter is invalid you must enter \"yes\" or \"no\".");
 				}
-				break ;
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"acceptDeliveryCall <orderId> <answer>\" has only 2 parameters.");
+					error = true ;
+				}
+				try{
+					currentCourier.acceptDeliveryCall(bAnswer, currentCourier.getBoard().findObsById(orderID), myFoodora);
+					System.out.println("You have "+(bAnswer?"accepted":"refused")+" to deliver this order :\n"+currentCourier.getBoard().findObsById(orderID));
+				}catch(OrderNotFoundException e){
+					System.err.println("This Order ID is not in your board.");
+				}
+				return "next" ;
 			case("logout"):
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"offDuty <>\" cannot have parameters.");
