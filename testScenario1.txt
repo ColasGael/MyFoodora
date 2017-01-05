@@ -4,7 +4,7 @@ registerRestaurant "Pizza Hut" "hut" "dateofbirth" "125.3,78.3"
 registerCustomer "Jamie" "Oliver" "joliver" "chef123" "12.2,45.3"
 registerCustomer "Gordon" "Ramsay" "gramsay" "chef456" "45.8,145.3"
 registerCourier "Forrest" "Gump" "fgump" "shrink" "784.2,12.3"
-registerCourier "Usain" "Bolt" "ubolt" "jamaik" "123.54,56.2"
+registerCourier "Usain" "Bolt" "ubolt" "jamaik" "123.54,76.2"
 registerCourier "Speedy" "Gonzalez" "speedgonz" "ch33se" "12.3,125.3"
 showCustomers
 logout 

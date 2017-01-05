@@ -32,10 +32,11 @@ public class FastestDeliveryPolicy implements DeliveryPolicy,Serializable {
 				double x = courier.getPosition().getX();
 				double y = courier.getPosition().getY();
 				//compute the distance between the address of delivery and the position of the courier 
-				double distance = Math.pow(Math.pow(x-xOrder, 2)*Math.pow(y-yOrder, 2), 0.5);
+				double distance = Math.pow(Math.pow(x-xOrder, 2)+Math.pow(y-yOrder, 2), 0.5);
 				
 				if (courier.isOnDuty()&& (distance < distanceMin)){
 					chosenCourier = courier;
+					distanceMin = distance ;
 				}
 			}
 		}
