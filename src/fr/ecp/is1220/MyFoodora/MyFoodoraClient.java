@@ -1,6 +1,7 @@
 package fr.ecp.is1220.MyFoodora;
 
 import java.io.*;
+import java.util.ArrayList ;
 import java.util.Scanner;
 import java.util.InputMismatchException ;
 import java.util.NoSuchElementException ;
@@ -17,6 +18,7 @@ public class MyFoodoraClient {
 	private static StringTokenizer st ;
 	private static MyFoodora myFoodora ;
 	private static User currentUser ;
+	private static Order currentOrder = null ;
 
 	public static void main(String[] args) {
 		myFoodora = MyFoodora.loadMyFoodora();
@@ -145,7 +147,132 @@ public class MyFoodoraClient {
 	}
 	
 	private static String workCustomer(){
-		return "next" ;
+		Customer currentCustomer = (Customer)currentUser ;
+		String commande ;
+		boolean error = false ;
+		try{
+			commande = st.nextToken() ;
+			switch (commande){
+			case("help"):
+				System.out.println("\"createOrder <restaurantName>\" : create a new order\n"
+						+ "\"addItem2Order <itemName>\" : add a dish or a meal to the menu\n"
+						+ "\"endOrder <> : submit the order to today's date\n"
+						+ "\"manage\" : manage your discounts\n"
+						+ "\"disconnect\" : change user\n"
+						+ "\"close\" : close MyFoodora");
+				return "next" ;
+			case("createOrder"):
+				st.nextToken("\"");
+				String restaurantName = st.nextToken("\"");
+				Restaurant orderedRestaurant = null ;
+				try{
+					User orderedUser = myFoodora.findUserByName(restaurantName) ;
+					if(orderedUser.getUserType().equals("restaurant")){
+						orderedRestaurant = (Restaurant)orderedUser ;
+					}else{
+						System.err.println("oupsThe restaurant \""+restaurantName+"\" does not exist.");
+						error = true ;
+					}
+				}catch(UserNotFoundException e){
+					System.err.println("The restaurant \""+restaurantName+"\" does not exist.");
+					error = true ;
+				}
+				if(st.hasMoreTokens()){
+					System.err.println("Invalid number of parameters or syntax error.");
+					error = true ;
+				}
+				if(!error){
+					currentOrder = new Order(currentCustomer,orderedRestaurant);
+					System.out.println("A new order has been created. Here is the restaurant's menu :");
+					currentOrder.getRestaurant().displayMenu();
+				}
+				return "next" ;
+			case("addItem2Order"):
+				st.nextToken("\"");
+				String itemName = st.nextToken("\"");
+				if(st.hasMoreTokens()){
+					System.err.println("Invalid number of parameters or syntax error.");
+					error = true ;
+				}
+				if(currentOrder==null){
+					System.err.println("You have not created any order.");
+					error = true ;
+					return "next" ;
+				}
+				boolean itemNotExisting = true ;
+				String itemType = null ;
+				Dish orderedDish = null ;
+				Meal orderedMeal = null ;
+				try{
+					orderedDish = currentOrder.getRestaurant().findDishByName(itemName) ;
+					itemType = "dish" ;
+					itemNotExisting = false ;
+				}catch(FoodItemNotFoundException e){
+					
+				}
+				try{
+					orderedMeal = currentOrder.getRestaurant().findMealByName(itemName) ;
+					itemType = "meal" ;
+					itemNotExisting = false ;
+				}catch(FoodItemNotFoundException e){
+					
+				}
+				if(itemNotExisting){
+					System.err.println("The item \""+itemName+"\" does not exist.");
+					error = true ;
+				}
+				if(!error){
+					switch(itemType){
+					case("dish"):
+						currentOrder.addDish(orderedDish);
+						System.out.println("The dish \""+itemName+"\" has been added to your order.");
+						break ;
+					case("meal"):
+						currentOrder.addMeal(orderedMeal);
+						System.out.println("The meal \""+itemName+"\" has been added to your order.");
+						break ;
+					}
+					System.out.println("The actual price of your order is "+currentOrder.computePrice());
+				}
+				return "next" ;
+			case("submitOrder"):
+				if(st.hasMoreTokens()){
+					if(st.hasMoreTokens()){	
+						System.err.println("The command \"submitOrder <>\" cannot have parameters.");
+						error = true ;
+					}
+				}
+				if(currentOrder==null){
+					System.err.println("You have not created any order.");
+					error = true ;
+					return "next" ;
+				}
+				if(currentOrder.computePrice()==0){
+					System.out.println("You have not ordered anything.");
+					error = true ;
+				}
+				if(!error){
+					System.out.println("Here is your order :");
+					System.out.println(currentOrder);
+					currentCustomer.submitOrder(currentOrder, true, myFoodora);
+				}
+				return "next" ;
+			case("logout"):
+				if(st.hasMoreTokens()){
+					if(st.hasMoreTokens()){	
+						System.err.println("The command \"logout <>\" cannot have parameters.");
+						return "next" ;
+					}
+				}
+				return "logout" ;				
+			default :
+				System.err.println("The command "+commande+" does not exist.");	
+			}
+			return "next" ;
+		}catch(NoSuchElementException e){
+			System.err.println("Invalid number of parameters or syntax error.");
+			return "next" ;
+		}
 	}
 	
 	/**
@@ -282,9 +409,9 @@ public class MyFoodoraClient {
 				if(!error){
 					currentManager.addUser("restaurant", restaurantName, "", restaurantUserName, restaurantPassword);
 					try{
-						((Restaurant)currentManager.getMyFoodora().findUserByUsername(restaurantUserName)).setAddress(new Position(restaurantX,restaurantY));
+						((Restaurant)currentManager.getMyFoodora().findUserByName(restaurantName)).setAddress(new Position(restaurantX,restaurantY));
 						System.out.println("The restaurant has been registered. Here are its properties : ") ;
-						System.out.println(currentManager.getMyFoodora().findUserByUsername(restaurantUserName));
+						System.out.println(currentManager.getMyFoodora().findUserByName(restaurantName));
 					}catch(UserNotFoundException e){
 						System.out.println("Error while creating the user.");
 					}
@@ -318,9 +445,9 @@ public class MyFoodoraClient {
 				if(!error){
 					currentManager.addUser("customer", customerName, customerSurname, customerUserName, customerPassword);
 					try{
-						((Customer)currentManager.getMyFoodora().findUserByUsername(customerUserName)).setAddress(new Position(customerX,customerY));
+						((Customer)currentManager.getMyFoodora().findUserByName(customerName)).setAddress(new Position(customerX,customerY));
 						System.out.println("The customer has been registered. Here are its properties : ") ;
-						System.out.println(currentManager.getMyFoodora().findUserByUsername(customerUserName));
+						System.out.println(currentManager.getMyFoodora().findUserByName(customerName));
 					}catch(UserNotFoundException e){
 						System.out.println("Error while creating the user.");
 					}
@@ -354,9 +481,9 @@ public class MyFoodoraClient {
 				if(!error){
 					currentManager.addUser("courier", courierName, courierSurname, courierUserName, courierPassword);
 					try{
-						((Courier)currentManager.getMyFoodora().findUserByUsername(courierUserName)).setPosition(new Position(courierX,courierY));
+						((Courier)currentManager.getMyFoodora().findUserByName(courierName)).setPosition(new Position(courierX,courierY));
 						System.out.println("The courier has been registered. Here are its properties : ") ;
-						System.out.println(currentManager.getMyFoodora().findUserByUsername(courierUserName));
+						System.out.println(currentManager.getMyFoodora().findUserByName(courierName));
 					}catch(UserNotFoundException e){
 						System.out.println("Error while creating the user.");
 					}
