@@ -209,7 +209,7 @@ public class Manager extends User {
 		for (User user : myFoodora.getUsers()){
 			if (user.getUserType().equals("courier")){
 				Courier courier = (Courier)user;
-				if(courier.getCounter() > mostDeliveries){
+				if((courier.getCounter() > mostDeliveries)&&(courier.isActivated())){
 					mostActiveCourier = courier;
 					mostDeliveries = courier.getCounter();
 				}

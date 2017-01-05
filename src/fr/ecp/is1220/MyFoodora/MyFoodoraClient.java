@@ -1,14 +1,8 @@
 package fr.ecp.is1220.MyFoodora;
 
 import java.io.*;
-import java.util.ArrayList ;
 import java.util.Scanner;
-import java.util.InputMismatchException ;
 import java.util.NoSuchElementException ;
-import java.util.Locale;
-import java.text.ParseException ;
-import java.util.Calendar ;
-import java.text.SimpleDateFormat ;
 import java.util.StringTokenizer ;
 
 public class MyFoodoraClient {
@@ -146,6 +140,10 @@ public class MyFoodoraClient {
 		}		
 	}
 	
+	/**
+	 * Works with all the possible commands that a customer can use
+	 * @return "next" to go to the next command or "logout" if the customer wanted to logout.
+	 */
 	private static String workCustomer(){
 		Customer currentCustomer = (Customer)currentUser ;
 		String commande ;
@@ -156,7 +154,7 @@ public class MyFoodoraClient {
 			case("help"):
 				System.out.println("\"createOrder <restaurantName>\" : create a new order\n"
 						+ "\"addItem2Order <itemName>\" : add a dish or a meal to the menu\n"
-						+ "\"endOrder <> : submit the order to today's date\n"
+						+ "\"endOrder <applyReduction> : submit the order to today's date and applies the order depending on the applyReduction value \"yes\" or \"no\"\n"
 						+ "\"manage\" : manage your discounts\n"
 						+ "\"disconnect\" : change user\n"
 						+ "\"close\" : close MyFoodora");
@@ -235,12 +233,27 @@ public class MyFoodoraClient {
 					System.out.println("The actual price of your order is "+currentOrder.computePrice());
 				}
 				return "next" ;
-			case("submitOrder"):
+			case("endOrder"):
+				st.nextToken("\"");
+				String applyReduction = st.nextToken("\"");
+				boolean applyReductionBool = false ;
 				if(st.hasMoreTokens()){
 					if(st.hasMoreTokens()){	
-						System.err.println("The command \"submitOrder <>\" cannot have parameters.");
+						System.err.println("The command \"endOrder <applyReduction>\" has only 1 parameter.");
 						error = true ;
 					}
+				}
+				switch(applyReduction){
+				case("yes"):
+					applyReductionBool = true ;
+					break ;
+				case("no"):
+					applyReductionBool = false ;
+					break ;
+				default :
+					System.err.println("The applyReduction parameter must be \"yes\" or \"no\".");
+					error = true ;
+					break ;
 				}
 				if(currentOrder==null){
 					System.err.println("You have not created any order.");
@@ -248,13 +261,19 @@ public class MyFoodoraClient {
 					return "next" ;
 				}
 				if(currentOrder.computePrice()==0){
-					System.out.println("You have not ordered anything.");
+					System.err.println("You have not ordered anything.");
 					error = true ;
 				}
 				if(!error){
 					System.out.println("Here is your order :");
 					System.out.println(currentOrder);
+					if(applyReductionBool){
+						if(currentCustomer.getFidelityCard().computeReduction(currentOrder)>0){
+							System.out.println("You have won "+currentCustomer.getFidelityCard().computeReduction(currentOrder)+" with your fidelity card.");
+						}
+					}
 					currentCustomer.submitOrder(currentOrder, true, myFoodora);
+					currentOrder = null ;
 				}
 				return "next" ;
 			case("logout"):
@@ -276,8 +295,8 @@ public class MyFoodoraClient {
 	}
 	
 	/**
-	 * Works with all the possible commands that a restaurant can use
-	 * @return "next" to go to the next command, "disconnect" or "close".
+	 * Works with all the possible commands that a courier can use
+	 * @return "next" to go to the next command or "logout" if the courier wanted to logout.
 	 */
 	private static String workCourier(){
 		Courier currentCourier = (Courier)currentUser ;
@@ -369,6 +388,10 @@ public class MyFoodoraClient {
 		}
 	}
 	
+	/**
+	 * Works with all the possible commands that a manager can use
+	 * @return "next" to go to the next command or "logout" if the manager wanted to logout.
+	 */
 	private static String workManager(){
 		Manager currentManager = (Manager)currentUser ;
 		boolean error = false ;
@@ -380,6 +403,11 @@ public class MyFoodoraClient {
 				System.out.println("\"registerRestaurant <name> <username> <password> <address> : register a new restaurant\n"
 						+ "\"registerCustomer <firstName> <lastName> <username> <password> <address> : register a new customer\n"
 						+ "\"registerCourier <firstName> <lastName> <username> <password> <address> : register a new courier\n"
+						+ "\"setDeliveryPolicy <delPolicyName>\" : set the delivery policy to \"fastest\" or \"fairOccupation\"\n"
+						+ "\"meetTargetProfit <profitInfoName> <targetProfit>\" : show how to set the value of the profit info (\"deliveryCost\", \"serviceFee\" or \"markup\") to meet the target profit.\n"
+						+ "\"setProfitInfo <profitInfoName> <value>\" : sets the profitInfo (\"deliveryCost\", \"serviceFee\" or \"markup\") to the value.\n"
+						+ "\"associateCard <userName> <cardType>\" : associate a new fidelity card (\"basic\", \"point\" or \"lottery\" to the user"
+						+ "\"showCourierDeliveries <>\" : displays all the Courier ordered by the number of delivered orders"
 						+ "\"logout\" : log out"
 						);
 				break;
@@ -489,9 +517,124 @@ public class MyFoodoraClient {
 					}
 				}
 				return "next" ;
+			case("setDeliveryPolicy"):
+				st.nextToken("\"");
+				String delPolicyName = st.nextToken("\"");
+				switch(delPolicyName){
+				case("fairOccupation"):case("fastest"):
+					break ;
+				default :
+					System.err.println("The <delPolicyName> parameter must be \"fairOccupation\" or \"fastest\".");
+					error = true ;
+				}
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"setDeliveryPolicy <delPolicyName>\" has only 1 parameter.");
+					error = true ;
+				}
+				if(!error){
+					currentManager.setDeliveryPolicy(delPolicyName);
+				}
+				return "next" ;
+			case("meetTargetProfit"):
+				st.nextToken("\"");
+				String profitPolicyName = st.nextToken("\"");
+				switch(profitPolicyName){
+				case("serviceFee"):case("markup"):case("deliveryCost"):
+					break ;
+				default :
+					System.err.println("The <profitInfoName> parameter must be \"deliveryCost\", \"markup\" or \"serviceFee\".");
+					error = true ;
+				}
+				st.nextToken("\"");
+				String targetProfitString = st.nextToken("\"");
+				double targetProfit = 0 ;
+				try{
+					targetProfit = Double.parseDouble(targetProfitString) ;
+				}catch(NumberFormatException e){
+					System.err.println("The <targetProfit> parameter is invalid : you must enter a profit value (ex : \"2142.24\").");
+					error = true ;
+				}
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"meetTargetProfit <profitInfoName> <targetProfit> \" has only 2 parameters.");
+					error = true ;
+				}
+				if(!error){
+					try{
+						System.out.println("You can reach a profit of "+targetProfit+" by changing the "+profitPolicyName+" to "+currentManager.meetTargetProfit(profitPolicyName,targetProfit)+".");
+					}catch(NonReachableTargetProfitException e){
+						System.err.println("It is impossible to reach the profit value "+targetProfit+".");
+					}
+				}
+				return "next" ;
+			case("setProfitInfo"):
+				st.nextToken("\"");
+				String profitInfoName = st.nextToken("\"");
+				switch(profitInfoName){
+				case("serviceFee"):case("markup"):case("deliveryCost"):
+					break ;
+				default :
+					System.err.println("The <profitInfoName> parameter must be \"deliveryCost\", \"markup\" or \"serviceFee\".");
+					error = true ;
+				}
+				st.nextToken("\"");
+				String valueString = st.nextToken("\"");
+				double value = 0 ;
+				try{
+					value = Double.parseDouble(valueString) ;
+				}catch(NumberFormatException e){
+					System.err.println("The <value> parameter is invalid : you must enter a value (ex : \"2142.24\").");
+					error = true ;
+				}
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"setProfitInfo <profitInfoName> <value>\" has only 2 parameters.");
+					error = true ;
+				}
+				if(!error){
+					currentManager.setProfitInfo(profitInfoName, value);
+					System.out.println("The "+profitInfoName+" value has been setted to "+value+".");
+				}
+				return "next" ;
+			case("associateCard"):
+				st.nextToken("\"");
+				String customerUsername = st.nextToken("\"");
+				st.nextToken("\"");
+				String cardType = st.nextToken("\"");
+				switch(cardType){
+				case("basic"):case("point"):case("lottery"):
+					break ;
+				default :
+					System.err.println("The <cardType> parameter must be \"basic\", \"point\" or \"lottery\".");
+					error = true ;
+				}
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"associateCard <userName> <cardType>\" has only 2 parameters.");
+					error = true ;
+				}
+				if(!error){
+					try{
+						User fidelUser = myFoodora.findUserByUsername(customerUsername);
+						if(fidelUser.getUserType().equals("customer")){
+							Customer fidelCustomer = (Customer)fidelUser ;
+							fidelCustomer.registerFidelityCard(cardType);
+							System.out.println("The user of username \""+customerUsername+"\" has now a "+cardType+" fidelity card.");
+						}else{
+							System.err.println("The user of username \""+customerUsername+"\" is not a customer.");
+						}
+					}catch(UserNotFoundException e){
+						System.err.println("The user of username \""+customerUsername+"\" does not exist.");
+					}
+				}
+				return "next" ;
+			case("showCourierDeliveries"):
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"showCourierDeliveries <>\" cannot have parameters.");
+					error = true ;
+				}
+				
+				return "next" ;
 			case("logout"):
 				if(st.hasMoreTokens()){	
-					System.err.println("The command \"offDuty <>\" cannot have parameters.");
+					System.err.println("The command \"logout <>\" cannot have parameters.");
 					error = true ;
 				}
 				if(!error){

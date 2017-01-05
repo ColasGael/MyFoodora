@@ -48,7 +48,7 @@ public class LotteryFidelityCard extends FidelityCard {
 			}
 			lastDayWhenUsed = Calendar.getInstance() ;
 		}
-		System.out.println((reduction!=0) ? "You have won " + reduction + " euros !" : "You lose.");
+		System.out.println((reduction!=0) ? "You have won " + reduction + " euros with your lottery fidelity card !" : "You did not have any reduction today with your lottery fidelity card.");
 		return reduction ;
 	}
 	
@@ -60,7 +60,6 @@ public class LotteryFidelityCard extends FidelityCard {
 	public void applyReduction(Order order){
 		double originalPrice = order.getPrice();
 		double reduction = this.computeReduction(order);
-		
 		order.setPrice(originalPrice - reduction);
 	}
 	/**
