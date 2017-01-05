@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.NoSuchElementException ;
 import java.util.StringTokenizer ;
+import java.util.ArrayList ;
 
 public class MyFoodoraClient {
 
@@ -630,7 +631,24 @@ public class MyFoodoraClient {
 					System.err.println("The command \"showCourierDeliveries <>\" cannot have parameters.");
 					error = true ;
 				}
-				
+				if(!error){
+					System.out.println("Here are the activated couriers of the platform :");
+					Courier mostActiveCourier = new Courier("","","","") ;
+					ArrayList<Integer> activatedCourier = new ArrayList<Integer>() ;
+					while (mostActiveCourier!=null){
+						mostActiveCourier = currentManager.mostActiveCourier();
+						if(mostActiveCourier!=null){
+						activatedCourier.add(mostActiveCourier.getUniqueID());
+							try{
+								currentManager.deactivateUser(mostActiveCourier.getUniqueID());
+							}catch(UserNotFoundException e){
+								System.err.println("Error while displaying the couriers.");
+							}						
+							System.out.println(mostActiveCourier);
+						}
+					}
+					
+				}
 				return "next" ;
 			case("logout"):
 				if(st.hasMoreTokens()){	
