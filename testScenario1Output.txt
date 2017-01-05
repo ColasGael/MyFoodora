@@ -435,7 +435,7 @@ Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
 ]
 price=0.0
 courier=null
-addressOfDelivery=[x = 78.9, y = 1.23]]
+addressOfDelivery=[x = 125.3, y = 78.3]]
 
 You did not have any reduction today with your lottery fidelity card.
 You did not have any reduction today with your lottery fidelity card.
@@ -529,7 +529,7 @@ Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
 ]
 price=0.0
 courier=null
-addressOfDelivery=[x = 12.2, y = 45.3]]
+addressOfDelivery=[x = 152.4, y = 47.2]]
 
 You have paid 33.245000000000005 euros for your order
 
@@ -582,7 +582,7 @@ Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=1]
 price=43.305
 courier=courier ID n°19 Speedy Gonzalez username:speedgonz
 
-addressOfDelivery=[x = 78.9, y = 1.23]]
+addressOfDelivery=[x = 125.3, y = 78.3]]
 
 Order [ID : 2
 dateOfOrder=5 January 2017
@@ -608,35 +608,10 @@ Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
 price=33.245000000000005
 courier=courier ID n°19 Speedy Gonzalez username:speedgonz
 
-addressOfDelivery=[x = 12.2, y = 45.3]]
+addressOfDelivery=[x = 152.4, y = 47.2]]
 
 
-You have refused to deliver this order :
-Order [ID : 2
-dateOfOrder=5 January 2017
-customer=customer ID n°15 Jamie Oliver username:joliver
-
-restaurant=Name : Sushi Saka
-	Address [x = 152.4, y = 47.2]
-dishes=[Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
-, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
-]
-meals=[
-FullMeal : S3
-price : 14.85 type : standard
-MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
-Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
-Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
-, 
-HalfMeal : M7
-price : 10.395 type : standard
-MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
-Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
-]
-price=33.245000000000005
-courier=courier ID n°19 Speedy Gonzalez username:speedgonz
-
-addressOfDelivery=[x = 12.2, y = 45.3]]
+You have refused to deliver the order :
 
 Type "help" to have a list of all available commands.
 Board :
@@ -664,7 +639,7 @@ Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
 price=33.245000000000005
 courier=courier ID n°19 Speedy Gonzalez username:speedgonz
 
-addressOfDelivery=[x = 12.2, y = 45.3]]
+addressOfDelivery=[x = 152.4, y = 47.2]]
 
 
 You have logged out.
@@ -698,8 +673,10 @@ Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=1]
 price=43.305
 courier=courier ID n°17 Forrest Gump username:fgump
 
-addressOfDelivery=[x = 78.9, y = 1.23]]
+addressOfDelivery=[x = 125.3, y = 78.3]]
 
+
+You have accepted to deliver the order :
 
 Type "help" to have a list of all available commands.
 Board :
@@ -810,7 +787,7 @@ Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
 ]
 price=0.0
 courier=null
-addressOfDelivery=[x = 12.2, y = 45.3]]
+addressOfDelivery=[x = 152.4, y = 47.2]]
 
 You have paid 18.395 euros for your order
 
@@ -841,7 +818,7 @@ Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
 price=18.395
 courier=courier ID n°18 Usain Bolt username:ubolt
 
-addressOfDelivery=[x = 12.2, y = 45.3]]
+addressOfDelivery=[x = 152.4, y = 47.2]]
 
 
 You have logged out.
@@ -876,8 +853,10 @@ Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
 price=33.245000000000005
 courier=courier ID n°19 Speedy Gonzalez username:speedgonz
 
-addressOfDelivery=[x = 12.2, y = 45.3]]
+addressOfDelivery=[x = 152.4, y = 47.2]]
 
+
+You have accepted to deliver the order :
 
 Type "help" to have a list of all available commands.
 Board :

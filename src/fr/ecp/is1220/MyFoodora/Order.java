@@ -64,7 +64,7 @@ public class Order implements java.io.Serializable {
 		this.meals = new ArrayList<Meal>();
 		this.dateOfOrder = Calendar.getInstance() ;
 		this.courier = null ;
-		this.addressOfDelivery = customer.getAddress() ;
+		this.addressOfDelivery = restaurant.getAddress() ;
 	}
 
 	public int getUniqueID() {
