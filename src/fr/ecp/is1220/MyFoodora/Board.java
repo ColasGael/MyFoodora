@@ -39,9 +39,11 @@ public class Board <ObsType> implements java.io.Serializable{
 	public ObsType findObsById (int uniqueID) throws OrderNotFoundException {
 		
 		for (ObsType object : obs){
-			if((object instanceof Order)&&(((Order)object).getUniqueID()==uniqueID));
+			if((object instanceof Order)&&(((Order)object).getUniqueID()==(uniqueID))){
+				System.out.println(((Order)object).getUniqueID());
 				System.out.println(uniqueID);
 				return object;
+			}
 		}
 		throw(new OrderNotFoundException("The order of ID " + uniqueID + "is not on the board"));
 	}

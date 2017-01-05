@@ -98,8 +98,8 @@ public class MyFoodoraClient {
 						//to read the testScenario file
 						sc = new Scanner (testScenarioFile);
 						//to write the testScenario file
-						/*OutputStream out = new FileOutputStream(fileName+"Output.txt");
-						System.setOut(new PrintStream(out));*/
+						OutputStream out = new FileOutputStream(fileName+"Output.txt");
+						System.setOut(new PrintStream(out));
 					}catch(NoSuchElementException e){
 						System.err.println("Invalid number of arguments or syntax error.");
 					}catch (FileNotFoundException e){

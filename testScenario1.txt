@@ -74,11 +74,15 @@ offDuty
 logout
 login "speedgonz" "ch33se"
 acceptDeliveryCall "2" "no"
+onDuty
 logout
 login "fgump" "shrink"
-acceptDeliveryCall "12" "yes"
+acceptDeliveryCall "2" "yes"
 logout
 login "ubolt" "jamaik"
+onDuty
+logout
+login "speedgonz" "ch33se"
 onDuty
 logout
 login "ceo" "123456789"
