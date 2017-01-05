@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.NoSuchElementException ;
 import java.util.StringTokenizer ;
 import java.util.ArrayList ;
+import java.util.Calendar;
 
 public class MyFoodoraClient {
 
@@ -156,9 +157,7 @@ public class MyFoodoraClient {
 				System.out.println("\"createOrder <restaurantName>\" : create a new order\n"
 						+ "\"addItem2Order <itemName>\" : add a dish or a meal to the menu\n"
 						+ "\"endOrder <applyReduction> : submit the order to today's date and applies the order depending on the applyReduction value \"yes\" or \"no\"\n"
-						+ "\"manage\" : manage your discounts\n"
-						+ "\"disconnect\" : change user\n"
-						+ "\"close\" : close MyFoodora");
+						+ "\"logout\" : logout\n") ;
 				return "next" ;
 			case("createOrder"):
 				st.nextToken("\"");
@@ -406,9 +405,12 @@ public class MyFoodoraClient {
 						+ "\"registerCourier <firstName> <lastName> <username> <password> <address> : register a new courier\n"
 						+ "\"setDeliveryPolicy <delPolicyName>\" : set the delivery policy to \"fastest\" or \"fairOccupation\"\n"
 						+ "\"meetTargetProfit <profitInfoName> <targetProfit>\" : show how to set the value of the profit info (\"deliveryCost\", \"serviceFee\" or \"markup\") to meet the target profit.\n"
-						+ "\"setProfitInfo <profitInfoName> <value>\" : sets the profitInfo (\"deliveryCost\", \"serviceFee\" or \"markup\") to the value.\n"
-						+ "\"associateCard <userName> <cardType>\" : associate a new fidelity card (\"basic\", \"point\" or \"lottery\" to the user"
-						+ "\"showCourierDeliveries <>\" : displays all the Courier ordered by the number of delivered orders"
+						+ "\"setProfitInfo <profitInfoName> <value>\" : sets the profitInfo (\"deliveryCost\", \"serviceFee\" or \"markup\") to the value\n"
+						+ "\"associateCard <userName> <cardType>\" : associate a new fidelity card (\"basic\", \"point\" or \"lottery\" to the user\n"
+						+ "\"showCourierDeliveries <>\" : displays all the Courier ordered by the number of delivered orders\n"
+						+ "\"showRestaurantTop <>\" : displays all the Restaurants ordered by the number of orders sold\n"
+						+ "\"showCustomers <>\" : displays all the Customers\n"
+						+ "\"showMenuItem <restaurantName>\" : displays the menu of the restaurant\n"
 						+ "\"logout\" : log out"
 						);
 				break;
@@ -645,9 +647,143 @@ public class MyFoodoraClient {
 								System.err.println("Error while displaying the couriers.");
 							}						
 							System.out.println(mostActiveCourier);
+						}else{
+							for(int i:activatedCourier){
+								try{
+									currentManager.activateUser(i);
+								}catch(UserNotFoundException e){
+									System.err.println("Error while displaying the couriers.");
+								}	
+							}
 						}
 					}
 					
+				}
+				return "next" ;
+			case("showRestaurantTop"):
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"showRestaurantTop <>\" cannot have parameters.");
+					error = true ;
+				}
+				if(!error){
+					System.out.println("Here are the activated restaurants of the platform :");
+					Restaurant mostSellingRestaurant = new Restaurant("","","","") ;
+					ArrayList<Integer> activatedRestaurants = new ArrayList<Integer>() ;
+					while (mostSellingRestaurant!=null){
+						mostSellingRestaurant = currentManager.mostSellingRestaurant();
+						if(mostSellingRestaurant!=null){
+						activatedRestaurants.add(mostSellingRestaurant.getUniqueID());
+							try{
+								currentManager.deactivateUser(mostSellingRestaurant.getUniqueID());
+							}catch(UserNotFoundException e){
+								System.err.println("Error while displaying the restaurants.");
+							}						
+							System.out.println(mostSellingRestaurant);
+						}else{
+							for(int i:activatedRestaurants){
+								try{
+									currentManager.activateUser(i);
+								}catch(UserNotFoundException e){
+									System.err.println("Error while displaying the restaurants.");
+								}	
+							}
+						}
+					}
+					
+				}
+				return "next" ;
+			case("showCustomers"):
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"showCustomers <>\" cannot have parameters.");
+					error = true ;
+				}
+				if(!error){
+					System.out.println("Here are the activated customers of the platform :");
+					for (User user : myFoodora.getUsers()){
+						if((user.getUserType().equals("customer")&&(user.isActivated()))){
+							System.out.println(user);							
+						}
+					}
+					
+				}
+				return "next" ;
+			case("showMenuItem"):
+				st.nextToken("\"");
+				restaurantName = st.nextToken("\"");
+				if(st.hasMoreTokens()){	
+					System.err.println("The command \"showMenuItem <restaurantName>\" has only 1 parameter.");
+					error = true ;
+				}
+				try{
+					if(!myFoodora.findUserByName(restaurantName).getUserType().equals("restaurant")){
+						System.err.println("The user named \""+restaurantName+"\" is not a restaurant.");
+						error = true ;
+					}
+				}catch(UserNotFoundException e){
+					System.err.println("The restaurant named \""+restaurantName+"\" does not exist.");
+					error = true ;
+				}
+				if(!error){
+					System.out.println("Here is the menu of the restaurant \""+restaurantName+"\" :");
+					try{
+						((Restaurant)myFoodora.findUserByName(restaurantName)).displayMenu();
+					}catch(UserNotFoundException e){
+						System.err.println("The restaurant named \""+restaurantName+"\" does not exist.");
+					}
+					
+				}
+				return "next" ;
+			case("showTotalProfit"):
+				if(st.hasMoreTokens()){	
+					st.nextToken("\"");
+					int day1 = 0 ; int month1 = 0 ; int year1 = 0 ;
+					int day2 = 0 ; int month2 = 0 ; int year2 = 0 ;
+					String stringDay1 = st.nextToken("\"/");
+					String stringMonth1 = st.nextToken("/");
+					String stringYear1 = st.nextToken("\"/");
+					st.nextToken("\"");
+					String stringDay2 = st.nextToken("\"/");
+					String stringMonth2 = st.nextToken("/");
+					String stringYear2 = st.nextToken("\"/");
+					if(st.hasMoreTokens()){
+						System.err.println("The command \"showTotalProfit <>\" cannot have parameters.");
+						error = true ;
+					}
+					try{
+						day1 = Integer.parseInt(stringDay1);
+						day2 = Integer.parseInt(stringDay2);
+						month1 = Integer.parseInt(stringMonth1);
+						month2 = Integer.parseInt(stringMonth2);
+						year1 = Integer.parseInt(stringYear1);
+						year2 = Integer.parseInt(stringYear2);
+						if((day1<1)||(day1>31)||(day2<1)||(day2>31)||(month1<1)||(month1>12)||(month2<1)||(month2>12)){
+							System.err.println("Each date parameter must be in format \"DD/MM/YYYY\" (ex : \"28/01/2016\".");
+							error = true ;
+						}
+					}catch(NumberFormatException e){
+						System.err.println("Each date parameter must be in format \"DD/MM/YYYY\" (ex : \"28/01/2016\".");
+						error = true ;
+					}
+					Calendar start = Calendar.getInstance() ;
+					start.set(year1,month1-1,day1);
+					Calendar end = Calendar.getInstance() ;
+					end.set(year2,month2-1,day2);
+					if(start.compareTo(end)>0){
+						System.err.println("The startDate must be before the endDate.");
+						error = true ;
+					}
+					if(!error){
+						System.out.println("The total profit during this period is :");
+						System.out.println(currentManager.getMyFoodora().totalProfit(start, end));	
+					}
+				}else{
+					Calendar start = Calendar.getInstance() ;
+					start.set(0,0,0);
+					Calendar end = Calendar.getInstance() ;
+					if(!error){
+						System.out.println("The total profit since the creation is :");
+						System.out.println(currentManager.getMyFoodora().totalProfit(start, end));	
+					}
 				}
 				return "next" ;
 			case("logout"):
