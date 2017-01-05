@@ -109,7 +109,7 @@ public abstract class User implements java.io.Serializable {
 
 	@Override
 	public String toString(){
-		return (this.userType + " ID n°" + this.uniqueID + " " + name + " " + surname + " username:"+userName+ " password:"+password+"\n");
+		return (this.userType + " ID n°" + this.uniqueID + " " + name + " " + surname + " username:"+userName+"\n");
 	}
 	
 	@Override

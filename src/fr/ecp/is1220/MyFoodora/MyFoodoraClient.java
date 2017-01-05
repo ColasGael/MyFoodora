@@ -115,7 +115,7 @@ public class MyFoodoraClient {
 				case("close"):
 					break closeLoop ;
 				default:
-					System.err.println("This choice is not available, please try again");
+					System.err.println("The command "+commande+" does not exist.");
 					break;
 				}
 			}
@@ -419,10 +419,13 @@ public class MyFoodoraClient {
 				switch(answer){
 				case("yes"):
 					bAnswer = true ;
+					break ;
 				case("no"):
 					bAnswer = false ;
+					break ;
 				default :
-					System.err.println("The <answer> parameter is invalid you must enter \"yes\" or \"no\".");
+					System.err.println("The <answer>" + answer+" parameter is invalid you must enter \"yes\" or \"no\".");
+					error = true ;
 				}
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"acceptDeliveryCall <orderId> <answer>\" has only 2 parameters.");
@@ -937,6 +940,7 @@ public class MyFoodoraClient {
 						+ "\"showMeal <mealName>\" : displays the indicated meal\n"
 						+ "\"setSpecialOffer <mealName>\" : sets the meal of the week\n"
 						+ "\"setSpecialDiscountFactor <value>\" : sets the special discount factor\n"
+						+ "\"setSpecialDiscountFactor <value>\" : sets the generic discount factor\n"
 						+ "\"showSortedMeals <> : displays all the meals w.r.t. the number of times they have been picked\n"
 						+ "\"showSortedDishes <> : displays all the dishes w.r.t. the number of times they have been picked\n"
 						+ "\"logout\" : log out\n");
@@ -1074,6 +1078,26 @@ public class MyFoodoraClient {
 				if(!error){
 					currentRestaurant.setSpecialDiscountFactor(discountFactor);
 					System.out.println("The discount factor is : "+discountFactor);
+				
+				}
+				return "next" ;
+			case("setGenericDiscountFactor"):
+				st.nextToken("\"");
+				String stringGenericFactor = st.nextToken("\"");
+				double genericFactor = 0;
+				try{
+					genericFactor = Double.parseDouble(stringGenericFactor) ;
+				}catch(NumberFormatException e){
+					System.err.println("The <value> parameter is invalid. You must enter a double value.");
+					error = true ;
+				}
+				if(st.hasMoreTokens()){
+					System.err.println("The command \"setGenericDiscountFactor <value>\" has only 1 parameter.");
+					error = true  ;
+				}
+				if(!error){
+					currentRestaurant.setGenericDiscountFactor(genericFactor);
+					System.out.println("The generic discount factor is : "+genericFactor);
 				
 				}
 				return "next" ;

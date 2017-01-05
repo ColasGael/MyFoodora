@@ -75,7 +75,7 @@ login "speedgonz" "ch33se"
 acceptDeliveryCall "1" "no"
 logout
 login "fgump" "shrink"
-acceptDeliveryCall "1" "yes"
+acceptDeliveryCall "0" "yes"
 logout
 login "ubolt" "jamaik"
 onDuty
@@ -97,7 +97,7 @@ logout
 login "ubolt" "jamaik"
 logout
 login "speedgonz" "ch33se"
-acceptDeliveryCall "2" "yes"
+acceptDeliveryCall "1" "yes"
 logout
 login "saka" "password"
 showSortedMeals
