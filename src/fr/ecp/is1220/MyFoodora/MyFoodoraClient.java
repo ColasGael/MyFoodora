@@ -202,7 +202,7 @@ public class MyFoodoraClient {
 					if(orderedUser.getUserType().equals("restaurant")){
 						orderedRestaurant = (Restaurant)orderedUser ;
 					}else{
-						System.err.println("oupsThe restaurant \""+restaurantName+"\" does not exist.");
+						System.err.println("The restaurant \""+restaurantName+"\" does not exist.");
 						error = true ;
 					}
 				}catch(UserNotFoundException e){
@@ -337,6 +337,7 @@ public class MyFoodoraClient {
 				if(!error){
 					currentCustomer.displayFidelityInfo();
 				}
+				return "next" ;
 			case("historyOfOrders"):
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"historyOfOrders <>\" cannot have parameters.");
@@ -345,6 +346,7 @@ public class MyFoodoraClient {
 				if(!error){
 					System.out.println(currentCustomer.getHistoryOfOrders(myFoodora));
 				}
+				return "next" ;
 			case("logout"):
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"logout <>\" cannot have parameters.");

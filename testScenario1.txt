@@ -1,4 +1,4 @@
-login "gcolas" "0123456789"
+login "ceo" "123456789"
 registerRestaurant "Sushi Saka" "saka" "password" "152.4,47.2"
 registerRestaurant "Pizza Hut" "hut" "dateofbirth" "125.3,78.3"
 registerCustomer "Jamie" "Oliver" "joliver" "chef123" "12.2,45.3"
@@ -47,7 +47,7 @@ showMenuItem
 setSpecialDiscountFactor "0.09"
 showMenuItem 
 logout
-register "customer" "Auguste" "Gusteau" "agusteau" "chef789" "78.9,1.23"
+register "Auguste" "Gusteau" "agusteau" "chef789" "78.9,1.23"
 login "agusteau" "chef789"
 registerFidelityCard "lottery"
 displayFidelityInfo
@@ -68,14 +68,14 @@ addItem2Order "boule coco"
 endOrder "no"
 logout
 login "ubolt" "jamaik"
-acceptDeliveryCall "yes" "0"
+acceptDeliveryCall "0" "yes"
 offDuty
 logout
 login "speedgonz" "ch33se"
-acceptDeliveryCall "no" "1"
+acceptDeliveryCall "1" "no"
 logout
 login "fgump" "shrink"
-acceptDeliveryCall "yes" "1"
+acceptDeliveryCall "1" "yes"
 logout
 login "ubolt" "jamaik"
 onDuty
@@ -97,7 +97,7 @@ logout
 login "ubolt" "jamaik"
 logout
 login "speedgonz" "ch33se"
-acceptDeliveryCall "yes" "2"
+acceptDeliveryCall "2" "yes"
 logout
 login "saka" "password"
 showSortedMeals
@@ -107,7 +107,7 @@ login "ceo" "123456789"
 showTotalProfit
 showTotalProfit "01/01/2017" "31/01/2017"
 meetTargetProfit "markup" "70"
-setProfitInfoValue "12"
+setProfitInfoValue "markup" "12"
 showTotalProfit
 showCustomers 
 showCourierDeliveries

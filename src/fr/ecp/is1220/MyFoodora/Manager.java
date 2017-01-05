@@ -167,7 +167,7 @@ public class Manager extends User {
 		int mostSells = 0;
 		
 		for (User user : myFoodora.getUsers()){
-			if (user.getUserType().equals("restaurant")){
+			if ((user.getUserType().equals("restaurant"))&&user.isActivated()){
 				Restaurant restaurant = (Restaurant)user;
 				if(restaurant.getCounter() > mostSells){
 					mostSellingRestaurant = restaurant;
