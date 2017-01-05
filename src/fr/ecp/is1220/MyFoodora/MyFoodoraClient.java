@@ -869,9 +869,13 @@ public class MyFoodoraClient {
 			case("help"):
 				System.out.println("\"showMenuItem <>\" : display your menu\n"
 						+ "\"addDishRestaurantMenu <dishName> <dishCategory> <foodCategory> <unitPrice>\" : add a new dish to your menu\n"
-						+ "\"manage\" : manage your discounts\n"
-						+ "\"disconnect\" : change user\n"
-						+ "\"close\" : close MyFoodora");
+						+ "\"createMeal <mealName> <mealCategory>\" : creates a new meal with mealname and mealCategory (\"full\" or \"half\")\n"
+						+ "\"addDish2Meal <dishName> <mealName>\" : adds a dish to a meal\n"
+						+ "\"showMeal <mealName>\" : displays the indicated meal\n"
+						+ "\"setSpecialOffer <mealName>\" : sets the meal of the week\n"
+						+ "\"showSortedMeals <> : displays all the meals w.r.t. the number of times they have been picked\n"
+						+ "\"showSortedDishes <> : displays all the dishes w.r.t. the number of times they have been picked\n"
+						+ "\"logout\" : log out\n");
 				return "next" ;
 			case("showMenuItem"):
 				if(st.hasMoreTokens()){
@@ -934,7 +938,7 @@ public class MyFoodoraClient {
 				st.nextToken("\"");
 				String mealCategory = st.nextToken("\"");
 				switch(mealCategory){
-				case("full"):case("half"):case("glutenFree"):
+				case("full"):case("half"):
 					break ;
 				default :
 					System.err.println("The <mealCategory> parameter is wrong. The possible values are \"full\" and \"half\" ");
@@ -1005,6 +1009,24 @@ public class MyFoodoraClient {
 					catch(FoodItemNotFoundException e){
 						System.err.println("The meal"+mealName+" does not exist.");
 					}
+				}
+				return "next" ;
+			case("showSortedMeals"):
+				if(st.hasMoreTokens()){
+					System.err.println("The command \"showSortedMeals\" has only one parameter.");
+					error = true ;
+				}
+				if(!error){
+					currentRestaurant.displaySortedFoodItems("meal");
+				}
+				return "next" ;
+			case("showSortedDishes"):
+				if(st.hasMoreTokens()){
+					System.err.println("The command \"showSortedDishes\" has only one parameter.");
+					error = true ;
+				}
+				if(!error){
+					currentRestaurant.displaySortedFoodItems("dish");
 				}
 				return "next" ;
 			case("logout"):
