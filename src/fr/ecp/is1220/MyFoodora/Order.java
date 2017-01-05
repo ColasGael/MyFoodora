@@ -11,7 +11,7 @@ public class Order implements java.io.Serializable {
 	/**
 	 * the static lastID ensure that the IDs of all orders are different
 	 */
-	protected static int lastID = 0 ;
+	protected static int lastID = 1 ;
 	/**
 	 * the unique ID of the order
 	 */

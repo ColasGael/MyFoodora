@@ -1,0 +1,982 @@
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome 
+Type "help" to have a list of all available commands.
+The restaurant has been registered. Here are its properties : 
+Name : Sushi Saka
+	Address [x = 152.4, y = 47.2]
+Type "help" to have a list of all available commands.
+The restaurant has been registered. Here are its properties : 
+Name : Pizza Hut
+	Address [x = 125.3, y = 78.3]
+Type "help" to have a list of all available commands.
+The customer has been registered. Here are its properties : 
+customer ID n°15 Jamie Oliver username:joliver
+
+Type "help" to have a list of all available commands.
+The customer has been registered. Here are its properties : 
+customer ID n°16 Gordon Ramsay username:gramsay
+
+Type "help" to have a list of all available commands.
+The courier has been registered. Here are its properties : 
+courier ID n°17 Forrest Gump username:fgump
+
+Type "help" to have a list of all available commands.
+The courier has been registered. Here are its properties : 
+courier ID n°18 Usain Bolt username:ubolt
+
+Type "help" to have a list of all available commands.
+The courier has been registered. Here are its properties : 
+courier ID n°19 Speedy Gonzalez username:speedgonz
+
+Type "help" to have a list of all available commands.
+Here are the activated customers of the platform :
+customer ID n°8 Xavier Collar username:chaperouge
+
+customer ID n°9 Regis Troissant username:cptcroche
+
+customer ID n°10 Baptiste Turpin username:alladin
+
+customer ID n°11 Kevin Uzan username:PJ
+
+customer ID n°12 Theo Bob username:theo7794
+
+customer ID n°15 Jamie Oliver username:joliver
+
+customer ID n°16 Gordon Ramsay username:gramsay
+
+Type "help" to have a list of all available commands.
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Sushi Saka
+Type "help" to have a list of all available commands.
+The standard mainDish maki surimi has been added to your menu for 8.0 euros.
+Type "help" to have a list of all available commands.
+The glutenFree mainDish maki radis has been added to your menu for 7.5 euros.
+Type "help" to have a list of all available commands.
+The vegetarian mainDish sushi avocat has been added to your menu for 8.5 euros.
+Type "help" to have a list of all available commands.
+The standard mainDish maki surimi has been added to your menu for 8.0 euros.
+Type "help" to have a list of all available commands.
+The vegetarian starter miso has been added to your menu for 3.0 euros.
+Type "help" to have a list of all available commands.
+The vegetarian dessert boule coco has been added to your menu for 5.0 euros.
+Type "help" to have a list of all available commands.
+The full S3 has been created and added to your menu.
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+FullMeal : S3
+price : 2.8499999999999996 type : standard
+nullStarter : [name=miso, price=3.0, type=vegetarian, counter=0]
+null
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+FullMeal : S3
+price : 10.924999999999999 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+null
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+FullMeal : S3
+price : 15.674999999999999 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+
+Type "help" to have a list of all available commands.
+Here is the S3 :
+
+FullMeal : S3
+price : 15.674999999999999 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+
+Type "help" to have a list of all available commands.
+The half M7 has been created and added to your menu.
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+HalfMeal : M7
+price : 2.8499999999999996 type : standard
+nullStarter : [name=miso, price=3.0, type=vegetarian, counter=0]
+
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+HalfMeal : M7
+price : 10.45 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+
+Type "help" to have a list of all available commands.
+Here is the new meal of the week :
+
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+
+Type "help" to have a list of all available commands.
+Here is your menu :
+Menu 
+[dishes=
+[MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, MainDish : [name=maki radis, price=7.5, type=glutenFree, counter=0]
+, MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+, MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+]
+
+meals=
+[
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+, 
+HalfMeal : M7
+price : 10.45 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+]
+
+genericDiscountFactor : 0.05, 
+specialDiscountFactor : 0.1, 
+
+mealOfTheWeek :
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+]
+Type "help" to have a list of all available commands.
+The generic discount factor is : 0.055
+Type "help" to have a list of all available commands.
+Here is your menu :
+Menu 
+[dishes=
+[MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, MainDish : [name=maki radis, price=7.5, type=glutenFree, counter=0]
+, MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+, MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+]
+
+meals=
+[
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+, 
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+]
+
+genericDiscountFactor : 0.055, 
+specialDiscountFactor : 0.1, 
+
+mealOfTheWeek :
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+]
+Type "help" to have a list of all available commands.
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Pizza Hut
+Type "help" to have a list of all available commands.
+The vegetarian mainDish 4 formaggi has been added to your menu for 12.0 euros.
+Type "help" to have a list of all available commands.
+The standard mainDish margherita has been added to your menu for 13.5 euros.
+Type "help" to have a list of all available commands.
+The vegetarian starter grecini has been added to your menu for 4.5 euros.
+Type "help" to have a list of all available commands.
+The vegetarian starter arancine has been added to your menu for 3.0 euros.
+Type "help" to have a list of all available commands.
+The vegetarian dessert tiramisu has been added to your menu for 6.5 euros.
+Type "help" to have a list of all available commands.
+The full complet has been created and added to your menu.
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+FullMeal : complet
+price : 11.399999999999999 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+nullnull
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+FullMeal : complet
+price : 14.25 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+null
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+FullMeal : complet
+price : 20.425 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+
+Type "help" to have a list of all available commands.
+Here is the complet :
+
+FullMeal : complet
+price : 20.425 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+
+Type "help" to have a list of all available commands.
+The half midi has been created and added to your menu.
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+HalfMeal : midi
+price : 12.825 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+null
+Type "help" to have a list of all available commands.
+Here is the updated meal
+
+HalfMeal : midi
+price : 17.099999999999998 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+
+Type "help" to have a list of all available commands.
+Here is the new meal of the week :
+
+HalfMeal : midi
+price : 16.2 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+
+Type "help" to have a list of all available commands.
+Here is your menu :
+Menu 
+[dishes=
+[MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+, MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+, Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+, Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+, Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+]
+
+meals=
+[
+FullMeal : complet
+price : 20.425 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+, 
+HalfMeal : midi
+price : 16.2 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+]
+
+genericDiscountFactor : 0.05, 
+specialDiscountFactor : 0.1, 
+
+mealOfTheWeek :
+HalfMeal : midi
+price : 16.2 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+]
+Type "help" to have a list of all available commands.
+The discount factor is : 0.09
+Type "help" to have a list of all available commands.
+Here is your menu :
+Menu 
+[dishes=
+[MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+, MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+, Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+, Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+, Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+]
+
+meals=
+[
+FullMeal : complet
+price : 20.425 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+, 
+HalfMeal : midi
+price : 16.38 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+]
+
+genericDiscountFactor : 0.05, 
+specialDiscountFactor : 0.09, 
+
+mealOfTheWeek :
+HalfMeal : midi
+price : 16.38 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+]
+Type "help" to have a list of all available commands.
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have been registered. Here is your accounts informations : 
+customer ID n°20 Auguste Gusteau username:agusteau
+
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Auguste
+Type "help" to have a list of all available commands.
+You have now a lottery fidelity card.
+Type "help" to have a list of all available commands.
+lottery fidelity card
+You have already played today
+You have a probability of 0.01 to win at the lottery
+if you win, the most expensive meal of your order becomes free
+
+Type "help" to have a list of all available commands.
+A new order has been created. Here is the restaurant's menu :
+Menu 
+[dishes=
+[MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+, MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+, Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+, Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+, Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+]
+
+meals=
+[
+FullMeal : complet
+price : 20.425 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+, 
+HalfMeal : midi
+price : 16.38 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+]
+
+genericDiscountFactor : 0.05, 
+specialDiscountFactor : 0.09, 
+
+mealOfTheWeek :
+HalfMeal : midi
+price : 16.38 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+]
+Type "help" to have a list of all available commands.
+The meal "midi" has been added to your order.
+The actual price of your order is 16.38
+Type "help" to have a list of all available commands.
+The meal "complet" has been added to your order.
+The actual price of your order is 36.805
+Type "help" to have a list of all available commands.
+The dish "tiramisu" has been added to your order.
+The actual price of your order is 43.305
+Type "help" to have a list of all available commands.
+Here is your order :
+Order [ID : 1
+dateOfOrder=5 January 2017
+customer=customer ID n°20 Auguste Gusteau username:agusteau
+
+restaurant=Name : Pizza Hut
+	Address [x = 125.3, y = 78.3]
+dishes=[Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+]
+meals=[
+HalfMeal : midi
+price : 16.38 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+, 
+FullMeal : complet
+price : 20.425 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=0]
+]
+price=0.0
+courier=null
+addressOfDelivery=[x = 78.9, y = 1.23]]
+
+You did not have any reduction today with your lottery fidelity card.
+You did not have any reduction today with your lottery fidelity card.
+You have paid 43.305 euros for your order
+
+Type "help" to have a list of all available commands.
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Jamie
+Type "help" to have a list of all available commands.
+You have now a point fidelity card.
+Type "help" to have a list of all available commands.
+point fidelity card
+You have 0 fidelity points on your card
+You need 100 to have a 0.1 percent reduction on the price of your next order
+When you spend 10.0 euros on My Foodora, you earn 1 fidelity point
+
+Type "help" to have a list of all available commands.
+A new order has been created. Here is the restaurant's menu :
+Menu 
+[dishes=
+[MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, MainDish : [name=maki radis, price=7.5, type=glutenFree, counter=0]
+, MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+, MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+]
+
+meals=
+[
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+, 
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+]
+
+genericDiscountFactor : 0.055, 
+specialDiscountFactor : 0.1, 
+
+mealOfTheWeek :
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+]
+Type "help" to have a list of all available commands.
+The meal "S3" has been added to your order.
+The actual price of your order is 14.85
+Type "help" to have a list of all available commands.
+The meal "M7" has been added to your order.
+The actual price of your order is 25.244999999999997
+Type "help" to have a list of all available commands.
+The dish "miso" has been added to your order.
+The actual price of your order is 28.245
+Type "help" to have a list of all available commands.
+The dish "boule coco" has been added to your order.
+The actual price of your order is 33.245000000000005
+Type "help" to have a list of all available commands.
+Here is your order :
+Order [ID : 2
+dateOfOrder=5 January 2017
+customer=customer ID n°15 Jamie Oliver username:joliver
+
+restaurant=Name : Sushi Saka
+	Address [x = 152.4, y = 47.2]
+dishes=[Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+]
+meals=[
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=0]
+, 
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=0]
+]
+price=0.0
+courier=null
+addressOfDelivery=[x = 12.2, y = 45.3]]
+
+You have paid 33.245000000000005 euros for your order
+
+Type "help" to have a list of all available commands.
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Usain
+Type "help" to have a list of all available commands.
+Board :
+
+Type "help" to have a list of all available commands.
+Board :
+
+You were on duty.
+You are now off duty.
+Type "help" to have a list of all available commands.
+Board :
+
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Speedy
+Type "help" to have a list of all available commands.
+Board :
+Order [ID : 1
+dateOfOrder=5 January 2017
+customer=customer ID n°20 Auguste Gusteau username:agusteau
+
+restaurant=Name : Pizza Hut
+	Address [x = 125.3, y = 78.3]
+dishes=[Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=1]
+]
+meals=[
+HalfMeal : midi
+price : 16.38 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+, 
+FullMeal : complet
+price : 20.425 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=1]
+]
+price=43.305
+courier=courier ID n°19 Speedy Gonzalez username:speedgonz
+
+addressOfDelivery=[x = 78.9, y = 1.23]]
+
+Order [ID : 2
+dateOfOrder=5 January 2017
+customer=customer ID n°15 Jamie Oliver username:joliver
+
+restaurant=Name : Sushi Saka
+	Address [x = 152.4, y = 47.2]
+dishes=[Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+]
+meals=[
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+, 
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+]
+price=33.245000000000005
+courier=courier ID n°19 Speedy Gonzalez username:speedgonz
+
+addressOfDelivery=[x = 12.2, y = 45.3]]
+
+
+You have refused to deliver this order :
+Order [ID : 2
+dateOfOrder=5 January 2017
+customer=customer ID n°15 Jamie Oliver username:joliver
+
+restaurant=Name : Sushi Saka
+	Address [x = 152.4, y = 47.2]
+dishes=[Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+]
+meals=[
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+, 
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+]
+price=33.245000000000005
+courier=courier ID n°19 Speedy Gonzalez username:speedgonz
+
+addressOfDelivery=[x = 12.2, y = 45.3]]
+
+Type "help" to have a list of all available commands.
+Board :
+Order [ID : 2
+dateOfOrder=5 January 2017
+customer=customer ID n°15 Jamie Oliver username:joliver
+
+restaurant=Name : Sushi Saka
+	Address [x = 152.4, y = 47.2]
+dishes=[Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+]
+meals=[
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+, 
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+]
+price=33.245000000000005
+courier=courier ID n°19 Speedy Gonzalez username:speedgonz
+
+addressOfDelivery=[x = 12.2, y = 45.3]]
+
+
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Forrest
+Type "help" to have a list of all available commands.
+Board :
+Order [ID : 1
+dateOfOrder=5 January 2017
+customer=customer ID n°20 Auguste Gusteau username:agusteau
+
+restaurant=Name : Pizza Hut
+	Address [x = 125.3, y = 78.3]
+dishes=[Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=1]
+]
+meals=[
+HalfMeal : midi
+price : 16.38 type : standard
+MainDish : [name=margherita, price=13.5, type=standard, counter=0]
+Starter : [name=grecini, price=4.5, type=vegetarian, counter=0]
+, 
+FullMeal : complet
+price : 20.425 type : standard
+MainDish : [name=4 formaggi, price=12.0, type=vegetarian, counter=0]
+Starter : [name=arancine, price=3.0, type=vegetarian, counter=0]
+Dessert : [name=tiramisu, price=6.5, type=vegetarian, counter=1]
+]
+price=43.305
+courier=courier ID n°17 Forrest Gump username:fgump
+
+addressOfDelivery=[x = 78.9, y = 1.23]]
+
+
+Type "help" to have a list of all available commands.
+Board :
+
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Usain
+Type "help" to have a list of all available commands.
+Board :
+
+You were off duty.
+You are now on duty.
+Type "help" to have a list of all available commands.
+Board :
+
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome 
+Type "help" to have a list of all available commands.
+The total profit since the creation is :
+12.28025
+Type "help" to have a list of all available commands.
+The total profit during this period is :
+12.28025
+Type "help" to have a list of all available commands.
+Type "help" to have a list of all available commands.
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Jamie
+Type "help" to have a list of all available commands.
+[]
+Type "help" to have a list of all available commands.
+point fidelity card
+You have 3 fidelity points on your card
+You need 100 to have a 0.1 percent reduction on the price of your next order
+When you spend 10.0 euros on My Foodora, you earn 1 fidelity point
+
+Type "help" to have a list of all available commands.
+A new order has been created. Here is the restaurant's menu :
+Menu 
+[dishes=
+[MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, MainDish : [name=maki radis, price=7.5, type=glutenFree, counter=0]
+, MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+, MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+]
+
+meals=
+[
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+, 
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+]
+
+genericDiscountFactor : 0.055, 
+specialDiscountFactor : 0.1, 
+
+mealOfTheWeek :
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+]
+Type "help" to have a list of all available commands.
+The meal "M7" has been added to your order.
+The actual price of your order is 10.395
+Type "help" to have a list of all available commands.
+The dish "miso" has been added to your order.
+The actual price of your order is 13.395
+Type "help" to have a list of all available commands.
+The dish "boule coco" has been added to your order.
+The actual price of your order is 18.395
+Type "help" to have a list of all available commands.
+Here is your order :
+Order [ID : 3
+dateOfOrder=5 January 2017
+customer=customer ID n°15 Jamie Oliver username:joliver
+
+restaurant=Name : Sushi Saka
+	Address [x = 152.4, y = 47.2]
+dishes=[Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=1]
+]
+meals=[
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=1]
+]
+price=0.0
+courier=null
+addressOfDelivery=[x = 12.2, y = 45.3]]
+
+You have paid 18.395 euros for your order
+
+Type "help" to have a list of all available commands.
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Usain
+Type "help" to have a list of all available commands.
+Board :
+Order [ID : 3
+dateOfOrder=5 January 2017
+customer=customer ID n°15 Jamie Oliver username:joliver
+
+restaurant=Name : Sushi Saka
+	Address [x = 152.4, y = 47.2]
+dishes=[Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=2]
+]
+meals=[
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
+]
+price=18.395
+courier=courier ID n°18 Usain Bolt username:ubolt
+
+addressOfDelivery=[x = 12.2, y = 45.3]]
+
+
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Speedy
+Type "help" to have a list of all available commands.
+Board :
+Order [ID : 2
+dateOfOrder=5 January 2017
+customer=customer ID n°15 Jamie Oliver username:joliver
+
+restaurant=Name : Sushi Saka
+	Address [x = 152.4, y = 47.2]
+dishes=[Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
+, Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=2]
+]
+meals=[
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=2]
+, 
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
+]
+price=33.245000000000005
+courier=courier ID n°19 Speedy Gonzalez username:speedgonz
+
+addressOfDelivery=[x = 12.2, y = 45.3]]
+
+
+Type "help" to have a list of all available commands.
+Board :
+
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome Sushi Saka
+Type "help" to have a list of all available commands.
+[
+HalfMeal : M7
+price : 10.395 type : standard
+MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
+, 
+FullMeal : S3
+price : 14.85 type : standard
+MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
+Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=2]
+]
+Type "help" to have a list of all available commands.
+[Dessert : [name=boule coco, price=5.0, type=vegetarian, counter=2]
+, Starter : [name=miso, price=3.0, type=vegetarian, counter=2]
+, MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, MainDish : [name=maki surimi, price=8.0, type=standard, counter=0]
+, MainDish : [name=sushi avocat, price=8.5, type=vegetarian, counter=0]
+, MainDish : [name=maki radis, price=7.5, type=glutenFree, counter=0]
+]
+Type "help" to have a list of all available commands.
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+You have successfully logged in the system !
+
+Welcome 
+Type "help" to have a list of all available commands.
+The total profit since the creation is :
+18.942500000000003
+Type "help" to have a list of all available commands.
+The total profit during this period is :
+18.942500000000003
+Type "help" to have a list of all available commands.
+You can reach a profit of 70.0 by changing the markup to Infinity.
+Type "help" to have a list of all available commands.
+The markup value has been setted to 12.0.
+Type "help" to have a list of all available commands.
+The total profit since the creation is :
+961.2
+Type "help" to have a list of all available commands.
+Here are the activated customers of the platform :
+customer ID n°8 Xavier Collar username:chaperouge
+
+customer ID n°9 Regis Troissant username:cptcroche
+
+customer ID n°10 Baptiste Turpin username:alladin
+
+customer ID n°11 Kevin Uzan username:PJ
+
+customer ID n°12 Theo Bob username:theo7794
+
+customer ID n°15 Jamie Oliver username:joliver
+
+customer ID n°16 Gordon Ramsay username:gramsay
+
+customer ID n°20 Auguste Gusteau username:agusteau
+
+Type "help" to have a list of all available commands.
+Here are the activated couriers of the platform :
+courier ID n°5 Peter Parker username:spiderman
+
+courier ID n°6 Spider Man username:peterparker
+
+courier ID n°17 Forrest Gump username:fgump
+
+courier ID n°19 Speedy Gonzalez username:speedgonz
+
+Type "help" to have a list of all available commands.
+Here are the activated restaurants of the platform :
+Name : Sushi Saka
+	Address [x = 152.4, y = 47.2]
+Name : Le Hoki
+	Address [x = 12.3, y = 478.21]
+Name : Pizza Hut
+	Address [x = 125.3, y = 78.3]
+Type "help" to have a list of all available commands.
+The user "ubolt" has been deactivated.
+Type "help" to have a list of all available commands.
+You have logged out.
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+Sorry your account is deactivated
+Your account has been deactivated : Please call a manager : +33 1 41 13 15 79 
+
+Please use "login <username> <password>"
+Type "help <>" to have a list of all available commands
+Thank you for your visit ! 
+Goodbye !
+
+The MyFoodora platform has been saved.
