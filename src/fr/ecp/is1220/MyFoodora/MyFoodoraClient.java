@@ -1067,7 +1067,7 @@ public class MyFoodoraClient {
 				}
 				if(st.hasMoreTokens()){
 					System.err.println("The command \"setSpecialDiscountFactor <value>\" has only 1 parameter.");
-					error = true ;
+					error = true  ;
 				}
 				if(!error){
 					currentRestaurant.setSpecialDiscountFactor(discountFactor);
