@@ -48,6 +48,7 @@ public class MyFoodoraClient {
 					String customerUserName = st.nextToken("\"");
 					st.nextToken("\"");
 					String customerPassword = st.nextToken("\"");
+					st.nextToken("\"");
 					String customerXString = st.nextToken("\",");
 					double customerX = 0;
 					String customerYString = st.nextToken(",\"");
@@ -59,7 +60,6 @@ public class MyFoodoraClient {
 						System.err.println("The address parameter is invalid you must enter two coordinates (ex : \"1.25,1.45\").");
 						error = true ;
 					}
-					st.nextToken("\"");
 					if(st.hasMoreTokens()){	
 						System.err.println("The command \"register <firstName> <lastName> <username> <password> <address>\" has only 5 parameters.");
 						error = true ;
@@ -470,7 +470,7 @@ public class MyFoodoraClient {
 						+ "\"registerCourier <firstName> <lastName> <username> <password> <address> : register a new courier\n"
 						+ "\"setDeliveryPolicy <delPolicyName>\" : set the delivery policy to \"fastest\" or \"fairOccupation\"\n"
 						+ "\"meetTargetProfit <profitInfoName> <targetProfit>\" : show how to set the value of the profit info (\"deliveryCost\", \"serviceFee\" or \"markup\") to meet the target profit.\n"
-						+ "\"setProfitInfo <profitInfoName> <value>\" : sets the profitInfo (\"deliveryCost\", \"serviceFee\" or \"markup\") to the value\n"
+						+ "\"setProfitInfoValue <profitInfoName> <value>\" : sets the profitInfo (\"deliveryCost\", \"serviceFee\" or \"markup\") to the value\n"
 						+ "\"associateCard <userName> <cardType>\" : associate a new fidelity card (\"basic\", \"point\" or \"lottery\" to the user\n"
 						+ "\"showCourierDeliveries <>\" : displays all the Courier ordered by the number of delivered orders\n"
 						+ "\"showRestaurantTop <>\" : displays all the Restaurants ordered by the number of orders sold\n"
@@ -490,6 +490,7 @@ public class MyFoodoraClient {
 				String restaurantUserName = st.nextToken("\"");
 				st.nextToken("\"");
 				String restaurantPassword = st.nextToken("\"");
+				st.nextToken("\"");
 				String restaurantXString = st.nextToken("\",");
 				double restaurantX = 0;
 				String restaurantYString = st.nextToken(",\"");
@@ -501,7 +502,6 @@ public class MyFoodoraClient {
 					System.err.println("The address parameter is invalid you must enter two coordinates (ex : \"1.25,1.45\").");
 					error = true ;
 				}
-				st.nextToken("\"");
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"registerRestaurant <name> <username> <password> <address>\" has only 4 parameters.");
 					error = true ;
@@ -526,6 +526,7 @@ public class MyFoodoraClient {
 				String customerUserName = st.nextToken("\"");
 				st.nextToken("\"");
 				String customerPassword = st.nextToken("\"");
+				st.nextToken("\"");
 				String customerXString = st.nextToken("\",");
 				double customerX = 0;
 				String customerYString = st.nextToken(",\"");
@@ -537,7 +538,6 @@ public class MyFoodoraClient {
 					System.err.println("The address parameter is invalid you must enter two coordinates (ex : \"1.25,1.45\").");
 					error = true ;
 				}
-				st.nextToken("\"");
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"registerCustomer <firstName> <lastName> <username> <password> <address>\" has only 5 parameters.");
 					error = true ;
@@ -562,6 +562,7 @@ public class MyFoodoraClient {
 				String courierUserName = st.nextToken("\"");
 				st.nextToken("\"");
 				String courierPassword = st.nextToken("\"");
+				st.nextToken("\"");
 				String courierXString = st.nextToken("\",");
 				double courierX = 0;
 				String courierYString = st.nextToken(",\"");
@@ -573,7 +574,6 @@ public class MyFoodoraClient {
 					System.err.println("The address parameter is invalid you must enter two coordinates (ex : \"1.25,1.45\").");
 					error = true ;
 				}
-				st.nextToken("\"");
 				if(st.hasMoreTokens()){	
 					System.err.println("The command \"registerCourier <firstName> <lastName> <username> <password> <address>\" has only 5 parameters.");
 					error = true ;
@@ -638,7 +638,7 @@ public class MyFoodoraClient {
 					}
 				}
 				return "next" ;
-			case("setProfitInfo"):
+			case("setProfitInfoValue"):
 				st.nextToken("\"");
 				String profitInfoName = st.nextToken("\"");
 				switch(profitInfoName){
@@ -658,7 +658,7 @@ public class MyFoodoraClient {
 					error = true ;
 				}
 				if(st.hasMoreTokens()){	
-					System.err.println("The command \"setProfitInfo <profitInfoName> <value>\" has only 2 parameters.");
+					System.err.println("The command \"setProfitInfoValue <profitInfoName> <value>\" has only 2 parameters.");
 					error = true ;
 				}
 				if(!error){
