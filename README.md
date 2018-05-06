@@ -1,7 +1,7 @@
 # MyFoodora
-by Gael Colas and Sylvestre Prabakaran, 2nd year students from the French engineering school Centrale-Supélec
+by Gael Colas and Sylvestre Prabakaran, 2nd year students from the French engineering school CentraleSupélec
 
-This is our final project for the IS1220BC: "Object Oriented Software Design" class in Centrale-Supélec (2016).
+This is our final project for the IS1220BC: "Object Oriented Software Design" class in CentraleSupélec (2016).
 Our teacher was Pr. Paolo Ballarini.
 
 Language: Java
